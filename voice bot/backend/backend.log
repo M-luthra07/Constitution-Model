@@ -1,0 +1,241 @@
+2025-11-28 12:48:46,414 - INFO - Client connected.
+2025-11-28 12:48:46,419 - INFO - Ready to receive messages.
+2025-11-28 12:54:26,062 - INFO - Client disconnected.
+2025-11-28 12:54:26,137 - INFO - Client connected.
+2025-11-28 12:54:26,137 - INFO - Ready to receive messages.
+2025-11-28 12:55:12,084 - INFO - Client disconnected.
+2025-11-28 12:56:54,539 - INFO - Client connected.
+2025-11-28 12:56:54,539 - INFO - Ready to receive messages.
+2025-11-28 12:56:55,972 - INFO - Client disconnected.
+2025-11-28 12:57:03,506 - INFO - Client connected.
+2025-11-28 12:57:03,506 - INFO - Ready to receive messages.
+2025-11-28 12:57:25,295 - INFO - Received from client: accidentally killed my neighbours cat what should I do
+2025-11-28 12:57:25,297 - INFO - Sending text to Gemini...
+2025-11-28 12:57:26,200 - ERROR - An error occurred in websocket_endpoint: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+Traceback (most recent call last):
+  File "/home/derp/Desktop/constitution/Constitution-Model/voice bot/backend/main.py", line 68, in websocket_endpoint
+    response = await chat.send_message_async(user_text)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/derp/Desktop/constitution/Constitution-Model/voice bot/.venv/lib/python3.13/site-packages/google/generativeai/generative_models.py", line 707, in send_message_async
+    response = await self.model.generate_content_async(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "/home/derp/Desktop/constitution/Constitution-Model/voice bot/.venv/lib/python3.13/site-packages/google/generativeai/generative_models.py", line 385, in generate_content_async
+    response = await self._async_client.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+    )
+    ^
+  File "/home/derp/Desktop/constitution/Constitution-Model/voice bot/.venv/lib/python3.13/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/async_client.py", line 440, in generate_content
+    response = await rpc(
+               ^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "/home/derp/Desktop/constitution/Constitution-Model/voice bot/.venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary_async.py", line 231, in retry_wrapped_func
+    return await retry_target(
+           ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "/home/derp/Desktop/constitution/Constitution-Model/voice bot/.venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary_async.py", line 163, in retry_target
+    next_sleep = _retry_error_helper(
+        exc,
+    ...<6 lines>...
+        timeout,
+    )
+  File "/home/derp/Desktop/constitution/Constitution-Model/voice bot/.venv/lib/python3.13/site-packages/google/api_core/retry/retry_base.py", line 214, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/home/derp/Desktop/constitution/Constitution-Model/voice bot/.venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary_async.py", line 158, in retry_target
+    return await target()
+           ^^^^^^^^^^^^^^
+  File "/home/derp/Desktop/constitution/Constitution-Model/voice bot/.venv/lib/python3.13/site-packages/google/api_core/grpc_helpers_async.py", line 89, in __await__
+    raise exceptions.from_grpc_error(rpc_error) from rpc_error
+google.api_core.exceptions.NotFound: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-11-28 12:57:35,385 - INFO - Client connected.
+2025-11-28 12:57:35,387 - INFO - Ready to receive messages.
+2025-11-28 12:57:53,037 - INFO - Received from client: start what should I do
+2025-11-28 12:57:53,038 - INFO - Sending text to Gemini...
+2025-11-28 12:57:53,747 - ERROR - An error occurred in websocket_endpoint: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+Traceback (most recent call last):
+  File "/home/derp/Desktop/constitution/Constitution-Model/voice bot/backend/main.py", line 65, in websocket_endpoint
+    response = await chat.send_message_async(user_text)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/derp/Desktop/constitution/Constitution-Model/voice bot/.venv/lib/python3.13/site-packages/google/generativeai/generative_models.py", line 707, in send_message_async
+    response = await self.model.generate_content_async(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "/home/derp/Desktop/constitution/Constitution-Model/voice bot/.venv/lib/python3.13/site-packages/google/generativeai/generative_models.py", line 385, in generate_content_async
+    response = await self._async_client.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+    )
+    ^
+  File "/home/derp/Desktop/constitution/Constitution-Model/voice bot/.venv/lib/python3.13/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/async_client.py", line 440, in generate_content
+    response = await rpc(
+               ^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "/home/derp/Desktop/constitution/Constitution-Model/voice bot/.venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary_async.py", line 231, in retry_wrapped_func
+    return await retry_target(
+           ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "/home/derp/Desktop/constitution/Constitution-Model/voice bot/.venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary_async.py", line 163, in retry_target
+    next_sleep = _retry_error_helper(
+        exc,
+    ...<6 lines>...
+        timeout,
+    )
+  File "/home/derp/Desktop/constitution/Constitution-Model/voice bot/.venv/lib/python3.13/site-packages/google/api_core/retry/retry_base.py", line 214, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/home/derp/Desktop/constitution/Constitution-Model/voice bot/.venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary_async.py", line 158, in retry_target
+    return await target()
+           ^^^^^^^^^^^^^^
+  File "/home/derp/Desktop/constitution/Constitution-Model/voice bot/.venv/lib/python3.13/site-packages/google/api_core/grpc_helpers_async.py", line 89, in __await__
+    raise exceptions.from_grpc_error(rpc_error) from rpc_error
+google.api_core.exceptions.NotFound: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-11-28 12:57:59,750 - INFO - Client connected.
+2025-11-28 12:57:59,750 - INFO - Ready to receive messages.
+2025-11-28 12:58:06,358 - INFO - Client disconnected.
+2025-11-28 12:58:06,463 - INFO - Client connected.
+2025-11-28 12:58:06,466 - INFO - Ready to receive messages.
+2025-11-28 12:58:46,341 - INFO - Client disconnected.
+2025-11-28 12:58:46,499 - INFO - Client connected.
+2025-11-28 12:58:46,499 - INFO - Ready to receive messages.
+2025-11-28 12:59:01,904 - INFO - Received from client: should I cross on a blue light
+2025-11-28 12:59:01,904 - INFO - Sending text to Gemini...
+2025-11-28 12:59:03,690 - INFO - AI Response: Sorry, I can only provide legal support. Please ask a question related to law, legal rights, or justice in India.
+2025-11-28 12:59:03,690 - INFO - AI response text sent.
+2025-11-28 12:59:13,321 - INFO - Received from client: Hrithik Roshan red light on an Indian state
+2025-11-28 12:59:13,322 - INFO - Sending text to Gemini...
+2025-11-28 12:59:15,261 - INFO - AI Response: Sorry, I can only provide legal support. Please ask a question related to law, legal rights, or justice in India.
+2025-11-28 12:59:15,262 - INFO - AI response text sent.
+2025-11-28 12:59:23,957 - INFO - Received from client: legal to cross on a red light in Indian street
+2025-11-28 12:59:23,958 - INFO - Sending text to Gemini...
+2025-11-28 12:59:25,543 - INFO - AI Response: No, it is not legal to cross a red light on an Indian street. It is a violation of traffic rules and can lead to penalties like fines.
+2025-11-28 12:59:25,543 - INFO - AI response text sent.
+2025-11-28 12:59:28,960 - INFO - Client disconnected.
+2025-11-28 12:59:29,055 - INFO - Client connected.
+2025-11-28 12:59:29,055 - INFO - Ready to receive messages.
+2025-11-28 12:59:34,642 - INFO - Received from client: YouTube for a passenger
+2025-11-28 12:59:34,643 - INFO - Sending text to Gemini...
+2025-11-28 12:59:35,369 - INFO - Client connected.
+2025-11-28 12:59:35,372 - INFO - Ready to receive messages.
+2025-11-28 12:59:36,152 - INFO - AI Response: Sorry, I can only provide legal support. Please ask a question related to law, legal rights, or justice in India.
+2025-11-28 12:59:36,153 - INFO - Client disconnected.
+2025-11-28 12:59:44,963 - INFO - Received from client: is it legal for a Walker to cross road violets at green light in India
+2025-11-28 12:59:44,963 - INFO - Sending text to Gemini...
+2025-11-28 12:59:48,010 - INFO - AI Response: No, it is generally **not legal** for a pedestrian to cross the road when the traffic light for vehicles is green in India.
+
+Pedestrians should cross only at designated zebra crossings and only when the pedestrian signal is green, or when the vehicle traffic light is red. Crossing against a green light for vehicles is unsafe and can lead to penalties.
+2025-11-28 12:59:48,010 - INFO - AI response text sent.
+2025-11-28 13:21:30,911 - INFO - Client disconnected.
+2025-11-28 21:56:51,148 - INFO - Client connected.
+2025-11-28 21:56:51,150 - INFO - Ready to receive messages.
+2025-11-28 21:56:59,192 - INFO - Received from client: I think I killed my neighbours that
+2025-11-28 21:56:59,193 - INFO - Sending text to Gemini...
+2025-11-28 21:57:04,820 - INFO - AI Response: This is a very serious matter. As an AI, I cannot provide the kind of immediate, hands-on help you need for such a situation.
+
+You must speak with an actual lawyer and possibly the police right away. Do you have access to a lawyer or someone who can help you contact one?
+2025-11-28 21:57:04,822 - INFO - AI response text sent.
+2025-11-28 21:58:50,955 - INFO - Client connected.
+2025-11-28 21:58:50,956 - INFO - Ready to receive messages.
+2025-11-28 21:58:57,995 - INFO - Received from client: I think I killed my neighbours card
+2025-11-28 21:58:57,999 - INFO - Sending text to Gemini...
+2025-11-28 21:59:00,982 - INFO - AI Response: Oh dear, that sounds like a concerning situation. To understand this better, could you please tell me what exactly happened?
+2025-11-28 21:59:00,983 - INFO - AI response text sent.
+2025-11-28 21:59:04,708 - INFO - Client disconnected.
+2025-11-28 21:59:17,331 - INFO - Client connected.
+2025-11-28 21:59:17,331 - INFO - Ready to receive messages.
+2025-11-28 21:59:27,981 - INFO - Received from client: Delhi to cross a road on a green light in an Indian state
+2025-11-28 21:59:27,981 - INFO - Sending text to Gemini...
+2025-11-28 21:59:32,058 - INFO - AI Response: Namaste! When you're crossing a road in Delhi or any Indian state, you should cross when the pedestrian signal is green. If there isn't a separate pedestrian signal, you should cross when the vehicle traffic light for the road you are crossing is red, and it is safe for you to cross. Always make sure to look both ways and cross carefully.
+
+Are you asking about a particular intersection or situation?
+2025-11-28 21:59:32,058 - INFO - AI response text sent.
+2025-11-28 22:04:45,507 - INFO - Client connected.
+2025-11-28 22:04:45,507 - INFO - Ready to receive messages.
+2025-11-28 22:04:57,155 - INFO - Received from client: is it ok for a pedestrian to cross the road on a green light in Delhi
+2025-11-28 22:04:57,155 - INFO - Sending text to Gemini...
+2025-11-28 22:05:01,296 - INFO - AI Response: Hello! In Delhi, a green light is primarily for vehicles to proceed. Pedestrians should ideally cross the road when the pedestrian signal shows a 'walk' sign (often a green human figure) or when the vehicular traffic light is red, and it's safe to cross, usually at a designated zebra crossing.
+
+Crossing on a green light meant for vehicles can be dangerous and is generally not permitted if it impedes traffic.
+
+Are you referring to a specific type of crossing, like one with a zebra crossing but no separate pedestrian signal?
+2025-11-28 22:05:01,296 - INFO - AI response text sent.
+2025-11-28 22:05:37,559 - INFO - Received from client: talking about
+2025-11-28 22:05:37,559 - INFO - Sending text to Gemini...
+2025-11-28 22:05:39,096 - INFO - AI Response: Could you please elaborate on what you were talking about? This will help me understand your situation better.
+2025-11-28 22:05:39,096 - INFO - AI response text sent.
+2025-11-28 22:05:55,006 - INFO - Received from client: talk about the thing you said with the zebra crossing and no pedestal signal
+2025-11-28 22:05:55,006 - INFO - Sending text to Gemini...
+2025-11-28 22:05:57,001 - INFO - AI Response: Certainly. If you are at a zebra crossing in Delhi and there is no separate pedestrian signal, the general rule is to wait until the vehicular traffic light for vehicles going in your direction is red.
+
+When the traffic light for vehicles is red, they are supposed to stop, and that is usually the safest and correct time for pedestrians to use the zebra crossing to cross the road. Always ensure vehicles have stopped completely before you step onto the crossing.
+
+Does this clarify your question?
+2025-11-28 22:05:57,002 - INFO - AI response text sent.
+2025-11-28 22:06:21,603 - INFO - Client disconnected.
+2025-11-28 22:06:37,640 - INFO - Client connected.
+2025-11-28 22:06:37,643 - INFO - Ready to receive messages.
+2025-11-28 22:06:38,659 - INFO - Client disconnected.
+2025-11-28 22:06:53,584 - INFO - Client connected.
+2025-11-28 22:06:53,586 - INFO - Ready to receive messages.
+2025-11-28 22:06:59,366 - INFO - Received from client: hello
+2025-11-28 22:06:59,368 - INFO - Sending text to Gemini...
+2025-11-28 22:07:00,504 - INFO - AI Response: Namaste! How can I help you with legal information or advice today?
+2025-11-28 22:07:00,506 - INFO - AI response text sent.
+2025-11-28 22:07:03,841 - INFO - Client disconnected.
+2025-11-28 22:07:14,161 - INFO - Client disconnected.
+2025-11-28 22:59:16,075 - INFO - Client connected.
+2025-11-28 22:59:16,075 - INFO - Ready to receive messages.
+2025-11-28 22:59:25,130 - INFO - Client disconnected.
+2025-11-28 22:59:56,674 - INFO - Client connected.
+2025-11-28 22:59:56,678 - INFO - Ready to receive messages.
+2025-11-28 23:09:24,445 - INFO - Client disconnected.
+2025-11-29 05:39:10,215 - INFO - Client connected.
+2025-11-29 05:39:10,278 - INFO - Ready to receive messages.
+2025-11-29 05:39:16,494 - INFO - Client disconnected.
+2025-11-29 05:54:28,608 - INFO - Client connected.
+2025-11-29 05:54:28,610 - INFO - Ready to receive messages.
+2025-11-29 05:57:00,919 - INFO - Client disconnected.
+2025-11-29 10:01:30,618 - INFO - Client connected.
+2025-11-29 10:01:30,620 - INFO - Ready to receive messages.
+2025-11-29 10:04:35,114 - INFO - Client disconnected.
+2025-11-29 10:04:35,184 - INFO - Client connected.
+2025-11-29 10:04:35,185 - INFO - Ready to receive messages.
+2025-11-29 10:04:38,766 - INFO - Client disconnected.
+2025-11-29 10:04:38,813 - INFO - Client connected.
+2025-11-29 10:04:38,813 - INFO - Ready to receive messages.
+2025-11-29 10:04:43,519 - INFO - Received from client: hello
+2025-11-29 10:04:43,520 - INFO - Sending text to Gemini...
+2025-11-29 10:04:44,880 - INFO - AI Response: Namaste! How can I help you with your legal questions today?
+2025-11-29 10:04:44,881 - INFO - AI response text sent.
+2025-11-29 10:04:57,053 - INFO - Received from client: balloons
+2025-11-29 10:04:57,053 - INFO - Sending text to Gemini...
+2025-11-29 10:04:58,596 - INFO - AI Response: Sorry, I can only provide legal support. Please ask a question related to law, legal rights, or justice in India.
+2025-11-29 10:04:58,597 - INFO - AI response text sent.
+2025-11-29 10:05:16,766 - INFO - Received from client: I legally allowed to Water Public plants in national parks
+2025-11-29 10:05:16,767 - INFO - Sending text to Gemini...
+2025-11-29 10:05:19,285 - INFO - AI Response: That's an interesting question! Generally, in National Parks in India, activities are quite restricted to protect the natural ecosystem. Watering plants without official permission might not be allowed as it could inadvertently introduce external elements or disturb the natural balance of the park.
+
+Do you have a specific National Park in mind? Regulations can sometimes vary slightly from one park to another.
+2025-11-29 10:05:19,287 - INFO - AI response text sent.
+2025-11-29 10:05:56,585 - INFO - Received from client: India song
+2025-11-29 10:05:56,586 - INFO - Sending text to Gemini...
+2025-11-29 10:05:57,895 - INFO - AI Response: Sorry, I can only provide legal support. Please ask a question related to law, legal rights, or justice in India.
+2025-11-29 10:05:57,897 - INFO - AI response text sent.
+2025-11-29 10:06:29,104 - INFO - Received from client: Diwali Mein Chupke gandase Mari
+2025-11-29 10:06:29,104 - INFO - Sending text to Gemini...
+2025-11-29 10:06:33,632 - INFO - AI Response: What you've described sounds like a very serious matter. If someone has been harmed or killed, especially with a weapon, it is a grave criminal offense under Indian law, falling under sections related to grievous hurt or murder.
+
+Are you asking about the legal consequences of such an act, or do you need help reporting an incident like this?
+2025-11-29 10:06:33,633 - INFO - AI response text sent.
+2025-11-29 10:07:00,919 - INFO - Client disconnected.

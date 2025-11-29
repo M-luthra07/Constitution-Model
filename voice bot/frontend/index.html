@@ -4,14 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Legal AI Assistant</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Legal AI Assistant</h1>
-        <div id="status" class="status">Connecting to server...</div>
-        <button id="start-btn">Start Conversation</button>
-        <div id="transcript" class="transcript"></div>
+    <div class="app-container">
+        <header class="app-header">
+            <div class="logo-area">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="logo-icon"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                <h1>Legal AI Assistant</h1>
+            </div>
+            <div id="connection-status" class="status-badge connecting">Connecting...</div>
+        </header>
+
+        <main class="chat-interface">
+            <div id="chat-history" class="chat-history">
+                <div class="welcome-message">
+                    <h2>Hello!</h2>
+                    <p>I am your AI Legal Assistant. I can help you understand your rights, duties, and legal procedures in India.</p>
+                    <p class="sub-text">Press the microphone to start talking.</p>
+                </div>
+            </div>
+        </main>
+
+        <footer class="control-area">
+            <div class="visualizer-container">
+                <div id="visualizer" class="visualizer">
+                    <div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div>
+                </div>
+            </div>
+            
+            <div class="controls">
+                <button id="mic-btn" class="mic-button" disabled>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" y1="19" x2="12" y2="23"></line><line x1="8" y1="23" x2="16" y2="23"></line></svg>
+                </button>
+            </div>
+            <p id="status-text" class="status-text">Initializing...</p>
+        </footer>
     </div>
     <script src="script.js"></script>
 </body>
