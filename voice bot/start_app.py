@@ -49,12 +49,6 @@ def main():
         clear_port_linux(8001)
     time.sleep(1)
 
-    # Get the directory where this script is located
-    script_dir = os.path.dirname(os.path.abspath(__file__))
-    
-    backend_dir = os.path.join(script_dir, "backend")
-    frontend_dir = os.path.join(script_dir, "frontend")
-
     backend_command = [sys.executable, "-m", "uvicorn", "main:app", "--reload"]
     frontend_command = [sys.executable, "-m", "http.server", "8001"]
 
@@ -62,9 +56,9 @@ def main():
     frontend_process = None
 
     try:
-        backend_process = start_server(backend_command, backend_dir, "Backend")
+        backend_process = start_server(backend_command, "backend", "Backend")
         time.sleep(2)
-        frontend_process = start_server(frontend_command, frontend_dir, "Frontend")
+        frontend_process = start_server(frontend_command, "frontend", "Frontend")
 
         print("\nApplication started. Press Ctrl+C to quit.")
         print(f"Frontend accessible at: http://localhost:8001")

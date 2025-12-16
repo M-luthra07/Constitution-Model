@@ -5,6 +5,11 @@ from flask import Flask, render_template, request, jsonify
 from dotenv import load_dotenv
 import google.generativeai as genai
 import markdown
+import pytesseract
+from PIL import Image
+
+pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
+
 
 # Load API key
 load_dotenv()
@@ -79,19 +84,11 @@ def index():
 
 @app.route("/chat", methods=["POST"])
 def chat():
-    data = request.json
-    user_message = data.get("message", "").strip()
-    state = data.get("state", "India")
-
+    user_message = request.json.get("message", "").strip()
     if not user_message:
         return jsonify({"reply": "Please enter a valid question."})
 
-    # Contextualize with State if specific
-    if state and state != "India":
-        contextualized_message = f"[Jurisdiction: {state}] {user_message}\n(Please provide legal information specific to {state} state laws if applicable, along with central Indian laws.)"
-        chat_history.append({"role": "user", "content": contextualized_message})
-    else:
-        chat_history.append({"role": "user", "content": user_message})
+    chat_history.append({"role": "user", "content": user_message})
     conversation = [m["content"] for m in chat_history]
 
 
@@ -106,6 +103,32 @@ def chat():
     chat_history.append({"role": "assistant", "content": reply_text})
 
     return jsonify({"reply": reply_text})
+
+@app.route("/ocr", methods=["GET", "POST"])
+def ocr_page():
+    text = ""
+    if request.method == "POST":
+        if "file" not in request.files:
+            return jsonify({"error": "No file uploaded"}), 400
+
+        file = request.files["file"]
+        if file.filename == "":
+            return jsonify({"error": "Empty filename"}), 400
+
+        # Open the image and extract text
+        img = Image.open(file)
+        text = pytesseract.image_to_string(img)
+
+        return jsonify({"ocr_text": text})
+
+    # For GET request, show a simple upload form
+    return '''
+        <h2>Upload an Image for OCR</h2>
+        <form method="post" enctype="multipart/form-data">
+            <input type="file" name="file" accept="image/*">
+            <input type="submit" value="Upload">
+        </form>
+    '''
 
 if __name__ == "__main__":
     app.run(debug=True)

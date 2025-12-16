@@ -1,232 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>myConstitutionConnect — Official Legal Portal</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Indian Constitution — Legal Help</title>
   <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Roboto:wght@300;400;500;700&display=swap"
-    rel="stylesheet">
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-  <meta name="description" content="Official AI-assisted legal helpdesk for the Indian Constitution." />
+  <meta name="description" content="Interactive Constitutional help — legal guidance based on the Indian Constitution."/>
 </head>
-
 <body>
-  <!-- Government Top Strip -->
-  <div class="gov-top-strip">
-    <div class="container">
-      <span>🇮🇳 Government of India</span>
-      <span>Ministry of Law and Justice</span>
-    </div>
-  </div>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- Main Header -->
-  <header class="main-header">
-    <div class="container header-content">
-      <div class="logo-section">
-        <img src="{{ url_for('static', filename='logo.png') }}" alt="National Emblem" class="emblem">
-        <div class="site-identity">
-          <h1>myConstitutionConnect</h1>
-          <p>Official Legal Guidance & Public Information Portal</p>
+  <header class="gov-header" role="banner">
+    <div class="container header-inner">
+      <div class="brand">
+  <img src="{{ url_for('static', filename='logo.png') }}" alt="App Logo" class="emblem" />
+        <div>
+          <h1 class="gov-title">भारतीय संविधान — Indian Constitution</h1>
+          <p class="gov-sub">Legal Guidance & Public Information Portal</p>
         </div>
       </div>
 
-      <nav class="main-nav">
+      <nav class="main-nav" aria-label="Primary">
         <ul>
-          <li><a href="#" class="active">Home</a></li>
-          <li><a href="#">About Us</a></li>
-          <li><a href="#">Acts & Rules</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><a href="#">HOME</a></li>
+          <li><a href="#">QUIZZES</a></li>
+          <li><a href="#">ARTICLES & ACTS</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero-section">
-    <div class="container hero-content">
-      <div class="hero-left">
-        <span class="badge">Citizen Services</span>
-        <h2>Constitution Helpdesk & Legal Aid</h2>
-        <p class="desc">
-          Empowering citizens with knowledge of their rights. Access simplified legal explanations, explore the
-          Constitution, and get instant AI-assisted guidance.
-        </p>
-
-        <div class="feature-list">
-          <div class="feature-item">
-            <span class="check">✓</span> Simplified Legal Rights
-          </div>
-          <div class="feature-item">
-            <span class="check">✓</span> AI Legal Assistant
-          </div>
-          <div class="feature-item">
-            <span class="check">✓</span> Document Analysis
-          </div>
-        </div>
-
-        <div class="actions">
-          <button id="startChatBtn" class="btn-primary">Start Consultation</button>
-          <a class="btn-secondary" href="#">Browse Constitution</a>
-        </div>
-      </div>
-
-      <!-- Right Side: Services Cards -->
-      <div class="hero-right">
-        <!-- Login Card -->
-        <div class="service-box login-box">
-          <div class="icon-circle">👤</div>
-          <h3>Citizen Login</h3>
-          <p>Access your saved documents and history.</p>
-          <button class="btn-small">Login / Sign Up</button>
-          <div class="links">
-            <a href="/forgot">Forgot Password?</a>
-          </div>
-        </div>
-
-        <!-- OCR Feature Card -->
-        <div class="service-box ocr-box">
-          <div class="icon-circle">📄</div>
-          <h3>Document Scanner</h3>
-          <p>Upload legal notices for instant analysis.</p>
-          <button class="btn-small" onclick="window.location.href='/ocr'">Scan Document</button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Information Ticker -->
-  <div class="news-ticker">
-    <div class="container">
-      <span class="ticker-label">Latest Updates:</span>
-      <marquee>New amendments to the Digital Personal Data Protection Act, 2023 released. | Know your Fundamental Duties
-        campaign launched.</marquee>
-    </div>
+  <div class="tricolor-banner" aria-hidden="true">
+    <!-- purely decorative tricolor stripe -->
   </div>
 
-  <!-- Education Section -->
-  <section class="services">
-    <div class="container">
-      <div class="section-header">
-        <h3>Knowledge Center</h3>
-        <div class="divider"></div>
-        <p>Understand the pillars of Indian Democracy</p>
-      </div>
-
-      <div class="service-grid">
-        <div class="service-card">
-          <div class="card-icon">⚖️</div>
-          <h4>Fundamental Rights</h4>
-          <p>Right to Equality, Freedom, and Constitutional Remedies.</p>
-          <a href="#" class="read-more">Read More &rarr;</a>
-        </div>
-        <div class="service-card">
-          <div class="card-icon">🤝</div>
-          <h4>Fundamental Duties</h4>
-          <p>Moral obligations of all citizens to help promote a spirit of patriotism.</p>
-          <a href="#" class="read-more">Read More &rarr;</a>
-        </div>
-        <div class="service-card">
-          <div class="card-icon">📜</div>
-          <h4>The Preamble</h4>
-          <p>The soul of the Constitution: Justice, Liberty, Equality, and Fraternity.</p>
-          <a href="#" class="read-more">Read More &rarr;</a>
-        </div>
-        <div class="service-card">
-          <div class="card-icon">🏛️</div>
-          <h4>State Structure</h4>
-          <p>Understanding the Legislature, Executive, and Judiciary.</p>
-          <a href="#" class="read-more">Read More &rarr;</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Chat Section -->
-  <section class="chat-section">
-    <div class="container">
-      <div class="chat-header">
-        <h3>AI Legal Assistant</h3>
-        <p>Ask questions in plain language</p>
-        <div class="jurisdiction-wrapper">
-          <label for="stateSelect">Select Jurisdiction:</label>
-          <select id="stateSelect" class="state-dropdown">
-            <option value="India">India (Central)</option>
-            <option value="Andhra Pradesh">Andhra Pradesh</option>
-            <option value="Arunachal Pradesh">Arunachal Pradesh</option>
-            <option value="Assam">Assam</option>
-            <option value="Bihar">Bihar</option>
-            <option value="Chhattisgarh">Chhattisgarh</option>
-            <option value="Delhi">Delhi (NCT)</option>
-            <option value="Goa">Goa</option>
-            <option value="Gujarat">Gujarat</option>
-            <option value="Haryana">Haryana</option>
-            <option value="Himachal Pradesh">Himachal Pradesh</option>
-            <option value="Jharkhand">Jharkhand</option>
-            <option value="Karnataka">Karnataka</option>
-            <option value="Kerala">Kerala</option>
-            <option value="Madhya Pradesh">Madhya Pradesh</option>
-            <option value="Maharashtra">Maharashtra</option>
-            <option value="Manipur">Manipur</option>
-            <option value="Meghalaya">Meghalaya</option>
-            <option value="Mizoram">Mizoram</option>
-            <option value="Nagaland">Nagaland</option>
-            <option value="Odisha">Odisha</option>
-            <option value="Punjab">Punjab</option>
-            <option value="Rajasthan">Rajasthan</option>
-            <option value="Sikkim">Sikkim</option>
-            <option value="Tamil Nadu">Tamil Nadu</option>
-            <option value="Telangana">Telangana</option>
-            <option value="Tripura">Tripura</option>
-            <option value="Uttar Pradesh">Uttar Pradesh</option>
-            <option value="Uttarakhand">Uttarakhand</option>
-            <option value="West Bengal">West Bengal</option>
-          </select>
+  <main id="main" class="container main-content" role="main">
+    <section class="hero">
+      <div class="hero-left">
+        <h2>Welcome to the Constitution Helpdesk</h2>
+        <p class="lead">
+          Ask clear questions about the Constitution. This AI-assisted guide explains legal points in simple language and suggests practical next steps.
+        </p>
+        <ul class="features">
+          <li>Clear, plain-language explanations</li>
+          <li>Search the Constitution PDF</li>
+          <li>How to get legal help, step-by-step</li>
+        </ul>
+        <div class="hero-actions">
+          <button id="startChatBtn" class="btn-primary">Start Chat</button>
+          <a class="btn-secondary" href="#">Explore Constitution</a>
         </div>
       </div>
 
+      <div class="hero-right">
+        <div class="card parchment">
+          <div class="card-header">
+            <h2><strong>Education Center</strong></h2>
+            <small></small>
+          </div>
+          <div class="card-body">
+            <ul>
+              <li>Fundamental Rights</li>
+              <li>Fundamental Duties</li>
+              <li>Premable</li>
+              <li>States & Union Territories</li>
+            </ul>
+          </div>
+          <div class="card-footer">
+            <small>Last updated: 2025</small>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="chat-section" aria-label="Constitution Chat">
+      <h3>Chat with the Constitution Lawyer</h3>
       <div class="chat-wrap">
-        <div id="chatbox" class="chatbox" aria-live="polite">
-          <div class="system-message">
-            <strong>Welcome to the Official Legal Aid Bot.</strong><br>
-            Please describe your legal query, and I will guide you through the relevant constitutional provisions.
-          </div>
-          {{ reply|safe }}
-        </div>
+  <div id="chatbox" class="chatbox" aria-live="polite">{{ reply|safe }}</div>
+
         <form id="chatForm" class="chat-form" onsubmit="return false;">
-          <div class="input-group">
-            <input id="userInput" type="text"
-              placeholder="Type your query here (e.g., 'What are my rights if arrested?')..." autocomplete="off" />
-            <button id="micBtn" type="button" class="btn-icon" title="Voice Input">🎤</button>
-          </div>
-          <button id="sendBtn" class="btn-primary">Submit Query</button>
-          <button id="clearBtn" type="button" class="btn-outline">Clear</button>
+          <label for="userInput" class="vis-hidden">Type your legal question</label>
+          <input id="userInput" type="text" placeholder="Type your legal question here..." autocomplete="off" />
+
+          <!-- 🎤 Speech-to-text button -->
+          <button id="micBtn" type="button" class="btn-ghost small">🎤</button>
+
+          <button id="sendBtn" class="btn-primary small">Send</button>
+          <button id="clearBtn" type="button" class="btn-ghost small">Clear</button>
         </form>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <!-- Footer -->
-  <footer>
-    <div class="container footer-content">
-      <div class="footer-links">
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms of Use</a>
-        <a href="#">Accessibility</a>
-        <a href="#">Help</a>
-      </div>
-      <div class="footer-info">
-        <p>Content owned by Ministry of Law and Justice, Government of India.</p>
-        <p>© 2025 myConstitutionConnect. All Rights Reserved.</p>
-      </div>
+  <footer class="gov-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-left">
+        <p>© Government of India — Constitution Helpdesk</p>
     </div>
   </footer>
 
+   
+  <!-- ✅ JS reference fixed -->
   <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
-
 </html>
