@@ -232,6 +232,69 @@ def serve_pdf():
 def read_constitution():
     return render_template('constitution.html')
 
+@app.route('/preamble')
+def preamble_explorer():
+    return render_template('preamble.html')
+
+from gtts import gTTS
+import io
+
+import hashlib
+import os
+
+@app.route('/tts')
+def tts():
+    text = request.args.get('text', '')
+    lang = request.args.get('lang', 'hi')
+    
+    if not text:
+        return "No text provided", 400
+        
+    # Create cache directory if it doesn't exist
+    cache_dir = os.path.join(app.static_folder, 'audio_cache')
+    if not os.path.exists(cache_dir):
+        os.makedirs(cache_dir)
+        
+    # Generate a unique hash for this text and language
+    hash_obj = hashlib.md5(f"{text}_{lang}".encode())
+    cache_filename = f"{hash_obj.hexdigest()}.mp3"
+    cache_path = os.path.join(cache_dir, cache_filename)
+    
+    # Return cached file if it exists
+    if os.path.exists(cache_path):
+        return send_file(cache_path, mimetype='audio/mpeg')
+        
+    # Get supported gTTS languages
+    try:
+        from gtts.lang import tts_langs
+        supported_langs = tts_langs().keys()
+    except Exception:
+        supported_langs = ['hi', 'bn', 'te', 'ta', 'mr', 'gu', 'kn', 'ml', 'pa', 'ur']
+
+    # Small mapping for 22 scheduled languages to gTTS codes
+    lang_map = {
+        "Assamese": "as", "Bengali": "bn", "Bodo": "hi", "Dogri": "hi", 
+        "Gujarati": "gu", "Hindi": "hi", "Kannada": "kn", "Kashmiri": "hi",
+        "Konkani": "hi", "Maithili": "hi", "Malayalam": "ml", "Manipuri": "hi",
+        "Marathi": "mr", "Nepali": "ne", "Odia": "or", "Punjabi": "pa",
+        "Sanskrit": "hi", "Santali": "hi", "Sindhi": "hi", "Tamil": "ta",
+        "Telugu": "te", "Urdu": "ur"
+    }
+    
+    # If the input lang is a full name, map it
+    gtts_lang = lang_map.get(lang, lang)
+    if gtts_lang not in supported_langs:
+        gtts_lang = 'hi' # Fallback to Hindi for Indian languages
+        
+    try:
+        tts = gTTS(text=text, lang=gtts_lang)
+        tts.save(cache_path) # Save to cache
+        return send_file(cache_path, mimetype='audio/mpeg')
+    except Exception as e:
+        return f"Error: {str(e)}", 500
+
+from flask import send_file
+
 if __name__ == "__main__":
     app.run(debug=True)
 

@@ -24,3 +24,6 @@ Thumbs.db
 
 # Bytecode
 *.py[cod]
+node_modules
+.next/
+backend/static/audio_cache/

@@ -20,6 +20,13 @@ A Flask-based web application that leverages Google's Gemini API to assist users
 3. **Install dependencies:**
    ```bash
    pip install -r requirements.txt
+   pip install -r "voice bot/backend/requirements.txt"
+   ```
+
+4. **Optional: Pre-generate Preamble Audio (Highly Recommended)**
+   To enable instant offline-speed audio for all 22 languages:
+   ```bash
+   python pregenerate_audio.py
    ```
 
 4. **Set up environment variables:**

@@ -1520,3 +1520,477 @@ Traceback (most recent call last):
   File "/home/derp/miniconda3/lib/python3.13/site-packages/starlette/websockets.py", line 57, in receive
     raise RuntimeError('Cannot call "receive" once a disconnect message has been received.')
 RuntimeError: Cannot call "receive" once a disconnect message has been received.
+2026-03-22 21:32:06,779 - INFO - Client connected.
+2026-03-22 21:32:06,780 - INFO - Ready to receive messages.
+2026-03-22 21:32:17,627 - INFO - Greeting sent.
+2026-03-22 21:32:17,628 - INFO - Received audio from client: 3194 bytes
+2026-03-22 21:32:17,708 - ERROR - Audio transcription error: [WinError 2] The system cannot find the file specified
+Traceback (most recent call last):
+  File "C:\Users\luthr\Downloads\Constitution-Model\voice bot\backend\main.py", line 64, in transcribe_audio
+    audio_segment = AudioSegment.from_file(io.BytesIO(audio_bytes), format="webm")
+  File "C:\Users\luthr\AppData\Roaming\Python\Python314\site-packages\pydub\audio_segment.py", line 728, in from_file
+    info = mediainfo_json(orig_file, read_ahead_limit=read_ahead_limit)
+  File "C:\Users\luthr\AppData\Roaming\Python\Python314\site-packages\pydub\utils.py", line 274, in mediainfo_json
+    res = Popen(command, stdin=stdin_parameter, stdout=PIPE, stderr=PIPE)
+  File "C:\Python314\Lib\subprocess.py", line 1038, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        pass_fds, cwd, env,
+                        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+                        gid, gids, uid, umask,
+                        ^^^^^^^^^^^^^^^^^^^^^^
+                        start_new_session, process_group)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\subprocess.py", line 1552, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+                       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+                             # no special security
+                             ^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+                             cwd,
+                             ^^^^
+                             startupinfo)
+                             ^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified
+2026-03-22 21:32:17,984 - INFO - Received audio from client: 3194 bytes
+2026-03-22 21:32:18,058 - ERROR - Audio transcription error: [WinError 2] The system cannot find the file specified
+Traceback (most recent call last):
+  File "C:\Users\luthr\Downloads\Constitution-Model\voice bot\backend\main.py", line 64, in transcribe_audio
+    audio_segment = AudioSegment.from_file(io.BytesIO(audio_bytes), format="webm")
+  File "C:\Users\luthr\AppData\Roaming\Python\Python314\site-packages\pydub\audio_segment.py", line 728, in from_file
+    info = mediainfo_json(orig_file, read_ahead_limit=read_ahead_limit)
+  File "C:\Users\luthr\AppData\Roaming\Python\Python314\site-packages\pydub\utils.py", line 274, in mediainfo_json
+    res = Popen(command, stdin=stdin_parameter, stdout=PIPE, stderr=PIPE)
+  File "C:\Python314\Lib\subprocess.py", line 1038, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        pass_fds, cwd, env,
+                        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+                        gid, gids, uid, umask,
+                        ^^^^^^^^^^^^^^^^^^^^^^
+                        start_new_session, process_group)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\subprocess.py", line 1552, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+                       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+                             # no special security
+                             ^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+                             cwd,
+                             ^^^^
+                             startupinfo)
+                             ^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified
+2026-03-22 21:32:18,077 - INFO - Received audio from client: 3194 bytes
+2026-03-22 21:32:18,150 - ERROR - Audio transcription error: [WinError 2] The system cannot find the file specified
+Traceback (most recent call last):
+  File "C:\Users\luthr\Downloads\Constitution-Model\voice bot\backend\main.py", line 64, in transcribe_audio
+    audio_segment = AudioSegment.from_file(io.BytesIO(audio_bytes), format="webm")
+  File "C:\Users\luthr\AppData\Roaming\Python\Python314\site-packages\pydub\audio_segment.py", line 728, in from_file
+    info = mediainfo_json(orig_file, read_ahead_limit=read_ahead_limit)
+  File "C:\Users\luthr\AppData\Roaming\Python\Python314\site-packages\pydub\utils.py", line 274, in mediainfo_json
+    res = Popen(command, stdin=stdin_parameter, stdout=PIPE, stderr=PIPE)
+  File "C:\Python314\Lib\subprocess.py", line 1038, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        pass_fds, cwd, env,
+                        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+                        gid, gids, uid, umask,
+                        ^^^^^^^^^^^^^^^^^^^^^^
+                        start_new_session, process_group)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\subprocess.py", line 1552, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+                       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+                             # no special security
+                             ^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+                             cwd,
+                             ^^^^
+                             startupinfo)
+                             ^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified
+2026-03-22 21:32:23,961 - INFO - Received audio from client: 123944 bytes
+2026-03-22 21:32:23,988 - ERROR - Audio transcription error: [WinError 2] The system cannot find the file specified
+Traceback (most recent call last):
+  File "C:\Users\luthr\Downloads\Constitution-Model\voice bot\backend\main.py", line 64, in transcribe_audio
+    audio_segment = AudioSegment.from_file(io.BytesIO(audio_bytes), format="webm")
+  File "C:\Users\luthr\AppData\Roaming\Python\Python314\site-packages\pydub\audio_segment.py", line 728, in from_file
+    info = mediainfo_json(orig_file, read_ahead_limit=read_ahead_limit)
+  File "C:\Users\luthr\AppData\Roaming\Python\Python314\site-packages\pydub\utils.py", line 274, in mediainfo_json
+    res = Popen(command, stdin=stdin_parameter, stdout=PIPE, stderr=PIPE)
+  File "C:\Python314\Lib\subprocess.py", line 1038, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        pass_fds, cwd, env,
+                        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+                        gid, gids, uid, umask,
+                        ^^^^^^^^^^^^^^^^^^^^^^
+                        start_new_session, process_group)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\subprocess.py", line 1552, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+                       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+                             # no special security
+                             ^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+                             cwd,
+                             ^^^^
+                             startupinfo)
+                             ^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified
+2026-03-22 21:32:28,594 - INFO - Received audio from client: 31208 bytes
+2026-03-22 21:32:28,620 - ERROR - Audio transcription error: [WinError 2] The system cannot find the file specified
+Traceback (most recent call last):
+  File "C:\Users\luthr\Downloads\Constitution-Model\voice bot\backend\main.py", line 64, in transcribe_audio
+    audio_segment = AudioSegment.from_file(io.BytesIO(audio_bytes), format="webm")
+  File "C:\Users\luthr\AppData\Roaming\Python\Python314\site-packages\pydub\audio_segment.py", line 728, in from_file
+    info = mediainfo_json(orig_file, read_ahead_limit=read_ahead_limit)
+  File "C:\Users\luthr\AppData\Roaming\Python\Python314\site-packages\pydub\utils.py", line 274, in mediainfo_json
+    res = Popen(command, stdin=stdin_parameter, stdout=PIPE, stderr=PIPE)
+  File "C:\Python314\Lib\subprocess.py", line 1038, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        pass_fds, cwd, env,
+                        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+                        gid, gids, uid, umask,
+                        ^^^^^^^^^^^^^^^^^^^^^^
+                        start_new_session, process_group)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\subprocess.py", line 1552, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+                       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+                             # no special security
+                             ^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+                             cwd,
+                             ^^^^
+                             startupinfo)
+                             ^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified
+2026-03-22 21:32:40,210 - INFO - Received audio from client: 44732 bytes
+2026-03-22 21:32:40,264 - ERROR - Audio transcription error: [WinError 2] The system cannot find the file specified
+Traceback (most recent call last):
+  File "C:\Users\luthr\Downloads\Constitution-Model\voice bot\backend\main.py", line 64, in transcribe_audio
+    audio_segment = AudioSegment.from_file(io.BytesIO(audio_bytes), format="webm")
+  File "C:\Users\luthr\AppData\Roaming\Python\Python314\site-packages\pydub\audio_segment.py", line 728, in from_file
+    info = mediainfo_json(orig_file, read_ahead_limit=read_ahead_limit)
+  File "C:\Users\luthr\AppData\Roaming\Python\Python314\site-packages\pydub\utils.py", line 274, in mediainfo_json
+    res = Popen(command, stdin=stdin_parameter, stdout=PIPE, stderr=PIPE)
+  File "C:\Python314\Lib\subprocess.py", line 1038, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        pass_fds, cwd, env,
+                        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+                        gid, gids, uid, umask,
+                        ^^^^^^^^^^^^^^^^^^^^^^
+                        start_new_session, process_group)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\subprocess.py", line 1552, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+                       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+                             # no special security
+                             ^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+                             cwd,
+                             ^^^^
+                             startupinfo)
+                             ^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified
+2026-03-22 21:32:42,725 - ERROR - An error occurred in websocket_endpoint: Cannot call "receive" once a disconnect message has been received.
+Traceback (most recent call last):
+  File "C:\Users\luthr\Downloads\Constitution-Model\voice bot\backend\main.py", line 123, in websocket_endpoint
+    message = await websocket.receive()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthr\AppData\Roaming\Python\Python314\site-packages\starlette\websockets.py", line 57, in receive
+    raise RuntimeError('Cannot call "receive" once a disconnect message has been received.')
+RuntimeError: Cannot call "receive" once a disconnect message has been received.
+2026-03-22 21:32:47,963 - INFO - Client connected.
+2026-03-22 21:32:47,988 - INFO - Ready to receive messages.
+2026-03-23 00:18:08,005 - INFO - Client connected.
+2026-03-23 00:18:08,007 - INFO - Ready to receive messages.
+2026-03-23 00:18:09,409 - INFO - Greeting sent.
+2026-03-23 00:18:13,762 - INFO - Received audio from client: 3194 bytes
+2026-03-23 00:18:13,812 - ERROR - Audio transcription error: [WinError 2] The system cannot find the file specified
+Traceback (most recent call last):
+  File "C:\Users\luthr\Downloads\Constitution-Model\voice bot\backend\main.py", line 64, in transcribe_audio
+    audio_segment = AudioSegment.from_file(io.BytesIO(audio_bytes), format="webm")
+  File "C:\Users\luthr\AppData\Roaming\Python\Python314\site-packages\pydub\audio_segment.py", line 728, in from_file
+    info = mediainfo_json(orig_file, read_ahead_limit=read_ahead_limit)
+  File "C:\Users\luthr\AppData\Roaming\Python\Python314\site-packages\pydub\utils.py", line 274, in mediainfo_json
+    res = Popen(command, stdin=stdin_parameter, stdout=PIPE, stderr=PIPE)
+  File "C:\Python314\Lib\subprocess.py", line 1038, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        pass_fds, cwd, env,
+                        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+                        gid, gids, uid, umask,
+                        ^^^^^^^^^^^^^^^^^^^^^^
+                        start_new_session, process_group)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\subprocess.py", line 1552, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+                       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+                             # no special security
+                             ^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+                             cwd,
+                             ^^^^
+                             startupinfo)
+                             ^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified
+2026-03-23 00:18:20,868 - INFO - Received audio from client: 92066 bytes
+2026-03-23 00:18:20,888 - ERROR - Audio transcription error: [WinError 2] The system cannot find the file specified
+Traceback (most recent call last):
+  File "C:\Users\luthr\Downloads\Constitution-Model\voice bot\backend\main.py", line 64, in transcribe_audio
+    audio_segment = AudioSegment.from_file(io.BytesIO(audio_bytes), format="webm")
+  File "C:\Users\luthr\AppData\Roaming\Python\Python314\site-packages\pydub\audio_segment.py", line 728, in from_file
+    info = mediainfo_json(orig_file, read_ahead_limit=read_ahead_limit)
+  File "C:\Users\luthr\AppData\Roaming\Python\Python314\site-packages\pydub\utils.py", line 274, in mediainfo_json
+    res = Popen(command, stdin=stdin_parameter, stdout=PIPE, stderr=PIPE)
+  File "C:\Python314\Lib\subprocess.py", line 1038, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        pass_fds, cwd, env,
+                        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+                        gid, gids, uid, umask,
+                        ^^^^^^^^^^^^^^^^^^^^^^
+                        start_new_session, process_group)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\subprocess.py", line 1552, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+                       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+                             # no special security
+                             ^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+                             cwd,
+                             ^^^^
+                             startupinfo)
+                             ^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified
+2026-03-23 00:18:31,163 - INFO - Received audio from client: 3194 bytes
+2026-03-23 00:18:31,188 - ERROR - Audio transcription error: [WinError 2] The system cannot find the file specified
+Traceback (most recent call last):
+  File "C:\Users\luthr\Downloads\Constitution-Model\voice bot\backend\main.py", line 64, in transcribe_audio
+    audio_segment = AudioSegment.from_file(io.BytesIO(audio_bytes), format="webm")
+  File "C:\Users\luthr\AppData\Roaming\Python\Python314\site-packages\pydub\audio_segment.py", line 728, in from_file
+    info = mediainfo_json(orig_file, read_ahead_limit=read_ahead_limit)
+  File "C:\Users\luthr\AppData\Roaming\Python\Python314\site-packages\pydub\utils.py", line 274, in mediainfo_json
+    res = Popen(command, stdin=stdin_parameter, stdout=PIPE, stderr=PIPE)
+  File "C:\Python314\Lib\subprocess.py", line 1038, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        pass_fds, cwd, env,
+                        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+                        gid, gids, uid, umask,
+                        ^^^^^^^^^^^^^^^^^^^^^^
+                        start_new_session, process_group)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\subprocess.py", line 1552, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+                       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+                             # no special security
+                             ^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+                             cwd,
+                             ^^^^
+                             startupinfo)
+                             ^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified
+2026-03-23 00:18:32,202 - INFO - Received audio from client: 3194 bytes
+2026-03-23 00:18:32,231 - ERROR - Audio transcription error: [WinError 2] The system cannot find the file specified
+Traceback (most recent call last):
+  File "C:\Users\luthr\Downloads\Constitution-Model\voice bot\backend\main.py", line 64, in transcribe_audio
+    audio_segment = AudioSegment.from_file(io.BytesIO(audio_bytes), format="webm")
+  File "C:\Users\luthr\AppData\Roaming\Python\Python314\site-packages\pydub\audio_segment.py", line 728, in from_file
+    info = mediainfo_json(orig_file, read_ahead_limit=read_ahead_limit)
+  File "C:\Users\luthr\AppData\Roaming\Python\Python314\site-packages\pydub\utils.py", line 274, in mediainfo_json
+    res = Popen(command, stdin=stdin_parameter, stdout=PIPE, stderr=PIPE)
+  File "C:\Python314\Lib\subprocess.py", line 1038, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        pass_fds, cwd, env,
+                        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+                        gid, gids, uid, umask,
+                        ^^^^^^^^^^^^^^^^^^^^^^
+                        start_new_session, process_group)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\subprocess.py", line 1552, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+                       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+                             # no special security
+                             ^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+                             cwd,
+                             ^^^^
+                             startupinfo)
+                             ^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified
+2026-03-23 00:18:40,522 - INFO - Received audio from client: 113318 bytes
+2026-03-23 00:18:40,544 - ERROR - Audio transcription error: [WinError 2] The system cannot find the file specified
+Traceback (most recent call last):
+  File "C:\Users\luthr\Downloads\Constitution-Model\voice bot\backend\main.py", line 64, in transcribe_audio
+    audio_segment = AudioSegment.from_file(io.BytesIO(audio_bytes), format="webm")
+  File "C:\Users\luthr\AppData\Roaming\Python\Python314\site-packages\pydub\audio_segment.py", line 728, in from_file
+    info = mediainfo_json(orig_file, read_ahead_limit=read_ahead_limit)
+  File "C:\Users\luthr\AppData\Roaming\Python\Python314\site-packages\pydub\utils.py", line 274, in mediainfo_json
+    res = Popen(command, stdin=stdin_parameter, stdout=PIPE, stderr=PIPE)
+  File "C:\Python314\Lib\subprocess.py", line 1038, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        pass_fds, cwd, env,
+                        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+                        gid, gids, uid, umask,
+                        ^^^^^^^^^^^^^^^^^^^^^^
+                        start_new_session, process_group)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\subprocess.py", line 1552, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+                       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+                             # no special security
+                             ^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+                             cwd,
+                             ^^^^
+                             startupinfo)
+                             ^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified
+2026-03-23 00:18:42,028 - INFO - Received audio from client: 3194 bytes
+2026-03-23 00:18:42,050 - ERROR - Audio transcription error: [WinError 2] The system cannot find the file specified
+Traceback (most recent call last):
+  File "C:\Users\luthr\Downloads\Constitution-Model\voice bot\backend\main.py", line 64, in transcribe_audio
+    audio_segment = AudioSegment.from_file(io.BytesIO(audio_bytes), format="webm")
+  File "C:\Users\luthr\AppData\Roaming\Python\Python314\site-packages\pydub\audio_segment.py", line 728, in from_file
+    info = mediainfo_json(orig_file, read_ahead_limit=read_ahead_limit)
+  File "C:\Users\luthr\AppData\Roaming\Python\Python314\site-packages\pydub\utils.py", line 274, in mediainfo_json
+    res = Popen(command, stdin=stdin_parameter, stdout=PIPE, stderr=PIPE)
+  File "C:\Python314\Lib\subprocess.py", line 1038, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        pass_fds, cwd, env,
+                        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+                        gid, gids, uid, umask,
+                        ^^^^^^^^^^^^^^^^^^^^^^
+                        start_new_session, process_group)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\subprocess.py", line 1552, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+                       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+                             # no special security
+                             ^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+                             cwd,
+                             ^^^^
+                             startupinfo)
+                             ^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified
+2026-03-23 00:18:42,236 - INFO - Received audio from client: 2228 bytes
+2026-03-23 00:18:42,257 - ERROR - Audio transcription error: [WinError 2] The system cannot find the file specified
+Traceback (most recent call last):
+  File "C:\Users\luthr\Downloads\Constitution-Model\voice bot\backend\main.py", line 64, in transcribe_audio
+    audio_segment = AudioSegment.from_file(io.BytesIO(audio_bytes), format="webm")
+  File "C:\Users\luthr\AppData\Roaming\Python\Python314\site-packages\pydub\audio_segment.py", line 728, in from_file
+    info = mediainfo_json(orig_file, read_ahead_limit=read_ahead_limit)
+  File "C:\Users\luthr\AppData\Roaming\Python\Python314\site-packages\pydub\utils.py", line 274, in mediainfo_json
+    res = Popen(command, stdin=stdin_parameter, stdout=PIPE, stderr=PIPE)
+  File "C:\Python314\Lib\subprocess.py", line 1038, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        pass_fds, cwd, env,
+                        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+                        gid, gids, uid, umask,
+                        ^^^^^^^^^^^^^^^^^^^^^^
+                        start_new_session, process_group)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\subprocess.py", line 1552, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+                       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+                             # no special security
+                             ^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+                             cwd,
+                             ^^^^
+                             startupinfo)
+                             ^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified
+2026-03-23 00:18:46,337 - INFO - Received audio from client: 3194 bytes
+2026-03-23 00:18:46,356 - ERROR - Audio transcription error: [WinError 2] The system cannot find the file specified
+Traceback (most recent call last):
+  File "C:\Users\luthr\Downloads\Constitution-Model\voice bot\backend\main.py", line 64, in transcribe_audio
+    audio_segment = AudioSegment.from_file(io.BytesIO(audio_bytes), format="webm")
+  File "C:\Users\luthr\AppData\Roaming\Python\Python314\site-packages\pydub\audio_segment.py", line 728, in from_file
+    info = mediainfo_json(orig_file, read_ahead_limit=read_ahead_limit)
+  File "C:\Users\luthr\AppData\Roaming\Python\Python314\site-packages\pydub\utils.py", line 274, in mediainfo_json
+    res = Popen(command, stdin=stdin_parameter, stdout=PIPE, stderr=PIPE)
+  File "C:\Python314\Lib\subprocess.py", line 1038, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        pass_fds, cwd, env,
+                        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+                        gid, gids, uid, umask,
+                        ^^^^^^^^^^^^^^^^^^^^^^
+                        start_new_session, process_group)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\subprocess.py", line 1552, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+                       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+                             # no special security
+                             ^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+                             cwd,
+                             ^^^^
+                             startupinfo)
+                             ^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified
+2026-03-23 00:18:51,648 - INFO - Received audio from client: 69848 bytes
+2026-03-23 00:18:51,670 - ERROR - Audio transcription error: [WinError 2] The system cannot find the file specified
+Traceback (most recent call last):
+  File "C:\Users\luthr\Downloads\Constitution-Model\voice bot\backend\main.py", line 64, in transcribe_audio
+    audio_segment = AudioSegment.from_file(io.BytesIO(audio_bytes), format="webm")
+  File "C:\Users\luthr\AppData\Roaming\Python\Python314\site-packages\pydub\audio_segment.py", line 728, in from_file
+    info = mediainfo_json(orig_file, read_ahead_limit=read_ahead_limit)
+  File "C:\Users\luthr\AppData\Roaming\Python\Python314\site-packages\pydub\utils.py", line 274, in mediainfo_json
+    res = Popen(command, stdin=stdin_parameter, stdout=PIPE, stderr=PIPE)
+  File "C:\Python314\Lib\subprocess.py", line 1038, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        pass_fds, cwd, env,
+                        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+                        gid, gids, uid, umask,
+                        ^^^^^^^^^^^^^^^^^^^^^^
+                        start_new_session, process_group)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\subprocess.py", line 1552, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+                       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+                             # no special security
+                             ^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+                             cwd,
+                             ^^^^
+                             startupinfo)
+                             ^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified
+2026-03-23 00:18:56,933 - ERROR - An error occurred in websocket_endpoint: Cannot call "receive" once a disconnect message has been received.
+Traceback (most recent call last):
+  File "C:\Users\luthr\Downloads\Constitution-Model\voice bot\backend\main.py", line 123, in websocket_endpoint
+    message = await websocket.receive()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luthr\AppData\Roaming\Python\Python314\site-packages\starlette\websockets.py", line 57, in receive
+    raise RuntimeError('Cannot call "receive" once a disconnect message has been received.')
+RuntimeError: Cannot call "receive" once a disconnect message has been received.

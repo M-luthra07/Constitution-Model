@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preamble Explorer - Indian Constitution</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary-gold: #D4AF37;
+            --primary-dark: #0f172a;
+            --secondary-dark: #1e293b;
+            --accent-amber: #fbbf24;
+            --text-light: #f8fafc;
+            --text-muted: #94a3b8;
+            --parchment: #fdf6e3;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--primary-dark);
+            color: var(--text-light);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            height: 70px;
+            background-color: var(--secondary-dark);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 30px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .back-btn {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: color 0.2s;
+        }
+
+        .back-btn:hover {
+            color: var(--primary-gold);
+        }
+
+        h1 {
+            font-family: 'Merriweather', serif;
+            font-size: 1.4rem;
+            color: var(--primary-gold);
+            letter-spacing: 0.5px;
+        }
+
+        .main-layout {
+            flex: 1;
+            display: flex;
+            max-width: 1400px;
+            margin: 0 auto;
+            width: 100%;
+            height: calc(100vh - 70px);
+        }
+
+        /* Sidebar for Languages */
+        .sidebar {
+            width: 300px;
+            background: rgba(30, 41, 59, 0.5);
+            border-right: 1px solid rgba(255, 255, 255, 0.05);
+            overflow-y: auto;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .sidebar-title {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            padding-left: 10px;
+        }
+
+        .lang-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 12px 15px;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .lang-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: var(--primary-gold);
+            transform: translateX(5px);
+        }
+
+        .lang-card.active {
+            background: var(--primary-gold);
+            border-color: var(--primary-gold);
+            color: var(--primary-dark);
+        }
+
+        .lang-name-en {
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        .lang-name-native {
+            font-size: 0.85rem;
+            opacity: 0.7;
+        }
+
+        .lang-card.active .lang-name-native {
+            opacity: 1;
+        }
+
+        /* Content Area */
+        .content-area {
+            flex: 1;
+            padding: 40px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: radial-gradient(circle at center, rgba(30, 41, 59, 0.3) 0%, transparent 70%);
+        }
+
+        .preamble-display {
+            background-color: var(--parchment);
+            color: #2c1810;
+            width: 100%;
+            max-width: 800px;
+            padding: 60px 80px;
+            border-radius: 4px;
+            box-shadow: 
+                0 10px 30px rgba(0, 0, 0, 0.3),
+                inset 0 0 100px rgba(139, 69, 19, 0.1);
+            position: relative;
+            margin-bottom: 40px;
+            background-image: url('https://www.transparenttextures.com/patterns/parchment.png');
+        }
+
+        .preamble-display::before {
+            content: "";
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            right: 20px;
+            bottom: 20px;
+            border: 2px solid #8b4513;
+            opacity: 0.2;
+            pointer-events: none;
+        }
+
+        .preamble-header {
+            text-align: center;
+            margin-bottom: 40px;
+            font-family: 'Merriweather', serif;
+            position: relative;
+        }
+
+        .listen-btn-main {
+            position: absolute;
+            top: 0;
+            right: -60px;
+            background: rgba(139, 69, 19, 0.1);
+            border: 1px solid rgba(139, 69, 19, 0.2);
+            color: #5d2e0a;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .listen-btn-main:hover {
+            background: var(--primary-gold);
+            color: var(--primary-dark);
+            transform: scale(1.1);
+            border-color: var(--primary-gold);
+        }
+
+        .listen-btn-main svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        @keyframes pulse-gold {
+            0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(212, 175, 55, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
+        }
+
+        .listen-btn-main.pulse {
+            animation: pulse-gold 2s infinite;
+            background: var(--primary-gold);
+            color: var(--primary-dark);
+            border-color: var(--primary-gold);
+        }
+
+        .preamble-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #5d2e0a;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .preamble-subtitle {
+            font-size: 1rem;
+            color: #8b4513;
+            font-style: italic;
+        }
+
+        .preamble-body {
+            font-family: 'Merriweather', serif;
+            font-size: 1.25rem;
+            line-height: 1.8;
+            text-align: justify;
+            position: relative;
+            white-space: pre-line;
+        }
+
+        /* Highlighted Word Style */
+        .keyword {
+            color: #b91c1c;
+            font-weight: 700;
+            cursor: pointer;
+            border-bottom: 2px dashed rgba(185, 28, 28, 0.3);
+            padding: 0 2px;
+            transition: all 0.2s;
+            position: relative;
+            display: inline-block;
+        }
+
+        .keyword:hover {
+            color: #991b1b;
+            background: rgba(185, 28, 28, 0.05);
+            border-bottom-style: solid;
+        }
+
+        /* Explanation Section */
+        .explanation-panel {
+            width: 100%;
+            max-width: 800px;
+            background: var(--secondary-dark);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 30px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            visibility: hidden;
+        }
+
+        .explanation-panel.active {
+            opacity: 1;
+            transform: translateY(0);
+            visibility: visible;
+        }
+
+        .exp-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 15px;
+        }
+
+        .exp-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--primary-gold);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-dark);
+            font-size: 1.2rem;
+        }
+
+        .exp-title-wrap {
+            flex: 1;
+        }
+
+        .exp-title-en {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary-gold);
+        }
+
+        .exp-title-native {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-top: 2px;
+        }
+
+        .exp-content {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #cbd5e1;
+        }
+
+        /* Scrollbar Styling */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: rgba(212, 175, 55, 0.2);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(212, 175, 55, 0.4);
+        }
+
+        @media (max-width: 1024px) {
+            .main-layout {
+                flex-direction: column;
+                height: auto;
+            }
+            .sidebar {
+                width: 100%;
+                height: 150px;
+                flex-direction: row;
+                border-right: none;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+            .lang-card {
+                flex-shrink: 0;
+                width: 180px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .preamble-display {
+                padding: 40px 30px;
+            }
+            .preamble-title {
+                font-size: 1.5rem;
+            }
+            .preamble-body {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="header-left">
+            <a href="/" class="back-btn">
+                <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                </svg>
+                Home
+            </a>
+            <h1>Multilingual Preamble Explorer</h1>
+        </div>
+        <div class="header-right">
+            <!-- Could add search or themes here -->
+        </div>
+    </header>
+
+    <div class="main-layout">
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-title">Scheduled Languages</div>
+            <!-- Language cards will be injected here -->
+        </aside>
+
+        <main class="content-area">
+            <div class="preamble-display" id="preambleDisplay">
+                <div class="preamble-header">
+                    <button class="listen-btn-main" id="listenPreambleBtn" title="Listen to Preamble">
+                        <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg>
+                    </button>
+                    <div class="preamble-title" id="displayTitle">The Preamble</div>
+                    <div class="preamble-subtitle" id="displaySubtitle">of the Constitution of India</div>
+                </div>
+                <div class="preamble-body" id="preambleText">
+                    Loading the sacred text...
+                </div>
+            </div>
+
+            <div class="explanation-panel" id="explanationPanel">
+                <div class="exp-header">
+                    <div class="exp-icon">⚖️</div>
+                    <div class="exp-title-wrap">
+                        <div class="exp-title-en" id="expTitleEn">Justice</div>
+                        <div class="exp-title-native" id="expTitleNative">न्याय</div>
+                    </div>
+                    <button class="listen-btn-main small" id="listenMeaningBtn" style="position: static; width:36px; height:36px;" title="Listen to Meaning">
+                        <svg fill="currentColor" viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
+                    </button>
+                </div>
+                <div class="exp-content" id="expContent">
+                    Select a highlighted word to see its constitutional meaning.
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        let preambleData = null;
+        let currentLanguage = 'English'; // English will be base, but we will default to Hindi if available first
+
+        // Native script mapping for labels
+        const nativeNames = {
+            "Assamese": "অসমীয়া",
+            "Bengali": "বাংলা",
+            "Bodo": "बर'",
+            "Dogri": "डोगरी",
+            "Gujarati": "ગુજરાતી",
+            "Hindi": "हिन्दी",
+            "Kannada": "ಕನ್ನಡ",
+            "Kashmiri": "कश्मीरी / كٲشُر",
+            "Konkani": "कोंकणी",
+            "Maithili": "मैथिली",
+            "Malayalam": "മലയാളം",
+            "Manipuri": "মৈতৈলোন",
+            "Marathi": "मराठी",
+            "Nepali": "नेपाली",
+            "Odia": "ଓଡ଼ିଆ",
+            "Punjabi": "ਪੰਜਾਬੀ",
+            "Sanskrit": "संस्कृतम्",
+            "Santali": "ᱥᱟᱱᱛᱟᱲᱤ",
+            "Sindhi": "सिंधी / سنڌي",
+            "Tamil": "தமிழ்",
+            "Telugu": "తెలుగు",
+            "Urdu": "اردو",
+            "English": "English"
+        };
+
+        const importantWords = ["Justice", "Liberty", "Equality", "Fraternity", "Sovereign", "Socialist", "Secular", "Democratic", "Republic"];
+        
+        // Language tags for Speech Synthesis
+        const langTags = {
+            "Hindi": "hi-IN", "Bengali": "bn-IN", "Tamil": "ta-IN", "Telugu": "te-IN",
+            "Marathi": "mr-IN", "Gujarati": "gu-IN", "Kannada": "kn-IN", "Malayalam": "ml-IN",
+            "Odia": "or-IN", "Punjabi": "pa-IN", "Urdu": "ur-PK", "Assamese": "as-IN",
+            "Sanskrit": "sa-IN", "Kashmiri": "ks-IN", "Nepali": "ne-NP", "Konkani": "kok-IN",
+            "Maithili": "mai-IN", "Dogri": "doi-IN", "Manipuri": "mni-IN", "Bodo": "brx-IN",
+            "Santali": "sat-IN", "Sindhi": "sd-IN"
+        };
+
+        let audio = new Audio();
+
+        function speak(text, language, btnId) {
+            const btn = document.getElementById(btnId);
+            const originalIcon = btn.dataset.originalIcon || btn.innerHTML;
+            const stopIcon = '<svg fill="currentColor" viewBox="0 0 24 24"><path d="M6 6h12v12H6z"/></svg>';
+
+            if (!audio.paused) {
+                audio.pause();
+                audio.src = '';
+                
+                const wasPlaying = btn.dataset.status === 'playing';
+                document.querySelectorAll('.listen-btn-main').forEach(b => {
+                    b.innerHTML = b.dataset.originalIcon || b.innerHTML;
+                    b.dataset.status = 'idle';
+                    b.classList.remove('pulse');
+                });
+                
+                if (wasPlaying) return;
+            }
+
+            const url = `/tts?text=${encodeURIComponent(text)}&lang=${encodeURIComponent(language)}`;
+            audio.src = url;
+            
+            audio.onplay = () => {
+                btn.dataset.originalIcon = originalIcon;
+                btn.innerHTML = stopIcon;
+                btn.dataset.status = 'playing';
+                btn.classList.add('pulse');
+            };
+
+            audio.onended = () => {
+                btn.innerHTML = originalIcon;
+                btn.dataset.status = 'idle';
+                btn.classList.remove('pulse');
+            };
+
+            audio.onerror = () => {
+                btn.innerHTML = originalIcon;
+                btn.dataset.status = 'idle';
+                btn.classList.remove('pulse');
+                console.error("Audio error");
+            };
+
+            audio.play().catch(console.error);
+        }
+
+        async function init() {
+            try {
+                const response = await fetch('/static/preamble_data.json');
+                preambleData = await response.json();
+                
+                const availableLangs = Object.keys(preambleData.languages);
+                renderSidebar(availableLangs);
+                
+                selectLanguage(availableLangs[0]);
+                
+                // Set up TTS listeners
+                document.getElementById('listenPreambleBtn').onclick = () => {
+                   const text = preambleData.languages[currentLanguage].preamble;
+                   speak(text, currentLanguage, 'listenPreambleBtn');
+                };
+                
+                document.getElementById('listenMeaningBtn').onclick = () => {
+                   const meaning = document.getElementById('expContent').textContent;
+                   speak(meaning, currentLanguage, 'listenMeaningBtn');
+                };
+
+            } catch (err) {
+                console.error("Failed to load data:", err);
+                document.getElementById('preambleText').textContent = "Error loading preamble data.";
+            }
+        }
+
+        function renderSidebar(langs) {
+            const sidebar = document.getElementById('sidebar');
+            const title = sidebar.querySelector('.sidebar-title');
+            sidebar.innerHTML = '';
+            sidebar.appendChild(title);
+
+            langs.sort().forEach(lang => {
+                const card = document.createElement('div');
+                card.className = 'lang-card';
+                card.dataset.lang = lang;
+                card.innerHTML = `
+                    <div class="lang-name-en">${lang}</div>
+                    <div class="lang-name-native">${nativeNames[lang] || ''}</div>
+                `;
+                card.onclick = () => selectLanguage(lang);
+                sidebar.appendChild(card);
+            });
+        }
+
+        function selectLanguage(lang) {
+            currentLanguage = lang;
+            
+            // Update UI
+            document.querySelectorAll('.lang-card').forEach(c => {
+                c.classList.toggle('active', c.dataset.lang === lang);
+            });
+
+            const data = preambleData.languages[lang];
+            let text = data.preamble;
+            
+            // Highlight keywords in the text
+            // We need to find the native translations and replace them
+            const words = data.words;
+            const sortedByLength = Object.keys(words).sort((a, b) => words[b].translation.length - words[a].translation.length);
+            
+            // Replace with placeholders to avoid nested replacements
+            let highlightedText = text;
+            const replacements = [];
+
+            sortedByLength.forEach((engWord, index) => {
+                const nativeWord = words[engWord].translation;
+                const placeholder = `__KEYWORD_${index}__`;
+                
+                // Case insensitive replace
+                const regex = new RegExp(nativeWord, 'g');
+                if (highlightedText.includes(nativeWord)) {
+                   highlightedText = highlightedText.replace(regex, placeholder);
+                   replacements.push({ placeholder, engWord, nativeWord });
+                }
+            });
+
+            // Put back the HTML
+            replacements.forEach(rep => {
+                const html = `<span class="keyword" data-word="${rep.engWord}" onclick="showExplanation('${rep.engWord}')">${rep.nativeWord}</span>`;
+                highlightedText = highlightedText.replace(rep.placeholder, html);
+            });
+
+            document.getElementById('preambleText').innerHTML = highlightedText;
+            
+            // Clear explanation panel
+            const panel = document.getElementById('explanationPanel');
+            panel.classList.remove('active');
+        }
+
+        function showExplanation(engWord) {
+            const data = preambleData.languages[currentLanguage].words[engWord];
+            
+            document.getElementById('expTitleEn').textContent = engWord;
+            document.getElementById('expTitleNative').textContent = data.translation;
+            document.getElementById('expContent').textContent = data.meaning;
+            
+            const panel = document.getElementById('explanationPanel');
+            panel.classList.add('active');
+            
+            // Scroll to explanation on mobile
+            if (window.innerWidth <= 768) {
+                panel.scrollIntoView({ behavior: 'smooth', block: 'end' });
+            }
+        }
+
+        init();
+    </script>
+</body>
+
+</html>

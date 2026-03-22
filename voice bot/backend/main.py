@@ -27,7 +27,7 @@ logging.basicConfig(
 
 # Gemini model setup
 model = genai.GenerativeModel(
-    "gemini-2.5-flash",
+    "gemini-flash-latest",
     system_instruction='''You are a professional, friendly INDIAN lawyer and legal assistant who helps people with legal knowledge.,
     you are receiving the commands throgh speach to text so some words maybe caught wrong try to decipher the correct meaning from context.
     Your responses must be concise and to the point.
@@ -172,6 +172,9 @@ async def websocket_endpoint(websocket: WebSocket):
         logging.info("Client disconnected.")
     except Exception as e:
         logging.error(f"An error occurred in websocket_endpoint: {e}", exc_info=True)
+    finally:
+        # Final cleanup for this connection if needed
+        pass
 
 if __name__ == "__main__":
     import uvicorn
