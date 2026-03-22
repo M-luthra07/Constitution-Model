@@ -704,3 +704,819 @@ To make your report effective, include the precise location (ideally with GPS co
 2026-03-22 17:23:41,151 - INFO - Ready to receive messages.
 2026-03-22 17:24:03,554 - INFO - Client connected.
 2026-03-22 17:24:03,554 - INFO - Ready to receive messages.
+2026-03-22 18:50:54,686 - INFO - Client connected.
+2026-03-22 18:50:54,686 - INFO - Ready to receive messages.
+2026-03-22 18:55:43,709 - INFO - Client disconnected.
+2026-03-22 19:00:47,314 - INFO - Client connected.
+2026-03-22 19:00:47,317 - INFO - Ready to receive messages.
+2026-03-22 19:00:47,827 - INFO - Greeting sent.
+2026-03-22 19:01:14,614 - INFO - Client connected.
+2026-03-22 19:01:14,616 - INFO - Ready to receive messages.
+2026-03-22 19:01:15,182 - INFO - Greeting sent.
+2026-03-22 19:01:15,791 - ERROR - An error occurred in websocket_endpoint: Cannot call "receive" once a disconnect message has been received.
+Traceback (most recent call last):
+  File "/home/derp/Desktop/project/Constitution-Model/voice bot/backend/main.py", line 123, in websocket_endpoint
+    message = await websocket.receive()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/derp/miniconda3/lib/python3.13/site-packages/starlette/websockets.py", line 57, in receive
+    raise RuntimeError('Cannot call "receive" once a disconnect message has been received.')
+RuntimeError: Cannot call "receive" once a disconnect message has been received.
+2026-03-22 19:01:15,959 - INFO - Client connected.
+2026-03-22 19:01:15,961 - INFO - Ready to receive messages.
+2026-03-22 19:01:16,917 - INFO - Greeting sent.
+2026-03-22 19:01:26,385 - INFO - Received audio from client: 29276 bytes
+2026-03-22 19:01:27,643 - INFO - Transcribed: hello
+2026-03-22 19:01:27,646 - INFO - Sending text to Gemini...
+2026-03-22 19:01:28,358 - ERROR - An error occurred in websocket_endpoint: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+Traceback (most recent call last):
+  File "/home/derp/miniconda3/lib/python3.13/site-packages/google/api_core/grpc_helpers_async.py", line 86, in __await__
+    response = yield from self._call.__await__()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/derp/miniconda3/lib/python3.13/site-packages/grpc/aio/_interceptor.py", line 474, in __await__
+    response = yield from call.__await__()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/derp/miniconda3/lib/python3.13/site-packages/grpc/aio/_call.py", line 327, in __await__
+    raise _create_rpc_error(
+    ...<2 lines>...
+    )
+grpc.aio._call.AioRpcError: <AioRpcError of RPC that terminated with:
+	status = StatusCode.NOT_FOUND
+	details = "models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+	debug_error_string = "UNKNOWN:Error received from peer ipv6:%5B2001:4860:4802:34::223%5D:443 {grpc_message:"models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.", grpc_status:5}"
+>
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/derp/Desktop/project/Constitution-Model/voice bot/backend/main.py", line 155, in websocket_endpoint
+    response = await chat.send_message_async(user_text)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/derp/miniconda3/lib/python3.13/site-packages/google/generativeai/generative_models.py", line 707, in send_message_async
+    response = await self.model.generate_content_async(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "/home/derp/miniconda3/lib/python3.13/site-packages/google/generativeai/generative_models.py", line 385, in generate_content_async
+    response = await self._async_client.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+    )
+    ^
+  File "/home/derp/miniconda3/lib/python3.13/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/async_client.py", line 440, in generate_content
+    response = await rpc(
+               ^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "/home/derp/miniconda3/lib/python3.13/site-packages/google/api_core/retry/retry_unary_async.py", line 231, in retry_wrapped_func
+    return await retry_target(
+           ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "/home/derp/miniconda3/lib/python3.13/site-packages/google/api_core/retry/retry_unary_async.py", line 163, in retry_target
+    next_sleep = _retry_error_helper(
+        exc,
+    ...<6 lines>...
+        timeout,
+    )
+  File "/home/derp/miniconda3/lib/python3.13/site-packages/google/api_core/retry/retry_base.py", line 216, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/home/derp/miniconda3/lib/python3.13/site-packages/google/api_core/retry/retry_unary_async.py", line 158, in retry_target
+    return await target()
+           ^^^^^^^^^^^^^^
+  File "/home/derp/miniconda3/lib/python3.13/site-packages/google/api_core/grpc_helpers_async.py", line 89, in __await__
+    raise exceptions.from_grpc_error(rpc_error) from rpc_error
+google.api_core.exceptions.NotFound: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2026-03-22 19:01:31,393 - INFO - Client connected.
+2026-03-22 19:01:31,393 - INFO - Ready to receive messages.
+2026-03-22 19:01:31,780 - INFO - Greeting sent.
+2026-03-22 19:01:38,623 - INFO - Received audio from client: 48596 bytes
+2026-03-22 19:01:40,240 - INFO - Transcribed: what is the meaning of
+2026-03-22 19:01:40,241 - INFO - Sending text to Gemini...
+2026-03-22 19:01:40,443 - ERROR - An error occurred in websocket_endpoint: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+Traceback (most recent call last):
+  File "/home/derp/miniconda3/lib/python3.13/site-packages/google/api_core/grpc_helpers_async.py", line 86, in __await__
+    response = yield from self._call.__await__()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/derp/miniconda3/lib/python3.13/site-packages/grpc/aio/_interceptor.py", line 474, in __await__
+    response = yield from call.__await__()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/derp/miniconda3/lib/python3.13/site-packages/grpc/aio/_call.py", line 327, in __await__
+    raise _create_rpc_error(
+    ...<2 lines>...
+    )
+grpc.aio._call.AioRpcError: <AioRpcError of RPC that terminated with:
+	status = StatusCode.NOT_FOUND
+	details = "models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+	debug_error_string = "UNKNOWN:Error received from peer ipv6:%5B2001:4860:4802:34::223%5D:443 {grpc_message:"models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.", grpc_status:5}"
+>
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/derp/Desktop/project/Constitution-Model/voice bot/backend/main.py", line 155, in websocket_endpoint
+    response = await chat.send_message_async(user_text)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/derp/miniconda3/lib/python3.13/site-packages/google/generativeai/generative_models.py", line 707, in send_message_async
+    response = await self.model.generate_content_async(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "/home/derp/miniconda3/lib/python3.13/site-packages/google/generativeai/generative_models.py", line 385, in generate_content_async
+    response = await self._async_client.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+    )
+    ^
+  File "/home/derp/miniconda3/lib/python3.13/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/async_client.py", line 440, in generate_content
+    response = await rpc(
+               ^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "/home/derp/miniconda3/lib/python3.13/site-packages/google/api_core/retry/retry_unary_async.py", line 231, in retry_wrapped_func
+    return await retry_target(
+           ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "/home/derp/miniconda3/lib/python3.13/site-packages/google/api_core/retry/retry_unary_async.py", line 163, in retry_target
+    next_sleep = _retry_error_helper(
+        exc,
+    ...<6 lines>...
+        timeout,
+    )
+  File "/home/derp/miniconda3/lib/python3.13/site-packages/google/api_core/retry/retry_base.py", line 216, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/home/derp/miniconda3/lib/python3.13/site-packages/google/api_core/retry/retry_unary_async.py", line 158, in retry_target
+    return await target()
+           ^^^^^^^^^^^^^^
+  File "/home/derp/miniconda3/lib/python3.13/site-packages/google/api_core/grpc_helpers_async.py", line 89, in __await__
+    raise exceptions.from_grpc_error(rpc_error) from rpc_error
+google.api_core.exceptions.NotFound: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2026-03-22 19:01:43,459 - INFO - Client connected.
+2026-03-22 19:01:43,459 - INFO - Ready to receive messages.
+2026-03-22 19:01:44,154 - INFO - Greeting sent.
+2026-03-22 19:01:51,477 - INFO - Received audio from client: 60188 bytes
+2026-03-22 19:01:53,108 - INFO - Transcribed: what is the meaning of life
+2026-03-22 19:01:53,110 - INFO - Sending text to Gemini...
+2026-03-22 19:01:53,233 - ERROR - An error occurred in websocket_endpoint: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+Traceback (most recent call last):
+  File "/home/derp/miniconda3/lib/python3.13/site-packages/google/api_core/grpc_helpers_async.py", line 86, in __await__
+    response = yield from self._call.__await__()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/derp/miniconda3/lib/python3.13/site-packages/grpc/aio/_interceptor.py", line 474, in __await__
+    response = yield from call.__await__()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/derp/miniconda3/lib/python3.13/site-packages/grpc/aio/_call.py", line 327, in __await__
+    raise _create_rpc_error(
+    ...<2 lines>...
+    )
+grpc.aio._call.AioRpcError: <AioRpcError of RPC that terminated with:
+	status = StatusCode.NOT_FOUND
+	details = "models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+	debug_error_string = "UNKNOWN:Error received from peer ipv6:%5B2001:4860:4802:34::223%5D:443 {grpc_status:5, grpc_message:"models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."}"
+>
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/derp/Desktop/project/Constitution-Model/voice bot/backend/main.py", line 155, in websocket_endpoint
+    response = await chat.send_message_async(user_text)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/derp/miniconda3/lib/python3.13/site-packages/google/generativeai/generative_models.py", line 707, in send_message_async
+    response = await self.model.generate_content_async(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "/home/derp/miniconda3/lib/python3.13/site-packages/google/generativeai/generative_models.py", line 385, in generate_content_async
+    response = await self._async_client.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+    )
+    ^
+  File "/home/derp/miniconda3/lib/python3.13/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/async_client.py", line 440, in generate_content
+    response = await rpc(
+               ^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "/home/derp/miniconda3/lib/python3.13/site-packages/google/api_core/retry/retry_unary_async.py", line 231, in retry_wrapped_func
+    return await retry_target(
+           ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "/home/derp/miniconda3/lib/python3.13/site-packages/google/api_core/retry/retry_unary_async.py", line 163, in retry_target
+    next_sleep = _retry_error_helper(
+        exc,
+    ...<6 lines>...
+        timeout,
+    )
+  File "/home/derp/miniconda3/lib/python3.13/site-packages/google/api_core/retry/retry_base.py", line 216, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/home/derp/miniconda3/lib/python3.13/site-packages/google/api_core/retry/retry_unary_async.py", line 158, in retry_target
+    return await target()
+           ^^^^^^^^^^^^^^
+  File "/home/derp/miniconda3/lib/python3.13/site-packages/google/api_core/grpc_helpers_async.py", line 89, in __await__
+    raise exceptions.from_grpc_error(rpc_error) from rpc_error
+google.api_core.exceptions.NotFound: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2026-03-22 19:01:56,268 - INFO - Client connected.
+2026-03-22 19:01:56,269 - INFO - Ready to receive messages.
+2026-03-22 19:01:56,577 - INFO - Greeting sent.
+2026-03-22 19:02:16,937 - ERROR - An error occurred in websocket_endpoint: Cannot call "receive" once a disconnect message has been received.
+Traceback (most recent call last):
+  File "/home/derp/Desktop/project/Constitution-Model/voice bot/backend/main.py", line 123, in websocket_endpoint
+    message = await websocket.receive()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/derp/miniconda3/lib/python3.13/site-packages/starlette/websockets.py", line 57, in receive
+    raise RuntimeError('Cannot call "receive" once a disconnect message has been received.')
+RuntimeError: Cannot call "receive" once a disconnect message has been received.
+2026-03-22 19:02:44,920 - INFO - Received audio from client: 34106 bytes
+2026-03-22 19:02:45,979 - INFO - Transcribed: hello
+2026-03-22 19:02:45,979 - INFO - Sending text to Gemini...
+2026-03-22 19:02:46,184 - ERROR - An error occurred in websocket_endpoint: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+Traceback (most recent call last):
+  File "/home/derp/miniconda3/lib/python3.13/site-packages/google/api_core/grpc_helpers_async.py", line 86, in __await__
+    response = yield from self._call.__await__()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/derp/miniconda3/lib/python3.13/site-packages/grpc/aio/_interceptor.py", line 474, in __await__
+    response = yield from call.__await__()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/derp/miniconda3/lib/python3.13/site-packages/grpc/aio/_call.py", line 327, in __await__
+    raise _create_rpc_error(
+    ...<2 lines>...
+    )
+grpc.aio._call.AioRpcError: <AioRpcError of RPC that terminated with:
+	status = StatusCode.NOT_FOUND
+	details = "models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+	debug_error_string = "UNKNOWN:Error received from peer ipv6:%5B2001:4860:4802:34::223%5D:443 {grpc_status:5, grpc_message:"models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."}"
+>
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/derp/Desktop/project/Constitution-Model/voice bot/backend/main.py", line 155, in websocket_endpoint
+    response = await chat.send_message_async(user_text)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/derp/miniconda3/lib/python3.13/site-packages/google/generativeai/generative_models.py", line 707, in send_message_async
+    response = await self.model.generate_content_async(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "/home/derp/miniconda3/lib/python3.13/site-packages/google/generativeai/generative_models.py", line 385, in generate_content_async
+    response = await self._async_client.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+    )
+    ^
+  File "/home/derp/miniconda3/lib/python3.13/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/async_client.py", line 440, in generate_content
+    response = await rpc(
+               ^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "/home/derp/miniconda3/lib/python3.13/site-packages/google/api_core/retry/retry_unary_async.py", line 231, in retry_wrapped_func
+    return await retry_target(
+           ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "/home/derp/miniconda3/lib/python3.13/site-packages/google/api_core/retry/retry_unary_async.py", line 163, in retry_target
+    next_sleep = _retry_error_helper(
+        exc,
+    ...<6 lines>...
+        timeout,
+    )
+  File "/home/derp/miniconda3/lib/python3.13/site-packages/google/api_core/retry/retry_base.py", line 216, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/home/derp/miniconda3/lib/python3.13/site-packages/google/api_core/retry/retry_unary_async.py", line 158, in retry_target
+    return await target()
+           ^^^^^^^^^^^^^^
+  File "/home/derp/miniconda3/lib/python3.13/site-packages/google/api_core/grpc_helpers_async.py", line 89, in __await__
+    raise exceptions.from_grpc_error(rpc_error) from rpc_error
+google.api_core.exceptions.NotFound: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2026-03-22 19:02:49,189 - INFO - Client connected.
+2026-03-22 19:02:49,190 - INFO - Ready to receive messages.
+2026-03-22 19:02:49,522 - INFO - Greeting sent.
+2026-03-22 19:02:59,560 - INFO - Received audio from client: 83372 bytes
+2026-03-22 19:03:01,213 - INFO - Transcribed: what is the meaning of Section 21 in the Indian Constitution
+2026-03-22 19:03:01,213 - INFO - Sending text to Gemini...
+2026-03-22 19:03:01,368 - ERROR - An error occurred in websocket_endpoint: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+Traceback (most recent call last):
+  File "/home/derp/miniconda3/lib/python3.13/site-packages/google/api_core/grpc_helpers_async.py", line 86, in __await__
+    response = yield from self._call.__await__()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/derp/miniconda3/lib/python3.13/site-packages/grpc/aio/_interceptor.py", line 474, in __await__
+    response = yield from call.__await__()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/derp/miniconda3/lib/python3.13/site-packages/grpc/aio/_call.py", line 327, in __await__
+    raise _create_rpc_error(
+    ...<2 lines>...
+    )
+grpc.aio._call.AioRpcError: <AioRpcError of RPC that terminated with:
+	status = StatusCode.NOT_FOUND
+	details = "models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+	debug_error_string = "UNKNOWN:Error received from peer ipv6:%5B2001:4860:4802:34::223%5D:443 {grpc_message:"models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.", grpc_status:5}"
+>
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/derp/Desktop/project/Constitution-Model/voice bot/backend/main.py", line 155, in websocket_endpoint
+    response = await chat.send_message_async(user_text)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/derp/miniconda3/lib/python3.13/site-packages/google/generativeai/generative_models.py", line 707, in send_message_async
+    response = await self.model.generate_content_async(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "/home/derp/miniconda3/lib/python3.13/site-packages/google/generativeai/generative_models.py", line 385, in generate_content_async
+    response = await self._async_client.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+    )
+    ^
+  File "/home/derp/miniconda3/lib/python3.13/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/async_client.py", line 440, in generate_content
+    response = await rpc(
+               ^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "/home/derp/miniconda3/lib/python3.13/site-packages/google/api_core/retry/retry_unary_async.py", line 231, in retry_wrapped_func
+    return await retry_target(
+           ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "/home/derp/miniconda3/lib/python3.13/site-packages/google/api_core/retry/retry_unary_async.py", line 163, in retry_target
+    next_sleep = _retry_error_helper(
+        exc,
+    ...<6 lines>...
+        timeout,
+    )
+  File "/home/derp/miniconda3/lib/python3.13/site-packages/google/api_core/retry/retry_base.py", line 216, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/home/derp/miniconda3/lib/python3.13/site-packages/google/api_core/retry/retry_unary_async.py", line 158, in retry_target
+    return await target()
+           ^^^^^^^^^^^^^^
+  File "/home/derp/miniconda3/lib/python3.13/site-packages/google/api_core/grpc_helpers_async.py", line 89, in __await__
+    raise exceptions.from_grpc_error(rpc_error) from rpc_error
+google.api_core.exceptions.NotFound: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2026-03-22 19:03:04,373 - INFO - Client connected.
+2026-03-22 19:03:04,374 - INFO - Ready to receive messages.
+2026-03-22 19:03:05,269 - INFO - Greeting sent.
+2026-03-22 19:03:39,230 - ERROR - An error occurred in websocket_endpoint: Cannot call "receive" once a disconnect message has been received.
+Traceback (most recent call last):
+  File "/home/derp/Desktop/project/Constitution-Model/voice bot/backend/main.py", line 123, in websocket_endpoint
+    message = await websocket.receive()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/derp/miniconda3/lib/python3.13/site-packages/starlette/websockets.py", line 57, in receive
+    raise RuntimeError('Cannot call "receive" once a disconnect message has been received.')
+RuntimeError: Cannot call "receive" once a disconnect message has been received.
+2026-03-22 19:03:42,233 - INFO - Client connected.
+2026-03-22 19:03:42,234 - INFO - Ready to receive messages.
+2026-03-22 19:03:42,928 - INFO - Greeting sent.
+2026-03-22 19:03:51,910 - INFO - Received audio from client: 2227 bytes
+2026-03-22 19:03:52,642 - WARNING - Speech recognition could not understand the audio.
+2026-03-22 19:03:54,869 - INFO - Received audio from client: 44732 bytes
+2026-03-22 19:03:56,170 - INFO - Transcribed: what is the meaning of
+2026-03-22 19:03:56,171 - INFO - Sending text to Gemini...
+2026-03-22 19:03:56,849 - ERROR - An error occurred in websocket_endpoint: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash
+Please retry in 3.341739092s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+}
+violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+}
+violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_input_token_count"
+  quota_id: "GenerateContentInputTokensPerModelPerMinute-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+}
+, retry_delay {
+  seconds: 3
+}
+]
+Traceback (most recent call last):
+  File "/home/derp/miniconda3/lib/python3.13/site-packages/google/api_core/grpc_helpers_async.py", line 86, in __await__
+    response = yield from self._call.__await__()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/derp/miniconda3/lib/python3.13/site-packages/grpc/aio/_interceptor.py", line 474, in __await__
+    response = yield from call.__await__()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/derp/miniconda3/lib/python3.13/site-packages/grpc/aio/_call.py", line 327, in __await__
+    raise _create_rpc_error(
+    ...<2 lines>...
+    )
+grpc.aio._call.AioRpcError: <AioRpcError of RPC that terminated with:
+	status = StatusCode.RESOURCE_EXHAUSTED
+	details = "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash
+Please retry in 3.341739092s."
+	debug_error_string = "UNKNOWN:Error received from peer ipv6:%5B2001:4860:4802:38::223%5D:443 {grpc_message:"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\nPlease retry in 3.341739092s.", grpc_status:8}"
+>
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/derp/Desktop/project/Constitution-Model/voice bot/backend/main.py", line 155, in websocket_endpoint
+    response = await chat.send_message_async(user_text)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/derp/miniconda3/lib/python3.13/site-packages/google/generativeai/generative_models.py", line 707, in send_message_async
+    response = await self.model.generate_content_async(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "/home/derp/miniconda3/lib/python3.13/site-packages/google/generativeai/generative_models.py", line 385, in generate_content_async
+    response = await self._async_client.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+    )
+    ^
+  File "/home/derp/miniconda3/lib/python3.13/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/async_client.py", line 440, in generate_content
+    response = await rpc(
+               ^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "/home/derp/miniconda3/lib/python3.13/site-packages/google/api_core/retry/retry_unary_async.py", line 231, in retry_wrapped_func
+    return await retry_target(
+           ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "/home/derp/miniconda3/lib/python3.13/site-packages/google/api_core/retry/retry_unary_async.py", line 163, in retry_target
+    next_sleep = _retry_error_helper(
+        exc,
+    ...<6 lines>...
+        timeout,
+    )
+  File "/home/derp/miniconda3/lib/python3.13/site-packages/google/api_core/retry/retry_base.py", line 216, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/home/derp/miniconda3/lib/python3.13/site-packages/google/api_core/retry/retry_unary_async.py", line 158, in retry_target
+    return await target()
+           ^^^^^^^^^^^^^^
+  File "/home/derp/miniconda3/lib/python3.13/site-packages/google/api_core/grpc_helpers_async.py", line 89, in __await__
+    raise exceptions.from_grpc_error(rpc_error) from rpc_error
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash
+Please retry in 3.341739092s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+}
+violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+}
+violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_input_token_count"
+  quota_id: "GenerateContentInputTokensPerModelPerMinute-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+}
+, retry_delay {
+  seconds: 3
+}
+]
+2026-03-22 19:03:59,858 - INFO - Client connected.
+2026-03-22 19:03:59,859 - INFO - Ready to receive messages.
+2026-03-22 19:04:00,645 - INFO - Greeting sent.
+2026-03-22 19:04:10,839 - INFO - Client connected.
+2026-03-22 19:04:10,842 - INFO - Ready to receive messages.
+2026-03-22 19:04:11,214 - INFO - Greeting sent.
+2026-03-22 19:04:41,432 - ERROR - An error occurred in websocket_endpoint: Cannot call "receive" once a disconnect message has been received.
+Traceback (most recent call last):
+  File "/home/derp/Desktop/project/Constitution-Model/voice bot/backend/main.py", line 123, in websocket_endpoint
+    message = await websocket.receive()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/derp/miniconda3/lib/python3.13/site-packages/starlette/websockets.py", line 57, in receive
+    raise RuntimeError('Cannot call "receive" once a disconnect message has been received.')
+RuntimeError: Cannot call "receive" once a disconnect message has been received.
+2026-03-22 19:04:41,441 - ERROR - An error occurred in websocket_endpoint: Cannot call "receive" once a disconnect message has been received.
+Traceback (most recent call last):
+  File "/home/derp/Desktop/project/Constitution-Model/voice bot/backend/main.py", line 123, in websocket_endpoint
+    message = await websocket.receive()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/derp/miniconda3/lib/python3.13/site-packages/starlette/websockets.py", line 57, in receive
+    raise RuntimeError('Cannot call "receive" once a disconnect message has been received.')
+RuntimeError: Cannot call "receive" once a disconnect message has been received.
+2026-03-22 19:04:44,907 - INFO - Client connected.
+2026-03-22 19:04:44,909 - INFO - Ready to receive messages.
+2026-03-22 19:04:44,938 - INFO - Client connected.
+2026-03-22 19:04:44,939 - INFO - Ready to receive messages.
+2026-03-22 19:04:45,395 - INFO - Greeting sent.
+2026-03-22 19:04:45,571 - INFO - Greeting sent.
+2026-03-22 19:04:46,380 - ERROR - An error occurred in websocket_endpoint: Cannot call "receive" once a disconnect message has been received.
+Traceback (most recent call last):
+  File "/home/derp/Desktop/project/Constitution-Model/voice bot/backend/main.py", line 123, in websocket_endpoint
+    message = await websocket.receive()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/derp/miniconda3/lib/python3.13/site-packages/starlette/websockets.py", line 57, in receive
+    raise RuntimeError('Cannot call "receive" once a disconnect message has been received.')
+RuntimeError: Cannot call "receive" once a disconnect message has been received.
+2026-03-22 19:04:46,389 - ERROR - An error occurred in websocket_endpoint: Cannot call "receive" once a disconnect message has been received.
+Traceback (most recent call last):
+  File "/home/derp/Desktop/project/Constitution-Model/voice bot/backend/main.py", line 123, in websocket_endpoint
+    message = await websocket.receive()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/derp/miniconda3/lib/python3.13/site-packages/starlette/websockets.py", line 57, in receive
+    raise RuntimeError('Cannot call "receive" once a disconnect message has been received.')
+RuntimeError: Cannot call "receive" once a disconnect message has been received.
+2026-03-22 19:04:49,702 - INFO - Client connected.
+2026-03-22 19:04:49,703 - INFO - Ready to receive messages.
+2026-03-22 19:04:49,780 - INFO - Client connected.
+2026-03-22 19:04:49,781 - INFO - Ready to receive messages.
+2026-03-22 19:04:50,156 - INFO - Greeting sent.
+2026-03-22 19:04:50,453 - INFO - Greeting sent.
+2026-03-22 19:05:17,133 - ERROR - An error occurred in websocket_endpoint: Cannot call "receive" once a disconnect message has been received.
+Traceback (most recent call last):
+  File "/home/derp/Desktop/project/Constitution-Model/voice bot/backend/main.py", line 123, in websocket_endpoint
+    message = await websocket.receive()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/derp/miniconda3/lib/python3.13/site-packages/starlette/websockets.py", line 57, in receive
+    raise RuntimeError('Cannot call "receive" once a disconnect message has been received.')
+RuntimeError: Cannot call "receive" once a disconnect message has been received.
+2026-03-22 19:05:17,225 - INFO - Client connected.
+2026-03-22 19:05:17,226 - INFO - Ready to receive messages.
+2026-03-22 19:05:17,526 - INFO - Greeting sent.
+2026-03-22 19:05:43,164 - INFO - Client connected.
+2026-03-22 19:05:43,165 - INFO - Ready to receive messages.
+2026-03-22 19:05:43,245 - INFO - Client connected.
+2026-03-22 19:05:43,247 - INFO - Ready to receive messages.
+2026-03-22 19:05:43,453 - INFO - Greeting sent.
+2026-03-22 19:05:43,497 - INFO - Greeting sent.
+2026-03-22 19:05:52,121 - INFO - Received audio from client: 81440 bytes
+2026-03-22 19:05:53,611 - INFO - Transcribed: what is the meaning of Section 21 in the Indian Constitution
+2026-03-22 19:05:53,611 - INFO - Sending text to Gemini...
+2026-03-22 19:05:57,726 - INFO - AI Response: Namaste! You're asking about Article 21 of the Indian Constitution. It's one of the most important fundamental rights we have.
+
+Article 21 states that "No person shall be deprived of his life or personal liberty except according to procedure established by law."
+
+In simple words, it guarantees everyone the Right to Life and Personal Liberty. The Supreme Court has interpreted this very broadly over the years to include many other rights essential for a dignified life, such as:
+
+   The right to live with human dignity
+   The right to a clean environment
+   The right to privacy
+   The right to education
+   The right to a speedy trial
+   The right to livelihood
+
+It essentially means that the state cannot take away your life or freedom unless it follows a fair, just, and reasonable legal procedure.
+
+Is there anything specific about Article 21 that you would like to know more about?
+2026-03-22 19:06:17,308 - ERROR - An error occurred in websocket_endpoint: Cannot call "receive" once a disconnect message has been received.
+Traceback (most recent call last):
+  File "/home/derp/Desktop/project/Constitution-Model/voice bot/backend/main.py", line 123, in websocket_endpoint
+    message = await websocket.receive()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/derp/miniconda3/lib/python3.13/site-packages/starlette/websockets.py", line 57, in receive
+    raise RuntimeError('Cannot call "receive" once a disconnect message has been received.')
+RuntimeError: Cannot call "receive" once a disconnect message has been received.
+2026-03-22 19:06:37,509 - ERROR - TTS generation error: 200 (OK) from TTS API. Probable cause: Unknown
+Traceback (most recent call last):
+  File "/home/derp/Desktop/project/Constitution-Model/voice bot/backend/main.py", line 92, in generate_tts_audio
+    tts.write_to_fp(mp3_buffer)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/home/derp/miniconda3/lib/python3.13/site-packages/gtts/tts.py", line 316, in write_to_fp
+    for idx, decoded in enumerate(self.stream()):
+                        ~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/derp/miniconda3/lib/python3.13/site-packages/gtts/tts.py", line 300, in stream
+    raise gTTSError(tts=self, response=r)
+gtts.tts.gTTSError: 200 (OK) from TTS API. Probable cause: Unknown
+2026-03-22 19:06:37,511 - INFO - Client disconnected.
+2026-03-22 19:06:38,656 - INFO - Client connected.
+2026-03-22 19:06:38,657 - INFO - Ready to receive messages.
+2026-03-22 19:06:38,679 - INFO - Client connected.
+2026-03-22 19:06:38,679 - INFO - Ready to receive messages.
+2026-03-22 19:06:38,958 - INFO - Greeting sent.
+2026-03-22 19:06:39,369 - INFO - Greeting sent.
+2026-03-22 19:06:54,186 - INFO - Received audio from client: 75644 bytes
+2026-03-22 19:06:55,735 - INFO - Transcribed: what is the meaning of Section 21 in the Indian Constitution
+2026-03-22 19:06:55,736 - INFO - Sending text to Gemini...
+2026-03-22 19:07:00,445 - INFO - AI Response: Namaste! It sounds like you're asking about Article 21 of the Indian Constitution. The Constitution uses "Articles" rather than "Sections" for its main provisions.
+
+Article 21 is a very important part of our Constitution. It simply states: "No person shall be deprived of his life or personal liberty except according to procedure established by law."
+
+In simple terms, it means:
+   Everyone has the Right to Life – not just physical existence, but to live with human dignity.
+   Everyone has the Right to Personal Liberty – freedom from unlawful arrest and detention, and the freedom to do what one wants, provided it's within the law.
+   These rights can only be taken away if there's a fair and just legal process, not arbitrarily.
+
+Our courts have interpreted this article very broadly over the years to include many other rights like the right to a clean environment, right to health, right to education, and more, as essential parts of living a dignified life.
+
+Is there a specific aspect of Article 21 you'd like to know more about?
+2026-03-22 19:07:13,241 - INFO - AI response with audio sent.
+2026-03-22 19:07:34,431 - ERROR - An error occurred in websocket_endpoint: Cannot call "receive" once a disconnect message has been received.
+Traceback (most recent call last):
+  File "/home/derp/Desktop/project/Constitution-Model/voice bot/backend/main.py", line 123, in websocket_endpoint
+    message = await websocket.receive()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/derp/miniconda3/lib/python3.13/site-packages/starlette/websockets.py", line 57, in receive
+    raise RuntimeError('Cannot call "receive" once a disconnect message has been received.')
+RuntimeError: Cannot call "receive" once a disconnect message has been received.
+2026-03-22 19:08:12,190 - ERROR - An error occurred in websocket_endpoint: Cannot call "receive" once a disconnect message has been received.
+Traceback (most recent call last):
+  File "/home/derp/Desktop/project/Constitution-Model/voice bot/backend/main.py", line 123, in websocket_endpoint
+    message = await websocket.receive()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/derp/miniconda3/lib/python3.13/site-packages/starlette/websockets.py", line 57, in receive
+    raise RuntimeError('Cannot call "receive" once a disconnect message has been received.')
+RuntimeError: Cannot call "receive" once a disconnect message has been received.
+2026-03-22 19:08:12,253 - INFO - Client connected.
+2026-03-22 19:08:12,253 - INFO - Ready to receive messages.
+2026-03-22 19:08:12,860 - INFO - Greeting sent.
+2026-03-22 19:08:16,735 - ERROR - An error occurred in websocket_endpoint: Cannot call "receive" once a disconnect message has been received.
+Traceback (most recent call last):
+  File "/home/derp/Desktop/project/Constitution-Model/voice bot/backend/main.py", line 123, in websocket_endpoint
+    message = await websocket.receive()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/derp/miniconda3/lib/python3.13/site-packages/starlette/websockets.py", line 57, in receive
+    raise RuntimeError('Cannot call "receive" once a disconnect message has been received.')
+RuntimeError: Cannot call "receive" once a disconnect message has been received.
+2026-03-22 19:08:16,797 - INFO - Client connected.
+2026-03-22 19:08:16,798 - INFO - Ready to receive messages.
+2026-03-22 19:08:17,417 - INFO - Greeting sent.
+2026-03-22 19:08:21,084 - ERROR - An error occurred in websocket_endpoint: Cannot call "receive" once a disconnect message has been received.
+Traceback (most recent call last):
+  File "/home/derp/Desktop/project/Constitution-Model/voice bot/backend/main.py", line 123, in websocket_endpoint
+    message = await websocket.receive()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/derp/miniconda3/lib/python3.13/site-packages/starlette/websockets.py", line 57, in receive
+    raise RuntimeError('Cannot call "receive" once a disconnect message has been received.')
+RuntimeError: Cannot call "receive" once a disconnect message has been received.
+2026-03-22 19:08:36,615 - INFO - Client connected.
+2026-03-22 19:08:36,616 - INFO - Ready to receive messages.
+2026-03-22 19:08:37,342 - INFO - Greeting sent.
+2026-03-22 19:08:42,950 - INFO - Received audio from client: 38688 bytes
+2026-03-22 19:08:48,785 - INFO - Transcribed: tum kaise ho
+2026-03-22 19:08:48,786 - INFO - Sending text to Gemini...
+2026-03-22 19:08:51,246 - INFO - AI Response: Namaste! Main theek hoon. Aap batayein, main aapki kya kanooni sahayata kar sakta hoon? Main sirf kanoon, kanooni adhikaaron ya Bharat mein nyaay se sambandhit prashnon ka jawaab de sakta hoon.
+2026-03-22 19:08:53,948 - INFO - AI response with audio sent.
+2026-03-22 19:09:25,942 - INFO - Received audio from client: 2440 bytes
+2026-03-22 19:09:26,254 - WARNING - Speech recognition could not understand the audio.
+2026-03-22 19:09:39,514 - INFO - Received audio from client: 76691 bytes
+2026-03-22 19:09:40,979 - INFO - Transcribed: Bharat ke sanvidhan mein artical 21 ka kya Arth hai
+2026-03-22 19:09:40,980 - INFO - Sending text to Gemini...
+2026-03-22 19:09:43,775 - INFO - AI Response: Namaste! Bharat ke Sanvidhan ka Article 21 bahut mahatvapurna hai.
+
+Iska seedha matlab yeh hai ki har vyakti ko jeene ka adhikar (Right to Life) aur vyaktigat azadi (Personal Liberty) ka adhikar hai.
+
+Koi bhi sarkari sanstha ya vyakti aapko aapke jeene ke adhikar ya aapki vyaktigat azadi se tab tak vanchit nahin kar sakta, jab tak ki kanoon dwara sthapit sahi prakriya ka paalan na kiya gaya ho.
+
+"Jeene ka adhikar" mein sirf saans lena hi nahin, balki samman ke saath jeena aur ek accha jeevan vyateet karna bhi shamil hai.
+2026-03-22 19:09:49,407 - INFO - AI response with audio sent.
+2026-03-22 19:10:41,831 - INFO - Received audio from client: 98737 bytes
+2026-03-22 19:10:43,576 - INFO - Transcribed: Iske kya-kya Hisse hain aur Mujhe Kya kis chij Ki Azadi hai
+2026-03-22 19:10:43,576 - INFO - Sending text to Gemini...
+2026-03-22 19:10:49,209 - INFO - AI Response: Bilkul sahi sawal hai! Article 21 ka daayra bahut bada hai aur iski vyakhya courts ne samay-samay par badhayi hai.
+
+Iske kuch pramukh hisse aur aapko milne wali azadiyan is prakar hain:
+
+1.  Samman ke Saath Jeene ka Adhikar (Right to Live with Human Dignity): Ismein sirf zinda rehna hi nahi, balki ek accha, sammanjanak aur arthpurn jeevan jeena shamil hai.
+2.  Vyaktigat Azadi (Personal Liberty): Ismein aapko apni marzi se apni zindagi jeene ki azadi shamil hai, jaise yatra karna, apni pasand ka kaam karna, jab tak aap kisi kanoon ka ullanghan na karein.
+3.  Swachh Paryavaran ka Adhikar (Right to Clean Environment): Aapko swachh hawa aur paani mein rehne ka adhikar hai.
+4.  Swasthya ka Adhikar (Right to Health): Aapko acchi chikitsa suvidhayein milne ka adhikar hai.
+5.  Shiksha ka Adhikar (Right to Education): 6 se 14 saal ke bachchon ke liye muft aur anivarya shiksha ka adhikar (Article 21A ke tahat bhi hai, jo Article 21 se hi nikla hai).
+6.  Nijta ka Adhikar (Right to Privacy): Aapko apni niji jaankari aur jeevan mein dakhalandazi se bachne ka adhikar hai.
+7.  Roji-roti ka Adhikar (Right to Livelihood): Aapko jeevan yapan ke liye sahi saadhan kamane ka adhikar hai.
+8.  Jald Sunwai ka Adhikar (Right to Speedy Trial): Yadi aap par koi mamla hai, toh uski sunwai jald se jald hone ka adhikar.
+
+Toh, Article 21 aapko ek sammanjanak, azad aur surakshit jeevan jeene ki buniyadi garantee deta hai.
+2026-03-22 19:11:10,336 - INFO - Client disconnected.
+2026-03-22 19:11:11,434 - INFO - Client connected.
+2026-03-22 19:11:11,434 - INFO - Ready to receive messages.
+2026-03-22 19:11:11,751 - INFO - Greeting sent.
+2026-03-22 19:11:14,761 - ERROR - An error occurred in websocket_endpoint: Cannot call "receive" once a disconnect message has been received.
+Traceback (most recent call last):
+  File "/home/derp/Desktop/project/Constitution-Model/voice bot/backend/main.py", line 123, in websocket_endpoint
+    message = await websocket.receive()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/derp/miniconda3/lib/python3.13/site-packages/starlette/websockets.py", line 57, in receive
+    raise RuntimeError('Cannot call "receive" once a disconnect message has been received.')
+RuntimeError: Cannot call "receive" once a disconnect message has been received.
+2026-03-22 19:11:14,866 - INFO - Client connected.
+2026-03-22 19:11:14,866 - INFO - Ready to receive messages.
+2026-03-22 19:11:16,259 - INFO - Greeting sent.
+2026-03-22 19:11:32,028 - INFO - Received audio from client: 133119 bytes
+2026-03-22 19:11:34,677 - INFO - Transcribed: Bharat mein artical 21 ka kya matlab hai iska kya kya Hisse hai aur Mujhe kin kin cheezon ki freedom hai
+2026-03-22 19:11:34,677 - INFO - Sending text to Gemini...
+2026-03-22 19:11:39,487 - INFO - AI Response: Namaste!
+
+Bharat mein Article 21 kehta hai ki "Kisi bhi vyakti ko uske pran aur dhaarik swatantrata se, kanoon dwara sthapit prakriya ke alawa, vanchit nahi kiya jayega."
+
+Seedhe shabdon mein, iska matlab hai ki aapko jeene ka aur apni marzi se apni zindagi guzarne ka adhikar hai, jab tak aap kanoon ka palan kar rahe hain.
+
+Iske mukhya hisse hain:
+
+1.  Jeene ka Adhikar (Right to Life): Iska matlab sirf saans lena nahi hai, balki izzat aur garima ke saath jeena. Ismein shamil hain:
+       Shudh hawa aur paani ka adhikar.
+       Swasthya ka adhikar.
+       Ek achhe vaatavaran mein rehne ka adhikar.
+       Bhojan ka adhikar.
+       Aashray ka adhikar (ghar ka).
+       Shiksha ka adhikar.
+
+2.  Vyaktigat Swatantrata ka Adhikar (Right to Personal Liberty): Iska matlab hai ki aapko manmani giraftari ya kaid se bachne ka adhikar hai, aur ismein kai aur cheezein bhi shamil hain jaise:
+       Nijta ka adhikar (Right to Privacy).
+       Videsh yatra ka adhikar.
+       Tej sunwai ka adhikar (Right to speedy trial).
+
+Yeh Article bahut vyapak hai aur Supreme Court ne samay-samay par ismein aur bhi adhikar shamil kiye hain jo ek insaan ki garima purn jeevan ke liye zaroori hain.
+2026-03-22 19:11:56,578 - INFO - AI response with audio sent.
+2026-03-22 19:13:12,802 - INFO - Received audio from client: 56445 bytes
+2026-03-22 19:13:14,207 - INFO - Transcribed: Mere Sath fundamental rights kya hai
+2026-03-22 19:13:14,207 - INFO - Sending text to Gemini...
+2026-03-22 19:13:19,532 - INFO - AI Response: Achha sawal hai!
+
+Bharat mein "Fundamental Rights" (mool adhikar) wo buniyadi adhikar hain jo hamare samvidhan ne har nagarik ko diye hain. Ye isliye "fundamental" hain kyunki ye aapke jeene aur garima ke saath rehne ke liye bahut zaroori hain. Koi bhi sarkar ya sanstha in adhikaron ko aapse asaani se nahi chheen sakti.
+
+Ye mool adhikar samvidhan ke Part III mein diye gaye hain aur unmein se kuch pramukh hain:
+
+1.  Samanta ka Adhikar (Right to Equality): Kanoon ke samne sab barabar hain aur kisi ke saath dharm, jaati, ling, ya janm sthan ke aadhar par bhedbhav nahi hoga. (Article 14-18)
+2.  Swatantrata ka Adhikar (Right to Freedom): Ismein bolne ki azadi, ikattha hone ki azadi, ghoomne ki azadi, aur vyavsay karne ki azadi shamil hai. (Article 19-22)
+       Article 21 (Pran aur Dhaarik Swatantrata ka Adhikar) jiske baare mein humne abhi baat ki, woh bhi isi mein aata hai.
+3.  Shoshan ke Viruddh Adhikar (Right Against Exploitation): Ismein bal shram (zabardasti kaam karana) aur manav taskari (insaanon ki kharid-firokht) par rok lagayi gayi hai. (Article 23-24)
+4.  Dharmik Swatantrata ka Adhikar (Right to Freedom of Religion): Har vyakti ko apni marzi se kisi bhi dharm ko manne, uska palan karne aur prachar karne ki azadi hai. (Article 25-28)
+5.  Sanskriti aur Shiksha Sambandhi Adhikar (Cultural and Educational Rights): Alpsankhyak samudayon ko apni sanskriti aur bhasha ko bachane aur shiksha sansthan sthapit karne ka adhikar hai. (Article 29-30)
+6.  Sanvaidhanik Upcharon ka Adhikar (Right to Constitutional Remedies): Agar aapke kisi mool adhikar ka ullanghan hota hai, toh aap is adhikar ke तहत seedhe Supreme Court ya High Court ja sakte hain. Ise Baba Saheb Ambedkar ne 'Samvidhan ki Aatma aur Hridaya' kaha tha. (Article 32)
+
+Kya aap kisi khaas mool adhikar ke baare mein janana chahte hain ya aapko lagta hai ki aapke kisi adhikar ka ullanghan ho raha hai?
+2026-03-22 19:13:49,008 - INFO - AI response with audio sent.
+2026-03-22 19:17:32,056 - ERROR - An error occurred in websocket_endpoint: Cannot call "receive" once a disconnect message has been received.
+Traceback (most recent call last):
+  File "/home/derp/Desktop/project/Constitution-Model/voice bot/backend/main.py", line 123, in websocket_endpoint
+    message = await websocket.receive()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/derp/miniconda3/lib/python3.13/site-packages/starlette/websockets.py", line 57, in receive
+    raise RuntimeError('Cannot call "receive" once a disconnect message has been received.')
+RuntimeError: Cannot call "receive" once a disconnect message has been received.

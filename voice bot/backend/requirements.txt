@@ -2,5 +2,7 @@ fastapi
 uvicorn
 websockets
 google-generativeai
-dotenv
+python-dotenv
 gTTS
+SpeechRecognition
+pydub

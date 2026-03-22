@@ -4,3 +4,5 @@ websockets
 google-generativeai
 python-dotenv
 gTTS
+SpeechRecognition
+pydub
