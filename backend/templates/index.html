@@ -8,205 +8,469 @@
   <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Roboto:wght@300;400;500;700&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;0,14..32,800&family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-  <meta name="description" content="Official AI-assisted legal helpdesk for the Indian Constitution." />
+  <meta name="description" content="Official AI-assisted legal helpdesk for the Indian Constitution — know your rights, explore the law." />
 </head>
 
 <body>
 
-
-  <!-- Main Header -->
-  <header class="main-header">
-    <div class="container header-content">
-      <div class="logo-section">
+  <!-- ===================== HEADER ===================== -->
+  <header class="main-header" id="top">
+    <div class="header-inner">
+      <a class="logo-link" href="#">
         <img src="{{ url_for('static', filename='logo.png') }}" alt="National Emblem" class="emblem">
         <div class="site-identity">
-          <h1>myConstitutionConnect</h1>
-          <p>Official Legal Guidance & Public Information Portal</p>
+          <span class="site-name">myConstitutionConnect</span>
+          <span class="site-tagline">Official Legal Portal</span>
         </div>
-      </div>
+      </a>
 
-      <nav class="main-nav">
-        <!-- Navigation links removed as per request -->
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#knowledge" class="nav-link">Knowledge</a>
+        <a href="#how-it-works" class="nav-link">How It Works</a>
+        <a href="#tools" class="nav-link">Tools</a>
+        <a href="#chat" class="nav-link">AI Assistant</a>
       </nav>
+
+      <button id="startChatBtn" class="btn-cta-header">Start Consultation</button>
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero-section">
-    <div class="container hero-content">
-      <div class="hero-left">
-        <span class="badge">Citizen Services</span>
-        <h2>Constitution Helpdesk & Legal Aid</h2>
-        <p class="desc">
-          Empowering citizens with knowledge of their rights. Access simplified legal explanations, explore the
-          Constitution, and get instant AI-assisted guidance.
+  <!-- ===================== HERO ===================== -->
+  <section class="hero">
+    <div class="hero-bg" aria-hidden="true">
+      <div class="particle p1"></div>
+      <div class="particle p2"></div>
+      <div class="particle p3"></div>
+      <div class="particle p4"></div>
+      <div class="particle p5"></div>
+      <div class="hero-glow g1"></div>
+      <div class="hero-glow g2"></div>
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-text">
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          Citizen Services Portal
+        </div>
+        <h1 class="hero-title">
+          Know Your Rights.<br>
+          <span class="hero-title-gold">Powered by AI.</span>
+        </h1>
+        <p class="hero-desc">
+          Access simplified legal explanations, explore the Indian Constitution,
+          and get instant AI-guided answers — all in plain language, free for every citizen.
         </p>
 
-        <div class="feature-list">
-          <div class="feature-item">
-            <span class="check">✓</span> Simplified Legal Rights
-          </div>
-          <div class="feature-item">
-            <span class="check">✓</span> AI Legal Assistant
-          </div>
-          <div class="feature-item">
-            <span class="check">✓</span> Document Analysis
-          </div>
-        </div>
-
-        <div class="actions">
-          <button id="startChatBtn" class="btn-primary">Start Consultation</button>
-          <a class="btn-secondary" href="/read">Browse Constitution</a>
+        <div class="hero-actions">
+          <button id="startChatBtnHero" class="btn-primary">
+            <span>Start Legal Consultation</span>
+            <svg width="18" height="18" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+          <a class="btn-ghost-hero" href="/read">Browse Constitution</a>
         </div>
       </div>
 
-      <!-- Right Side: Services Cards -->
-      <div class="hero-right">
-
-        <!-- OCR Feature Card -->
-        <div class="service-box ocr-box">
-          <div class="icon-circle">📄</div>
-          <h3>Document Scanner</h3>
-          <p>Upload legal notices for instant analysis.</p>
-          <button class="btn-small" onclick="window.location.href='/ocr'">Scan Document</button>
-        </div>
+      <div class="hero-image-wrap">
+        <img src="{{ url_for('static', filename='hero_constitution.png') }}" alt="Indian Constitution with Scales of Justice" class="hero-image">
       </div>
+    </div>
+
+    <!-- Stats bar -->
+    <div class="stats-bar">
+      <div class="stat"><span class="stat-num">448+</span><span class="stat-label">Articles Covered</span></div>
+      <div class="stat-divider"></div>
+      <div class="stat"><span class="stat-num">36</span><span class="stat-label">States &amp; UTs</span></div>
+      <div class="stat-divider"></div>
+      <div class="stat"><span class="stat-num">AI</span><span class="stat-label">Powered Answers</span></div>
+      <div class="stat-divider"></div>
+      <div class="stat"><span class="stat-num">Free</span><span class="stat-label">For All Citizens</span></div>
     </div>
   </section>
 
-  <!-- Information Ticker -->
-  <div class="news-ticker">
-    <div class="container">
-      <span class="ticker-label">Latest Updates:</span>
-      <marquee>New amendments to the Digital Personal Data Protection Act, 2023 released. | Know your Fundamental Duties
-        campaign launched.</marquee>
+  <!-- ===================== TICKER ===================== -->
+  <div class="news-ticker" role="marquee">
+    <div class="ticker-inner">
+      <span class="ticker-label">Latest Updates</span>
+      <div class="ticker-track">
+        <span class="ticker-content">
+          New amendments to the Digital Personal Data Protection Act, 2023 released.&nbsp;&nbsp;｜&nbsp;&nbsp;
+          Know your Fundamental Duties campaign launched.&nbsp;&nbsp;｜&nbsp;&nbsp;
+          Supreme Court expands scope of Right to Privacy under Article 21.&nbsp;&nbsp;｜&nbsp;&nbsp;
+          Legal Aid Services available free for citizens below poverty line.&nbsp;&nbsp;｜&nbsp;&nbsp;
+          New amendments to the Digital Personal Data Protection Act, 2023 released.&nbsp;&nbsp;｜&nbsp;&nbsp;
+          Know your Fundamental Duties campaign launched.&nbsp;&nbsp;｜&nbsp;&nbsp;
+          Supreme Court expands scope of Right to Privacy under Article 21.&nbsp;&nbsp;｜&nbsp;&nbsp;
+          Legal Aid Services available free for citizens below poverty line.
+        </span>
+      </div>
     </div>
   </div>
 
-  <!-- Education Section -->
-  <section class="services">
+  <!-- ===================== ABOUT SECTION ===================== -->
+  <section class="about-section" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-image-wrap">
+          <img src="{{ url_for('static', filename='rights_illustration.png') }}" alt="Citizens of India under the shield of justice" class="about-image">
+          <div class="about-image-badge">
+            <span class="about-badge-num">75+</span>
+            <span class="about-badge-text">Years of Constitutional Democracy</span>
+          </div>
+        </div>
+        <div class="about-text">
+          <span class="section-tag">About</span>
+          <h2>India's Constitution — The People's Document</h2>
+          <p class="about-lead">
+            The Constitution of India is the supreme law of the land. Adopted on <strong>26 November 1949</strong>
+            and effective from <strong>26 January 1950</strong>, it is the longest written constitution of any
+            sovereign country in the world.
+          </p>
+          <div class="about-highlights">
+            <div class="highlight-item">
+              <div class="highlight-icon">📖</div>
+              <div>
+                <strong>448 Articles</strong>
+                <span>across 25 Parts covering every aspect of governance</span>
+              </div>
+            </div>
+            <div class="highlight-item">
+              <div class="highlight-icon">📋</div>
+              <div>
+                <strong>12 Schedules</strong>
+                <span>detailing administrative and legal provisions</span>
+              </div>
+            </div>
+            <div class="highlight-item">
+              <div class="highlight-icon">🏛️</div>
+              <div>
+                <strong>3 Pillars</strong>
+                <span>Legislature, Executive, and Judiciary</span>
+              </div>
+            </div>
+          </div>
+          <a href="/read" class="btn-primary about-btn">Read the Constitution →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== HOW IT WORKS ===================== -->
+  <section class="hiw-section" id="how-it-works">
     <div class="container">
       <div class="section-header">
-        <h3>Knowledge Center</h3>
-        <div class="divider"></div>
+        <span class="section-tag">Simple</span>
+        <h2>How It Works</h2>
+        <p>Get legal guidance in three easy steps</p>
+      </div>
+
+      <div class="hiw-grid">
+        <div class="hiw-step">
+          <div class="hiw-number">01</div>
+          <div class="hiw-icon">💬</div>
+          <h3>Ask Your Question</h3>
+          <p>Type or speak your legal question in plain language — no legal expertise required.</p>
+        </div>
+        <div class="hiw-arrow">→</div>
+        <div class="hiw-step">
+          <div class="hiw-number">02</div>
+          <div class="hiw-icon">⚡</div>
+          <h3>AI Analyzes</h3>
+          <p>Our AI scans the complete Indian Constitution and relevant legal provisions instantly.</p>
+        </div>
+        <div class="hiw-arrow">→</div>
+        <div class="hiw-step">
+          <div class="hiw-number">03</div>
+          <div class="hiw-icon">✅</div>
+          <h3>Get Clear Answers</h3>
+          <p>Receive simplified explanations with article references and actionable next steps.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== KNOWLEDGE CENTER ===================== -->
+  <section class="knowledge-section" id="knowledge">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Learn</span>
+        <h2>Knowledge Center</h2>
         <p>Understand the pillars of Indian Democracy</p>
       </div>
 
-      <div class="service-grid">
-        <div class="service-card">
-          <div class="card-icon">⚖️</div>
-          <h4>Fundamental Rights</h4>
-          <p>Right to Equality, Freedom, and Constitutional Remedies.</p>
-          <a href="/flashcards/" class="read-more">Read More &rarr;</a>
-        </div>
-        <div class="service-card">
-          <div class="card-icon">🤝</div>
-          <h4>Fundamental Duties</h4>
-          <p>Moral obligations of all citizens to help promote a spirit of patriotism.</p>
-          <a href="/flashcards/" class="read-more">Read More &rarr;</a>
-        </div>
-        <div class="service-card">
-          <div class="card-icon">📜</div>
-          <h4>The Preamble</h4>
-          <p>The soul of the Constitution: Justice, Liberty, Equality, and Fraternity.</p>
-          <a href="#" class="read-more">Read More &rarr;</a>
-        </div>
-        <div class="service-card">
-          <div class="card-icon">🏛️</div>
-          <h4>State Structure</h4>
-          <p>Understanding the Legislature, Executive, and Judiciary.</p>
-          <a href="http://localhost:3000" class="read-more">Read More &rarr;</a>
-        </div>
+      <div class="knowledge-grid">
+        <article class="kcard" style="--card-accent: #d4af37;">
+          <div class="kcard-icon-wrap" style="background: rgba(212,175,55,0.12);">⚖️</div>
+          <h3>Fundamental Rights</h3>
+          <p>Right to Equality, Freedom of Speech, and Constitutional Remedies guaranteed by the Constitution.</p>
+          <a href="/flashcards/" class="kcard-link">Explore with Flashcards <span>→</span></a>
+        </article>
+        <article class="kcard" style="--card-accent: #60a5fa;">
+          <div class="kcard-icon-wrap" style="background: rgba(96,165,250,0.12);">🤝</div>
+          <h3>Fundamental Duties</h3>
+          <p>Moral obligations of all citizens to help promote patriotism and strengthen the unity of India.</p>
+          <a href="/flashcards/" class="kcard-link">Explore with Flashcards <span>→</span></a>
+        </article>
+        <article class="kcard" style="--card-accent: #a78bfa;">
+          <div class="kcard-icon-wrap" style="background: rgba(167,139,250,0.12);">📜</div>
+          <h3>The Preamble</h3>
+          <p>The philosophical soul of the Constitution — Justice, Liberty, Equality, and Fraternity for all.</p>
+          <a href="/read" class="kcard-link">Read the Constitution <span>→</span></a>
+        </article>
+        <article class="kcard" style="--card-accent: #34d399;">
+          <div class="kcard-icon-wrap" style="background: rgba(52,211,153,0.12);">🏛️</div>
+          <h3>State Structure</h3>
+          <p>Understanding the three pillars — the Legislature, Executive, and an independent Judiciary.</p>
+          <a href="http://localhost:4000" class="kcard-link">Explore State Laws <span>→</span></a>
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- Chat Section -->
-  <section class="chat-section">
+  <!-- ===================== TOOLS / PLATFORM FEATURES ===================== -->
+  <section class="tools-section" id="tools">
     <div class="container">
-      <div class="chat-header">
-        <h3>AI Legal Assistant</h3>
-        <p>Ask questions in plain language</p>
-        <div class="jurisdiction-wrapper">
-          <label for="stateSelect">Select Jurisdiction:</label>
-          <select id="stateSelect" class="state-dropdown">
-            <option value="India">India (Central)</option>
-            <option value="Andhra Pradesh">Andhra Pradesh</option>
-            <option value="Arunachal Pradesh">Arunachal Pradesh</option>
-            <option value="Assam">Assam</option>
-            <option value="Bihar">Bihar</option>
-            <option value="Chhattisgarh">Chhattisgarh</option>
-            <option value="Delhi">Delhi (NCT)</option>
-            <option value="Goa">Goa</option>
-            <option value="Gujarat">Gujarat</option>
-            <option value="Haryana">Haryana</option>
-            <option value="Himachal Pradesh">Himachal Pradesh</option>
-            <option value="Jharkhand">Jharkhand</option>
-            <option value="Karnataka">Karnataka</option>
-            <option value="Kerala">Kerala</option>
-            <option value="Madhya Pradesh">Madhya Pradesh</option>
-            <option value="Maharashtra">Maharashtra</option>
-            <option value="Manipur">Manipur</option>
-            <option value="Meghalaya">Meghalaya</option>
-            <option value="Mizoram">Mizoram</option>
-            <option value="Nagaland">Nagaland</option>
-            <option value="Odisha">Odisha</option>
-            <option value="Punjab">Punjab</option>
-            <option value="Rajasthan">Rajasthan</option>
-            <option value="Sikkim">Sikkim</option>
-            <option value="Tamil Nadu">Tamil Nadu</option>
-            <option value="Telangana">Telangana</option>
-            <option value="Tripura">Tripura</option>
-            <option value="Uttar Pradesh">Uttar Pradesh</option>
-            <option value="Uttarakhand">Uttarakhand</option>
-            <option value="West Bengal">West Bengal</option>
-          </select>
+      <!-- Tool #1: AI Chat -->
+      <div class="tool-row">
+        <div class="tool-image-wrap">
+          <img src="{{ url_for('static', filename='ai_assistant.png') }}" alt="AI Legal Assistant interface" class="tool-image">
+        </div>
+        <div class="tool-text">
+          <span class="section-tag">Tool</span>
+          <h2>AI Legal Assistant</h2>
+          <p>Ask any question about the Indian Constitution in plain language. Our AI analyzes all 448 articles and gives you clear, simplified answers with proper article references.</p>
+          <ul class="tool-features">
+            <li><span class="tf-check">✓</span> Understands plain-language legal questions</li>
+            <li><span class="tf-check">✓</span> References specific Articles and Sections</li>
+            <li><span class="tf-check">✓</span> Suggests practical next steps</li>
+            <li><span class="tf-check">✓</span> Available in text and voice mode</li>
+          </ul>
+          <div class="tool-actions">
+            <button onclick="document.getElementById('chat').scrollIntoView({behavior:'smooth'})" class="btn-primary">Try the AI Chat →</button>
+            <a href="http://localhost:8001" class="btn-ghost-hero" target="_blank">🎤 Voice Mode</a>
+          </div>
         </div>
       </div>
 
-      <div class="chat-wrap">
-        <div id="chatbox" class="chatbox" aria-live="polite">
-          <div class="system-message">
-            <strong>Welcome to the Official Legal Aid Bot.</strong><br>
-            Please describe your legal query, and I will guide you through the relevant constitutional provisions.
-          </div>
-          {{ reply|safe }}
+      <!-- Tool #2: Document Scanner -->
+      <div class="tool-row tool-row-reverse">
+        <div class="tool-image-wrap">
+          <img src="{{ url_for('static', filename='ocr_preview.png') }}" alt="Document scanner screenshot" class="tool-image tool-image-screenshot">
         </div>
-        <form id="chatForm" class="chat-form" onsubmit="return false;">
-          <div class="input-group">
-            <input id="userInput" type="text"
-              placeholder="Type your query here (e.g., 'What are my rights if arrested?')..." autocomplete="off" />
-            <a href="http://localhost:8001" target="_blank" id="micBtn" class="btn-icon" title="Voice Input"
-              style="text-decoration:none; display:flex; align-items:center; justify-content:center;">🎤</a>
-          </div>
-          <button id="sendBtn" class="btn-primary">Submit Query</button>
-          <button id="clearBtn" type="button" class="btn-outline">Clear</button>
-        </form>
+        <div class="tool-text">
+          <span class="section-tag">Tool</span>
+          <h2>Document Scanner</h2>
+          <p>Upload a legal notice, government form, or any legal document. Our AI will read it, explain what it says in simple terms, and tell you what to do next.</p>
+          <ul class="tool-features">
+            <li><span class="tf-check">✓</span> Supports PDFs and images</li>
+            <li><span class="tf-check">✓</span> Explains legal jargon in plain language</li>
+            <li><span class="tf-check">✓</span> Identifies key deadlines and actions</li>
+          </ul>
+          <a href="/ocr" class="btn-primary">Scan a Document →</a>
+        </div>
+      </div>
+
+      <!-- Tool #3: State Laws -->
+      <div class="tool-row">
+        <div class="tool-image-wrap">
+          <img src="{{ url_for('static', filename='cover.jpg') }}" alt="Indian flag and legal books" class="tool-image">
+        </div>
+        <div class="tool-text">
+          <span class="section-tag">Tool</span>
+          <h2>State-by-State Laws</h2>
+          <p>India has different laws for different states and union territories. Explore legal provisions specific to your region, from local labour laws to state police acts.</p>
+          <ul class="tool-features">
+            <li><span class="tf-check">✓</span> All 28 states and 8 union territories</li>
+            <li><span class="tf-check">✓</span> Search by state or legal topic</li>
+            <li><span class="tf-check">✓</span> Complete with relevant articles and acts</li>
+          </ul>
+          <a href="http://localhost:4000" class="btn-primary">Explore State Laws →</a>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer>
-    <div class="container footer-content">
-      <div class="footer-links">
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms of Use</a>
-        <a href="#">Accessibility</a>
-        <a href="#">Help</a>
+  <!-- ===================== PREAMBLE BANNER ===================== -->
+  <section class="preamble-section">
+    <div class="container">
+      <div class="preamble-card">
+        <div class="preamble-eyebrow">The Preamble of India</div>
+        <blockquote class="preamble-text">
+          "WE, THE PEOPLE OF INDIA, having solemnly resolved to constitute India into a
+          <em>Sovereign Socialist Secular Democratic Republic</em> and to secure to all its citizens:
+          <strong>JUSTICE</strong>, social, economic and political;
+          <strong>LIBERTY</strong> of thought, expression, belief, faith and worship;
+          <strong>EQUALITY</strong> of status and of opportunity;
+          and to promote among them all <strong>FRATERNITY</strong> assuring the dignity of the individual
+          and the unity and integrity of the Nation…"
+        </blockquote>
+        <a href="/read" class="preamble-link">Read the Full Constitution →</a>
       </div>
-      <div class="footer-info">
+    </div>
+  </section>
 
-        <p>© 2025 myConstitutionConnect. All Rights Reserved.</p>
+  <!-- ===================== AI CHAT ===================== -->
+  <section class="chat-section" id="chat">
+    <div class="container">
+      <div class="chat-layout">
+        <div class="chat-info">
+          <span class="section-tag">AI Powered</span>
+          <h2>Legal Assistant</h2>
+          <p>Ask any question about the Indian Constitution or your legal rights. Our AI will explain it in simple, plain language.</p>
+          <ul class="chat-tips">
+            <li>
+              <span class="tip-icon">💡</span>
+              <span>"What are my rights if I am arrested?"</span>
+            </li>
+            <li>
+              <span class="tip-icon">💡</span>
+              <span>"Can I be fired without notice?"</span>
+            </li>
+            <li>
+              <span class="tip-icon">💡</span>
+              <span>"What does Article 21 say?"</span>
+            </li>
+          </ul>
+          <div class="jurisdiction-wrapper">
+            <label for="stateSelect">Jurisdiction:</label>
+            <select id="stateSelect" class="state-dropdown">
+              <option value="India">India (Central)</option>
+              <option value="Andhra Pradesh">Andhra Pradesh</option>
+              <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+              <option value="Assam">Assam</option>
+              <option value="Bihar">Bihar</option>
+              <option value="Chhattisgarh">Chhattisgarh</option>
+              <option value="Delhi">Delhi (NCT)</option>
+              <option value="Goa">Goa</option>
+              <option value="Gujarat">Gujarat</option>
+              <option value="Haryana">Haryana</option>
+              <option value="Himachal Pradesh">Himachal Pradesh</option>
+              <option value="Jharkhand">Jharkhand</option>
+              <option value="Karnataka">Karnataka</option>
+              <option value="Kerala">Kerala</option>
+              <option value="Madhya Pradesh">Madhya Pradesh</option>
+              <option value="Maharashtra">Maharashtra</option>
+              <option value="Manipur">Manipur</option>
+              <option value="Meghalaya">Meghalaya</option>
+              <option value="Mizoram">Mizoram</option>
+              <option value="Nagaland">Nagaland</option>
+              <option value="Odisha">Odisha</option>
+              <option value="Punjab">Punjab</option>
+              <option value="Rajasthan">Rajasthan</option>
+              <option value="Sikkim">Sikkim</option>
+              <option value="Tamil Nadu">Tamil Nadu</option>
+              <option value="Telangana">Telangana</option>
+              <option value="Tripura">Tripura</option>
+              <option value="Uttar Pradesh">Uttar Pradesh</option>
+              <option value="Uttarakhand">Uttarakhand</option>
+              <option value="West Bengal">West Bengal</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="chat-panel" id="chatPanel">
+          <div class="chat-panel-header">
+            <div class="chat-avatar">⚖️</div>
+            <div>
+              <div class="chat-name">Constitution Lawyer AI</div>
+              <div class="chat-status"><span class="online-dot"></span> Online · Ready to help</div>
+            </div>
+            <a href="http://localhost:8001" target="_blank" class="voice-btn" title="Switch to voice">🎤 Voice</a>
+            <button id="closeChatFullscreen" class="close-fullscreen-btn" title="Close fullscreen" style="display:none;">✕</button>
+          </div>
+
+          <div id="chatbox" class="chatbox" aria-live="polite">
+            <div class="system-message">
+              <strong>Welcome to the Legal Aid Bot.</strong><br>
+              Ask me anything about the Indian Constitution or your rights. I'll explain it clearly.
+            </div>
+            {{ reply|safe }}
+          </div>
+
+          <form id="chatForm" class="chat-form" onsubmit="return false;">
+            <div class="input-row">
+              <input id="userInput" type="text"
+                placeholder="Type a message..."
+                autocomplete="off" />
+              <button id="sendBtn" class="wa-send-btn" type="button" title="Send">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" fill="currentColor"/></svg>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CTA BANNER ===================== -->
+  <section class="cta-banner">
+    <div class="container">
+      <div class="cta-content">
+        <h2>Ready to know your rights?</h2>
+        <p>Start a free AI-powered consultation right now — no sign up required.</p>
+        <div class="cta-actions">
+          <button onclick="document.getElementById('chat').scrollIntoView({behavior:'smooth'})" class="btn-primary cta-btn">Start Free Consultation</button>
+          <a href="/read" class="btn-ghost-hero">Browse Constitution</a>
+          <a href="http://localhost:4000" class="btn-ghost-hero">State Laws</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" class="footer-logo">
+          <div>
+            <div class="footer-brand-name">myConstitutionConnect</div>
+            <div class="footer-brand-sub">Legal Guidance &amp; Public Information Portal</div>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <div class="footer-col-title">Features</div>
+          <a href="#chat">AI Assistant</a>
+          <a href="/ocr">Document Scanner</a>
+          <a href="http://localhost:8001">Voice Bot</a>
+          <a href="http://localhost:4000">State Laws</a>
+        </div>
+
+        <div class="footer-col">
+          <div class="footer-col-title">Resources</div>
+          <a href="/read">Constitution Reader</a>
+          <a href="/flashcards/">Flashcards</a>
+          <a href="#knowledge">Knowledge Center</a>
+        </div>
+
+        <div class="footer-col">
+          <div class="footer-col-title">Legal</div>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+          <a href="#">Accessibility</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2025 myConstitutionConnect. Built for citizens, powered by AI. All rights reserved.</p>
       </div>
     </div>
   </footer>
 
   <script src="{{ url_for('static', filename='script.js') }}"></script>
+  <script>
+    document.getElementById('startChatBtn').addEventListener('click', () => {
+      document.getElementById('chat').scrollIntoView({ behavior: 'smooth' });
+      setTimeout(() => document.getElementById('userInput').focus(), 600);
+    });
+    document.getElementById('startChatBtnHero').addEventListener('click', () => {
+      document.getElementById('chat').scrollIntoView({ behavior: 'smooth' });
+      setTimeout(() => document.getElementById('userInput').focus(), 600);
+    });
+  </script>
 </body>
-
 </html>

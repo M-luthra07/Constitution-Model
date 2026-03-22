@@ -1,10 +1,12 @@
- document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("chatForm");
   const input = document.getElementById("userInput");
   const chatbox = document.getElementById("chatbox");
-  const clearBtn = document.getElementById("clearBtn");
-  const startBtn = document.getElementById("startChatBtn");
-  const micBtn = document.getElementById("micBtn");
+  const chatPanel = document.getElementById("chatPanel");
+  const closeFullscreenBtn = document.getElementById("closeChatFullscreen");
+
+  let isFullscreen = false;
+  let overlay = null;
 
   // --- Chat Message Append ---
   function appendMessage(text, cls) {
@@ -35,11 +37,74 @@
 
   showWelcome();
 
+  // --- Fullscreen Chat ---
+  function openFullscreen() {
+    if (isFullscreen) return;
+    isFullscreen = true;
+
+    // Create overlay
+    overlay = document.createElement("div");
+    overlay.className = "chat-fullscreen-overlay";
+    overlay.id = "chatOverlay";
+    document.body.appendChild(overlay);
+
+    // Move chat panel into overlay
+    overlay.appendChild(chatPanel);
+
+    // Show close button
+    closeFullscreenBtn.style.display = "flex";
+
+    // Prevent body scroll
+    document.body.style.overflow = "hidden";
+
+    // Activate with slight delay for animation
+    requestAnimationFrame(() => {
+      overlay.classList.add("active");
+    });
+
+    // Focus input
+    setTimeout(() => input.focus(), 400);
+  }
+
+  function closeFullscreen() {
+    if (!isFullscreen) return;
+
+    overlay.classList.remove("active");
+
+    setTimeout(() => {
+      // Move chat panel back to its original section
+      const chatLayout = document.querySelector(".chat-layout");
+      if (chatLayout) {
+        chatLayout.appendChild(chatPanel);
+      }
+      closeFullscreenBtn.style.display = "none";
+      document.body.style.overflow = "";
+      if (overlay && overlay.parentNode) {
+        overlay.parentNode.removeChild(overlay);
+      }
+      overlay = null;
+      isFullscreen = false;
+    }, 350);
+  }
+
+  closeFullscreenBtn.addEventListener("click", closeFullscreen);
+
+  // Close on ESC
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && isFullscreen) closeFullscreen();
+  });
+
   // --- Send message to backend ---
   async function sendMessage() {
     const text = input.value.trim();
     if (!text) return;
-    appendMessage("You: " + text, "user");
+
+    // Open fullscreen on first send
+    if (!isFullscreen) {
+      openFullscreen();
+    }
+
+    appendMessage("" + text, "user");
     input.value = "";
 
     const typing = document.createElement("div");
@@ -55,7 +120,7 @@
       const res = await fetch("/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ 
+        body: JSON.stringify({
           message: text,
           state: selectedState
         }),
@@ -76,46 +141,6 @@
   input.addEventListener("keydown", (e) => {
     if (e.key === "Enter") sendMessage();
   });
-
-  clearBtn.addEventListener("click", async () => {
-    chatbox.innerHTML = "";
-    input.value = "";
-    await fetch("/clear", { method: "POST" });
-    showWelcome();
-  });
-
-  if (startBtn) {
-    startBtn.addEventListener("click", () => {
-      input.value = "Hey lawyer!";
-      input.focus();
-      input.setSelectionRange(input.value.length, input.value.length);
-    });
-  }
-
-  // --- 🎤 Speech to Text Feature ---
-  if (micBtn && "webkitSpeechRecognition" in window) {
-    const recognition = new webkitSpeechRecognition();
-    recognition.lang = "en-IN";
-    recognition.continuous = false;
-    recognition.interimResults = false;
-
-    micBtn.addEventListener("click", () => {
-      recognition.start();
-      micBtn.innerText = "🎙️";
-    });
-
-    recognition.onresult = (event) => {
-      const transcript = event.results[0][0].transcript;
-      input.value = transcript;
-      micBtn.innerText = "🎤";
-    };
-
-    recognition.onerror = () => {
-      micBtn.innerText = "🎤";
-    };
-  } else if (micBtn) {
-    micBtn.disabled = true;
-  }
 
   // --- OCR Redirect Handling ---
   const ocrBtn = document.querySelector(".ocr-btn");

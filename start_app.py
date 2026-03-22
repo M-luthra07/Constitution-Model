@@ -88,7 +88,7 @@ def main():
     print(f"Root Directory: {root_dir}")
 
     # Clear ports first
-    ports_to_clear = [3000, 5000, 8000, 8001]
+    ports_to_clear = [4000, 5000, 8000, 8001]
     print(f"🧹 Clearing ports: {ports_to_clear}...")
     if platform.system() == "Windows":
         for port in ports_to_clear:
@@ -121,11 +121,11 @@ def main():
     # 3. Start Next.js App (React Frontend)
     # npm command depends on OS
     npm_cmd = "npm.cmd" if platform.system() == "Windows" else "npm"
-    start_process([npm_cmd, "run", "dev"], cwd=root_dir, name="Next.js App (Port 3000)")
+    start_process([npm_cmd, "run", "dev"], cwd=root_dir, name="Next.js App (Port 4000)")
 
     print("\n✨ All services are running!")
     print("------------------------------------------------")
-    print("📱 React App (Main):   http://localhost:3000")
+    print("📱 React App (Main):   http://localhost:4000")
     print("⚖️  Flask App:          http://localhost:5000")
     print("🎤 Voice Bot Frontend: http://localhost:8001")
     print("------------------------------------------------")

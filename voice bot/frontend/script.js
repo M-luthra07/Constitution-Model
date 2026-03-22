@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
         window.speechSynthesis.cancel();
 
         const utterance = new SpeechSynthesisUtterance(text);
-        
+
         // Workaround for a browser bug where speech gets cut off
         let keepAliveInterval;
         const startKeepAlive = () => {
@@ -101,7 +101,7 @@ document.addEventListener("DOMContentLoaded", () => {
         recognition.onresult = (event) => {
             const transcript = event.results[0][0].transcript.trim();
             if (transcript && socket.readyState === WebSocket.OPEN) {
-                addMessageToChat("user", `You: ${transcript}`); // Add user message to chat
+                addMessageToChat("user", `${transcript}`); // Add user message to chat
                 socket.send(transcript);
                 statusDiv.textContent = "AI is thinking...";
             }
@@ -116,9 +116,9 @@ document.addEventListener("DOMContentLoaded", () => {
         if (!conversationStarted) {
             conversationStarted = true;
             startBtn.textContent = "End Conversation";
-            
+
             setupRecognition();
-            
+
             const greetingText = "Hello, how can I help you?";
             addMessageToChat("ai", `AI: ${greetingText}`); // Add initial greeting to chat
             speakText(greetingText);

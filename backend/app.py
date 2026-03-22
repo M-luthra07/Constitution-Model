@@ -7,7 +7,7 @@ import google.generativeai as genai
 import markdown
 
 # Load API key
-load_dotenv(os.path.join(os.path.dirname(__file__), '..', '.env'))
+load_dotenv()
 api_key = os.getenv("GOOGLE_API_KEY")
 if not api_key:
     raise ValueError("GOOGLE_API_KEY not found in .env file.")
