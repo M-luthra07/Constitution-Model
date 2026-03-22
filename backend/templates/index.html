@@ -8,9 +8,12 @@
   <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;0,14..32,800&family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;0,14..32,800&family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-  <meta name="description" content="Official AI-assisted legal helpdesk for the Indian Constitution — know your rights, explore the law." />
+  <meta name="description"
+    content="Official AI-assisted legal helpdesk for the Indian Constitution — know your rights, explore the law." />
 </head>
 
 <body>
@@ -68,14 +71,18 @@
         <div class="hero-actions">
           <button id="startChatBtnHero" class="btn-primary">
             <span>Start Legal Consultation</span>
-            <svg width="18" height="18" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5l7 7-7 7"/></svg>
+            <svg width="18" height="18" fill="none" viewBox="0 0 24 24">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
           </button>
           <a class="btn-ghost-hero" href="/read">Browse Constitution</a>
         </div>
       </div>
 
       <div class="hero-image-wrap">
-        <img src="{{ url_for('static', filename='hero_constitution.png') }}" alt="Indian Constitution with Scales of Justice" class="hero-image">
+        <img src="{{ url_for('static', filename='hero_constitution.png') }}"
+          alt="Indian Constitution with Scales of Justice" class="hero-image">
       </div>
     </div>
 
@@ -91,31 +98,14 @@
     </div>
   </section>
 
-  <!-- ===================== TICKER ===================== -->
-  <div class="news-ticker" role="marquee">
-    <div class="ticker-inner">
-      <span class="ticker-label">Latest Updates</span>
-      <div class="ticker-track">
-        <span class="ticker-content">
-          New amendments to the Digital Personal Data Protection Act, 2023 released.&nbsp;&nbsp;｜&nbsp;&nbsp;
-          Know your Fundamental Duties campaign launched.&nbsp;&nbsp;｜&nbsp;&nbsp;
-          Supreme Court expands scope of Right to Privacy under Article 21.&nbsp;&nbsp;｜&nbsp;&nbsp;
-          Legal Aid Services available free for citizens below poverty line.&nbsp;&nbsp;｜&nbsp;&nbsp;
-          New amendments to the Digital Personal Data Protection Act, 2023 released.&nbsp;&nbsp;｜&nbsp;&nbsp;
-          Know your Fundamental Duties campaign launched.&nbsp;&nbsp;｜&nbsp;&nbsp;
-          Supreme Court expands scope of Right to Privacy under Article 21.&nbsp;&nbsp;｜&nbsp;&nbsp;
-          Legal Aid Services available free for citizens below poverty line.
-        </span>
-      </div>
-    </div>
-  </div>
 
   <!-- ===================== ABOUT SECTION ===================== -->
   <section class="about-section" id="about">
     <div class="container">
       <div class="about-grid">
         <div class="about-image-wrap">
-          <img src="{{ url_for('static', filename='rights_illustration.png') }}" alt="Citizens of India under the shield of justice" class="about-image">
+          <img src="{{ url_for('static', filename='rights_illustration.png') }}"
+            alt="Citizens of India under the shield of justice" class="about-image">
           <div class="about-image-badge">
             <span class="about-badge-num">75+</span>
             <span class="about-badge-text">Years of Constitutional Democracy</span>
@@ -220,6 +210,12 @@
           <p>The philosophical soul of the Constitution — Justice, Liberty, Equality, and Fraternity for all.</p>
           <a href="/preamble" class="kcard-link">Explore in 22 Languages <span>→</span></a>
         </article>
+        <article class="kcard" style="--card-accent: #f59e0b;">
+          <div class="kcard-icon-wrap" style="background: rgba(245,158,11,0.12);">👨‍⚖️</div>
+          <h3>AI Virtual Court</h3>
+          <p>Gamified learning: Take on the role of a lawyer and defend citizens using Fundamental Rights.</p>
+          <a href="/virtual-court" class="kcard-link">Play Mock Trial <span>→</span></a>
+        </article>
         <article class="kcard" style="--card-accent: #34d399;">
           <div class="kcard-icon-wrap" style="background: rgba(52,211,153,0.12);">🏛️</div>
           <h3>State Structure</h3>
@@ -236,12 +232,14 @@
       <!-- Tool #1: AI Chat -->
       <div class="tool-row">
         <div class="tool-image-wrap">
-          <img src="{{ url_for('static', filename='ai_assistant.png') }}" alt="AI Legal Assistant interface" class="tool-image">
+          <img src="{{ url_for('static', filename='ai_assistant.png') }}" alt="AI Legal Assistant interface"
+            class="tool-image">
         </div>
         <div class="tool-text">
           <span class="section-tag">Tool</span>
           <h2>AI Legal Assistant</h2>
-          <p>Ask any question about the Indian Constitution in plain language. Our AI analyzes all 448 articles and gives you clear, simplified answers with proper article references.</p>
+          <p>Ask any question about the Indian Constitution in plain language. Our AI analyzes all 448 articles and
+            gives you clear, simplified answers with proper article references.</p>
           <ul class="tool-features">
             <li><span class="tf-check">✓</span> Understands plain-language legal questions</li>
             <li><span class="tf-check">✓</span> References specific Articles and Sections</li>
@@ -249,7 +247,8 @@
             <li><span class="tf-check">✓</span> Available in text and voice mode</li>
           </ul>
           <div class="tool-actions">
-            <button onclick="document.getElementById('chat').scrollIntoView({behavior:'smooth'})" class="btn-primary">Try the AI Chat →</button>
+            <button onclick="document.getElementById('chat').scrollIntoView({behavior:'smooth'})"
+              class="btn-primary">Try the AI Chat →</button>
             <a href="http://localhost:8001" class="btn-ghost-hero" target="_blank">🎤 Voice Mode</a>
           </div>
         </div>
@@ -258,12 +257,14 @@
       <!-- Tool #2: Document Scanner -->
       <div class="tool-row tool-row-reverse">
         <div class="tool-image-wrap">
-          <img src="{{ url_for('static', filename='ocr_preview.png') }}" alt="Document scanner screenshot" class="tool-image tool-image-screenshot">
+          <img src="{{ url_for('static', filename='ocr_preview.png') }}" alt="Document scanner screenshot"
+            class="tool-image tool-image-screenshot">
         </div>
         <div class="tool-text">
           <span class="section-tag">Tool</span>
           <h2>Document Scanner</h2>
-          <p>Upload a legal notice, government form, or any legal document. Our AI will read it, explain what it says in simple terms, and tell you what to do next.</p>
+          <p>Upload a legal notice, government form, or any legal document. Our AI will read it, explain what it says in
+            simple terms, and tell you what to do next.</p>
           <ul class="tool-features">
             <li><span class="tf-check">✓</span> Supports PDFs and images</li>
             <li><span class="tf-check">✓</span> Explains legal jargon in plain language</li>
@@ -281,7 +282,8 @@
         <div class="tool-text">
           <span class="section-tag">Tool</span>
           <h2>State-by-State Laws</h2>
-          <p>India has different laws for different states and union territories. Explore legal provisions specific to your region, from local labour laws to state police acts.</p>
+          <p>India has different laws for different states and union territories. Explore legal provisions specific to
+            your region, from local labour laws to state police acts.</p>
           <ul class="tool-features">
             <li><span class="tf-check">✓</span> All 28 states and 8 union territories</li>
             <li><span class="tf-check">✓</span> Search by state or legal topic</li>
@@ -319,7 +321,8 @@
         <div class="chat-info">
           <span class="section-tag">AI Powered</span>
           <h2>Legal Assistant</h2>
-          <p>Ask any question about the Indian Constitution or your legal rights. Our AI will explain it in simple, plain language.</p>
+          <p>Ask any question about the Indian Constitution or your legal rights. Our AI will explain it in simple,
+            plain language.</p>
           <ul class="chat-tips">
             <li>
               <span class="tip-icon">💡</span>
@@ -379,7 +382,8 @@
               <div class="chat-status"><span class="online-dot"></span> Online · Ready to help</div>
             </div>
             <a href="http://localhost:8001" target="_blank" class="voice-btn" title="Switch to voice">🎤 Voice</a>
-            <button id="closeChatFullscreen" class="close-fullscreen-btn" title="Close fullscreen" style="display:none;">✕</button>
+            <button id="closeChatFullscreen" class="close-fullscreen-btn" title="Close fullscreen"
+              style="display:none;">✕</button>
           </div>
 
           <div id="chatbox" class="chatbox" aria-live="polite">
@@ -392,11 +396,11 @@
 
           <form id="chatForm" class="chat-form" onsubmit="return false;">
             <div class="input-row">
-              <input id="userInput" type="text"
-                placeholder="Type a message..."
-                autocomplete="off" />
+              <input id="userInput" type="text" placeholder="Type a message..." autocomplete="off" />
               <button id="sendBtn" class="wa-send-btn" type="button" title="Send">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" fill="currentColor"/></svg>
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                  <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" fill="currentColor" />
+                </svg>
               </button>
             </div>
           </form>
@@ -412,7 +416,8 @@
         <h2>Ready to know your rights?</h2>
         <p>Start a free AI-powered consultation right now — no sign up required.</p>
         <div class="cta-actions">
-          <button onclick="document.getElementById('chat').scrollIntoView({behavior:'smooth'})" class="btn-primary cta-btn">Start Free Consultation</button>
+          <button onclick="document.getElementById('chat').scrollIntoView({behavior:'smooth'})"
+            class="btn-primary cta-btn">Start Free Consultation</button>
           <a href="/read" class="btn-ghost-hero">Browse Constitution</a>
           <a href="http://localhost:4000" class="btn-ghost-hero">State Laws</a>
         </div>
@@ -473,4 +478,5 @@
     });
   </script>
 </body>
+
 </html>

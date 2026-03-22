@@ -232,6 +232,38 @@ def serve_pdf():
 def read_constitution():
     return render_template('constitution.html')
 
+@app.route('/virtual-court')
+def virtual_court():
+    return render_template('virtual_court.html')
+
+@app.route('/api/court/judge', methods=['POST'])
+def court_judge():
+    data = request.json
+    scenario = data.get('scenario', '')
+    chosen_right = data.get('chosen_right', '')
+    argument = data.get('argument', '')
+
+    judge_prompt = f"""
+You are the Honorable Virtual Chief Justice of the AI Constitutional Court of India. 
+A citizen is presenting a case to you.
+
+Case Scenario: {scenario}
+Citizen's Choice of Fundamental Right: {chosen_right}
+Citizen's Argument: {argument}
+
+Evaluate if their choice of fundamental right is the most appropriate for this scenario and if their argument holds up under the Indian Constitution.
+Respond in character as a wise, fair, but slightly strict judge. 
+End your response with a clear VERDICT: (either "FAVOUR OF THE CITIZEN" or "CASE DISMISSED").
+Format your response using Markdown (bolding, lists, etc. for readability). Keep it concise (under 150 words).
+"""
+    try:
+        response = model.generate_content(judge_prompt)
+        verdict_html = markdown.markdown(response.text)
+        return jsonify({"verdict": verdict_html})
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+        
 @app.route('/preamble')
 def preamble_explorer():
     return render_template('preamble.html')
