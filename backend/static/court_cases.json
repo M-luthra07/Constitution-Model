@@ -1,0 +1,1102 @@
+[
+  {
+      "id": "105",
+      "title": "The Banned Book Shop",
+      "desc": "A local government has ordered the closure of a bookstore for stocking a novel that critiques the city mayor's policies. They claim the book disrupts 'public harmony', even though no violence has occurred. The owner comes to you for help.",
+      "options": [
+          "Article 14 - Right to Equality",
+          "Article 19(1)(a) - Freedom of Speech & Expression",
+          "Article 21 - Right to Life & Personal Liberty",
+          "Article 25 - Freedom of Religion"
+      ]
+  },
+  {
+      "id": "302",
+      "title": "The Denied Promotion",
+      "desc": "A female police officer discovers she was passed over for a promotion simply because the department policy secretly prefers male officers for the 'Captain' role. She is fully qualified and has seniority.",
+      "options": [
+          "Article 15 - Prohibition of Discrimination",
+          "Article 16 - Equality of Opportunity in Public Employment",
+          "Article 22 - Protection against Arrest",
+          "Article 32 - Right to Constitutional Remedies"
+      ]
+  },
+  {
+      "id": "411",
+      "title": "The Stopped Procession",
+      "desc": "A group of citizens is denied permission by the police to hold a peaceful, weaponless march to protest a new tax law. The police chief says he 'just doesn't like protests'.",
+      "options": [
+          "Article 17 - Abolition of Untouchability",
+          "Article 19(1)(b) - Right to assemble peacefully",
+          "Article 25 - Freedom of Religion",
+          "Article 29 - Protection of Interests of Minorities"
+      ]
+  },
+  {
+      "id": "508",
+      "title": "The Forced Labor Mill",
+      "desc": "A group of workers are trapped in a brick kiln. The owner pays them almost nothing and does not let them leave until they pay off an ancestral debt. They seek your legal intervention to be freed.",
+      "options": [
+          "Article 14 - Right to Equality",
+          "Article 19 - Freedom of Movement",
+          "Article 23 - Prohibition of Traffic in Human Beings & Forced Labour",
+          "Article 26 - Freedom to Manage Religious Affairs"
+      ]
+  },
+  {
+      "id": "612",
+      "title": "The Midnight Arrest",
+      "desc": "A citizen is arrested by police without being informed of the grounds of his arrest. He is kept in the police station for three days without being presented before a magistrate.",
+      "options": [
+          "Article 20 - Protection in respect of conviction for offences",
+          "Article 21 - Right to Life and Personal Liberty",
+          "Article 22 - Protection against Arrest and Detention",
+          "Article 32 - Right to Constitutional Remedies"
+      ]
+  },
+  {
+      "id": "789",
+      "title": "The Temple Entry Ban",
+      "desc": "A community group is physically blocked from entering a public Hindu temple by the temple management solely because they belong to a legally recognized 'lower caste'.",
+      "options": [
+          "Article 15 - Prohibition of Discrimination",
+          "Article 17 - Abolition of Untouchability",
+          "Article 26 - Freedom to manage religious affairs",
+          "Article 29 - Protection of Interests of Minorities"
+      ]
+  },
+  {
+      "id": "804",
+      "title": "The Child Mechanic",
+      "desc": "While visiting a local auto repair garage, you notice a 12-year-old child working underneath cars with heavy machinery instead of attending school. The owner says the child is 'learning a trade'.",
+      "options": [
+          "Article 21A - Right to Education",
+          "Article 23 - Prohibition of Traffic in Human Beings",
+          "Article 24 - Prohibition of Employment of Children",
+          "Article 39(e) - Protection of workers' health"
+      ]
+  },
+  {
+      "id": "915",
+      "title": "The School Dress Code",
+      "desc": "A state-run school bans Sikh students from wearing turbans, stating it violates the strict new uniform policy. The students argue this is an essential part of their faith.",
+      "options": [
+          "Article 14 - Right to Equality",
+          "Article 21 - Right to Life & Personal Liberty",
+          "Article 25 - Freedom of Conscience and Religion",
+          "Article 28 - Freedom as to attendance at religious instruction"
+      ]
+  },
+  {
+      "id": "1001",
+      "title": "The Sued Journalist",
+      "desc": "A journalist uncovers a massive corruption scandal. The government bans her from publishing the article and confiscates her printing press.",
+      "options": [
+          "Article 14 - Right to Equality",
+          "Article 19(1)(a) - Freedom of Speech and Expression",
+          "Article 21 - Right to Life and Personal Liberty",
+          "Article 32 - Right to Constitutional Remedies"
+      ]
+  },
+  {
+      "id": "1002",
+      "title": "The Denied Hostel Admission",
+      "desc": "A government-funded college refuses admission to a student in its minority-run hostel solely based on the student's religion, despite there being empty rooms.",
+      "options": [
+          "Article 29(2) - Protection of Interests of Minorities",
+          "Article 15(1) - Prohibition of discrimination",
+          "Article 21 - Right to Life and Personal Liberty",
+          "Article 26 - Freedom to manage religious affairs"
+      ]
+  },
+  {
+      "id": "1003",
+      "title": "The Double Jeopardy Dealer",
+      "desc": "A man was convicted of smuggling goods and served 5 years in prison. Upon his release, the state decides to put him on trial again for the exact same crime to give him a longer sentence.",
+      "options": [
+          "Article 20(1) - Protection from Ex Post Facto Laws",
+          "Article 20(2) - Protection against Double Jeopardy",
+          "Article 22 - Protection against Arrest and Detention",
+          "Article 21 - Right to Life and Liberty"
+      ]
+  },
+  {
+      "id": "1004",
+      "title": "The Minority School Scheme",
+      "desc": "A linguistic minority community sets up its own school to preserve its language. The local government orders them to close it because it doesn't teach the state's majority language as the primary medium.",
+      "options": [
+          "Article 29(1) - Protection of Interests of Minorities",
+          "Article 30(1) - Right of minorities to establish educational institutions",
+          "Article 14 - Right to Equality",
+          "Article 26 - Freedom to manage religious affairs"
+      ]
+  },
+  {
+      "id": "1005",
+      "title": "The Passport Seizure",
+      "desc": "An activist is about to fly out of the country to give a speech at the UN regarding human rights abuses. Authorities illegally seize her passport to prevent her travel, with no official warrant.",
+      "options": [
+          "Article 19(1)(d) - Right to move freely throughout the territory of India",
+          "Article 21 - Right to Life and Personal Liberty",
+          "Article 14 - Right to Equality",
+          "Article 22 - Protection against arbitrary arrest"
+      ]
+  },
+  {
+      "id": "1006",
+      "title": "The Self-Incrimination Trap",
+      "desc": "A person accused of a minor theft is forced by the police to sign a written confession stating he committed the crime under threat of violence.",
+      "options": [
+          "Article 20(3) - Protection against Self-Incrimination",
+          "Article 22(1) - Right to consult a legal practitioner",
+          "Article 21 - Protection of Life and Liberty",
+          "Article 14 - Right to Equality"
+      ]
+  },
+  {
+      "id": "1007",
+      "title": "The Segregated Well",
+      "desc": "In a remote village, a certain community is banned from drawing water from the public well that was built using state government funds.",
+      "options": [
+          "Article 15(2) - Access to public places without discrimination",
+          "Article 17 - Abolition of Untouchability",
+          "Article 21 - Right to water",
+          "Article 25 - Freedom of Religion"
+      ]
+  },
+  {
+      "id": "1008",
+      "title": "The Unpaid Teacher",
+      "desc": "A teacher in a government school discovers she is being paid 30% less than her male counterparts doing the exact same work and holding the same qualifications.",
+      "options": [
+          "Article 14 - Right to Equality",
+          "Article 16 - Equality of opportunity in public employment",
+          "Article 21 - Right to Livelihood",
+          "Article 39(d) - Equal pay for equal work"
+      ]
+  },
+  {
+      "id": "1009",
+      "title": "The Banned Trade Union",
+      "desc": "Factory workers decide to form an association to collectively bargain for safer working conditions. The factory owner bribes the local government to officially ban their newly formed union.",
+      "options": [
+          "Article 19(1)(c) - Right to form associations or unions",
+          "Article 19(1)(a) - Freedom of speech",
+          "Article 21 - Right to livelihood",
+          "Article 23 - Prohibition of forced labour"
+      ]
+  },
+  {
+      "id": "1010",
+      "title": "The Intercepted Letters",
+      "desc": "An investigative journalist finds out the police have been illegally tapping her phone and opening her mail without any court warrants or authorization.",
+      "options": [
+          "Article 14 - Right to Equality before the law",
+          "Article 19(1)(a) - Freedom of expression",
+          "Article 21 - Right to Privacy (Life and Personal Liberty)",
+          "Article 32 - Right to Constitutional Remedies"
+      ]
+  },
+  {
+      "id": "1011",
+      "title": "The Ex Post Facto Penalty",
+      "desc": "A citizen is caught committing a tax violation that carried a fine of ₹5,000 at the time of the offense. A new law is passed increasing the fine to ₹50,000, and the judge tries to apply the new fine to him.",
+      "options": [
+          "Article 20(1) - Protection against ex post facto laws",
+          "Article 14 - Equality before law",
+          "Article 21 - Personal liberty",
+          "Article 32 - Remedies"
+      ]
+  },
+  {
+      "id": "1012",
+      "title": "The Wrongfully Detained Activist",
+      "desc": "An environmental activist was arrested illegally without cause. Normal appeals have failed, and you need to file a powerful direct petition to the Supreme Court to order his immediate release.",
+      "options": [
+          "Article 14 - Right to Equality",
+          "Article 21 - Right to Life",
+          "Article 22 - Protection against arrest",
+          "Article 32 - Right to Constitutional Remedies (Habeas Corpus)"
+      ]
+  },
+  {
+      "id": "1013",
+      "title": "The Relocated Vendors",
+      "desc": "A group of street vendors who have been operating legally in a designated zone for 20 years are violently evicted by authorities without any prior notice or alternative arrangement.",
+      "options": [
+          "Article 14 - Right to Equality",
+          "Article 19(1)(g) - Right to practice any profession",
+          "Article 21 - Right to Livelihood",
+          "Article 25 - Freedom of religion"
+      ]
+  },
+  {
+      "id": "1014",
+      "title": "The Tax For Religion",
+      "desc": "A state government begins collecting a mandatory 'development tax' from all citizens, but it is discovered the funds are exclusively being used to build a massive place of worship for one specific religion.",
+      "options": [
+          "Article 27 - Freedom as to payment of taxes for promotion of any particular religion",
+          "Article 25 - Freedom of conscience",
+          "Article 26 - Freedom to manage religious affairs",
+          "Article 14 - Equality before the law"
+      ]
+  },
+  {
+      "id": "1015",
+      "title": "The Delayed Trial",
+      "desc": "An undertrial prisoner has been languishing in jail for 10 years for a crime that carries a maximum penalty of 3 years, simply because the courts are backlogged.",
+      "options": [
+          "Article 14 - Equality before the law",
+          "Article 20 - Protection from conviction",
+          "Article 21 - Right to a Speedy Trial (Life and Personal Liberty)",
+          "Article 22 - Protection against arrest"
+      ]
+  },
+  {
+      "id": "1016",
+      "title": "The State Religion Order",
+      "desc": "A particular state declares that there is now a 'State Religion' and all government employees must participate in its prayers before starting the workday.",
+      "options": [
+          "Article 14 - Right to equality",
+          "Article 25 - Freedom of Conscience and Religion",
+          "Article 28 - Freedom as to attendance at religious instruction in state institutions",
+          "Article 32 - Remedies"
+      ]
+  },
+  {
+      "id": "1017",
+      "title": "The Handcuffed Prisoner",
+      "desc": "A petty thief, who has shown no signs of violence or escape risk, is routinely paraded through the streets in heavy handcuffs to publicly humiliate him.",
+      "options": [
+          "Article 14 - Right to equality",
+          "Article 19 - Freedom of movement",
+          "Article 21 - Protection against cruel and degrading treatment (Personal Liberty)",
+          "Article 22 - Rights of arrested persons"
+      ]
+  },
+  {
+      "id": "1018",
+      "title": "The Stopped Migration",
+      "desc": "A citizen from Karnataka moves to Maharashtra for better job opportunities. The local municipality issues an order stating non-locals cannot reside in the town.",
+      "options": [
+          "Article 14 - Right to equality",
+          "Article 19(1)(e) - Right to reside and settle in any part of the territory of India",
+          "Article 21 - Personal liberty",
+          "Article 15 - Prohibition of discrimination"
+      ]
+  },
+  {
+      "id": "1019",
+      "title": "The Forced Temple Trust",
+      "desc": "A state government forcibly takes over the management of a completely private and successfully run religious trust without citing any mismanagement or law and order issue.",
+      "options": [
+          "Article 25 - Freedom of religion",
+          "Article 26 - Freedom to manage religious affairs",
+          "Article 14 - Equality",
+          "Article 32 - Remedies"
+      ]
+  },
+  {
+      "id": "1020",
+      "title": "The Confiscated Land",
+      "desc": "A farmer's agricultural land is seized by the government to build a highway. However, the government refuses to pay any compensation, stating the land is 'state property' now.",
+      "options": [
+          "Article 19 - Freedom to practice profession",
+          "Article 21 - Right to livelihood",
+          "Article 300A - Persons not to be deprived of property save by authority of law",
+          "Article 32 - Constitutional remedies"
+      ]
+  },
+  {
+      "id": "1021",
+      "title": "The Suspended Student",
+      "desc": "A college student is suspended indefinitely without any hearing or reason given by the principal, severely impacting his future.",
+      "options": [
+          "Article 14 - Arbitrary action violating equality",
+          "Article 21 - Right to Life (Education/Livelihood)",
+          "Article 19 - Freedom of expression",
+          "Article 32 - Constitutional remedies"
+      ]
+  },
+  {
+      "id": "1022",
+      "title": "The Censored Filmmaker",
+      "desc": "A filmmaker creates a documentary highlighting police corruption. The state censorship board bans it, claiming it 'harms the reputation of the police'.",
+      "options": [
+          "Article 14 - Right to Equality",
+          "Article 19(1)(a) - Freedom of Speech and Expression",
+          "Article 21 - Right to Privacy",
+          "Article 25 - Freedom of Religion"
+      ]
+  },
+  {
+      "id": "1023",
+      "title": "The Arrested Writer",
+      "desc": "A writer is detained for sedition simply because he wrote an op-ed heavily criticizing the Prime Minister's economic policies.",
+      "options": [
+          "Article 20 - Protection from Double Jeopardy",
+          "Article 19(1)(a) - Freedom of Speech and Expression",
+          "Article 23 - Prohibition of human trafficking",
+          "Article 17 - Abolition of untouchability"
+      ]
+  },
+  {
+      "id": "1024",
+      "title": "The Blocked Highway",
+      "desc": "State police block all major highways leading into the capital to prevent farmers from gathering to protest peacefully against new agricultural laws.",
+      "options": [
+          "Article 14 - Right to equality",
+          "Article 19(1)(b) - Right to assemble peaceably",
+          "Article 21 - Right to life",
+          "Article 29 - Minority rights"
+      ]
+  },
+  {
+      "id": "1025",
+      "title": "The Denied Passport",
+      "desc": "A journalist's passport application is rejected by the government without any stated reason, preventing her from taking a job overseas.",
+      "options": [
+          "Article 21 - Right to Life and Personal Liberty (Travel abroad)",
+          "Article 19(1)(g) - Practice profession",
+          "Article 14 - Equality",
+          "Article 25 - Religion"
+      ]
+  },
+  {
+      "id": "1026",
+      "title": "The Banned Beef Eater",
+      "desc": "Police enter a citizen's private home and arrest them for consuming beef, even though no law in that state prohibits private consumption.",
+      "options": [
+          "Article 19 - Freedom of speech",
+          "Article 21 - Right to Privacy (Life & Personal Liberty)",
+          "Article 20 - Ex post facto laws",
+          "Article 25 - Freedom of religion"
+      ]
+  },
+  {
+      "id": "1027",
+      "title": "The Private Hospital Rejection",
+      "desc": "A daily wage worker suffers a severe heart attack. A nearby private hospital refuses to provide emergency stabilization, citing his inability to pay immediately.",
+      "options": [
+          "Article 14 - Equality",
+          "Article 21 - Right to Life (Emergency Medical Aid)",
+          "Article 19 - Freedom of trade",
+          "Article 23 - Forced labour"
+      ]
+  },
+  {
+      "id": "1028",
+      "title": "The Noise Nuisance",
+      "desc": "A political party uses massive loudspeakers in a residential area at 2 AM for a rally, depriving the neighborhood of sleep.",
+      "options": [
+          "Article 19 - Freedom of assembly",
+          "Article 21 - Right to Life (Pollution-free environment/Sleep)",
+          "Article 25 - Freedom of religion",
+          "Article 14 - Equality"
+      ]
+  },
+  {
+      "id": "1029",
+      "title": "The Untouchability Practice",
+      "desc": "A barber refuses to cut the hair of a customer belonging to a Scheduled Caste, citing traditional community rules.",
+      "options": [
+          "Article 14 - Right to Equality",
+          "Article 17 - Abolition of Untouchability",
+          "Article 19 - Freedom of profession",
+          "Article 21 - Personal liberty"
+      ]
+  },
+  {
+      "id": "1030",
+      "title": "The Illegal Phone Tap",
+      "desc": "Without any national security threat or court order, the intelligence bureau taps the phones of opposition politicians to listen to their election strategies.",
+      "options": [
+          "Article 19(1)(a) - Freedom of expression",
+          "Article 21 - Right to Privacy (Personal Liberty)",
+          "Article 14 - Right to Equality",
+          "Article 22 - Protection against arrest"
+      ]
+  },
+  {
+      "id": "1031",
+      "title": "The Handcuffed Patient",
+      "desc": "An undertrial prisoner admitted to a government hospital for a minor illness is kept chained to his bed 24/7 despite being old and frail.",
+      "options": [
+          "Article 21 - Cruel and degrading treatment (Life/Liberty)",
+          "Article 14 - Equality",
+          "Article 20 - Protection from conviction",
+          "Article 22 - Protection against arrest"
+      ]
+  },
+  {
+      "id": "1032",
+      "title": "The Gender Biased Law",
+      "desc": "A state passes a law stating that women cannot be employed as bartenders, claiming it is for 'their own moral protection'.",
+      "options": [
+          "Article 14 - Right to Equality",
+          "Article 15 - Prohibition of Discrimination on grounds of sex",
+          "Article 19 - Freedom to practice profession",
+          "Article 21 - Personal liberty"
+      ]
+  },
+  {
+      "id": "1033",
+      "title": "The Banned Internet",
+      "desc": "Following a peaceful local strike, the state government shuts down the internet in the entire district for 3 months to 'prevent rumors', devastating online businesses and education.",
+      "options": [
+          "Article 14 - Equality",
+          "Article 19(1)(a) - Freedom of Speech & 19(1)(g) Trade",
+          "Article 21 - Right to privacy",
+          "Article 25 - Freedom of religion"
+      ]
+  },
+  {
+      "id": "1034",
+      "title": "The Evicted Slum Dwellers",
+      "desc": "Authorities bulldoze a slum during the heavy monsoon season without providing prior notice or any alternative rehabilitation plan, leaving hundreds homeless.",
+      "options": [
+          "Article 19 - Freedom of movement",
+          "Article 21 - Right to Shelter/Livelihood (Life)",
+          "Article 14 - Right to equality",
+          "Article 22 - Arrest rights"
+      ]
+  },
+  {
+      "id": "1035",
+      "title": "The Fired Pregnant Woman",
+      "desc": "A private corporate company fires a female employee the moment she announces her pregnancy, citing 'expected loss of productivity'.",
+      "options": [
+          "Article 14 - Right to Equality",
+          "Article 16 - Equal opportunity in employment",
+          "Article 21 & 42 - Right to Livelihood & Maternity Relief",
+          "Article 19 - Freedom of profession"
+      ]
+  },
+  {
+      "id": "1036",
+      "title": "The Forced Confession",
+      "desc": "A suspect in police custody is subjected to narco-analysis (truth serum) testing without his consent to extract information about a robbery.",
+      "options": [
+          "Article 20(3) - Protection against Self-Incrimination",
+          "Article 22 - Arrest rights",
+          "Article 14 - Right to equality",
+          "Article 21 - Speedy trial"
+      ]
+  },
+  {
+      "id": "1037",
+      "title": "The Stopped Foreign Funding",
+      "desc": "An NGO focused on holding the government accountable for human rights violations arbitrarily has its foreign funding license revoked without a valid hearing.",
+      "options": [
+          "Article 19(1)(c) - Right to form associations",
+          "Article 14 - Equality before law",
+          "Article 21 - Personal liberty",
+          "Article 25 - Freedom of religion"
+      ]
+  },
+  {
+      "id": "1038",
+      "title": "The Denied Bail",
+      "desc": "A very poor citizen is granted bail by a judge, but the judge demands a surety sum of ₹5,00,000, which the citizen has no possible way of paying, keeping him in jail.",
+      "options": [
+          "Article 14 - Right to equality",
+          "Article 21 - Personal Liberty (Unreasonable bail terms)",
+          "Article 22 - Protection against arrest",
+          "Article 20 - Ex post facto laws"
+      ]
+  },
+  {
+      "id": "1039",
+      "title": "The Forced Standing",
+      "desc": "A cinema hall forces all patrons, including a wheelchair-bound disabled person, to stand up during the national anthem, threatening them with arrest.",
+      "options": [
+          "Article 14 - Right to Equality (Reasonable accommodation)",
+          "Article 19(1)(a) - Freedom of expression (Right to remain silent)",
+          "Article 21 - Protection of life",
+          "Article 25 - Religion"
+      ]
+  },
+  {
+      "id": "1040",
+      "title": "The Beggar Roundup",
+      "desc": "A city police force arrests all beggars on the streets before an international event and locks them in a poorly ventilated shelter against their will.",
+      "options": [
+          "Article 14 - Right to equality",
+          "Article 19 - Freedom of movement",
+          "Article 21 - Right to Life & Dignity (Arbitrary detention)",
+          "Article 23 - Human Traffic"
+      ]
+  },
+  {
+      "id": "1041",
+      "title": "The Outcast Couple",
+      "desc": "A young inter-caste couple is threatened with violence by a local unelected 'Khap Panchayat' village council, aiming to force them to leave the village.",
+      "options": [
+          "Article 15 - Right against discrimination",
+          "Article 19(1)(e) - Right to reside in any part of India",
+          "Article 21 - Right to Life and Liberty (Choice of partner)",
+          "Article 25 - Freedom of religion"
+      ]
+  },
+  {
+      "id": "1042",
+      "title": "The Stopped Scholarship",
+      "desc": "A brilliant student from a minority community applies to a state-funded university but is denied a merit scholarship solely because there is a secret quota reserving all funds for the majority community.",
+      "options": [
+          "Article 15 - Prohibition of Discrimination",
+          "Article 29(2) - Non-discrimination in state-aided educational institutions",
+          "Article 21A - Right to primary education",
+          "Article 32 - Remedies"
+      ]
+  },
+  {
+      "id": "1043",
+      "title": "The Detained Protestor",
+      "desc": "A student protestor is arrested and kept in police custody over the weekend. The police refuse to produce him before a magistrate within 24 hours, citing a public holiday.",
+      "options": [
+          "Article 20 - Protection from Double Jeopardy",
+          "Article 22(2) - Right to be produced before a magistrate within 24 hours",
+          "Article 21 - Personal Liberty",
+          "Article 32 - Habeas Corpus"
+      ]
+  },
+  {
+      "id": "1044",
+      "title": "The Demolished Factory",
+      "desc": "The municipal corporation tears down a legally operating small-scale factory without any written notice, alleging it was 'making the road look ugly'.",
+      "options": [
+          "Article 14 - Right to Equality",
+          "Article 19(1)(g) - Right to practice any profession or carry on occupation",
+          "Article 25 - Freedom of Religion",
+          "Article 22 - Arrest Rights"
+      ]
+  },
+  {
+      "id": "1045",
+      "title": "The Disconnected Patient",
+      "desc": "A government hospital turns off the life-support machine of an unstable patient because they needed the bed for a local politician's relative.",
+      "options": [
+          "Article 21 - Right to Life",
+          "Article 14 - Equality",
+          "Article 20 - Ex post facto laws",
+          "Article 23 - Traffic in human beings"
+      ]
+  },
+  {
+      "id": "1046",
+      "title": "The Stopped Speaker",
+      "desc": "An opposition politician is permanently banned from holding any public speeches in a specific state by the Chief Minister, fearing she might win votes.",
+      "options": [
+          "Article 19(1)(a) - Freedom of Speech and Expression",
+          "Article 21 - Right to life",
+          "Article 14 - Right to equality",
+          "Article 25 - Freedom of religion"
+      ]
+  },
+  {
+      "id": "1047",
+      "title": "The Banned Inter-faith Marriage",
+      "desc": "A state passes a law that completely prohibits marriages between individuals of two specific differing religions, attempting to 'prevent social mixing'.",
+      "options": [
+          "Article 15 - Prohibition of Discrimination",
+          "Article 21 - Right to Life and Personal Liberty (Right to Marry)",
+          "Article 26 - Manage religious affairs",
+          "Article 19 - Freedom of speech"
+      ]
+  },
+  {
+      "id": "1048",
+      "title": "The Unhoused Tenant",
+      "desc": "A landlord immediately evicts a tenant using physical force merely because he discovered the tenant belongs to a particular religious minority.",
+      "options": [
+          "Article 14 - Right to Equality",
+          "Article 15 - Prohibition of Discrimination on grounds of religion",
+          "Article 19 - Freedom of residence",
+          "Article 21 - Privacy"
+      ]
+  },
+  {
+      "id": "1049",
+      "title": "The Secretive State Data",
+      "desc": "A citizen files an RTI application to find out how much public money was spent on a new statue. The government completely refuses to share any details, claiming it is 'state secret'.",
+      "options": [
+          "Article 19(1)(a) - Right to Know (Freedom of Expression/Information)",
+          "Article 21 - Right to Life",
+          "Article 14 - Equality",
+          "Article 32 - Constitutional Remedies"
+      ]
+  },
+  {
+      "id": "1050",
+      "title": "The Seized Animal Transporter",
+      "desc": "A truck driver legally transporting cattle with valid permits is stopped, beaten, and has his vehicle seized by an unauthorized mob acting as self-styled vigilantes.",
+      "options": [
+          "Article 14 - Right to equality",
+          "Article 19(1)(g) - Right to carry on trade/business",
+          "Article 21 - Right to life and liberty against vigilante violence",
+          "Article 25 - Religion"
+      ]
+  },
+  {
+      "id": "1051",
+      "title": "The Striking Doctors",
+      "desc": "The government threatens to physically jail striking medical doctors under anti-terrorism laws unless they immediately resume duties during a non-emergency period.",
+      "options": [
+          "Article 19(1)(c) - Right to form associations and unions",
+          "Article 21 - Right to life",
+          "Article 23 - Prohibition of forced labour",
+          "Article 14 - Equality"
+      ]
+  },
+  {
+      "id": "1052",
+      "title": "The Boycotted Store",
+      "desc": "A village council officially passes a resolution ordering all villagers to permanently boycott a Dalit-owned grocery store to force them out of business.",
+      "options": [
+          "Article 15 - Prohibition of discrimination",
+          "Article 17 - Abolition of Untouchability",
+          "Article 21 - Right to Livelihood",
+          "Article 19 - Freedom of Trade"
+      ]
+  },
+  {
+      "id": "1053",
+      "title": "The Shackled Journalist",
+      "desc": "A newspaper editor is illegally detained and physically chained to a chair for writing an editorial criticizing a high court judge's recent judgment.",
+      "options": [
+          "Article 19(1)(a) - Freedom of Speech",
+          "Article 21 - Protection against torture and cruel treatment",
+          "Article 14 - Equality",
+          "Article 22 - Arrest procedures"
+      ]
+  },
+  {
+      "id": "1054",
+      "title": "The Refused School Admission",
+      "desc": "A prestigious private school refuses to admit a 7-year-old child entirely because her parents cannot speak English fluently, despite the child passing the aptitude test.",
+      "options": [
+          "Article 21A - Right to Education",
+          "Article 14 - Arbitrariness",
+          "Article 15 - Discrimination",
+          "Article 29 - Minority rights"
+      ]
+  },
+  {
+      "id": "1055",
+      "title": "The Denied Advocate",
+      "desc": "An impoverished man accused of murder is forced to represent himself in a fast-track court because the state refuses to provide him with legal aid.",
+      "options": [
+          "Article 21 - Right to Fair Trial (Free Legal Aid)",
+          "Article 22(1) - Right to consult a legal practitioner",
+          "Article 14 - Equality",
+          "Article 20 - Protection from conviction"
+      ]
+  },
+  {
+      "id": "1056",
+      "title": "The Delayed Election",
+      "desc": "A state government continually cancels local municipal elections for five years straight, claiming they are 'too busy with road construction' to hold polls.",
+      "options": [
+          "Article 14 - Arbitrary action",
+          "Article 19 - Freedom of association",
+          "Article 32 - Remedies (Mandamus for Democratic Rights)",
+          "Article 21 - Personal liberty"
+      ]
+  },
+  {
+      "id": "1057",
+      "title": "The Interrogated Suspect",
+      "desc": "A police inspector mercilessly beats a theft suspect with a baton to force him to reveal where the stolen jewelry is hidden.",
+      "options": [
+          "Article 21 - Right against torture",
+          "Article 20(3) - Protection against self-incrimination",
+          "Article 22 - Arrest procedures",
+          "Article 14 - Equality"
+      ]
+  },
+  {
+      "id": "1058",
+      "title": "The Sacked Whistleblower",
+      "desc": "A government auditor is immediately terminated from his job without a standard formal inquiry simply because he reported fraud by a senior minister.",
+      "options": [
+          "Article 14 - Arbitrary state action",
+          "Article 311 - Dismissal of civil servants without inquiry",
+          "Article 19 - Freedom of speech",
+          "Article 21 - Livelihood"
+      ]
+  },
+  {
+      "id": "1059",
+      "title": "The Blockaded Village",
+      "desc": "Because a village voted for the opposition party, the current ruling government deliberately cuts off all water and electricity supply to their area for weeks.",
+      "options": [
+          "Article 14 - Arbitrary discrimination",
+          "Article 21 - Right to Life (Basic human necessities)",
+          "Article 19 - Freedom of expression",
+          "Article 25 - Religion"
+      ]
+  },
+  {
+      "id": "1060",
+      "title": "The Banned Minority Language",
+      "desc": "A state government introduces a law making it illegal for any private school to teach students using the local, historical tribal language of that specific region.",
+      "options": [
+          "Article 29(1) - Right of minorities to conserve their distinct language/culture",
+          "Article 14 - Equality",
+          "Article 21A - Education",
+          "Article 25 - Religion"
+      ]
+  },
+  {
+      "id": "1061",
+      "title": "The Retroactive Taxman",
+      "desc": "The government introduces a new steep corporate tax on software exports in 2025, but legally demands that IT companies also pay the tax for their profits made back in 2015.",
+      "options": [
+          "Article 20(1) - Protection against Ex Post Facto Laws",
+          "Article 265 - Taxes not to be imposed save by authority of law",
+          "Article 19 - Trade",
+          "Article 14 - Arbitrariness"
+      ]
+  },
+  {
+      "id": "1062",
+      "title": "The Forbidden Protest Fast",
+      "desc": "An activist goes on a peaceful hunger strike in a public square demanding a new anti-corruption law. The police arrest him and force-feed him via tubes against his will.",
+      "options": [
+          "Article 19(1)(b) - Peaceful assembly",
+          "Article 21 - Personal Liberty & Bodily Autonomy",
+          "Article 25 - Religion",
+          "Article 14 - Equality"
+      ]
+  },
+  {
+      "id": "1063",
+      "title": "The Censured Scientist",
+      "desc": "A government researcher publishes a scientific paper warning about severe incoming heatwaves. The government fires him for 'causing public panic'.",
+      "options": [
+          "Article 14 - Right to Equality",
+          "Article 19(1)(a) - Freedom of Speech and scientific expression",
+          "Article 21 - Livelihood",
+          "Article 32 - Remedies"
+      ]
+  },
+  {
+      "id": "1064",
+      "title": "The Single Mother's Surname",
+      "desc": "A government passport office refuses to issue a passport to a child merely because the single mother refuses to disclose the name of the estranged father on the application.",
+      "options": [
+          "Article 14 - Right to Equality (Arbitrariness)",
+          "Article 21 - Right to Privacy and Dignity",
+          "Article 15 - Sex discrimination",
+          "Article 19 - Movement"
+      ]
+  },
+  {
+      "id": "1065",
+      "title": "The Solitary Confinement",
+      "desc": "A prison warden locks an inmate in a tiny, dark cell with zero human contact for an entire year as a punishment for arguing with a guard.",
+      "options": [
+          "Article 14 - Equality",
+          "Article 21 - Right against cruel, inhuman punishment (Solitary Confinement)",
+          "Article 20 - Conviction protection",
+          "Article 22 - Arrest rights"
+      ]
+  },
+  {
+      "id": "1066",
+      "title": "The Overpriced Medicine",
+      "desc": "During a deadly pandemic, a pharmaceutical company heavily backed by politicians increases the price of life-saving oxygen by 5000%, and the state refuses to intervene.",
+      "options": [
+          "Article 14 - Equality",
+          "Article 19 - Trade",
+          "Article 21 - Right to Health and Life (State's duty to protect citizens)",
+          "Article 32 - Remedies"
+      ]
+  },
+  {
+      "id": "1067",
+      "title": "The Captured Camera",
+      "desc": "A photojournalist takes pictures of police using excessive force at a rally. The officers violently seize his camera and permanently delete all the photos without a warrant.",
+      "options": [
+          "Article 14 - Equality",
+          "Article 19(1)(a) - Freedom of the Press/Expression",
+          "Article 21 - Personal Liberty",
+          "Article 20 - Incrimination"
+      ]
+  },
+  {
+      "id": "1068",
+      "title": "The Unpaid Contract Worker",
+      "desc": "A daily wage laborer hired by the municipal corporation sweeps the streets for 6 months but is not paid any wages, with officials citing 'lack of budget'.",
+      "options": [
+          "Article 14 - Equality",
+          "Article 21 - Right to Livelihood",
+          "Article 23 - Prohibition of beggar and forced labor (Non-payment of minimum wage)",
+          "Article 19 - Profession"
+      ]
+  },
+  {
+      "id": "1069",
+      "title": "The Banned Inter-State Grain",
+      "desc": "A farmer successfully harvests wheat in Punjab and tries to transport it to sell in a neighboring state where prices are higher, but state police completely ban him from crossing the border.",
+      "options": [
+          "Article 14 - Equality",
+          "Article 19(1)(g) - Right to carry on trade/business across India",
+          "Article 301 - Freedom of Trade, Commerce, and Intercourse",
+          "Article 21 - Livelihood"
+      ]
+  },
+  {
+      "id": "1070",
+      "title": "The Arbitrary Tax Assessment",
+      "desc": "An income tax officer, holding a personal grudge against a businessman, bypasses all normal formulas and imposes an arbitrary, astronomically high tax demand specifically to bankrupt him.",
+      "options": [
+          "Article 14 - Right to Equality (Protection against arbitrary state action)",
+          "Article 19 - Trade",
+          "Article 21 - Right to life",
+          "Article 20 - Ex post facto"
+      ]
+  },
+  {
+      "id": "1071",
+      "title": "The Strip Searched Visitor",
+      "desc": "Every female relative visiting a particular high-security men's prison is subjected to deeply humiliating strip searches without any medical privacy or specific suspicion of smuggling.",
+      "options": [
+          "Article 14 - Equality",
+          "Article 19 - Movement",
+          "Article 21 - Right to Dignity and Privacy",
+          "Article 25 - Religion"
+      ]
+  },
+  {
+      "id": "1072",
+      "title": "The Refused Organ Donor",
+      "desc": "A willing adult sister wishes to donate her kidney to save her dying brother. The state medical board rejects it merely because 'unmarried women shouldn't undergo surgery'.",
+      "options": [
+          "Article 14 - Equality",
+          "Article 15 - Prohibition of Discrimination (Sex)",
+          "Article 21 - Right to Bodily Autonomy & Right to Life",
+          "Article 19 - Profession"
+      ]
+  },
+  {
+      "id": "1073",
+      "title": "The Denied Election Candidate",
+      "desc": "A disabled citizen files his nomination to contest local municipal elections. The Election Officer rejects it stating 'people in wheelchairs cannot physically visit constituencies'.",
+      "options": [
+          "Article 14 - Equality before Law",
+          "Article 15 - Discrimination",
+          "Article 21 - Dignity",
+          "Article 326 - Universal adult suffrage / Right to contest"
+      ]
+  },
+  {
+      "id": "1074",
+      "title": "The Fake Encounter",
+      "desc": "Police officers take an unarmed, handcuffed smuggling suspect into a heavily forested area at midnight, shoot him dead, and publicly claim he was 'resisting arrest'.",
+      "options": [
+          "Article 14 - Equality",
+          "Article 21 - Right to Life (Protection from extrajudicial killings)",
+          "Article 20 - Double jeopardy",
+          "Article 22 - Legal practitioner"
+      ]
+  },
+  {
+      "id": "1075",
+      "title": "The Shut Down Website",
+      "desc": "An investigative news blog frequently uncovers government scams. The IT Ministry permanently blocks the entire website in India without providing any legal reason or advance notice.",
+      "options": [
+          "Article 14 - Right to Equality",
+          "Article 19(1)(a) - Freedom of Speech & Expression (Press Freedom)",
+          "Article 21 - Privacy",
+          "Article 25 - Religion"
+      ]
+  },
+  {
+      "id": "1076",
+      "title": "The Indefinite Exile",
+      "desc": "A state police chief issues a 'district banishment' order against a vocal trade union leader, legally forbidding him from entering his own home district for 10 years without a trial.",
+      "options": [
+          "Article 14 - Equality",
+          "Article 19(1)(d) & (e) - Right to move freely and reside anywhere in India",
+          "Article 20 - Conviction protection",
+          "Article 25 - Religion"
+      ]
+  },
+  {
+      "id": "1077",
+      "title": "The Segregated Graveyard",
+      "desc": "A local municipal corporation maintains three public graveyards using taxpayer money, but officially designates the largest and cleanest one for 'upper castes only'.",
+      "options": [
+          "Article 14 - Right to Equality",
+          "Article 15 - Prohibition of Discrimination in Public Facilities",
+          "Article 17 - Abolition of Untouchability",
+          "Article 21 - Dignity in death"
+      ]
+  },
+  {
+      "id": "1078",
+      "title": "The Refused Religious Procession",
+      "desc": "A minority religious community seeks permission to hold an annual, peaceful street procession that they have held for 50 years. The mayor denies it because 'it makes traffic too slow'.",
+      "options": [
+          "Article 14 - Equality",
+          "Article 19 - Movement",
+          "Article 25 & 26 - Freedom to manage religious affairs and freely profess religion",
+          "Article 21 - Liberty"
+      ]
+  },
+  {
+      "id": "1079",
+      "title": "The Invasive CCTV Surveillance",
+      "desc": "A new city policy installs AI-powered facial recognition CCTVs directly pointing inside the open windows of private residential homes to 'monitor domestic violence'.",
+      "options": [
+          "Article 14 - Equality",
+          "Article 19 - Speech",
+          "Article 21 - Right to Privacy",
+          "Article 20 - Self incrimination"
+      ]
+  },
+  {
+      "id": "1080",
+      "title": "The Suspended Public Servant",
+      "desc": "A high-ranking Civil Servant is immediately suspended and stripped of his pension by the Chief Minister without a single written charge sheet or a disciplinary hearing.",
+      "options": [
+          "Article 14 - Arbitrariness",
+          "Article 311 - Protection of Civil Servants (No dismissal without inquiry)",
+          "Article 19 - Trade",
+          "Article 21 - Livelihood"
+      ]
+  },
+  {
+      "id": "1081",
+      "title": "The Arrested Standup Comic",
+      "desc": "A standup comedian is preemptively arrested by police before a highly anticipated show because a political group claimed his jokes *might* offend their religious sentiments.",
+      "options": [
+          "Article 14 - Equality",
+          "Article 19(1)(a) - Freedom of Speech and Expression",
+          "Article 21 - Right to Life",
+          "Article 25 - Religion"
+      ]
+  },
+  {
+      "id": "1082",
+      "title": "The Hazardous Matchbox Factory",
+      "desc": "During a surprise inspection, authorities find 40 young children, ages 8 to 11, working long hours packing toxic chemicals inside a poorly ventilated matchbox factory.",
+      "options": [
+          "Article 14 - Equality",
+          "Article 21 - Life",
+          "Article 24 - Prohibition of Employment of Children in Factories/Hazardous Work",
+          "Article 25 - Religion"
+      ]
+  },
+  {
+      "id": "1083",
+      "title": "The Compulsory Aadhaar Data",
+      "desc": "A private local supermarket refuses to sell essential groceries like rice and milk to an elderly citizen unless he first provides his biometric Aadhaar fingerprint scan to 'their private database'.",
+      "options": [
+          "Article 14 - Equality",
+          "Article 19 - Trade",
+          "Article 21 - Right to Privacy (Autonomy over biometrics vs private entities)",
+          "Article 25 - Religion"
+      ]
+  },
+  {
+      "id": "1084",
+      "title": "The Banned Inter-Caste Organization",
+      "desc": "A newly-formed NGO dedicated solely to promoting and supporting inter-caste marriages is officially banned by the state governor for 'disrupting traditional cultural peace'.",
+      "options": [
+          "Article 14 - Right to Equality",
+          "Article 19(1)(c) - Right to form associations or unions",
+          "Article 21 - Right to marry",
+          "Article 25 - Religion"
+      ]
+  },
+  {
+      "id": "1085",
+      "title": "The Rejected Transgender Candidate",
+      "desc": "A highly qualified transgender person applies for the Sub-Inspector police exam but is automatically disqualified because the application form only has binary 'Male/Female' gender options.",
+      "options": [
+          "Article 14 & 15 - Right to Equality & Non-Discrimination (Gender)",
+          "Article 19 - Profession",
+          "Article 21 - Dignity",
+          "Article 20 - Conviction protection"
+      ]
+  },
+  {
+      "id": "1086",
+      "title": "The Seized Foreign Exchange",
+      "desc": "Customs officials illegally seize a businessman's completely legitimate foreign currency earnings at the airport without issuing any receipt, pocketing the cash themselves.",
+      "options": [
+          "Article 14 - Arbitrariness",
+          "Article 19 - Trade",
+          "Article 21 - Liberty",
+          "Article 300A - Right to Property (Deprivation without authority of law)"
+      ]
+  },
+  {
+      "id": "1087",
+      "title": "The Uninformed Detainee",
+      "desc": "A man is arrested for a minor financial dispute. The police lock him in a holding cell for 48 hours and aggressively deny his repeated requests to let him call his lawyer.",
+      "options": [
+          "Article 14 - Equality",
+          "Article 20 - Self incrimination",
+          "Article 21 - Liberty",
+          "Article 22(1) - Right to be informed of grounds of arrest & consult legal practitioner"
+      ]
+  },
+  {
+      "id": "1088",
+      "title": "The Poisoned Riverside",
+      "desc": "A massive chemical plant continuously dumps untreated toxic sludge into the only river a village uses for drinking water. The state pollution board ignores all complaints.",
+      "options": [
+          "Article 14 - Equality",
+          "Article 19 - Business",
+          "Article 21 - Right to Life (Right to a clean environment and safe water)",
+          "Article 32 - Remedies"
+      ]
+  },
+  {
+      "id": "1089",
+      "title": "The Double Jeopardy Dismissal",
+      "desc": "A bank clerk is tried criminally for embezzlement and acquitted by the High Court. Later, the bank conducts its own internal disciplinary hearing for the exact same event and fires him.",
+      "options": [
+          "Article 14 - Equality",
+          "Article 20(2) - Protection against Double Jeopardy (Does not apply to departmental inquiries!)",
+          "Article 21 - Livelihood",
+          "Article 311 - Protection of civil servants"
+      ]
+  },
+  {
+      "id": "1090",
+      "title": "The Banned Minority School Exams",
+      "desc": "A state education board suddenly refuses to recognize the passing certificates of an established Christian minority high school, forcing all its 10th graders to fail the year.",
+      "options": [
+          "Article 14 - Equality",
+          "Article 21A - Education",
+          "Article 25 - Religion",
+          "Article 30(1) - Right of minorities to establish and administer educational institutions"
+      ]
+  },
+  {
+      "id": "1091",
+      "title": "The Forcibly Evicted Tribe",
+      "desc": "An indigenous tribal community is forcibly driven out of their ancestral forest land by logging corporations. The state fails to protect their traditional forest dwelling rights.",
+      "options": [
+          "Article 14 - Equality",
+          "Article 19(1)(e) - Right to reside and settle",
+          "Article 21 - Right to Livelihood and Dignity",
+          "Article 29 - Protection of minority cultural interests"
+      ]
+  },
+  {
+      "id": "1092",
+      "title": "The Censured Lawyer",
+      "desc": "A civil rights lawyer files a genuine Public Interest Litigation (PIL) against government corruption. Consequently, ruling party members brutally assault him outside the Supreme Court, and police refuse to register an FIR.",
+      "options": [
+          "Article 14 - Equality before law",
+          "Article 19 - Profession",
+          "Article 21 - Right to Life and Personal Liberty",
+          "Article 32 - Right to Constitutional Remedies (Access to Justice)"
+      ]
+  }
+]

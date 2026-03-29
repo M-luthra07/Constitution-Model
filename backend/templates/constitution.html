@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Constitution of India - Digital Reader</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary-gold: #D4AF37;
+            --primary-dark: #1a1a1a;
+            --secondary-dark: #2d2d2d;
+            --text-light: #f5f5f5;
+            --text-muted: #a0a0a0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--primary-dark);
+            color: var(--text-light);
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            height: 60px;
+            background-color: var(--secondary-dark);
+            border-bottom: 1px solid #333;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            z-index: 100;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .back-btn {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: color 0.2s;
+        }
+
+        .back-btn:hover {
+            color: var(--primary-gold);
+        }
+
+        h1 {
+            font-family: 'Merriweather', serif;
+            font-size: 1.2rem;
+            color: var(--primary-gold);
+        }
+
+        .header-controls {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .btn {
+            background: transparent;
+            border: 1px solid #444;
+            color: var(--text-light);
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+        }
+
+        .btn:hover {
+            border-color: var(--primary-gold);
+            color: var(--primary-gold);
+        }
+
+        .btn-primary {
+            background: var(--primary-gold);
+            border-color: var(--primary-gold);
+            color: var(--primary-dark);
+            font-weight: 600;
+        }
+
+        .btn-primary:hover {
+            background: #b5952f;
+            border-color: #b5952f;
+            color: var(--primary-dark);
+        }
+
+        #book-container {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Flipbook Styles */
+        .stf__wrapper {
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .page {
+            background-color: #fff;
+            box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            border-left: 1px solid #d0d0d0;
+            border-right: 1px solid #d0d0d0;
+        }
+
+        .page-content {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        canvas {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        /* Loader */
+        .loader {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: var(--primary-gold);
+            font-size: 1.2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 3px solid rgba(212, 175, 55, 0.3);
+            border-radius: 50%;
+            border-top-color: var(--primary-gold);
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Index Modal */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: var(--secondary-dark);
+            width: 90%;
+            max-width: 600px;
+            max-height: 80vh;
+            border-radius: 8px;
+            border: 1px solid #444;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .modal-header {
+            padding: 20px;
+            border-bottom: 1px solid #444;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-header h2 {
+            color: var(--primary-gold);
+            font-family: 'Merriweather', serif;
+        }
+
+        .close-modal {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .modal-body {
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .index-list {
+            list-style: none;
+        }
+
+        .index-item {
+            padding: 10px 0;
+            border-bottom: 1px solid #333;
+        }
+
+        .index-link {
+            color: var(--text-light);
+            text-decoration: none;
+            display: flex;
+            justify-content: space-between;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .index-link:hover {
+            color: var(--primary-gold);
+        }
+
+        .page-num {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .controls-bar {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(45, 45, 45, 0.9);
+            padding: 10px 20px;
+            border-radius: 30px;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            border: 1px solid #444;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .page-info {
+            font-variant-numeric: tabular-nums;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="header-left">
+            <a href="/" class="back-btn">← Home</a>
+            <h1>Constitution of India</h1>
+        </div>
+        <div class="header-controls">
+            <button class="btn" id="indexBtn">Table of Contents</button>
+        </div>
+    </header>
+
+    <div id="book-container">
+        <div class="loader" id="loader">
+            <div class="spinner"></div>
+            <span>Loading Document...</span>
+        </div>
+        <!-- The Flipbook will be injected here -->
+        <div id="flipbook" style="display:none;"></div>
+    </div>
+
+    <div class="controls-bar">
+        <button class="btn" id="prevBtn">Previous</button>
+        <span class="page-info">Page <span id="currentPage">1</span> of <span id="totalPages">--</span></span>
+        <button class="btn" id="nextBtn">Next</button>
+    </div>
+
+    <!-- Index Modal -->
+    <div class="modal-overlay" id="indexModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Table of Contents</h2>
+                <button class="close-modal" id="closeModal">×</button>
+            </div>
+            <div class="modal-body">
+                <ul class="index-list" id="indexList">
+                    <!-- Index items will be populated here -->
+                    <li class="index-item" style="text-align:center; color:#666;">Loading index...</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/page-flip/dist/js/page-flip.browser.js"></script>
+
+    <script>
+        // PDF.js worker
+        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+
+        const pdfUrl = '/constitution-pdf';
+        let pdfDoc = null;
+        let pageFlip = null;
+        const scale = 1.5; // Adjust for quality
+
+        const loader = document.getElementById('loader');
+        const flipbookEl = document.getElementById('flipbook');
+        const indexList = document.getElementById('indexList');
+        const currentPageEl = document.getElementById('currentPage');
+        const totalPagesEl = document.getElementById('totalPages');
+
+        // Initialize PageFlip
+        async function initBook() {
+            try {
+                const loadingTask = pdfjsLib.getDocument(pdfUrl);
+                pdfDoc = await loadingTask.promise;
+
+                totalPagesEl.textContent = pdfDoc.numPages;
+
+                // We need to render pages. 
+                // For performance with large PDFs, we might want to render on demand, 
+                // but page-flip works best with DOM elements.
+                // Let's create the DOM structure first.
+
+                // NOTE: Rendering ALL pages of a large PDF at once will crash the browser.
+                // We should implement a lazy loading mechanism or just render the first few.
+                // However, page-flip expects elements to exist.
+                // A better approach for large PDFs with page-flip is to use the 'images' mode or canvas mode,
+                // but let's try to create container divs for all pages and render canvas into them lazily.
+
+                flipbookEl.style.display = 'block';
+
+                // Create Cover Page
+                const coverDiv = document.createElement('div');
+                coverDiv.className = 'page';
+                coverDiv.dataset.density = 'hard'; // Hard cover
+                coverDiv.innerHTML = `
+                    <div class="page-content" style="background-color:#1a1a1a; display:flex; justify-content:center; align-items:center;">
+                        <img src="/static/cover.jpg" style="max-width:100%; max-height:100%; object-fit:contain; box-shadow: 5px 5px 15px rgba(0,0,0,0.5);">
+                    </div>
+                `;
+                flipbookEl.appendChild(coverDiv);
+
+                // Create PDF page elements
+                for (let i = 1; i <= pdfDoc.numPages; i++) {
+                    const pageDiv = document.createElement('div');
+                    pageDiv.className = 'page';
+                    pageDiv.dataset.density = 'soft'; // or hard
+
+                    const contentDiv = document.createElement('div');
+                    contentDiv.className = 'page-content';
+                    contentDiv.id = `page-container-${i}`;
+
+                    pageDiv.appendChild(contentDiv);
+                    flipbookEl.appendChild(pageDiv);
+                }
+
+                // Initialize PageFlip
+                pageFlip = new St.PageFlip(flipbookEl, {
+                    width: 550, // base width
+                    height: 800, // base height
+                    size: 'stretch',
+                    minWidth: 315,
+                    maxWidth: 1000,
+                    minHeight: 420,
+                    maxHeight: 1350,
+                    maxShadowOpacity: 0.5,
+                    showCover: true,
+                    mobileScrollSupport: false // disable mobile scroll to prevent interference
+                });
+
+                pageFlip.loadFromHTML(document.querySelectorAll('.page'));
+
+                loader.style.display = 'none';
+
+                // Event Listeners
+                pageFlip.on('flip', (e) => {
+                    // e.data is the page index (0-based)
+                    // Index 0 = Cover
+                    // Index 1 = PDF Page 1
+                    // Index 2 = PDF Page 2
+
+                    const currentIndex = e.data;
+
+                    // Update Page Info
+                    if (currentIndex === 0) {
+                        currentPageEl.textContent = "Cover";
+                    } else {
+                        currentPageEl.textContent = currentIndex;
+                    }
+
+                    // Render current and neighbors
+                    // We need to map Index -> PDF Page Num
+                    // PDF Page Num = Index
+
+                    renderPage(currentIndex);     // Current
+                    renderPage(currentIndex + 1); // Next
+                    renderPage(currentIndex - 1); // Prev
+                    renderPage(currentIndex + 2); // Next Next (for smooth flipping)
+                });
+
+                // Initial render
+                // Index 0 is cover (already rendered via HTML)
+                // Index 1 is PDF Page 1
+                renderPage(1);
+                renderPage(2);
+
+                loadOutline();
+
+            } catch (error) {
+                console.error('Error loading PDF:', error);
+                loader.innerHTML = `<span style="color:red">Error loading document: ${error.message}</span>`;
+            }
+        }
+
+        const renderedPages = new Set();
+
+        async function renderPage(pageNum) {
+            if (pageNum < 1 || pageNum > pdfDoc.numPages) return;
+            if (renderedPages.has(pageNum)) return;
+
+            const container = document.getElementById(`page-container-${pageNum}`);
+            if (!container) return;
+
+            try {
+                const page = await pdfDoc.getPage(pageNum);
+                const viewport = page.getViewport({ scale: scale });
+
+                const canvas = document.createElement('canvas');
+                const context = canvas.getContext('2d');
+                canvas.height = viewport.height;
+                canvas.width = viewport.width;
+
+                // Clear container (in case of re-render attempts)
+                container.innerHTML = '';
+                container.appendChild(canvas);
+
+                const renderContext = {
+                    canvasContext: context,
+                    viewport: viewport
+                };
+
+                await page.render(renderContext).promise;
+                renderedPages.add(pageNum);
+
+            } catch (err) {
+                console.error(`Error rendering page ${pageNum}:`, err);
+            }
+        }
+
+        async function loadOutline() {
+            try {
+                let outline = await pdfDoc.getOutline();
+                indexList.innerHTML = '';
+
+                // If PDF has no outline, try to fetch our generated one
+                if (!outline || outline.length === 0) {
+                    try {
+                        const response = await fetch('/static/toc.json');
+                        if (response.ok) {
+                            const tocData = await response.json();
+                            // Convert to format compatible with our loop
+                            outline = tocData.map(item => ({
+                                title: item.title,
+                                dest: null, // We handle page number directly
+                                pageNumber: item.page // Custom property
+                            }));
+                        }
+                    } catch (e) {
+                        console.log("Could not fetch static TOC", e);
+                    }
+                }
+
+                if (!outline || outline.length === 0) {
+                    indexList.innerHTML = '<li class="index-item">No table of contents found.</li>';
+                    return;
+                }
+
+                for (const item of outline) {
+                    const li = document.createElement('li');
+                    li.className = 'index-item';
+
+                    const a = document.createElement('a');
+                    a.className = 'index-link';
+                    a.innerHTML = `<span>${item.title}</span> <span class="page-num">${item.pageNumber || ''}</span>`;
+
+                    a.onclick = async () => {
+                        try {
+                            let pageIndex;
+                            if (item.pageNumber) {
+                                // PDF Page 1 is now at Index 1 (Index 0 is Cover)
+                                pageIndex = item.pageNumber;
+                            } else if (item.dest) {
+                                const dest = item.dest;
+                                const pdfPageIndex = await pdfDoc.getPageIndex(dest[0]);
+                                // pdfPageIndex is 0-based (0 = Page 1)
+                                // We need Flipbook Index. Page 1 is at Index 1.
+                                pageIndex = pdfPageIndex + 1;
+                            }
+
+                            if (pageIndex !== undefined) {
+                                pageFlip.flip(pageIndex);
+                                closeModal();
+                            }
+                        } catch (e) {
+                            console.error('Error navigating:', e);
+                        }
+                    };
+
+                    li.appendChild(a);
+                    indexList.appendChild(li);
+                }
+
+            } catch (err) {
+                console.error('Error loading outline:', err);
+                indexList.innerHTML = '<li class="index-item">Could not load index.</li>';
+            }
+        }
+
+        // UI Controls
+        document.getElementById('prevBtn').addEventListener('click', () => pageFlip.flipPrev());
+        document.getElementById('nextBtn').addEventListener('click', () => pageFlip.flipNext());
+
+        // Modal Controls
+        const modal = document.getElementById('indexModal');
+        const indexBtn = document.getElementById('indexBtn');
+        const closeBtn = document.getElementById('closeModal');
+
+        function openModal() { modal.classList.add('active'); }
+        function closeModal() { modal.classList.remove('active'); }
+
+        indexBtn.addEventListener('click', openModal);
+        closeBtn.addEventListener('click', closeModal);
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeModal();
+        });
+
+        // Keyboard Navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') {
+                pageFlip.flipPrev();
+            } else if (e.key === 'ArrowRight') {
+                pageFlip.flipNext();
+            }
+        });
+
+        // Start
+        initBook();
+
+    </script>
+</body>
+
+</html>

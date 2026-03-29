@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legal AI Voice Assistant | myConstitutionConnect</title>
+    <meta name="description" content="AI-powered voice assistant for Indian constitutional and legal queries." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Unified Page Header -->
+    <header class="page-header">
+        <div class="header-brand">
+            <span class="brand-icon">⚖️</span>
+            <div>
+                <div class="brand-name">myConstitutionConnect</div>
+                <div class="header-subtitle">Voice Legal Assistant</div>
+            </div>
+        </div>
+        <a href="http://localhost:5000" class="header-back">← Back to Portal</a>
+    </header>
+
+    <!-- Main Content -->
+    <main class="page-main">
+        <div class="container">
+            <h1>Legal AI Voice Assistant</h1>
+            <p class="page-desc">Speak your legal question and get AI-powered guidance based on the Indian Constitution. Click the button below to begin.</p>
+
+            <div id="status" class="status">Connecting to server...</div>
+
+            <button id="start-btn">Start Conversation</button>
+
+            <button id="record-btn" style="display:none;">🎤 Hold to Talk</button>
+
+            <div id="transcript" class="transcript"></div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="page-footer">
+        <p>© 2025 myConstitutionConnect — AI Legal Voice Service</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
