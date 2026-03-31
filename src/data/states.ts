@@ -5,11 +5,7 @@ export interface Law {
 
 export interface StateEntity {
     name: string;
-<<<<<<< HEAD
     type: string;
-=======
-    type: 'State' | 'Union Territory';
->>>>>>> e791816e79449b261549803ec19c7b28a5d8dd5a
     laws: Law[];
 }
 

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useMemo } from "react";
-import { Search, Filter, Phone } from "lucide-react";
+import { Search, Filter, Share2 } from "lucide-react";
 import { motion } from "framer-motion";
 
 interface Scheme {
@@ -166,9 +166,10 @@ export default function SchemesPage() {
 
   const filteredSchemes = useMemo(() => {
     return schemes.filter(scheme => {
-      const nameMatch = (lang === "hi" ? (scheme.hindi_name || scheme.name) : scheme.name)
-        .toLowerCase().includes(searchQuery.toLowerCase());
-      const sectorMatch = scheme.sector.toLowerCase().includes(searchQuery.toLowerCase());
+      const name = (lang === "hi" ? (scheme.hindi_name || scheme.name) : scheme.name) || "";
+      const sector = (typeof scheme.sector === "string" ? scheme.sector : "") || "";
+      const nameMatch = name.toLowerCase().includes(searchQuery.toLowerCase());
+      const sectorMatch = sector.toLowerCase().includes(searchQuery.toLowerCase());
       return nameMatch || sectorMatch;
     });
   }, [schemes, searchQuery, lang]);
@@ -374,7 +375,7 @@ export default function SchemesPage() {
           <div className="flex items-end">
             <button
               onClick={() => {
-                setFilters({ state: "", sector: "", gender: "", ageGroup: "", category: "", status: "" });
+                setFilters({ state: "", sector: "", ministry: "", gender: "", ageGroup: "", category: "", status: "" });
                 setSearchQuery("");
               }}
               className="w-full px-6 py-3.5 bg-slate-100 dark:bg-slate-800 rounded-xl hover:bg-slate-200 dark:hover:bg-slate-700 flex items-center justify-center gap-2 text-sm font-medium transition-colors"
@@ -462,19 +463,23 @@ export default function SchemesPage() {
                 >
                   {t.apply}
                 </a>
-                <a 
-                  href={scheme.helpline && scheme.helpline !== "N/A" ? `tel:${scheme.helpline.split('/')[0].trim()}` : "#"} 
-                  className="p-4 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 rounded-xl hover:text-amber-600 transition-colors"
-                  title={lang === "hi" ? "हेल्पलाइन पर कॉल करें" : "Call Helpline"}
-                  onClick={(e) => {
-                    if (!scheme.helpline || scheme.helpline === "N/A") {
-                      e.preventDefault();
-                      alert(lang === "hi" ? "हेल्पलाइन नंबर उपलब्ध नहीं है।" : "Helpline number not available.");
+                <button 
+                  className="p-4 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 rounded-xl hover:text-amber-600 hover:bg-amber-50 dark:hover:bg-amber-950/30 transition-colors"
+                  title={lang === "hi" ? "योजना साझा करें" : "Share Scheme"}
+                  onClick={async () => {
+                    const shareText = `${scheme.name}\n\n${scheme.description}\n\nEligibility: ${scheme.eligibility}\n\nApply: ${scheme.website}`;
+                    if (navigator.share) {
+                      try {
+                        await navigator.share({ title: scheme.name, text: shareText, url: scheme.website });
+                      } catch (err) { /* user cancelled */ }
+                    } else {
+                      await navigator.clipboard.writeText(shareText);
+                      alert(lang === "hi" ? "✅ योजना की जानकारी कॉपी हो गई!" : "✅ Scheme details copied to clipboard!");
                     }
                   }}
                 >
-                  <Phone className="w-5 h-5" />
-                </a>
+                  <Share2 className="w-5 h-5" />
+                </button>
               </div>
             </motion.div>
           ))}
