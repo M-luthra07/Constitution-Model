@@ -1,5 +1,6 @@
 # Python
 __pycache__/
+<<<<<<< HEAD
 *.py[cod]
 *$py.class
 *.so
@@ -62,3 +63,32 @@ voice bot/backend/audio_cache/
 # Data and large files (Optional: common to ignore raw PDFs or large JSON outputs)
 # 20240716890312078.pdf
 # National_Welfare_Master.json
+=======
+*.pyc
+*.pyo
+*.pyd
+*.env
+venv/
+env/
+
+# Flask
+instance/
+.webassets-cache
+
+# IDEs
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Bytecode
+*.py[cod]
+node_modules
+.next/
+backend/static/audio_cache/
+>>>>>>> e791816e79449b261549803ec19c7b28a5d8dd5a

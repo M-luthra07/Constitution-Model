@@ -43,6 +43,7 @@ export default function Home() {
                                 <Scale className="w-10 h-10 text-amber-400" />
                             </div>
                         </div>
+<<<<<<< HEAD
 <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight mb-6">
                             <span className="block text-white">Know Your Rights</span>
                             <span className="block text-amber-400 mt-2">State by State</span>
@@ -50,6 +51,12 @@ export default function Home() {
                         <a href="/schemes" className="inline-flex items-center px-8 py-4 bg-white dark:bg-slate-900 text-slate-900 dark:text-white rounded-full shadow-2xl border border-slate-200 dark:border-slate-700 hover:shadow-3xl transition-all mt-6">
                             <span className="font-semibold">📋 Explore Government Schemes →</span>
                         </a>
+=======
+                        <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight mb-6">
+                            <span className="block text-white">Know Your Rights</span>
+                            <span className="block text-amber-400 mt-2">State by State</span>
+                        </h1>
+>>>>>>> e791816e79449b261549803ec19c7b28a5d8dd5a
                         <p className="max-w-2xl mx-auto text-lg sm:text-xl text-slate-300 mb-10">
                             Explore the essential laws and legal provisions specific to every State and Union Territory of India.
                         </p>

@@ -16,6 +16,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
+<<<<<<< HEAD
             <body className={inter.className}>
                 <nav className="bg-white dark:bg-slate-900 shadow-sm border-b border-slate-200 dark:border-slate-800 sticky top-0 z-50">
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -48,6 +49,9 @@ export default function RootLayout({
                 </nav>
                 {children}
             </body>
+=======
+            <body className={inter.className}>{children}</body>
+>>>>>>> e791816e79449b261549803ec19c7b28a5d8dd5a
         </html>
     );
 }

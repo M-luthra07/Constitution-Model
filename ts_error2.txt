@@ -1,0 +1,4 @@
+src/data/states.ts(12,14): error TS2322: Type '{ name: string; type: string; laws: { title: string; description: string; }[]; }[]' is not assignable to type 'StateEntity[]'.
+  Type '{ name: string; type: string; laws: { title: string; description: string; }[]; }' is not assignable to type 'StateEntity'.
+    Types of property 'type' are incompatible.
+      Type 'string' is not assignable to type '"State" | "Union Territory"'.
