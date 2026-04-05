@@ -4,29 +4,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Constitution Guide</title>
+    <title>Constitution Flashcards – Fundamental Rights & Duties | Legal India</title>
+    <meta name="description" content="Interactive flashcards to learn Fundamental Rights (Articles 12-35) and Fundamental Duties (Article 51A) of the Indian Constitution.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div class="main-container">
+    <!-- Top Nav Bar -->
+    <header class="topbar">
+        <a href="http://localhost:5000/" class="back-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            Back to Home
+        </a>
+        <div class="site-title">
+            <span class="logo-icon">⚖️</span>
+            <span>Constitution Flashcards</span>
+        </div>
+        <div class="progress-wrap">
+            <span class="progress-label" id="progress-label">Select a section</span>
+        </div>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="hero-banner">
+        <div class="hero-content">
+            <div class="hero-badge">🇮🇳 Indian Constitution Study Tool</div>
+            <h1 class="hero-title">Master the <span class="gradient-text">Constitution</span></h1>
+            <p class="hero-sub">Click a section below to open flashcards. Tap any card to reveal the answer. Quiz yourself and ace your exams!</p>
+            <div class="hero-stats">
+                <div class="stat-pill">
+                    <span class="stat-num">6</span>
+                    <span class="stat-label">Fundamental Rights</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-pill">
+                    <span class="stat-num">11</span>
+                    <span class="stat-label">Fundamental Duties</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-pill">
+                    <span class="stat-num">17</span>
+                    <span class="stat-label">Total Cards</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-decoration">
+            <div class="deco-ring deco-ring-1"></div>
+            <div class="deco-ring deco-ring-2"></div>
+            <div class="deco-ring deco-ring-3"></div>
+        </div>
+    </section>
+
+    <!-- Main Shutter Container -->
+    <div class="main-container" id="main-container">
+
+        <!-- Fundamental Rights Shutter -->
         <div class="shutter" id="rights-shutter">
-            <h2>Fundamental Rights</h2>
+            <div class="shutter-bg rights-bg"></div>
+            <div class="shutter-overlay"></div>
+
+            <div class="shutter-label">
+                <div class="label-icon rights-icon">📜</div>
+                <h2>Fundamental Rights</h2>
+                <p class="label-sub">Articles 12–35 | Part III</p>
+                <div class="label-badge">6 Cards</div>
+                <div class="label-hint">Click to explore →</div>
+            </div>
+
+            <div class="close-btn" id="rights-close" title="Close">✕</div>
+
             <div class="flashcard-container" id="rights-flashcards">
+                <div class="section-header">
+                    <div class="section-icon rights-icon-big">📜</div>
+                    <div>
+                        <h3 class="section-title">Fundamental Rights</h3>
+                        <p class="section-desc">Articles 12 – 35, Part III of the Indian Constitution</p>
+                    </div>
+                </div>
+                <div class="cards-grid" id="rights-grid"></div>
             </div>
         </div>
 
+        <!-- Divider -->
+        <div class="shutter-divider">
+            <span>OR</span>
+        </div>
+
+        <!-- Fundamental Duties Shutter -->
         <div class="shutter" id="duties-shutter">
-            <h2>Fundamental Duties</h2>
+            <div class="shutter-bg duties-bg"></div>
+            <div class="shutter-overlay"></div>
+
+            <div class="shutter-label">
+                <div class="label-icon duties-icon">🛡️</div>
+                <h2>Fundamental Duties</h2>
+                <p class="label-sub">Article 51A | Part IVA</p>
+                <div class="label-badge">11 Cards</div>
+                <div class="label-hint">Click to explore →</div>
+            </div>
+
+            <div class="close-btn" id="duties-close" title="Close">✕</div>
+
             <div class="flashcard-container" id="duties-flashcards">
+                <div class="section-header">
+                    <div class="section-icon duties-icon-big">🛡️</div>
+                    <div>
+                        <h3 class="section-title">Fundamental Duties</h3>
+                        <p class="section-desc">Article 51A, Part IVA – Added by 42nd Amendment (1976)</p>
+                    </div>
+                </div>
+                <div class="cards-grid" id="duties-grid"></div>
             </div>
         </div>
+
     </div>
+
+    <!-- Progress Toast -->
+    <div class="progress-toast" id="progress-toast">
+        <span id="toast-text">0 / 0 cards flipped</span>
+    </div>
+
     <script src="script.js"></script>
 </body>
 
 </html>
-```eof

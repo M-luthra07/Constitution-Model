@@ -273,6 +273,8 @@
             font-style: italic;
         }
 
+        @keyframes blink { 50% { opacity: 0; } }
+
         @media (max-width: 768px) {
             .container { grid-template-columns: 1fr; }
             .rights-grid { grid-template-columns: 1fr; }
@@ -378,6 +380,36 @@
             });
         }
 
+        let audioCtx = null;
+        function playGavelSound() {
+            try {
+                if (!audioCtx) {
+                    audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+                }
+                
+                // Resume context if it was suspended (browser policy)
+                if (audioCtx.state === 'suspended') {
+                    audioCtx.resume();
+                }
+
+                function hit(timeOffset) {
+                    const osc = audioCtx.createOscillator();
+                    const gainNode = audioCtx.createGain();
+                    osc.type = 'square';
+                    osc.connect(gainNode);
+                    gainNode.connect(audioCtx.destination);
+                    osc.frequency.setValueAtTime(300, audioCtx.currentTime + timeOffset);
+                    osc.frequency.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + timeOffset + 0.1);
+                    gainNode.gain.setValueAtTime(1, audioCtx.currentTime + timeOffset);
+                    gainNode.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + timeOffset + 0.05);
+                    osc.start(audioCtx.currentTime + timeOffset);
+                    osc.stop(audioCtx.currentTime + timeOffset + 0.1);
+                }
+                hit(0);
+                hit(0.25);
+            } catch(e) { console.log("Audio API error:", e); }
+        }
+
         async function presentCase() {
             if (!selectedRight) {
                 alert("You must select a Constitutional Right to base your argument upon!");
@@ -405,8 +437,19 @@
                 const data = await response.json();
                 
                 if (data.verdict) {
-                    document.getElementById('verdictText').innerHTML = data.verdict;
+                    const nextBtn = document.querySelector('.next-case-btn');
+                    nextBtn.style.display = 'none'; // hide until typing finished
+
+                    document.getElementById('verdictText').innerHTML = "";
                     document.getElementById('verdictModal').classList.add('active');
+                    
+                    // Drama sequence: BANG BANG -> Wait -> Show Instant
+                    playGavelSound();
+                    await new Promise(r => setTimeout(r, 600));
+                    
+                    document.getElementById('verdictText').innerHTML = data.verdict;
+                    
+                    nextBtn.style.display = 'inline-block';
                 } else {
                     alert('The judge refused to hear the case: ' + data.error);
                 }

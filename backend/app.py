@@ -56,6 +56,30 @@ def ocr():
 def read():
     return render_template("constitution.html")
 
+@app.route("/bibliography")
+def bibliography():
+    return render_template("bibliography.html")
+
+@app.route("/dictionary")
+def dictionary():
+    return render_template("dictionary.html")
+
+@app.route("/timeline")
+def timeline():
+    return render_template("timeline.html")
+
+@app.route("/api/legal-knowledge")
+def get_legal_knowledge():
+    """Serves the latest legal cases and dictionary terms from the JSON database."""
+    try:
+        json_path = os.path.join(app.static_folder, "legal_knowledge.json")
+        if os.path.exists(json_path):
+            with open(json_path, "r", encoding="utf-8") as f:
+                return jsonify(json.load(f))
+        return jsonify({"cases": [], "dictionary": []})
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
 @app.route("/flashcards/")
 @app.route("/flashcards/<path:path>")
 def flashcards(path="index.html"):
@@ -214,6 +238,66 @@ def sync_schemes():
         return jsonify({'status': 'success', 'added': added_count, 'message': result.stdout})
     except Exception as e:
         return jsonify({'error': str(e)}), 500
+
+@app.route("/rti")
+def rti_page():
+    return render_template("rti.html")
+
+@app.route("/api/generate-rti", methods=["POST"])
+def generate_rti():
+    data = request.json
+    user_prompt = data.get("prompt", "").strip()
+    state = data.get("state", "India").strip()
+    city = data.get("city", "").strip()
+    
+    if not user_prompt:
+        return jsonify({"error": "Prompt is required"}), 400
+
+    system_inst = f"""You are an expert constitutional lawyer and Indian RTI (Right to Information) activist.
+Given a user's request for information from the region: {city}, {state}, you must draft a formal, ready-to-use RTI application.
+Crucially, you must identify the most likely specific Government Department, Municipal Corporation (e.g. BMC for Mumbai, RMC for Ranchi), or Council responsible for the matter in {city}, {state}.
+Format it clearly with:
+1. The likely Public Information Officer (PIO) and the EXACT Department/Organization Name for {city}, {state}.
+2. Subject line.
+3. A numbered list of specific, sharp questions to ask the government based on the user's input.
+4. The standard declaration of citizenship and fee payment.
+Keep it strictly to the formal RTI draft. Do not include introductory/outro chatter."""
+
+    try:
+        # Create a new local model instance with the specific instruction
+        rti_model = genai.GenerativeModel("gemini-2.5-flash", system_instruction=system_inst)
+        full_query = f"User Location: {city}, {state}\nUser Request: {user_prompt}"
+        response = rti_model.generate_content(full_query)
+        return jsonify({"draft": response.text, "is_mock": False})
+    except Exception as e:
+        # Fallback if API key is invalid or quota exceeded
+        mock_draft = f"""[MOCK DRAFT / TEMPLATE - API UNAVAILABLE]
+
+To,
+The Central Public Information Officer (CPIO),
+[Appropriate Government Department, E.g., Municipal Corporation/Ministry]
+[City, State, PIN Code]
+
+Subject: Request for Information under the Right to Information Act, 2005
+
+Sir/Madam,
+
+Please provide the following information with respect to my following query: 
+"{user_prompt}"
+
+1. Please provide a certified copy of all documents, orders, and budget approvals related to this matter.
+2. Please provide the names and designations of the officers responsible for this specific matter.
+3. If the work is incomplete or pending, please state the recorded reasons for the delay as per official files.
+4. Please provide details of any actions taken on this matter so far.
+
+I declare that I am a citizen of India. I have attached the requisite RTI fee of Rs. 10 via Postal Order / Online Payment.
+
+Yours faithfully,
+[Your Name]
+[Your Address]
+[Your Contact Number]
+[Date]"""
+        return jsonify({"draft": mock_draft, "is_mock": True})
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5000, debug=True)

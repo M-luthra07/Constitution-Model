@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useMemo } from "react";
-import { Search, Filter, Share2 } from "lucide-react";
+import { Search, Filter, Share2, Heart } from "lucide-react";
 import { motion } from "framer-motion";
 
 interface Scheme {
@@ -112,6 +112,8 @@ export default function SchemesPage() {
   const [loading, setLoading] = useState(true);
   const [lang, setLang] = useState<"en" | "hi">("en");
   const [searchQuery, setSearchQuery] = useState("");
+  const [savedSchemeIds, setSavedSchemeIds] = useState<string[]>([]);
+  const [showOnlySaved, setShowOnlySaved] = useState(false);
   const [filters, setFilters] = useState({
     state: "",
     sector: "",
@@ -125,6 +127,21 @@ export default function SchemesPage() {
   const [syncing, setSyncing] = useState(false);
 
   const t = translations[lang];
+
+  // Load saved schemes from localstorage on mount
+  useEffect(() => {
+    const saved = localStorage.getItem("savedSchemasFavs");
+    if (saved) setSavedSchemeIds(JSON.parse(saved));
+  }, []);
+
+  const toggleSave = (id: string, e: React.MouseEvent) => {
+    e.preventDefault();
+    setSavedSchemeIds(prev => {
+      const next = prev.includes(id) ? prev.filter(x => x !== id) : [...prev, id];
+      localStorage.setItem("savedSchemasFavs", JSON.stringify(next));
+      return next;
+    });
+  };
 
   // Fetch schemes
   useEffect(() => {
@@ -166,13 +183,14 @@ export default function SchemesPage() {
 
   const filteredSchemes = useMemo(() => {
     return schemes.filter(scheme => {
+      if (showOnlySaved && !savedSchemeIds.includes(scheme.id)) return false;
       const name = (lang === "hi" ? (scheme.hindi_name || scheme.name) : scheme.name) || "";
       const sector = (typeof scheme.sector === "string" ? scheme.sector : "") || "";
       const nameMatch = name.toLowerCase().includes(searchQuery.toLowerCase());
       const sectorMatch = sector.toLowerCase().includes(searchQuery.toLowerCase());
       return nameMatch || sectorMatch;
     });
-  }, [schemes, searchQuery, lang]);
+  }, [schemes, searchQuery, lang, showOnlySaved, savedSchemeIds]);
 
   if (loading && schemes.length === 0) {
     return (
@@ -215,19 +233,27 @@ export default function SchemesPage() {
           </motion.div>
 
           <div className="flex flex-col items-end gap-3 relative z-30">
-            <div className="flex bg-slate-800 p-1 rounded-xl shadow-inner">
-              <button 
-                onClick={() => setLang("en")}
-                className={`px-4 py-2 rounded-lg text-sm font-bold transition-all ${lang === "en" ? "bg-amber-500 text-white shadow-lg" : "text-slate-400 hover:text-white"}`}
+            <div className="flex gap-2 sm:gap-3">
+              <a 
+                href="http://localhost:5000/" 
+                className="px-4 py-2 bg-slate-800 border border-slate-700 text-slate-300 hover:text-white hover:bg-slate-700 rounded-xl text-sm font-bold flex items-center transition-all shadow-inner"
               >
-                English
-              </button>
-              <button 
-                onClick={() => setLang("hi")}
-                className={`px-4 py-2 rounded-lg text-sm font-bold transition-all ${lang === "hi" ? "bg-amber-500 text-white shadow-lg" : "text-slate-400 hover:text-white"}`}
-              >
-                हिन्दी
-              </button>
+                🏠 {lang === "hi" ? "मुख्य पृष्ठ" : "Back to Home"}
+              </a>
+              <div className="flex bg-slate-800 p-1 rounded-xl shadow-inner">
+                <button 
+                  onClick={() => setLang("en")}
+                  className={`px-4 py-2 rounded-lg text-sm font-bold transition-all ${lang === "en" ? "bg-amber-500 text-white shadow-lg" : "text-slate-400 hover:text-white"}`}
+                >
+                  English
+                </button>
+                <button 
+                  onClick={() => setLang("hi")}
+                  className={`px-4 py-2 rounded-lg text-sm font-bold transition-all ${lang === "hi" ? "bg-amber-500 text-white shadow-lg" : "text-slate-400 hover:text-white"}`}
+                >
+                  हिन्दी
+                </button>
+              </div>
             </div>
             
             <button 
@@ -247,19 +273,28 @@ export default function SchemesPage() {
       </div>
 
       <div className="max-w-7xl mx-auto px-8 -mt-12 relative z-20 pb-20">
-        {/* Search Bar */}
-        <div className="relative mb-8 group max-w-2xl">
-          <div className="absolute inset-0 bg-amber-400/20 rounded-2xl blur-lg opacity-0 group-hover:opacity-100 transition-all" />
-          <div className="relative flex items-center bg-white dark:bg-slate-900 rounded-2xl shadow-xl border border-slate-200 dark:border-slate-700 overflow-hidden">
-            <Search className="w-6 h-6 text-slate-400 ml-6" />
-            <input
-              type="text"
-              placeholder={t.searchPlaceholder}
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full py-5 px-4 bg-transparent text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none text-lg"
-            />
+        {/* Search Bar & Saved Toggle */}
+        <div className="flex flex-col sm:flex-row gap-4 mb-8 max-w-3xl">
+          <div className="relative group flex-grow">
+            <div className="absolute inset-0 bg-amber-400/20 rounded-2xl blur-lg opacity-0 group-hover:opacity-100 transition-all" />
+            <div className="relative flex items-center bg-white dark:bg-slate-900 rounded-2xl shadow-xl border border-slate-200 dark:border-slate-700 overflow-hidden">
+              <Search className="w-6 h-6 text-slate-400 ml-6 shrink-0" />
+              <input
+                type="text"
+                placeholder={t.searchPlaceholder}
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="w-full py-5 px-4 bg-transparent text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none text-lg"
+              />
+            </div>
           </div>
+          <button 
+            onClick={() => setShowOnlySaved(!showOnlySaved)}
+            className={`px-6 py-5 rounded-2xl font-bold flex items-center justify-center gap-2 transition-all shadow-xl border overflow-hidden whitespace-nowrap ${showOnlySaved ? 'bg-amber-500 text-white border-amber-400' : 'bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 border-slate-200 dark:border-slate-700 hover:border-amber-400 dark:hover:border-amber-600'}`}
+          >
+            <Heart className={`w-5 h-5 ${showOnlySaved ? 'fill-current text-white' : 'text-amber-500'}`} />
+            {lang === 'hi' ? 'सेव की गई योजनाएं' : 'Saved Schemes'}
+          </button>
         </div>
 
         {/* Filters Grid */}
@@ -395,8 +430,15 @@ export default function SchemesPage() {
               animate={{ opacity: 1, y: 0 }}
               className="group bg-white dark:bg-slate-900 rounded-[2rem] p-8 border border-slate-200 dark:border-slate-700 hover:shadow-2xl hover:border-amber-300 dark:hover:border-amber-700 transition-all duration-500 relative flex flex-col h-full"
             >
-              <div className="flex items-start justify-between mb-4">
-                <div className="flex flex-col">
+              <div className="flex items-start justify-between mb-4 relative z-10">
+                <button 
+                  onClick={(e) => toggleSave(scheme.id, e)}
+                  title={lang === "hi" ? "योजना सेव करें" : "Save Scheme"}
+                  className="absolute -top-4 -right-4 p-3 rounded-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:bg-amber-50 dark:hover:bg-slate-700 transition-colors z-20 shadow-lg"
+                >
+                  <Heart className={`w-5 h-5 transition-all ${savedSchemeIds.includes(scheme.id) ? 'fill-amber-500 text-amber-500 scale-110' : 'text-slate-400 hover:text-amber-500'}`} />
+                </button>
+                <div className="flex flex-col pr-8">
                   <div className="flex gap-2 mb-3">
                     <span className="px-3 py-1 bg-amber-50 dark:bg-amber-950/30 text-amber-700 dark:text-amber-400 text-[10px] font-bold uppercase tracking-wider rounded-lg border border-amber-200/50 dark:border-amber-800/30">
                       {scheme.state}

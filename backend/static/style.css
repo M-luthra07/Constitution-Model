@@ -318,38 +318,57 @@ img { display: block; max-width: 100%; }
 /* ============================================================
    KNOWLEDGE CENTER
    ============================================================ */
-.knowledge-section { padding: 100px 0; background: var(--cream); position: relative; }
+.knowledge-section { padding: 120px 0; background: var(--cream); position: relative; }
 .knowledge-section::before {
   content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
   background: linear-gradient(90deg, transparent, rgba(212,175,55,0.3), transparent);
 }
-.knowledge-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
+.knowledge-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px; }
 .kcard {
-  background: var(--surface); border: 1px solid var(--border-sub);
-  border-radius: var(--r-lg); padding: 32px 28px; position: relative;
-  overflow: hidden; transition: all 0.35s ease; cursor: default;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 24px; padding: 40px 32px; position: relative;
+  overflow: hidden; transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  display: flex; flex-direction: column; align-items: flex-start;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.03);
 }
-.kcard::after {
-  content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
-  background: var(--card-accent); transform: scaleX(0); transform-origin: left;
-  transition: transform 0.35s ease;
+.kcard::before {
+  content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+  background: radial-gradient(circle at top right, var(--card-accent), transparent 60%);
+  opacity: 0; transition: opacity 0.4s ease; z-index: 0;
 }
-.kcard:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); }
-.kcard:hover::after { transform: scaleX(1); }
+.kcard:hover { 
+  transform: translateY(-10px); 
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+  border-color: var(--card-accent);
+}
+.kcard:hover::before { opacity: 0.05; }
+
 .kcard-icon-wrap {
-  width: 56px; height: 56px; border-radius: 14px;
+  width: 64px; height: 64px; border-radius: 18px;
   display: flex; align-items: center; justify-content: center;
-  font-size: 1.8rem; margin-bottom: 20px;
+  font-size: 2rem; margin-bottom: 24px; position: relative; z-index: 1;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.05);
 }
-.kcard h3 { font-family: var(--font-h); font-size: 1.05rem; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
-.kcard p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 20px; }
+.kcard h3 { 
+  font-family: var(--font-h); font-size: 1.25rem; font-weight: 800; 
+  color: var(--navy); margin-bottom: 12px; position: relative; z-index: 1;
+}
+.kcard p { 
+  font-size: 0.95rem; color: var(--text-muted); line-height: 1.8; 
+  margin-bottom: 28px; position: relative; z-index: 1; min-height: 54px;
+}
 .kcard-link {
-  font-size: 0.85rem; font-weight: 700; color: var(--gold-dim);
-  display: inline-flex; align-items: center; gap: 6px; transition: color var(--t), gap var(--t);
+  font-size: 0.9rem; font-weight: 700; color: var(--navy);
+  display: inline-flex; align-items: center; gap: 8px; 
+  transition: all 0.3s ease; position: relative; z-index: 1;
+  padding: 8px 16px; background: rgba(0,0,0,0.04); border-radius: 10px;
 }
-.kcard-link span { transition: transform var(--t); }
-.kcard-link:hover { color: var(--gold); }
-.kcard-link:hover span { transform: translateX(4px); }
+.kcard-link span { display: inline-block; transition: transform 0.3s ease; }
+.kcard-link:hover { background: var(--card-accent); color: white; }
+.kcard-link:hover span { transform: translateX(5px); }
 
 /* ============================================================
    TOOLS / FEATURES SECTION

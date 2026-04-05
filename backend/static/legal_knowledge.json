@@ -1,0 +1,1126 @@
+{
+  "cases": [
+    {
+      "id": "CASE_RANDOM",
+      "name": "I.R. Coelho (Dead) By LRs v. State of Tamil Nadu",
+      "year": 2007,
+      "subtitle": "Basic Structure Doctrine and Ninth Schedule",
+      "story": "Post-Kesavananda Bharati, the Ninth Schedule of the Constitution, which protects laws from judicial review, became a point of contention. Several land reform laws and other statutes were placed in it, ostensibly to shield them from challenges based on fundamental rights. The central question arose whether laws inserted into the Ninth Schedule *after* April 24, 1973 (the date of the Kesavananda Bharati judgment) could still be subjected to judicial review on the grounds that they violated the 'basic structure' of the Constitution.",
+      "conflict": "The core constitutional conflict was whether the 'basic structure' doctrine, laid down in Kesavananda Bharati, would apply to laws placed under the Ninth Schedule, especially those inserted post-April 24, 1973, thereby allowing judicial review of such laws despite the protective cover of the Ninth Schedule.",
+      "wisdom": "The Supreme Court, in a unanimous verdict, reaffirmed that laws placed in the Ninth Schedule are not immune from judicial review if they violate the 'basic structure' of the Constitution. It held that any law added to the Ninth Schedule after April 24, 1973, would be open to challenge on the ground of violating fundamental rights, which form part of the basic structure. This landmark ruling ensured that the Ninth Schedule could not be used as a blanket to nullify fundamental rights or destroy the basic tenets of the Constitution, reinforcing judicial supremacy in protecting the Constitution's core identity.",
+      "color": "#f8fafc"
+    },
+    {
+      "id": "CASE_ANURADHA_BHASIN_2020",
+      "name": "Anuradha Bhasin v. Union of India",
+      "year": 2020,
+      "subtitle": "Right to Internet Access as a Fundamental Right",
+      "story": "Following the abrogation of Article 370 in August 2019, the Jammu and Kashmir government imposed widespread communication restrictions, including indefinite internet shutdowns and mobile service suspensions. Journalist Anuradha Bhasin and other petitioners challenged these restrictions, arguing they violated fundamental rights guaranteed under the Indian Constitution.",
+      "conflict": "The core constitutional conflict was whether indefinite internet shutdowns and communication restrictions violated the fundamental rights to freedom of speech and expression (Article 19(1)(a)) and freedom to practice any profession or carry on any occupation, trade or business (Article 19(1)(g)), and if such restrictions met the constitutional tests of proportionality and necessity under Article 19(2) and (6).",
+      "wisdom": "The Supreme Court held that the freedom of speech and expression and freedom to carry on trade or business over the internet are constitutionally protected rights under Article 19(1)(a) and Article 19(1)(g) respectively. It ruled that any restriction on these rights must be temporary, limited, necessary, proportionate, and subject to judicial review. The Court directed the government to review all orders imposing restrictions within a week, emphasizing that indefinite internet shutdowns are impermissible and must be justified under a strict standard of necessity and proportionality.",
+      "color": "#f8fafc"
+    },
+    {
+      "id": "CASE_COELHO_07",
+      "name": "I.R. Coelho v. State of Tamil Nadu",
+      "year": 2007,
+      "subtitle": "Ninth Schedule and Basic Structure Doctrine",
+      "story": "The Ninth Schedule of the Indian Constitution was added to protect certain laws from judicial review, especially land reform laws, by placing them beyond challenge on grounds of violating fundamental rights. Over time, various laws, some unrelated to land reform, were added to this schedule, raising questions about whether this shield could undermine the basic structure of the Constitution.",
+      "conflict": "The central conflict was whether laws placed under the Ninth Schedule, after April 24, 1973 (the date of the Kesavananda Bharati judgment), could be subjected to judicial review on the grounds that they violated the basic structure of the Constitution, specifically fundamental rights.",
+      "wisdom": "The Supreme Court unanimously held that laws placed in the Ninth Schedule after April 24, 1973, are not immune from judicial review. They can be challenged on the ground of violating the basic structure of the Constitution if they abrogate or damage the fundamental rights or any other basic feature of the Constitution. This judgment reaffirmed the supremacy of the Basic Structure doctrine and limited the legislative power to immunize laws from judicial scrutiny.",
+      "color": "#f8fafc"
+    },
+    {
+      "id": "CASE_RANDOM",
+      "name": "Sarala Mudgal v. Union of India",
+      "year": 1995,
+      "subtitle": "Bigamy, Conversion, Uniform Civil Code",
+      "story": "Several Hindu women petitioned the Supreme Court after their husbands converted to Islam solely to marry a second wife without divorcing their first wife, taking advantage of personal laws which allow Muslim men to have up to four wives. This practice left the first wives without legal recourse under the Hindu Marriage Act.",
+      "conflict": "The core constitutional conflict was whether a Hindu marriage solemnized under the Hindu Marriage Act, 1955, could be dissolved by merely converting to Islam and solemnizing a second marriage, without legally divorcing the first spouse. The case also implicitly addressed the constitutional directive for a Uniform Civil Code.",
+      "wisdom": "The Supreme Court held that a Hindu marriage, even after conversion of one of the spouses to Islam, could only be dissolved under the provisions of the Hindu Marriage Act, 1955. A second marriage by a Hindu husband after converting to Islam, without lawfully dissolving the first marriage, was declared illegal and constituted bigamy under Section 494 of the Indian Penal Code. The Court emphasized that such a conversion was a fraud on the law and reiterated the need for the Parliament to enact a Uniform Civil Code as mandated by Article 44 of the Constitution.",
+      "color": "#f8fafc"
+    },
+    {
+      "id": "CASE_RANDOM",
+      "name": "Common Cause (A Regd. Society) v. Union of India",
+      "year": 2018,
+      "subtitle": "Right to die with dignity, passive euthanasia, living will",
+      "story": "A non-governmental organization, Common Cause, filed a petition seeking the recognition of the 'right to die with dignity' as a part of the fundamental right to life under Article 21 of the Indian Constitution. Specifically, it sought validation for passive euthanasia and the execution of advance medical directives (living wills) for individuals with terminal illnesses who wished to refuse medical treatment to prolong their suffering.",
+      "conflict": "Does the 'right to life' under Article 21 encompass the 'right to die with dignity'? Can a person execute an advance medical directive (living will) to refuse medical treatment in anticipation of a terminal illness or a persistent vegetative state?",
+      "wisdom": "The Supreme Court recognized the right to die with dignity as an intrinsic part of the right to life under Article 21, thereby allowing passive euthanasia under strict guidelines. It validated the concept of 'living wills' or advance medical directives, empowering individuals to refuse medical treatment in the future if they reach an irreversible stage of terminal illness. This landmark judgment provided a legal framework for end-of-life decisions, balancing individual autonomy with the state's interest in preserving life, and laid down detailed procedures for medical boards and courts to follow for approval of passive euthanasia.",
+      "color": "#f8fafc"
+    },
+    {
+      "id": "CASE_RANDOM",
+      "name": "Shreya Singhal v. Union of India",
+      "year": 2015,
+      "subtitle": "Freedom of Speech and Expression Online",
+      "story": "The case arose from arrests made under Section 66A of the Information Technology Act, 2000, for posting allegedly offensive or annoying content online. Instances like the arrest of two women for protesting against a bandh on Facebook after the death of Shiv Sena chief Bal Thackeray sparked widespread public outrage, highlighting the draconian and vague nature of the section.",
+      "conflict": "The core constitutional conflict was whether Section 66A of the Information Technology Act, 2000, violated the fundamental right to freedom of speech and expression guaranteed under Article 19(1)(a) of the Indian Constitution, and whether its restrictions could be justified under Article 19(2).",
+      "wisdom": "The Supreme Court unequivocally held that Section 66A of the IT Act was unconstitutional, vague, and overbroad, thus violating Article 19(1)(a). The Court drew a crucial distinction between 'discussion,' 'advocacy,' and 'incitement,' clarifying that only incitement could be reasonably restricted under Article 19(2). This landmark judgment significantly bolstered free speech rights in the digital age and clarified the permissible limits of state control over online content in India.",
+      "color": "#e0f2f7"
+    },
+    {
+      "id": "CASE_2024_04",
+      "name": "Property Owners’ Association & Ors. v. State of Maharashtra & Ors.",
+      "year": 2024,
+      "subtitle": "The Material Resources Doctrine",
+      "story": "This historic nine-judge bench case examined whether the state can take over private property by labeling it as a 'material resource of the community' for the common good.",
+      "conflict": "The legal dispute focused on Article 39(b) of the Constitution and whether it allows the government to treat all private property as communal resources for redistribution.",
+      "wisdom": "The Court clarified that not all private property is a community resource, ruling that the state must prove the resource is of a public nature to qualify under Article 39(b).",
+      "color": "#eff6ff"
+    },
+    {
+      "id": "CASE_2024_03",
+      "name": "Sita Soren v. Union of India",
+      "year": 2024,
+      "subtitle": "The Legislative Bribery Overrule",
+      "story": "A member of the Legislative Assembly was accused of taking a bribe to vote for a specific candidate in the Rajya Sabha elections but claimed immunity from prosecution.",
+      "conflict": "The conflict centered on whether constitutional immunity under Articles 105 and 194 extends to criminal acts like bribery that are committed in relation to legislative functions.",
+      "wisdom": "A seven-judge bench held that bribery is not protected by legislative privilege as it is not essential to the casting of a vote or the discharge of legislative duties.",
+      "color": "#fffbeb"
+    },
+    {
+      "id": "CASE_2024_02",
+      "name": "Association for Democratic Reforms & Anr. v. Union of India & Ors.",
+      "year": 2024,
+      "subtitle": "The Electoral Bond Verdict",
+      "story": "Petitioners challenged a government scheme that allowed individuals and corporations to buy bonds from a state bank and donate them anonymously to political parties.",
+      "conflict": "The case pitted the fundamental right of voters to know the source of political funding against the state's argument for donor privacy and curbing black money.",
+      "wisdom": "The Supreme Court struck down the scheme as unconstitutional, holding that anonymous political funding violates Article 19(1)(a) regarding the voter's right to information.",
+      "color": "#f0fdf4"
+    },
+    {
+      "id": "CASE_2024_01",
+      "name": "Mineral Area Development Authority v. M/S Steel Authority of India & Ors.",
+      "year": 2024,
+      "subtitle": "The Mineral Taxation Authority",
+      "story": "A nine-judge Constitution Bench revisited the decades-old legal debate regarding whether the royalty paid to the government by mining leaseholders is a tax or a contractual payment.",
+      "conflict": "The legal clash involved the interpretation of the Mines and Minerals (Development and Regulation) Act versus the sovereign powers of State Governments to tax mineral rights.",
+      "wisdom": "The Court ruled that royalty is not a tax and that States possess the legislative competence to tax mineral-bearing lands, overturning the 1989 India Cement precedent.",
+      "color": "#fdf2f2"
+    },
+    {
+      "id": "CASE_1973_01",
+      "name": "Kesavananda Bharati v. State of Kerala",
+      "year": 1973,
+      "subtitle": "The Basic Structure Doctrine.",
+      "story": "Kesavananda Bharati, the head of a religious math, challenged the Kerala government's attempt to take over his land under land reform laws. The case turned into a giant battle about whether Parliament could change any part of the Constitution.",
+      "conflict": "The Government believed Parliament had supreme power to amend or even rewrite the Constitution. Citizens feared this would allow the government to remove fundamental rights entirely.",
+      "wisdom": "A 13-judge bench decided that Parliament could amend the Constitution, but it could NOT touch its 'Basic Structure'—like democracy and judicial review. This saved the soul of the Indian Constitution.",
+      "color": "#eef2ff"
+    },
+    {
+      "id": "CASE_2017_01",
+      "name": "Puttaswamy v. Union of India",
+      "year": 2017,
+      "subtitle": "The Right to Privacy Case.",
+      "story": "A retired judge challenged the mandatory nature of Aadhaar biometrics. He claimed that sharing such personal data with the state without strong laws was a violation of his identity.",
+      "conflict": "The Government argued that Privacy was NOT a fundamental right explicitly, while citizens argued it was an inherent part of the Right to Life (Article 21).",
+      "wisdom": "The Supreme Court declared Privacy as a Fundamental Right. It established that 'Privacy is the heart of liberty.'",
+      "color": "#fdf2f2"
+    },
+    {
+      "id": "CASE_2017_02",
+      "name": "Shayara Bano v. Union of India",
+      "year": 2017,
+      "subtitle": "The Triple Talaq Case.",
+      "story": "Shayara Bano was given 'Triple Talaq' (instant divorce) by her husband via a letter. She challenged the practice, claiming it violated her right to equality and dignity as a woman.",
+      "conflict": "Opponents argued that personal religious laws were protected under the Right to Religion, while others argued it was arbitrary and unconstitutional.",
+      "wisdom": "The Court struck down instant Triple Talaq as arbitrary and unconstitutional, ruling that personal laws must still follow the core fundamental rights of equality.",
+      "color": "#fdf2f8"
+    },
+    {
+      "id": "CASE_2018_01",
+      "name": "Navtej Singh Johar v. Union of India",
+      "year": 2018,
+      "subtitle": "The LGBTQ+ Rights Case.",
+      "story": "Section 377 of the IPC, a law from 1861, made consensual acts between same-sex adults a 'crime'. Five individuals filed a petition saying this law criminalized their very existence.",
+      "conflict": "Some argued that such acts went against 'traditional social morality' and that the law should stay to protect cultural values.",
+      "wisdom": "The Court beautifully said: 'Constitutional morality must triumph over social morality.' They ruled that sexual orientation is a natural part of being human.",
+      "color": "#ecfdf5"
+    },
+    {
+      "id": "CASE_2018_02",
+      "name": "Joseph Shine v. Union of India",
+      "year": 2018,
+      "subtitle": "The Decriminalization of Adultery.",
+      "story": "Section 497 of the IPC punished only men for adultery, while treating wives as the 'property' of their husbands. Joseph Shine challenged this ancient and unequal law.",
+      "conflict": "Opponents argued that the law was necessary to protect the 'sanctity of marriage' even if it was unequal towards women.",
+      "wisdom": "The Supreme Court declared: 'A husband is not the master of his wife.' They ruled that matrimonial disputes are personal matters and shouldn't be treated as criminal offenses.",
+      "color": "#fffbeb"
+    },
+    {
+      "id": "CASE_1986_01",
+      "name": "M.C. Mehta v. Union of India",
+      "year": 1986,
+      "subtitle": "The Absolute Liability Principle",
+      "story": "Oleum gas leaked from a fertilizer plant in Delhi causing harm to the public. M.C. Mehta filed a PIL to seek compensation for the victims.",
+      "conflict": "The issue was whether the plant owners could use the traditional defenses of strict liability to avoid paying damages to those injured by the hazardous substance.",
+      "wisdom": "The Supreme Court introduced the concept of Absolute Liability, holding that enterprises engaged in inherently dangerous activities have an absolute obligation to compensate everyone affected, without exceptions.",
+      "color": "#f0fdf4"
+    },
+    {
+      "id": "CASE_1992_01",
+      "name": "Indra Sawhney v. Union of India",
+      "year": 1992,
+      "subtitle": "The Mandal Commission Case",
+      "story": "The government implemented the Mandal Commission report, providing 27% reservation for Other Backward Classes (OBCs) in central government jobs. This sparked nationwide protests and legal challenges.",
+      "conflict": "The debate centered on whether caste can be a basis for identifying backward classes and whether reservations violate the constitutional guarantee of equality.",
+      "wisdom": "The Court upheld the 27% OBC reservation but established a 50% cap on total reservations. It also introduced the concept of excluding the creamy layer from reservation benefits.",
+      "color": "#fdf2f2"
+    },
+    {
+      "id": "CASE_1980_01",
+      "name": "Minerva Mills v. Union of India",
+      "year": 1980,
+      "subtitle": "Harmony between Rights and Duties",
+      "story": "The 42nd Amendment gave unlimited power to Parliament to amend the Constitution and prioritized Directive Principles over Fundamental Rights. The owners of Minerva Mills challenged these changes.",
+      "conflict": "The case questioned whether Parliament could destroy the basic features of the Constitution and whether Fundamental Rights are subordinate to Directive Principles.",
+      "wisdom": "The Court ruled against unlimited amending power and restored the balance. It beautifully stated that Fundamental Rights and Directive Principles are like the two wheels of a chariot, and neither is supreme over the other.",
+      "color": "#eff6ff"
+    }
+  ],
+  "dictionary": [
+    {
+      "term": "Contra proferentem",
+      "pron": "Kon-tra pro-fe-REN-tem",
+      "en": "Against the offeror; a legal doctrine stating that in the interpretation of contract terms, ambiguities should be resolved against the party who drafted the contract.",
+      "hi": "प्रस्तावकर्ता के विरुद्ध; एक कानूनी सिद्धांत जिसमें कहा गया है कि अनुबंध की शर्तों की व्याख्या में, अस्पष्टताओं को अनुबंध का मसौदा तैयार करने वाली पार्टी के खिलाफ हल किया जाना चाहिए।",
+      "bn": "প্রস্তাবকারীর বিরুদ্ধে; একটি আইনি মতবাদ যা বলে যে চুক্তির শর্তাবলীর ব্যাখ্যার ক্ষেত্রে, অস্পষ্টতাগুলি চুক্তির খসড়া তৈরি করা পক্ষের বিরুদ্ধে সমাধান করা উচিত।",
+      "te": "ప్రతిపాదకుడికి వ్యతిరేకంగా; ఒప్పంద నిబంధనల వ్యాఖ్యానంలో, అస్పష్టతలు ఒప్పందాన్ని రూపొందించిన పక్షానికి వ్యతిరేకంగా పరిష్కరించబడాలని పేర్కొనే చట్టపరమైన సిద్ధాంతం.",
+      "mr": "प्रस्तावकाविरुद्ध; एक कायदेशीर सिद्धांत जो सांगतो की कराराच्या अटींच्या अर्थनिर्णयात, अस्पष्टता कराराचा मसुदा तयार करणाऱ्या पक्षाच्या विरोधात सोडवली पाहिजे.",
+      "usage": "The insurance policy contained an ambiguous clause, so the court applied the *contra proferentem* rule, interpreting it in favor of the policyholder, as the insurer was the drafter."
+    },
+    {
+      "term": "Res Integra",
+      "pron": "Rehss Inn-teh-gruh",
+      "en": "A matter not yet decided; an original question of law; a point of law that has not been decided by any authoritative court, hence requiring independent judicial consideration.",
+      "hi": "अनिर्णीत विषय; एक मूल विधि प्रश्न; किसी आधिकारिक न्यायालय द्वारा अभी तक तय नहीं किया गया कानून का बिंदु, जिस पर स्वतंत्र न्यायिक विचार की आवश्यकता है।",
+      "bn": "অনির্দিষ্ট বিষয়; একটি মৌলিক আইনের প্রশ্ন; কোনো কর্তৃপক্ষীয় আদালত দ্বারা এখনো মীমাংসিত হয়নি এমন একটি আইনের বিষয়, যার জন্য স্বাধীন বিচার বিভাগীয় বিবেচনার প্রয়োজন।",
+      "te": "ఇంకా నిర్ణయించబడని విషయం; న్యాయశాస్త్రంలో ఒక కొత్త ప్రశ్న; ఏ అధికారిక న్యాయస్థానం చేత కూడా నిర్ణయించబడని చట్టపరమైన అంశం, దీనికి స్వతంత్ర న్యాయ పరిశీలన అవసరం.",
+      "mr": "अजून निर्णय न झालेला विषय; कायद्याचा एक मूळ प्रश्न; कोणत्याही अधिकृत न्यायालयाने अजून निर्णय न दिलेला कायद्याचा मुद्दा, ज्यासाठी स्वतंत्र न्यायिक विचार आवश्यक आहे.",
+      "usage": "The High Court observed that the issue of liability for novel AI-generated content was largely res integra in Indian jurisprudence, requiring a fresh approach."
+    },
+    {
+      "term": "Functus officio",
+      "pron": "fungk-tus uh-fish-ee-oh",
+      "en": "Having discharged his duty. A person or body is 'functus officio' when they have performed their official duty or office and are no longer authorized to act in that capacity concerning the particular matter.",
+      "hi": "कर्तव्यविमुक्त / पदमुक्त",
+      "bn": "কর্তব্যমুক্ত / কার্যমুক্ত",
+      "te": "విధులు నిర్వర్తించిన / కర్తవ్యం పూర్తిచేసిన",
+      "mr": "कर्तव्यमुक्त / कार्यमुक्त",
+      "usage": "Once the arbitrator delivered the final award, he became *functus officio* and could not unilaterally alter the decision without a specific statutory provision."
+    },
+    {
+      "term": "Per incuriam",
+      "pron": "pur in-KOO-ree-am",
+      "en": "(Latin) 'through lack of care'; A judgment rendered in ignorance or forgetfulness of a statute or a binding precedent. Such a judgment is not binding on a later court and can be disregarded.",
+      "hi": "(लैटिन) 'लापरवाही से' या 'असावधानी के कारण'; एक ऐसा निर्णय जो किसी क़ानून या बाध्यकारी मिसाल (पूर्व निर्णय) की अज्ञानता या उसे भूल जाने के कारण दिया गया हो। ऐसा निर्णय बाद की अदालत के लिए बाध्यकारी नहीं होता और उसे अस्वीकार किया जा सकता है।",
+      "bn": "(ল্যাটিন) 'যত্নের অভাবে' বা 'অসাবধানতার কারণে'; একটি রায় যা কোনো আইন বা বাধ্যতামূলক পূর্ব দৃষ্টান্তের (প্রেসিডেন্ট) অজ্ঞতা বা বিস্মৃতির কারণে দেওয়া হয়েছে। এই ধরনের রায় পরবর্তী আদালতের জন্য বাধ্যতামূলক হয় না এবং তা অগ্রাহ্য করা যেতে পারে।",
+      "te": "(లాటిన్) 'శ్రద్ధ లేకపోవడం వల్ల' లేదా 'అజాగ్రత్త వల్ల'; ఒక చట్టం లేదా కట్టుబడి ఉండే పూర్వ తీర్పును (ప్రీసిడెంట్) విస్మరించడం లేదా తెలియకపోవడం వల్ల ఇచ్చిన తీర్పు. అటువంటి తీర్పు తదుపరి కోర్టుకు కట్టుబడి ఉండదు మరియు విస్మరించబడుతుంది.",
+      "mr": "(लॅटिन) 'असावधपणे' किंवा 'दुर्लक्षामुळे'; असा निर्णय जो एखाद्या कायद्याची किंवा बंधनकारक पूर्वदृष्टांताची (प्रेसीडेंट) माहिती नसताना किंवा विसरल्यामुळे दिला गेला आहे. असा निर्णय नंतरच्या न्यायालयासाठी बंधनकारक नसतो आणि तो रद्द केला जाऊ शकतो.",
+      "usage": "The High Court clarified that its earlier ruling on the matter was *per incuriam* as it had overlooked a key statutory provision governing the jurisdiction."
+    },
+    {
+      "term": "Pari Materia",
+      "pron": "PAIR-ee mah-TEER-ee-uh",
+      "en": "On the same subject matter; statutes relating to the same person or thing, or having the same purpose, are said to be in pari materia and are to be construed together as one law.",
+      "hi": "समान विषय वस्तु पर; एक ही व्यक्ति या वस्तु से संबंधित या समान उद्देश्य रखने वाले क़ानूनों को 'समान विषय वस्तु में' (पारी मटेरिया) कहा जाता है और उन्हें एक कानून के रूप में एक साथ समझा जाना चाहिए।",
+      "bn": "একই বিষয়বস্তুর উপর; একই ব্যক্তি বা জিনিস সম্পর্কিত, অথবা একই উদ্দেশ্য সম্পন্ন আইনগুলিকে 'পারি ম্যাটেরিয়া' বলা হয় এবং সেগুলিকে একটি আইন হিসাবে একত্রে ব্যাখ্যা করা হয়।",
+      "te": "ఒకే విషయంపై; ఒకే వ్యక్తి లేదా వస్తువుకు సంబంధించిన లేదా ఒకే ఉద్దేశ్యం కలిగిన చట్టాలను 'పారి మెటీరియా' అంటారు మరియు వాటిని ఒకే చట్టంగా కలిపి అర్థం చేసుకోవాలి.",
+      "mr": "एकाच विषयावर; एकाच व्यक्ती किंवा वस्तूशी संबंधित असलेले किंवा समान उद्देश असलेले कायदे 'पारी मटेरिया' (एकाच विषयात) मानले जातात आणि त्यांचा अर्थ एका कायद्याप्रमाणे एकत्रितपणे लावला जातो.",
+      "usage": "The court interpreted the two environmental protection acts in pari materia to ensure a consistent application of the law, as they addressed similar concerns and objectives."
+    },
+    {
+      "term": "Habeas Corpus",
+      "pron": "Hay-be-as Kor-pus",
+      "en": "A court order to bring a detained person before a judge to check if their arrest is legal.",
+      "hi": "किसी व्यक्ति को अदालत के सामने पेश करने का आदेश, ताकि उसकी गिरफ्तारी की वैधता जांची जा सके।",
+      "bn": "একজন বন্দিকে বিচারকের সামনে হাজির করার আদালতের নির্দেশ যাতে তাদের গ্রেপ্তার বৈধ কি না তা পরীক্ষা করা যায়।",
+      "te": "బంధీగా ఉన్న వ్యక్తిని కోర్టు ముందు హాజరుపరచాలని ఇచ్చే ఆదేశం.",
+      "mr: ": "अटक केलेल्या व्यक्तीला न्यायाधीशासमोर हजर करण्याचा न्यायालयाचा आदेश.",
+      "usage": "His lawyer filed a Habeas Corpus petition because he was arrested without a warrant."
+    },
+    {
+      "term": "Amicus Curiae",
+      "pron": "A-mee-kus Kyoo-ree-ay",
+      "en": "A 'friend of the court'—a neutral expert appointed to help the judge in complex cases.",
+      "hi": "न्यायालय का मित्र - जटिल मामलों में न्यायाधीश की सहायता के लिए नियुक्त एक तटस्थ विशेषज्ञ।",
+      "bn: ": "আদালতের বন্ধু - জটিল মামলায় বিচারককে সাহায্য করার জন্য নিযুক্ত একজন নিরপেক্ষ বিশেষজ্ঞ।",
+      "te: ": "న్యాయమూర్తికి సహాయం చేయడానికి నియమించబడిన తటస్థ నిపుణుడు.",
+      "mr: ": "न्यायालयीन मित्र - जटिल प्रकरणांमध्ये न्यायाधीशांना मदत करण्यासाठी नियुक्त केलेली व्यक्ती.",
+      "usage": "The Court invited a senior advocate as Amicus Curiae to provide environmental expertise."
+    },
+    {
+      "term": "Suo Moto",
+      "pron": "Soo-oh Mo-toh",
+      "en": "When a court takes action on its own without anyone filing a complaint.",
+      "hi: ": "जब अदालत किसी शिकायत के बिना खुद से कार्रवाई शुरू करती है।",
+      "bn: ": "যখন কোনও অভিযোগ ছাড়াই আদালত নিজেই ব্যবস্থা নেয়।",
+      "te: ": "ఎవరూ ఫిర్యాదు చేయకపోయినా కోర్టు స్వయంగా తీసుకునే చర్య.",
+      "mr: ": "जेव्हा न्यायालय स्वतःहून एखाद्या प्रकरणाची दखल घेते.",
+      "usage": "The High Court took Suo Moto notice of the poor road conditions after seeing news reports."
+    },
+    {
+      "term": "Caveat Emptor",
+      "pron": "Ka-vee-at Emp-tor",
+      "en": "Let the buyer beware. The principle that the buyer is responsible for checking quality.",
+      "hi": "क्रेता सावधान। यह सिद्धांत कि खरीदने वाला गुणवत्ता की जांच के लिए स्वयं जिम्मेदार है।",
+      "bn": "ক্রেতা সাবধান। ক্রেতা নিজেই জিনিসের গুণমান যাচাই করার জন্য দায়ী এই নীতি।",
+      "te": "కొనుగోలుదారు జాగ్రత్తగా ఉండాలి.",
+      "mr": "खरेदीदाराने सावध राहावे. ग्राहकाने वस्तूची तपासणी करण्याची जबाबदारी स्वतः घ्यावी.",
+      "usage": "The used car was sold 'as is', following the principle of Caveat Emptor."
+    },
+    {
+      "term": "Audi Alteram Partem",
+      "pron": "Ow-dee Al-te-ram Par-tem",
+      "en": "Hear the other side",
+      "hi": "दूसरे पक्ष को भी सुनें",
+      "bn": "অন্য পক্ষের কথা শোনা",
+      "te": "అవతలి పక్షం మాట కూడా వినాలి",
+      "mr": "दुसऱ्या बाजूचे म्हणणे ऐकून घेणे",
+      "usage": "The judge adjourned the case because the defendant was not present, adhering to the principle of Audi Alteram Partem."
+    },
+    {
+      "term": "Res Ipsa Loquitur",
+      "pron": "Rayz Ip-sa Lo-qui-tur",
+      "en": "The thing speaks for itself",
+      "hi": "घटना स्वयं प्रमाण है",
+      "bn": "ঘটনা নিজেই কথা বলে",
+      "te": "సంగతే స్వయంగా చెబుతుంది",
+      "mr": "घटना स्वतःच बोलते",
+      "usage": "In a medical negligence case where a tool is left inside a patient, the court applies Res Ipsa Loquitur."
+    },
+    {
+      "term": "Stare Decisis",
+      "pron": "Sta-ray De-sy-sis",
+      "en": "To stand by things decided",
+      "hi": "पूर्व निर्णय का सिद्धांत",
+      "bn": "পূর্ববর্তী সিদ্ধান্তের নীতি",
+      "te": "పూర్వ తీర్పులకు కట్టుబడి ఉండటం",
+      "mr": "पूर्वीच्या निर्णयांचे पालन करणे",
+      "usage": "The High Court followed the Supreme Court's precedent based on the doctrine of Stare Decisis."
+    },
+    {
+      "term": "Mandamus",
+      "pron": "man-DAY-mus",
+      "en": "We command (A writ issued by a superior court to compel a lower court or a government officer to perform a specific duty.)",
+      "hi": "परमादेश (एक उच्च न्यायालय द्वारा निचली अदालत या सरकारी अधिकारी को एक विशिष्ट कर्तव्य का पालन करने के लिए मजबूर करने के लिए जारी किया गया एक रिट।)",
+      "bn": "ম্যান্ডামাস (একটি উচ্চ আদালত কর্তৃক নিম্ন আদালত বা সরকারি কর্মকর্তাকে একটি নির্দিষ্ট দায়িত্ব পালনে বাধ্য করার জন্য জারি করা একটি রিট।)",
+      "te": "మాండమస్ (ఒక ఉన్నత న్యాయస్థానం దిగువ న్యాయస్థానాన్ని లేదా ప్రభుత్వ అధికారిని ఒక నిర్దిష్ట విధిని నిర్వర్తించమని ఆదేశించడానికి జారీ చేసే రిట్.)",
+      "mr": "परमादेश (वरिष्ठ न्यायालयाने कनिष्ठ न्यायालय किंवा सरकारी अधिकाऱ्याला विशिष्ट कर्तव्य बजावण्यासाठी जारी केलेला आदेश.)",
+      "usage": "The High Court issued a writ of Mandamus directing the municipal corporation to clear the public road."
+    },
+    {
+      "term": "Quo Warranto",
+      "pron": "kwoh wuh-RAN-toh",
+      "en": "By what authority (A writ issued to inquire into the legality of the claim by which a person holds a public office.)",
+      "hi": "अधिकार पृच्छा (एक व्यक्ति द्वारा सार्वजनिक पद धारण करने के दावे की वैधता की जांच के लिए जारी किया गया एक रिट।)",
+      "bn": "কো ওয়ারেন্টো (একজন ব্যক্তি যে ক্ষমতাবলে একটি সরকারি পদ ধারণ করেন, তার বৈধতা যাচাই করার জন্য জারি করা একটি রিট।)",
+      "te": "కో వారంటో (ఒక వ్యక్తి ప్రభుత్వ పదవిని ఏ అధికారంతో కలిగి ఉన్నాడో విచారించడానికి జారీ చేసే రిట్.)",
+      "mr": "अधिकार पृच्छा (एखाद्या व्यक्तीने सार्वजनिक पद कोणत्या अधिकाराने धारण केले आहे, याची कायदेशीरता तपासण्यासाठी जारी केलेला आदेश.)",
+      "usage": "The court issued a writ of Quo Warranto against the minister to ascertain the legality of his appointment."
+    },
+    {
+      "term": "Certiorari",
+      "pron": "sur-shee-uh-RAH-ree",
+      "en": "To be certified (A writ issued by a superior court to a lower court to send up the record of a case for review.)",
+      "hi": "उत्प्रेषण (एक उच्च न्यायालय द्वारा निचली अदालत को किसी मामले के रिकॉर्ड की समीक्षा के लिए भेजने के लिए जारी किया गया एक रिट।)",
+      "bn": "সার্টিওরারি (একটি উচ্চ আদালত কর্তৃক নিম্ন আদালতকে একটি মামলার রেকর্ড পর্যালোচনার জন্য পাঠানোর জন্য জারি করা একটি রিট।)",
+      "te": "సెర్షియోరారి (ఒక ఉన్నత న్యాయస్థానం దిగువ న్యాయస్థానానికి ఒక కేసు రికార్డును సమీక్ష కోసం పంపమని జారీ చేసే రిట్.)",
+      "mr": "उत्प्रेषण (वरिष्ठ न्यायालयाने कनिष्ठ न्यायालयाला एखाद्या प्रकरणाची नोंद पुनरावलोकनासाठी पाठवण्यासाठी जारी केलेला आदेश.)",
+      "usage": "The Supreme Court granted a writ of Certiorari to review the High Court's judgment."
+    },
+    {
+      "term": "Prohibition",
+      "pron": "proh-hi-BISH-un",
+      "en": "To forbid (A writ issued by a superior court to a lower court or tribunal to prevent it from exceeding its jurisdiction.)",
+      "hi": "प्रतिषेध (एक उच्च न्यायालय द्वारा निचली अदालत या न्यायाधिकरण को अपने अधिकार क्षेत्र से बाहर जाने से रोकने के लिए जारी किया गया एक रिट।)",
+      "bn": "প্রতিষেধ (একটি উচ্চ আদালত কর্তৃক নিম্ন আদালত বা ট্রাইব্যুনালকে তার এখতিয়ার অতিক্রম করা থেকে বিরত রাখার জন্য জারি করা একটি রিট।)",
+      "te": "నిషేధం (ఒక ఉన్నత న్యాయస్థానం దిగువ న్యాయస్థానాన్ని లేదా ట్రిబ్యునల్‌ను దాని అధికార పరిధిని మించిపోకుండా నిరోధించడానికి జారీ చేసే రిట్.)",
+      "mr": "प्रतिषेध (वरिष्ठ न्यायालयाने कनिष्ठ न्यायालय किंवा न्यायाधिकरणाला त्याच्या अधिकारक्षेत्राबाहेर जाण्यापासून रोखण्यासाठी जारी केलेला आदेश.)",
+      "usage": "The High Court issued a writ of Prohibition against the tribunal, preventing it from hearing a matter outside its jurisdiction."
+    },
+    {
+      "term": "Ultra Vires",
+      "pron": "UL-truh VAI-reez",
+      "en": "Beyond the powers (An act that requires legal authority but is done without it.)",
+      "hi": "अधिकार से परे (एक ऐसा कार्य जिसके लिए कानूनी अधिकार की आवश्यकता होती है लेकिन वह उसके बिना किया जाता है।)",
+      "bn": "আল্ট্রা ভাইরেস (একটি কাজ যা আইনি কর্তৃত্বের প্রয়োজন কিন্তু তা ছাড়া করা হয়।)",
+      "te": "అల్ట్రా వైర్స్ (చట్టబద్ధమైన అధికారం అవసరమైనప్పటికీ, అది లేకుండా చేసే చర్య.)",
+      "mr": "अधिकारबाह्य (असे कृत्य ज्यासाठी कायदेशीर अधिकाराची आवश्यकता असते परंतु ते त्याशिवाय केले जाते.)",
+      "usage": "The resolution passed by the board was declared Ultra Vires as it exceeded their statutory powers."
+    },
+    {
+      "term": "Prima Facie",
+      "pron": "PRY-muh FAY-shee",
+      "en": "At first sight; on the face of it (Based on the first impression; accepted as correct until proved otherwise.)",
+      "hi": "प्रथम दृष्टया (पहली नज़र में; जब तक अन्यथा सिद्ध न हो, तब तक सही माना जाता है।)",
+      "bn": "প্রাইমা ফেসি (প্রথম দর্শনে; অন্যথা প্রমাণিত না হওয়া পর্যন্ত সঠিক হিসাবে গৃহীত।)",
+      "te": "ప్రైమా ఫేసీ (మొదటి చూపులో; వేరే విధంగా నిరూపించబడే వరకు సరైనదిగా అంగీకరించబడింది.)",
+      "mr": "प्रथमदर्शनी (पहिल्या दृष्टीक्षेपात; जोपर्यंत अन्यथा सिद्ध होत नाही तोपर्यंत योग्य मानले जाते.)",
+      "usage": "There was Prima Facie evidence to suggest the accused's involvement in the crime."
+    },
+    {
+      "term": "Mens Rea",
+      "pron": "menz REE-uh",
+      "en": "Guilty mind (The mental element of a person's intention to commit a crime; criminal intent.)",
+      "hi": "दुराशय (अपराध करने के व्यक्ति के इरादे का मानसिक तत्व; आपराधिक इरादा।)",
+      "bn": "মেনস রিয়া (অপরাধ করার জন্য একজন ব্যক্তির অভিপ্রায়ের মানসিক উপাদান; অপরাধমূলক উদ্দেশ্য।)",
+      "te": "మెన్స్ రియా (నేరం చేయడానికి ఒక వ్యక్తి యొక్క ఉద్దేశ్యం యొక్క మానసిక అంశం; నేరపూరిత ఉద్దేశ్యం.)",
+      "mr": "दुराशय (गुन्हा करण्याच्या व्यक्तीच्या हेतूचा मानसिक घटक; गुन्हेगारी हेतू.)",
+      "usage": "For a conviction, the prosecution must prove both Actus Reus and Mens Rea."
+    },
+    {
+      "term": "Actus Reus",
+      "pron": "AK-tus RAY-us",
+      "en": "Guilty act (The physical act of committing a crime.)",
+      "hi": "आपराधिक कृत्य (अपराध करने का भौतिक कार्य।)",
+      "bn": "অ্যাক্টাস রিয়াস (অপরাধ করার শারীরিক কাজ।)",
+      "te": "యాక్టస్ రియస్ (నేరం చేసే శారీరక చర్య.)",
+      "mr": "आपराधिक कृत्य (गुन्हा करण्याचे शारीरिक कृत्य.)",
+      "usage": "The Actus Reus of theft is the unlawful taking of another's property."
+    },
+    {
+      "term": "Locus Standi",
+      "pron": "LOH-kus STAN-dee",
+      "en": "Place of standing (The right or capacity of a party to bring an action or appear in court.)",
+      "hi": "वाद प्रस्तुत करने का अधिकार (किसी पक्ष का मुकदमा दायर करने या अदालत में पेश होने का अधिकार या क्षमता।)",
+      "bn": "লোকাস স্ট্যান্ডি (একটি মামলা দায়ের করার বা আদালতে উপস্থিত হওয়ার একটি পক্ষের অধিকার বা ক্ষমতা।)",
+      "te": "లోకస్ స్టాండి (ఒక పక్షం కేసును దాఖలు చేయడానికి లేదా కోర్టులో హాజరు కావడానికి ఉన్న హక్కు లేదా సామర్థ్యం.)",
+      "mr": "वाद दाखल करण्याचा अधिकार (एखाद्या पक्षाचा खटला दाखल करण्याचा किंवा न्यायालयात हजर राहण्याचा अधिकार किंवा क्षमता.)",
+      "usage": "The petitioner's Locus Standi was challenged, arguing that they had no direct interest in the matter."
+    },
+    {
+      "term": "Res Judicata",
+      "pron": "reez joo-di-KAH-tuh",
+      "en": "A matter judged (A matter that has been adjudicated by a competent court and may not be pursued further by the same parties.)",
+      "hi": "निर्णित विषय (एक ऐसा मामला जिस पर एक सक्षम न्यायालय द्वारा निर्णय दिया गया है और उसी पक्षों द्वारा आगे नहीं बढ़ाया जा सकता है।)",
+      "bn": "রেস জুডিকাটা (একটি বিষয় যা একটি উপযুক্ত আদালত দ্বারা বিচার করা হয়েছে এবং একই পক্ষগুলি দ্বারা আর অনুসরণ করা যাবে না।)",
+      "te": "రెస్ జుడికాటా (ఒక సమర్థవంతమైన న్యాయస్థానం ద్వారా తీర్పు చెప్పబడిన విషయం మరియు అదే పక్షాలచే మరింత కొనసాగించబడదు.)",
+      "mr": "निर्णित विषय (असा विषय ज्यावर सक्षम न्यायालयाने निर्णय दिला आहे आणि तोच पक्ष पुन्हा पुढे नेऊ शकत नाही.)",
+      "usage": "The principle of Res Judicata prevents the same issue from being litigated again between the same parties."
+    },
+    {
+      "term": "Ex Parte",
+      "pron": "eks PAR-tay",
+      "en": "From one party (A legal proceeding brought by one person in the absence of and without representation or notification of other parties.)",
+      "hi": "एकतरफा (एक कानूनी कार्यवाही जो एक व्यक्ति द्वारा अन्य पक्षों की अनुपस्थिति में और उनकी प्रतिनिधित्व या सूचना के बिना लाई जाती है।)",
+      "bn": "এক্স পার্টি (অন্যান্য পক্ষের অনুপস্থিতিতে এবং তাদের প্রতিনিধিত্ব বা বিজ্ঞপ্তি ছাড়াই একজন ব্যক্তি দ্বারা আনা একটি আইনি প্রক্রিয়া।)",
+      "te": "ఎక్స్ పార్టే (ఇతర పక్షాల ప్రాతినిధ్యం లేదా నోటిఫికేషన్ లేకుండా, ఒక పక్షం ద్వారా తీసుకురాబడిన చట్టపరమైన ప్రక్రియ.)",
+      "mr": "एकतर्फी (इतर पक्षांच्या अनुपस्थितीत आणि त्यांच्या प्रतिनिधित्व किंवा सूचनेशिवाय एका व्यक्तीने आणलेली कायदेशीर कार्यवाही.)",
+      "usage": "The court granted an Ex Parte injunction due to the urgency of the matter."
+    },
+    {
+      "term": "Ratio Decidendi",
+      "pron": "RAH-shee-oh de-si-DEN-dee",
+      "en": "The reason for the decision (The legal principle or rule on which a judicial decision is based.)",
+      "hi": "निर्णय का आधार (वह कानूनी सिद्धांत या नियम जिस पर न्यायिक निर्णय आधारित होता है।)",
+      "bn": "রেশিও ডিসিডেন্ডি (আইনি নীতি বা নিয়ম যার উপর একটি বিচারিক সিদ্ধান্ত ভিত্তি করে।)",
+      "te": "రేషియో డిసిడెండి (న్యాయ నిర్ణయం ఆధారపడిన చట్టపరమైన సూత్రం లేదా నియమం.)",
+      "mr": "निर्णयाचे कारण (कायदेशीर सिद्धांत किंवा नियम ज्यावर न्यायिक निर्णय आधारित असतो.)",
+      "usage": "The Ratio Decidendi of the landmark judgment set a precedent for future cases."
+    },
+    {
+      "term": "Obiter Dicta",
+      "pron": "OH-bi-ter DIK-tuh",
+      "en": "Things said by the way (Remarks made by a judge in a judgment that are not essential to the decision and thus not binding as precedent.)",
+      "hi": "प्रासंगिक टिप्पणी (एक न्यायाधीश द्वारा निर्णय में की गई टिप्पणियां जो निर्णय के लिए आवश्यक नहीं हैं और इस प्रकार मिसाल के रूप में बाध्यकारी नहीं हैं।)",
+      "bn": "অবিটার ডিক্টা (একজন বিচারক দ্বারা একটি রায়ে করা মন্তব্য যা সিদ্ধান্তের জন্য অপরিহার্য নয় এবং তাই নজির হিসাবে বাধ্যতামূলক নয়।)",
+      "te": "ఒబిటర్ డిక్టా (ఒక తీర్పులో న్యాయమూర్తి చేసిన వ్యాఖ్యలు, అవి నిర్ణయానికి అవసరం లేనివి మరియు అందువల్ల పూర్వ తీర్పుగా బంధించబడవు.)",
+      "mr": "प्रासंगिक टिप्पणी (न्यायाधीशाने निर्णयात केलेल्या अशा टिप्पण्या ज्या निर्णयासाठी आवश्यक नाहीत आणि त्यामुळे पूर्वन्यायासाठी बंधनकारक नाहीत.)",
+      "usage": "While the Obiter Dicta in the judgment were insightful, they do not form part of the binding precedent."
+    },
+    {
+      "term": "Lis Pendens",
+      "pron": "lis PEN-denz",
+      "en": "Suit pending (A pending legal action; a notice of a pending lawsuit.)",
+      "hi": "विचाराधीन मुकदमा (एक विचाराधीन कानूनी कार्रवाई; एक विचाराधीन मुकदमे की सूचना।)",
+      "bn": "লিস পেন্ডেন্স (একটি বিচারাধীন আইনি পদক্ষেপ; একটি বিচারাধীন মামলার বিজ্ঞপ্তি।)",
+      "te": "లిస్ పెండెన్స్ (పెండింగ్‌లో ఉన్న చట్టపరమైన చర్య; పెండింగ్‌లో ఉన్న దావా నోటీసు.)",
+      "mr": "प्रलंबित खटला (प्रलंबित कायदेशीर कार्यवाही; प्रलंबित खटल्याची सूचना.)",
+      "usage": "The doctrine of Lis Pendens prevents the transfer of property while a dispute over its title is pending in court."
+    },
+    {
+      "term": "In Personam",
+      "pron": "in per-SOH-nam",
+      "en": "Against a person (A legal action directed against a specific person, rather than against property.)",
+      "hi": "व्यक्ति के विरुद्ध (एक कानूनी कार्रवाई जो किसी संपत्ति के बजाय किसी विशिष्ट व्यक्ति के विरुद्ध निर्देशित होती है।)",
+      "bn": "ইন পার্সোনাম (একটি আইনি পদক্ষেপ যা সম্পত্তির বিরুদ্ধে নয়, একটি নির্দিষ্ট ব্যক্তির বিরুদ্ধে পরিচালিত হয়।)",
+      "te": "ఇన్ పర్సోనమ్ (ఆస్తికి వ్యతిరేకంగా కాకుండా, ఒక నిర్దిష్ట వ్యక్తికి వ్యతిరేకంగా నిర్దేశించబడిన చట్టపరమైన చర్య.)",
+      "mr": "व्यक्तीविरुद्ध (कायदेशीर कारवाई जी मालमत्तेऐवजी विशिष्ट व्यक्तीविरुद्ध निर्देशित केली जाते.)",
+      "usage": "A decree for specific performance is an In Personam remedy, compelling the defendant to act."
+    },
+    {
+      "term": "In Rem",
+      "pron": "in REM",
+      "en": "Against a thing (A legal action directed against property, rather than against a specific person.)",
+      "hi": "वस्तु के विरुद्ध (एक कानूनी कार्रवाई जो किसी विशिष्ट व्यक्ति के बजाय संपत्ति के विरुद्ध निर्देशित होती है।)",
+      "bn": "ইন রেম (একটি আইনি পদক্ষেপ যা একটি নির্দিষ্ট ব্যক্তির বিরুদ্ধে নয়, সম্পত্তির বিরুদ্ধে পরিচালিত হয়।)",
+      "te": "ఇన్ రెమ్ (ఒక నిర్దిష్ట వ్యక్తికి వ్యతిరేకంగా కాకుండా, ఆస్తికి వ్యతిరేకంగా నిర్దేశించబడిన చట్టపరమైన చర్య.)",
+      "mr": "वस्तूंविरुद्ध (कायदेशीर कारवाई जी विशिष्ट व्यक्तीऐवजी मालमत्तेविरुद्ध निर्देशित केली जाते.)",
+      "usage": "Admiralty cases often involve actions In Rem, where the ship itself is the defendant."
+    },
+    {
+      "term": "Doctrine of Basic Structure",
+      "pron": "DOK-trin ov BAY-sik STRUK-cher",
+      "en": "A judicial principle that the fundamental features of the Indian Constitution cannot be amended by the Parliament.",
+      "hi": "मूल संरचना का सिद्धांत (एक न्यायिक सिद्धांत कि भारतीय संविधान की मूलभूत विशेषताओं को संसद द्वारा संशोधित नहीं किया जा सकता है।)",
+      "bn": "মৌলিক কাঠামোর নীতি (একটি বিচারিক নীতি যে ভারতীয় সংবিধানের মৌলিক বৈশিষ্ট্যগুলি সংসদ দ্বারা সংশোধন করা যাবে না।)",
+      "te": "ప్రాథమిక నిర్మాణ సిద్ధాంతం (భారత రాజ్యాంగం యొక్క ప్రాథమిక లక్షణాలను పార్లమెంటు సవరించలేదని చెప్పే న్యాయ సూత్రం.)",
+      "mr": "मूलभूत संरचनेचे सिद्धांत (एक न्यायिक सिद्धांत की भारतीय संविधानाच्या मूलभूत वैशिष्ट्यांमध्ये संसदेद्वारे सुधारणा केली जाऊ शकत नाही.)",
+      "usage": "The Supreme Court, in Kesavananda Bharati case, propounded the Doctrine of Basic Structure."
+    },
+    {
+      "term": "Procedure Established by Law",
+      "pron": "pro-SEE-jer es-TAB-lished bai LAW",
+      "en": "A principle in Indian law that a person can be deprived of life or personal liberty only according to a procedure laid down in the law.",
+      "hi": "विधि द्वारा स्थापित प्रक्रिया (भारतीय कानून में एक सिद्धांत कि किसी व्यक्ति को जीवन या व्यक्तिगत स्वतंत्रता से केवल कानून में निर्धारित प्रक्रिया के अनुसार ही वंचित किया जा सकता है।)",
+      "bn": "আইন দ্বারা প্রতিষ্ঠিত পদ্ধতি (ভারতীয় আইনে একটি নীতি যে একজন ব্যক্তিকে কেবল আইনে নির্ধারিত পদ্ধতি অনুসারে জীবন বা ব্যক্তিগত স্বাধীনতা থেকে বঞ্চিত করা যেতে পারে।)",
+      "te": "చట్టం ద్వారా స్థాపించబడిన విధానం (భారతీయ చట్టంలో ఒక సూత్రం, ఒక వ్యక్తిని చట్టంలో నిర్దేశించిన విధానం ప్రకారం మాత్రమే జీవితం లేదా వ్యక్తిగత స్వేచ్ఛ నుండి వంచించవచ్చు.)",
+      "mr": "कायद्याने स्थापित प्रक्रिया (भारतीय कायद्यातील एक सिद्धांत की एखाद्या व्यक्तीला केवळ कायद्यात नमूद केलेल्या प्रक्रियेनुसारच जीवन किंवा वैयक्तिक स्वातंत्र्यापासून वंचित केले जाऊ शकते.)",
+      "usage": "Article 21 of the Indian Constitution states that no person shall be deprived of his life or personal liberty except according to Procedure Established by Law."
+    },
+    {
+      "term": "Public Interest Litigation (PIL)",
+      "pron": "PUB-lik IN-ter-est LIT-i-GAY-shun (PEE-EYE-EL)",
+      "en": "Litigation filed in a court of law for the protection of public interest, such as pollution, terrorism, road safety, construction hazards, etc.",
+      "hi": "जनहित याचिका (प्रदूषण, आतंकवाद, सड़क सुरक्षा, निर्माण खतरों आदि जैसे सार्वजनिक हित की रक्षा के लिए अदालत में दायर मुकदमा।)",
+      "bn": "জনস্বার্থ মামলা (দূষণ, সন্ত্রাসবাদ, সড়ক নিরাপত্তা, নির্মাণ ঝুঁকি ইত্যাদি জনস্বার্থ রক্ষার জন্য আদালতে দায়ের করা মামলা।)",
+      "te": "ప్రజా ప్రయోజన వ్యాజ్యం (కాలుష్యం, తీవ్రవాదం, రహదారి భద్రత, నిర్మాణ ప్రమాదాలు మొదలైన ప్రజా ప్రయోజనాలను రక్షించడానికి న్యాయస్థానంలో దాఖలు చేయబడిన వ్యాజ్యం.)",
+      "mr": "जनहित याचिका (प्रदूषण, दहशतवाद, रस्ते सुरक्षा, बांधकाम धोके इत्यादी सार्वजनिक हिताच्या संरक्षणासाठी न्यायालयात दाखल केलेला खटला.)",
+      "usage": "The Supreme Court entertained a PIL concerning the deteriorating air quality in the capital."
+    },
+    {
+      "term": "Natural Justice",
+      "pron": "NACH-uh-ruhl JUS-tis",
+      "en": "Fundamental rules of fairness and impartiality in legal proceedings, including the right to a fair hearing and the rule against bias.",
+      "hi": "नैसर्गिक न्याय (कानूनी कार्यवाही में निष्पक्षता और निष्पक्षता के मौलिक नियम, जिसमें निष्पक्ष सुनवाई का अधिकार और पूर्वाग्रह के खिलाफ नियम शामिल हैं।)",
+      "bn": "প্রাকৃতিক ন্যায় (আইনি কার্যক্রমে ন্যায্যতা এবং নিরপেক্ষতার মৌলিক নিয়ম, যার মধ্যে একটি ন্যায্য শুনানির অধিকার এবং পক্ষপাতিত্বের বিরুদ্ধে নিয়ম অন্তর্ভুক্ত।)",
+      "te": "సహజ న్యాయం (చట్టపరమైన ప్రక్రియలలో నిష్పాక్షికత మరియు నిష్పక్షపాతానికి సంబంధించిన ప్రాథమిక నియమాలు, ఇందులో సరసమైన విచారణ హక్కు మరియు పక్షపాతానికి వ్యతిరేకంగా నియమం ఉంటాయి.)",
+      "mr": "नैसर्गिक न्याय (कायदेशीर कार्यवाहीमध्ये निष्पक्षता आणि तटस्थतेचे मूलभूत नियम, ज्यात निष्पक्ष सुनावणीचा अधिकार आणि पूर्वग्रहाविरुद्ध नियम समाविष्ट आहेत.)",
+      "usage": "The principles of Natural Justice require that no one should be condemned unheard."
+    },
+    {
+      "term": "Estoppel",
+      "pron": "es-TOP-ul",
+      "en": "A legal principle that prevents someone from asserting a fact or right that is inconsistent with a previous position or representation.",
+      "hi": "विबंध (एक कानूनी सिद्धांत जो किसी को ऐसे तथ्य या अधिकार का दावा करने से रोकता है जो पिछली स्थिति या प्रतिनिधित्व के असंगत है।)",
+      "bn": "এস্টোপেল (একটি আইনি নীতি যা কাউকে এমন একটি সত্য বা অধিকার দাবি করা থেকে বিরত রাখে যা পূর্ববর্তী অবস্থান বা উপস্থাপনার সাথে অসঙ্গতিপূর্ণ।)",
+      "te": "ఎస్టోపెల్ (గతంలో తీసుకున్న స్థానం లేదా ప్రాతినిధ్యానికి విరుద్ధంగా ఉన్న వాస్తవం లేదా హక్కును నొక్కి చెప్పకుండా ఒకరిని నిరోధించే చట్టపరమైన సూత్రం.)",
+      "mr": "विबंध (एक कायदेशीर सिद्धांत जो एखाद्याला अशा वस्तुस्थिती किंवा अधिकाराचा दावा करण्यापासून प्रतिबंधित करतो जो मागील स्थिती किंवा प्रतिनिधित्वाशी विसंगत आहे.)",
+      "usage": "The landlord was held to be estopped from denying the tenant's right to renew the lease, having previously assured him of it."
+    },
+    {
+      "term": "De Facto",
+      "pron": "dee FAK-toh",
+      "en": "In fact; in reality (Existing in fact, although perhaps not legally or officially recognized.)",
+      "hi": "वस्तुतः (वास्तव में; वास्तव में मौजूद, हालांकि शायद कानूनी या आधिकारिक तौर पर मान्यता प्राप्त नहीं।)",
+      "bn": "ডি ফ্যাক্টো (আসলে; বাস্তবে বিদ্যমান, যদিও সম্ভবত আইনত বা আনুষ্ঠানিকভাবে স্বীকৃত নয়।)",
+      "te": "డి ఫాక్టో (వాస్తవానికి; వాస్తవంలో ఉన్నది, చట్టబద్ధంగా లేదా అధికారికంగా గుర్తించబడకపోయినా.)",
+      "mr": "वस्तुतः (प्रत्यक्षात; प्रत्यक्षात अस्तित्वात असलेले, जरी कदाचित कायदेशीर किंवा अधिकृतपणे मान्यताप्राप्त नसले तरी.)",
+      "usage": "The military government was the De Facto ruler, even if not recognized De Jure."
+    },
+    {
+      "term": "De Jure",
+      "pron": "dee JOO-ray",
+      "en": "By right; by law (Existing by right or according to law.)",
+      "hi": "विधिपूर्वक (अधिकार से या कानून के अनुसार मौजूद।)",
+      "bn": "ডি জুরে (অধিকার দ্বারা; আইন অনুসারে বিদ্যমান।)",
+      "te": "డి జ్యూరే (హక్కు ద్వారా; చట్టం ప్రకారం ఉన్నది.)",
+      "mr": "कायदेशीररित्या (अधिकाराने किंवा कायद्यानुसार अस्तित्वात असलेले.)",
+      "usage": "The monarch is the De Jure head of state, though real power lies with the parliament."
+    },
+    {
+      "term": "Ad Hoc",
+      "pron": "ad HOK",
+      "en": "For this (Formed or arranged for a particular purpose only, as needed.)",
+      "hi": "तदर्थ (केवल एक विशेष उद्देश्य के लिए, आवश्यकतानुसार गठित या व्यवस्थित।)",
+      "bn": "অ্যাড হক (শুধুমাত্র একটি নির্দিষ্ট উদ্দেশ্যে, প্রয়োজন অনুযায়ী গঠিত বা সাজানো।)",
+      "te": "అడ్ హాక్ (ఒక నిర్దిష్ట ప్రయోజనం కోసం మాత్రమే, అవసరమైన విధంగా ఏర్పాటు చేయబడినది.)",
+      "mr": "तदर्थ (केवळ एका विशिष्ट उद्देशासाठी, आवश्यकतेनुसार तयार केलेले किंवा व्यवस्था केलेले.)",
+      "usage": "An Ad Hoc committee was formed to investigate the allegations of misconduct."
+    },
+    {
+      "term": "Sine Qua Non",
+      "pron": "SEE-nay KWAH non",
+      "en": "Without which not (An essential condition; a thing that is absolutely necessary.)",
+      "hi": "अनिवार्य शर्त (एक अनिवार्य शर्त; एक ऐसी चीज जो बिल्कुल आवश्यक है।)",
+      "bn": "সাইন কোয়া নন (যার ছাড়া নয়; একটি অপরিহার্য শর্ত; একটি জিনিস যা একেবারে প্রয়োজনীয়।)",
+      "te": "సినే క్వా నాన్ (లేకుండా కాదు; ఒక ముఖ్యమైన షరతు; ఖచ్చితంగా అవసరమైన విషయం.)",
+      "mr": "अनिवार्य अट (ज्याशिवाय नाही; एक अनिवार्य अट; अशी गोष्ट जी पूर्णपणे आवश्यक आहे.)",
+      "usage": "Consent of the parties is a Sine Qua Non for a valid contract."
+    },
+    {
+      "term": "In Camera",
+      "pron": "in KAM-uh-ruh",
+      "en": "In chambers; in private (a legal proceeding held in private, typically in a judge's chambers, with the public excluded)",
+      "hi": "बंद कमरे में",
+      "bn": "ইন ক্যামেরা",
+      "te": "ఇన్ కెమెరా",
+      "mr": "बंद खोलीत",
+      "usage": "The sensitive evidence was heard in camera to protect the victim's identity."
+    },
+    {
+      "term": "Ipso Facto",
+      "pron": "IP-so FAK-toh",
+      "en": "By the fact itself (by that very fact or act; automatically)",
+      "hi": "स्वतः ही",
+      "bn": "ইপসো ফ্যাক্টো",
+      "te": "ఇప్సో ఫ్యాక్టో",
+      "mr": "आपोआप",
+      "usage": "Upon his resignation, he ipso facto lost his membership in the committee."
+    },
+    {
+      "term": "Nemo Judex In Causa Sua",
+      "pron": "NEE-moh JOO-deks in KAW-zuh SOO-uh",
+      "en": "No one should be a judge in his own cause (a fundamental principle of natural justice that no person can be a judge in a case in which they have an interest)",
+      "hi": "कोई भी व्यक्ति अपने मामले में न्यायाधीश नहीं हो सकता",
+      "bn": "নেমো জুডেক্স ইন কওসা সুয়া",
+      "te": "నెమో జుడెక్స్ ఇన్ కాసా సువా",
+      "mr": "कोणीही आपल्याच प्रकरणात न्यायाधीश असू शकत नाही",
+      "usage": "The judge recused himself, citing the principle of nemo judex in causa sua, as he had a personal interest in the outcome."
+    },
+    {
+      "term": "Doctrine of Severability",
+      "pron": "DOK-trin ov SEV-uh-ruh-BIL-i-tee",
+      "en": "A principle that if a part of a statute is unconstitutional, but is separable from the rest, only that part is declared void, and the rest remains valid.",
+      "hi": "पृथक्करणीयता का सिद्धांत",
+      "bn": "বিভাজ্যতা তত্ত্ব",
+      "te": "విభజనీయత సిద్ధాంతం",
+      "mr": "पृथक्करणीयतेचे सिद्धांत",
+      "usage": "The court applied the doctrine of severability to strike down only the unconstitutional clause of the law."
+    },
+    {
+      "term": "Volenti Non Fit Injuria",
+      "pron": "voh-LEN-tee non fit in-JOO-ree-uh",
+      "en": "To a willing person, no injury is done (a person who voluntarily exposes themselves to a risk of harm cannot sue for damages)",
+      "hi": "स्वेच्छा से जोखिम उठाने वाले को कोई चोट नहीं लगती",
+      "bn": "ভোলেন্টি নন ফিট ইনজুরিয়া",
+      "te": "వోలెంటీ నాన్ ఫిట్ ఇంజూరియా",
+      "mr": "स्वेच्छेने धोका पत्करणाऱ्याला इजा होत नाही",
+      "usage": "The defense argued volenti non fit injuria, as the participant had signed a waiver acknowledging the risks."
+    },
+    {
+      "term": "Sub Judice",
+      "pron": "sub JOO-di-say",
+      "en": "Under judgment (a matter currently being considered by a court or judge and therefore prohibited from public discussion elsewhere)",
+      "hi": "विचाराधीन",
+      "bn": "সাব জুডিস",
+      "te": "సబ్ జుడిస్",
+      "mr": "न्यायप्रविष्ट",
+      "usage": "The media was cautioned against discussing the details of the case as it was sub judice."
+    },
+    {
+      "term": "Quid Pro Quo",
+      "pron": "kwid proh KWOH",
+      "en": "Something for something (an exchange of goods or services, where one transfer is contingent upon the other)",
+      "hi": "कुछ के बदले कुछ",
+      "bn": "কুইড প্রো কো",
+      "te": "క్విడ్ ప్రో కో",
+      "mr": "काहीतरीच्या बदल्यात काहीतरी",
+      "usage": "The contract specified a quid pro quo arrangement for the exchange of services."
+    },
+    {
+      "term": "Affidavit",
+      "pron": "AF-i-DAY-vit",
+      "en": "A written statement confirmed by oath or affirmation, for use as evidence in court.",
+      "hi": "शपथ पत्र (एक लिखित बयान जिसकी पुष्टि शपथ या प्रतिज्ञान द्वारा की जाती है, अदालत में सबूत के रूप में उपयोग के लिए।)",
+      "bn": "হলফনামা (আদালতে প্রমাণ হিসেবে ব্যবহারের জন্য শপথ বা সত্যায়ন দ্বারা নিশ্চিত করা একটি লিখিত বিবৃতি।)",
+      "te": "అఫిడవిట్ (కోర్టులో సాక్ష్యంగా ఉపయోగించడానికి ప్రమాణపూర్వకంగా ధృవీకరించబడిన లిఖితపూర్వక ప్రకటన.)",
+      "mr": "शपथपत्र (न्यायालयात पुरावा म्हणून वापरण्यासाठी शपथेवर किंवा पुष्टीकरणाद्वारे पुष्टी केलेले लेखी विधान.)",
+      "usage": "The witness submitted a signed affidavit to the court regarding the incident."
+    },
+    {
+      "term": "Alibi",
+      "pron": "AL-i-BY",
+      "en": "A claim or piece of evidence that one was elsewhere when an act, typically a criminal one, is alleged to have taken place.",
+      "hi": "अन्यत्र उपस्थिति का साक्ष्य (एक दावा या सबूत का टुकड़ा कि जब कोई कार्य, विशेष रूप से एक आपराधिक कार्य, होने का आरोप लगाया गया था, तब व्यक्ति कहीं और था।)",
+      "bn": "অ্যালিবি (একটি দাবি বা প্রমাণের টুকরো যে সাধারণত অপরাধমূলক কাজ হওয়ার সময় অভিযুক্ত ব্যক্তি অন্য কোথাও ছিল।)",
+      "te": "అలిబి (ఒక నేరపూరిత చర్య జరిగినప్పుడు నిందితుడు వేరే చోట ఉన్నాడని చెప్పే సాక్ష్యం లేదా దావా.)",
+      "mr": "अलिबाय (एक दावा किंवा पुराव्याचा टुकडा की जेव्हा एखादे कृत्य, विशेषतः गुन्हेगारी कृत्य घडल्याचा आरोप केला जातो, तेव्हा व्यक्ती इतरत्र होती.)",
+      "usage": "The defendant provided a solid alibi, proving he was at work during the time of the robbery."
+    },
+    {
+      "term": "Bail",
+      "pron": "BAYL",
+      "en": "The temporary release of an accused person awaiting trial, sometimes on condition that a sum of money is lodged to guarantee their appearance in court.",
+      "hi": "जमानत (परीक्षण की प्रतीक्षा कर रहे एक आरोपी व्यक्ति की अस्थायी रिहाई, कभी-कभी इस शर्त पर कि अदालत में उनकी उपस्थिति की गारंटी के लिए धन की राशि जमा की जाती है।)",
+      "bn": "জামিন (বিচারের অপেক্ষায় থাকা অভিযুক্ত ব্যক্তির সাময়িক মুক্তি, কখনও কখনও আদালতে তাদের উপস্থিতি নিশ্চিত করার জন্য নির্দিষ্ট পরিমাণ অর্থ জমাদানের শর্তে।)",
+      "te": "బెయిల్ (విచారణ పెండింగ్‌లో ఉన్న నిందితుడి తాత్కాలిక విడుదల, కోర్టుకు హాజరవుతారని హామీగా కొంత సొమ్మును జమ చేయాలనే నిబంధనతో.)",
+      "mr": "जामीन (खटल्याच्या प्रतीक्षेत असलेल्या आरोपीची तात्पुरती सुटका, कधीकधी न्यायालयात हजर राहण्याची हमी म्हणून ठराविक रक्कम जमा करण्याच्या अటిवर.)",
+      "usage": "The judge granted bail to the suspect under the condition that he surrenders his passport."
+    },
+    {
+      "term": "Plaintiff",
+      "pron": "PLAYN-tif",
+      "en": "A person who brings a case against another in a court of law.",
+      "hi": "वादी (एक व्यक्ति जो अदालत में दूसरे के खिलाफ मामला लाता है।)",
+      "bn": "বাদী (যে ব্যক্তি আদালতে অন্য কারো বিরুদ্ধে মামলা দায়ের করে।)",
+      "te": "వాది (న్యాయస్థానంలో మరొకరిపై కేసు వేసే వ్యక్తి.)",
+      "mr": "वादी (अशी व्यक्ती जी न्यायालयात दुसऱ्यावर खटला भरते.)",
+      "usage": "The plaintiff is seeking damages for breach of contract."
+    },
+    {
+      "term": "Defendant",
+      "pron": "di-FEN-duhnt",
+      "en": "An individual, company, or institution sued or accused in a court of law.",
+      "hi": "प्रतिवादी (एक व्यक्ति, कंपनी या संस्थान जिस पर अदालत में मुकदमा चलाया गया या आरोप लगाया गया।)",
+      "bn": "বিবাদী (কোনো ব্যক্তি, কোম্পানি বা প্রতিষ্ঠান যার বিরুদ্ধে আদালতে মামলা করা হয়েছে বা অভিযুক্ত করা হয়েছে।)",
+      "te": "ప్రతివాది (న్యాయస్థానంలో దావా వేయబడిన లేదా అభియోగాలు మోపబడిన వ్యక్తి లేదా సంస్థ.)",
+      "mr": "प्रतिवादी (अशी व्यक्ती, कंपनी किंवा संस्था ज्यांच्यावर न्यायालयात खटला भरला जातो किंवा आरोप लावला जातो.)",
+      "usage": "The defendant argued that he acted in self-defense."
+    },
+    {
+      "term": "Decree",
+      "pron": "di-KREE",
+      "en": "A final order or judgment of a court, especially in a civil case.",
+      "hi": "डिक्री (अदालत का अंतिम आदेश या निर्णय, विशेष रूप से दीवानी मामले में।)",
+      "bn": "ডিক্রি (আদালতের চূড়ান্ত আদেশ বা রায়, বিশেষ করে দেওয়ানি মামলার ক্ষেত্রে।)",
+      "te": "డిక్రీ (కోర్టు యొక్క తుది ఉత్తర్వు లేదా తీర్పు, ముఖ్యంగా సివిల్ కేసులో.)",
+      "mr": "डिक्री (न्यायालयाचा अंतिम आदेश किंवा निकाल, विशेषतः दिवाणी प्रकरणात.)",
+      "usage": "The family court issued a divorce decree after two years of proceedings."
+    },
+    {
+      "term": "Injunction",
+      "pron": "in-JUNGK-shuhn",
+      "en": "A judicial order that restrains a person from beginning or continuing an action invading the legal right of another, or that compels a person to carry out a certain act.",
+      "hi": "निषेधाज्ञा (एक न्यायिक आदेश जो किसी व्यक्ति को दूसरे के कानूनी अधिकार पर आक्रमण करने वाले कार्य को शुरू करने या जारी रखने से रोकता है, या जो किसी व्यक्ति को एक निश्चित कार्य करने के लिए मजबूर करता है।)",
+      "bn": "নিষেধাজ্ঞা (একটি বিচারিক আদেশ যা কোনো ব্যক্তিকে অন্যের আইনি অধিকার ক্ষুণ্ণ করে এমন কাজ শুরু বা চালিয়ে যেতে বাধা দেয়, অথবা কোনো নির্দিষ্ট কাজ করতে বাধ্য করে।)",
+      "te": "ఇంజంక్షన్ (ఒక వ్యక్తి మరొకరి చట్టపరమైన హక్కును ఉల్లంఘించే పనిని ప్రారంభించకుండా లేదా కొనసాగించకుండా నిరోధించే, లేదా ఒక నిర్దిష్ట పనిని చేయమని ఆదేశించే కోర్టు ఉత్తర్వు.)",
+      "mr": "मनाई हुकूम (एक न्यायालयीन आदेश जो एखाद्या व्यक्तीला दुसऱ्याच्या कायदेशीर अधिकारावर गదా आणणारी कृती सुरू करण्यापासून किंवा चालू ठेवण्यापासून रोखतो, किंवा एखाद्या व्यक्तीला विशिष्ट कृती करण्यास भाग पाडतो.)",
+      "usage": "The court granted a temporary injunction to stop the demolition of the historic building."
+    },
+    {
+      "term": "Bailable Offense",
+      "pron": "BAY-luh-buhl uh-FENS",
+      "en": "An offense in which bail is a matter of right and is typically granted by the police or the court.",
+      "hi": "जमानती अपराध (एक ऐसा अपराध जिसमें जमानत एक अधिकार है और आमतौर पर पुलिस या अदालत द्वारा दी जाती है।)",
+      "bn": "জামিনযোগ্য অপরাধ (এমন একটি অপরাধ যেখানে জামিন পাওয়া একটি অধিকার এবং সাধারণত পুলিশ বা আদালত তা মঞ্জুর করে।)",
+      "te": "బెయిల్ పొందదగిన నేరం (బెయిల్ హక్కుగా వచ్చే నేరం మరియు సాధారణంగా పోలీసులు లేదా కోర్టు ద్వారా మంజూరు చేయబడుతుంది.)",
+      "mr": "जामीनपात्र गुन्हा (असा गुन्हा ज्यामध्ये जामीन हा हक्क असतो आणि सहसा पोलीस किंवा न्यायालयाकडून तो मंजूर केला जातो.)",
+      "usage": "Minor traffic violations are often categorized as bailable offenses."
+    },
+    {
+      "term": "Non-bailable Offense",
+      "pron": "NON-BAY-luh-buhl uh-FENS",
+      "en": "A serious offense in which bail is not a matter of right but is at the discretion of the court.",
+      "hi": "गैर-जमानती अपराध (एक गंभीर अपराध जिसमें जमानत अधिकार का मामला नहीं है बल्कि अदालत के विवेक पर है।)",
+      "bn": "অ-জামিনযোগ্য অপরাধ (এমন একটি গুরুতর অপরাধ যেখানে জামিন পাওয়া অধিকার নয় বরং আদালতের বিবেচনার ওপর নির্ভরশীল।)",
+      "te": "బెయిల్ పొందలేని నేరం (బెయిల్ హక్కుగా రాని తీవ్రమైన నేరం మరియు ఇది కోర్టు విచక్షణపై ఆధారపడి ఉంటుంది.)",
+      "mr": "अजामीनपात्र गुन्हा (असा गंभीर गुन्हा ज्यामध्ये जामीन हा हक्क नसून तो न्यायालयाच्या विवेकाधीन असतो.)",
+      "usage": "Murder is a non-bailable offense in many jurisdictions."
+    },
+    {
+      "term": "Cognizable Offense",
+      "pron": "KOG-ni-zuh-buhl uh-FENS",
+      "en": "An offense for which a police officer may arrest without a warrant.",
+      "hi": "संज्ञेय अपराध (एक ऐसा अपराध जिसके लिए एक पुलिस अधिकारी बिना वारंट के गिरफ्तार कर सकता है।)",
+      "bn": "আমলযোগ্য অপরাধ (এমন একটি অপরাধ যেটির জন্য পুলিশ অফিসার ওয়ারেন্ট ছাড়াই গ্রেপ্তার করতে পারেন।)",
+      "te": "కాగ్నిజబుల్ నేరం (పోలీసు అధికారి వారంట్ లేకుండా అరెస్టు చేయగల నేరం.)",
+      "mr": "दखलपात्र गुन्हा (ज्या गुन्ह्यासाठी पोलीस अधिकारी वॉरंटशिवाय अटक करू शकतात.)",
+      "usage": "Theft is treated as a cognizable offense, allowing the police to take immediate action."
+    },
+    {
+      "term": "Non-cognizable Offense",
+      "pron": "NON-KOG-ni-zuh-buhl uh-FENS",
+      "en": "An offense for which a police officer has no authority to arrest without a warrant.",
+      "hi": "असंज्ञेय अपराध (एक ऐसा अपराध जिसके लिए एक पुलिस अधिकारी को बिना वारंट के गिरफ्तार करने का कोई अधिकार नहीं है।)",
+      "bn": "অ-আমলযোগ্য অপরাধ (এমন একটি অপরাধ যেটির জন্য পুলিশ অফিসার ওয়ারেন্ট ছাড়া গ্রেপ্তার করার ক্ষমতা রাখেন না।)",
+      "te": "నాన్-కాగ్నిజబుల్ నేరం (పోలీసు అధికారికి వారంట్ లేకుండా అరెస్టు చేసే అధికారం లేని నేరం.)",
+      "mr": "अदखलपात्र गुन्हा (असा गुन्हा ज्यासाठी पोलिसांना वॉरंटशिवाय अटक करण्याचा अधिकार नसतो.)",
+      "usage": "Defamation is generally a non-cognizable offense in India."
+    },
+    {
+      "term": "Summons",
+      "pron": "SUM-uhnz",
+      "en": "An official order to appear in a court of law.",
+      "hi": "समन (अदालत में उपस्थित होने का आधिकारिक आदेश।)",
+      "bn": "সমন (আদালতে হাজির হওয়ার সরকারি আদেশ।)",
+      "te": "సమన్లు (కోర్టుకు హాజరు కావాలని ఇచ్చే అధికారిక ఆదేశం.)",
+      "mr": "समन्स (न्यायालयात हजर राहण्याचा अधिकृत आदेश.)",
+      "usage": "The witness received a court summons to testify next week."
+    },
+    {
+      "term": "Warrant",
+      "pron": "WAWR-uhnt",
+      "en": "A document issued by a legal or government official authorizing the police to make an arrest, search premises, or carry out some other action relating to the administration of justice.",
+      "hi": "वारंट (न्याय के प्रशासन से संबंधित गिरफ्तारी करने, परिसर की तलाशी लेने या कुछ अन्य कार्रवाई करने के लिए पुलिस को अधिकृत करने वाले कानूनी या सरकारी अधिकारी द्वारा जारी किया गया दस्तावेज।)",
+      "bn": "ওয়ারেন্ট (পুলিশকে গ্রেপ্তার করা, তল্লাশি চালানো বা ন্যায়বিচারের সাথে সম্পর্কিত অন্য কোনো পদক্ষেপ নেওয়ার অনুমতি দিয়ে আইনি বা সরকারি কর্মকর্তার জারি করা নথি।)",
+      "te": "వారంట్ (అరెస్టు చేయడానికి, సోదాలు చేయడానికి లేదా న్యాయ పరిపాలనకు సంబంధించిన ఇతర చర్యలు తీసుకోవడానికి పోలీసులను అనుమతిస్తూ జారీ చేసే పత్రం.)",
+      "mr": "वॉरंट (पोलिसांना अटक करण्याचा, जागेची झडती घेण्याचा किंवा न्यायदानाशी संबंधित इतर कोणतीही कार्यवाही करण्याचा अधिकार देणारा अधिकृत दस्तऐవज.)",
+      "usage": "The police had a search warrant to inspect the suspect's house."
+    },
+    {
+      "term": "Affirmation",
+      "pron": "AF-er-MAY-shun",
+      "en": "A solemn declaration by a person who conscientiously objects to taking an oath.",
+      "hi": "प्रतिज्ञान (एक व्यक्ति द्वारा एक गंभीर घोषणा जो ईमानदारी से शपथ लेने पर आपत्ति जताता है।)",
+      "bn": "অ্যাফারমেশন (শপথ নিতে যার নৈতিক আপত্তি আছে এমন ব্যক্তির করা গুরুতর ঘোষণা।)",
+      "te": "ప్రతిజ్ఞ (ప్రమాణం చేయడానికి అభ్యంతరం ఉన్న వ్యక్తి చేసే నిశ్చయాత్మక ప్రకటన.)",
+      "mr": "प्रतिज्ञान (शपथ घेण्यास आक्षेप असलेल्या व्यक्तीने केलेले गंभीर विधान.)",
+      "usage": "The witness chose to give an affirmation instead of taking a religious oath."
+    },
+    {
+      "term": "Alimony",
+      "pron": "AL-i-MOH-nee",
+      "en": "A husband's or wife's court-ordered provision for a spouse after separation or divorce.",
+      "hi": "गुजारा भत्ता (अलगाव या तलाक के बाद जीवनसाथी के लिए एक पति या पत्नी का अदालत द्वारा आदेशित प्रावधान।)",
+      "bn": "খোরপোশ (বিচ্ছেদ বা বিবাহবিচ্ছেদের পর স্ত্রীর জন্য স্বামীর পক্ষ থেকে আদালতের নির্দেশে প্রদত্ত অর্থ বা ব্যবস্থা।)",
+      "te": "భరణం (విడిపోయిన తర్వాత లేదా విడాకుల తర్వాత భార్యాభర్తలు ఒకరికొకరు చెల్లించాలని కోర్టు ఇచ్చే ఆదేశం.)",
+      "mr": "पोटगी (विभक्त झाल्यानंतर किंवा घटस्फोटानंतर जोडीदाराच्या उदरनिववाहासाठी न्यायालयाने दिलेला आर्थिक आदेश.)",
+      "usage": "The court ordered the husband to pay monthly alimony to his former wife."
+    },
+    {
+      "term": "Appellant",
+      "pron": "uh-PEL-uhnt",
+      "en": "A person who applies to a higher court for a reversal of the decision of a lower court.",
+      "hi": "अपीलकर्ता (एक व्यक्ति जो निचली अदालत के फैसले को वापस लेने के लिए उच्च न्यायालय में आवेदन करता है।)",
+      "bn": "আপিলকারী (যে ব্যক্তি নিম্ন আদালতের রায় পরিবর্তনের জন্য উচ্চ আদালতে আবেদন করে।)",
+      "te": "అప్పీలుదారు (దిగువ కోర్టు తీర్పును సవరించాలని పై కోర్టును ఆశ్రయించే వ్యక్తి.)",
+      "mr": "अपीलकर्ता (अशी व्यक्ती जी कनिष्ठ न्यायालयाचा निकाल बदलण्यासाठी वरिष्ठ न्यायालयात अर्ज करते.)",
+      "usage": "The appellant argued that the trial judge made a legal error."
+    },
+    {
+      "term": "Respondent",
+      "pron": "ri-SPON-duhnt",
+      "en": "A person who is called upon to respond to a petition or an appeal.",
+      "hi": "प्रत्यर्थी (एक व्यक्ति जिसे याचिका या अपील का जवाब देने के लिए बुलाया जाता है।)",
+      "bn": "রেসপনডেন্ট (যে ব্যক্তিকে কোনো আবেদন বা আপিলের জবাব দেওয়ার জন্য ডাকা হয়।)",
+      "te": "ప్రతివాది/రెస్పాండెంట్ (అప్పీలు లేదా పిటిషన్‌కు సమాధానం ఇవ్వవలసిన వ్యక్తి.)",
+      "mr": "उत्तरदाता (अशी व्यक्ती जिला याचिका किंवा अपीलाला उत्तर देण्यासाठी बोलावले जाते.)",
+      "usage": "The respondent filed a counter-affidavit in the High Court."
+    },
+    {
+      "term": "Arbitrator",
+      "pron": "AHR-bi-tray-ter",
+      "en": "An independent person or body officially appointed to settle a dispute.",
+      "hi": "मध्यस्थ (विवाद को सुलझाने के लिए आधिकारिक रूप से नियुक्त एक स्वतंत्र व्यक्ति या निकाय।)",
+      "bn": "সালিশকারী (বিরোধ নিষ্পত্তির জন্য আনুষ্ঠানিকভাবে নিযুক্ত একজন স্বতন্ত্র ব্যক্তি বা সংস্থা।)",
+      "te": "ఆర్బిట్రేటర్ (వివాదాన్ని పరిష్కరించడానికి అధికారికంగా నియమించబడిన స్వతంత్ర వ్యక్తి లేదా సంస్థ.)",
+      "mr": "लवाद (वाद सोडवण्यासाठी अधिकृतपणे नियुक्त केलेली स्वतंत्र व्यक्ती किंवा संस्था.)",
+      "usage": "The arbitrator's decision is binding on both parties involved in the commercial dispute."
+    },
+    {
+      "term": "Barrister",
+      "pron": "BAR-is-ter",
+      "en": "A lawyer entitled to practice as an advocate, particularly in higher courts.",
+      "hi": "बैरिस्टर (एक वकील जिसे अधिवक्ता के रूप में अभ्यास करने का अधिकार है, विशेष रूप से उच्च न्यायालयों में।)",
+      "bn": "ব্যারিস্টার (একজন আইনজীবী যিনি বিশেষ করে উচ্চ আদালতে আইনজীবী হিসেবে কাজ করার অধিকারী।)",
+      "te": "బారిస్టర్ (ముఖ్యంగా ఉన్నత న్యాయస్థానాలలో వాదించే అధికారం కలిగిన న్యాయవాది.)",
+      "mr": "बॅरिस्टर (असा वकील ज्याला वकील म्हणून सराव करण्याचा अधिकार आहे, विशेषतः उच्च न्यायालयांमध्ये.)",
+      "usage": "The family hired a prominent barrister to represent them in the Supreme Court."
+    },
+    {
+      "term": "Beneficiary",
+      "pron": "BEN-uh-FISH-ee-er-ee",
+      "en": "A person who derives advantage from something, especially a trust, will, or life insurance policy.",
+      "hi": "लाभार्थी (एक व्यक्ति जो किसी चीज़ से लाभ प्राप्त करता है, विशेष रूप से एक ट्रस्ट, वसीयत या जीवन बीमा पॉलिसी।)",
+      "bn": "সুবিধাভোগী (এমন একজন ব্যক্তি যিনি কোনো কিছু থেকে সুবিধা পান, বিশেষ করে ট্রাস্ট, উইল বা জীবন বীমা পলিসি থেকে।)",
+      "te": "లబ్ధిదారుడు (ముఖ్యంగా ట్రస్ట్, వృద్ధాప్య పింఛను లేదా బీమా పాలసీ నుండి ప్రయోజనం పొందే వ్యక్తి.)",
+      "mr": "लाभार्थी (अशी व्यक्ती जिला कशाचा तरी फायदा होतो, विशेषतः ट्रस्ट, मृ्त्युपत्र किंवा विमा पॉलिसीमधून.)",
+      "usage": "He was named the sole beneficiary of his grandfather's massive estate."
+    },
+    {
+      "term": "Breach of Contract",
+      "pron": "BREECH ov KON-trakt",
+      "en": "Failure to perform any term of a contract without a legitimate legal excuse.",
+      "hi": "अनुबंध का उल्लंघन (बिना किसी वैध कानूनी बहाने के अनुबंध की किसी भी शर्त को पूरा करने में विफलता।)",
+      "bn": "চুক্তি ভঙ্গ (বৈধ আইনি অজুহাত ছাড়াই চুক্তির কোনো শর্ত পালনে ব্যর্থতা।)",
+      "te": "ఒప్పంద ఉల్లంఘన (న్యాయబద్ధమైన కారణం లేకుండా ఒప్పంద నిబంధనలను పాటించకపోవడం.)",
+      "mr": "करारभंग (कायदेशीर कारणाशिवाय करारातील कोणत्याही अटीचे पालन न करणे.)",
+      "usage": "The company was sued for breach of contract after failing to deliver the goods on time."
+    },
+    {
+      "term": "Caveat",
+      "pron": "KAV-ee-at",
+      "en": "A warning or proviso of specific stipulations, conditions, or limitations.",
+      "hi": "चेतावनी या शर्त (विशिष्ट प्रावधानों, शर्तों या सीमाओं की चेतावनी।)",
+      "bn": "ক্যাভিয়েট (নির্দিষ্ট শর্ত বা সীমাবদ্ধতার বিষয়ে আনুষ্ঠানিক সতর্কতা।)",
+      "te": "కావియట్ (నిర్దిష్ట నిబంధనలు లేదా పరిమితుల గురించి ఇచ్చే హెచ్చరిక.)",
+      "mr": "कॅव्हेट (विशिष्ट अटी किंवा मर्यादांबाबत दिलेली ताकीद किंवा चेतावणी.)",
+      "usage": "The judge issued a caveat that the release was conditional on future good behavior."
+    },
+    {
+      "term": "Class Action",
+      "pron": "KLAS AK-shun",
+      "en": "A lawsuit filed by one or more people on behalf of a larger group of people who are in a similar situation.",
+      "hi": "वर्ग कार्रवाई (एक या अधिक लोगों द्वारा उन लोगों के एक बड़े समूह की ओर से दायर किया गया मुकदमा जो समान स्थिति में हैं।)",
+      "bn": "ক্লাস অ্যাকশন (একই ধরণের সমস্যায় থাকা একদল মানুষের পক্ষে এক বা একাধিক ব্যক্তির করা মামলা।)",
+      "te": "క్లాస్ యాక్షన్ (ఒకే రకమైన సమస్య ఉన్న పెద్ద సమూహం తరపున ఒకరు లేదా అంతకంటే ఎక్కువ మంది వేసే దావా.)",
+      "mr": "सामूहिक खटला (समान परिस्थितीत असलेल्या लोकांच्या मोठ्या गटाच्या वतीने एक किंवा अधिक व्यक्तींनी दाखल केलेला खटला.)",
+      "usage": "The victims of the chemical spill filed a class action lawsuit against the corporation."
+    },
+    {
+      "term": "Collateral",
+      "pron": "kuh-LAT-er-uhl",
+      "en": "Something pledged as security for repayment of a loan, to be forfeited in the event of a default.",
+      "hi": "संपार्श्विक (ऋण के पुनर्भुगतान के लिए सुरक्षा के रूप में गिरवी रखी गई कोई चीज़, जिसे चूक की स्थिति में जब्त किया जा सकता है।)",
+      "bn": "কোল্যাটারাল (ঋণ পরিশোধের গ্যারান্টি হিসেবে বন্ধক রাখা কোনো কিছু।)",
+      "te": "కొలేటరల్ (రుణం తిరిగి చెల్లించడానికి పూచీకత్తుగా ఉంచే ఆస్తి లేదా సెక్యూరిటీ.)",
+      "mr": "तारण (कर्ज परतफेडीची हमी म्हणून गहाण ठेवलेली वस्तू, जी कर्ज न फेडल्यास जप्त केली जाऊ शकते.)",
+      "usage": "He used his family home as collateral for the business loan."
+    },
+    {
+      "term": "Common Law",
+      "pron": "KOM-uhn LAW",
+      "en": "The part of English law that is derived from custom and judicial precedent rather than statutes.",
+      "hi": "सामान्य कानून (अंग्रेजी कानून का वह हिस्सा जो कानून के बजाय प्रथा और न्यायिक मिसाल से लिया गया है।)",
+      "bn": "কমন ল (প্রথা এবং বিচারিক নজির থেকে উদ্ভূত আইনের অংশ।)",
+      "te": "కామన్ లా (శానసాల కంటే కూడా ఆచారాలు మరియు మునుపటి కోర్టు తీర్పుల నుండి ఉద్భవించిన చట్టం.)",
+      "mr": "कॉमन लॉ (कायद्याऐवजी प्रथा आणि न्यायालयीन निर्णयांतून विकसित झालेली कायदा पद्धती.)",
+      "usage": "Indian legal traditions often draw from British common law principles."
+    },
+    {
+      "term": "Confession",
+      "pron": "kuhn-FESH-uhn",
+      "en": "A formal statement admitting that one is guilty of a crime.",
+      "hi": "इकबालिया बयान (यह स्वीकार करने वाला एक औपचारिक बयान कि व्यक्ति किसी अपराध का दोषी है।)",
+      "bn": "স্বীকারোক্তি (নিজে অপরাধী তা স্বীকার করে দেওয়া আনুষ্ঠানিক বিবৃতি।)",
+      "te": "తప్పును ఒప్పుకోవడం/కన్ఫెషన్ (తాను నేరం చేశానని అధికారికంగా అంగీకరించడం.)",
+      "mr": "गुन्ह्याची कबुली (मी गुन्हा केला आहे असे मान्य करणारा अधिकृत जबाब.)",
+      "usage": "The suspect signed a written confession at the police station late last night."
+    },
+    {
+      "term": "Consideration",
+      "pron": "kuhn-SID-er-AY-shuhn",
+      "en": "Something of value exchanged in a contract; the price paid by one party for the promise of the other.",
+      "hi": "प्रतिफल (अनुबंध में विनिमय की गई मूल्यवान वस्तु; दूसरे के वादे के लिए एक पक्ष द्वारा चुकाई गई कीमत।)",
+      "bn": "প্রতিদান (চুক্তিতে বিনিময়ে প্রদত্ত কোনো মূল্যবান বস্তু।)",
+      "te": "ప్రతిఫలం (ఒప్పందంలో భాగంగా పరస్పరం మార్చుకునే విలువైన వస్తువు లేదా నగదు.)",
+      "mr": "प्रतिफळ (करारामध्ये देवाणघेवाण केलेली मूल्यवान गोष्ट; एका पक्षाने दुसऱ्याच्या आश्वासनासाठी दिलेली किंमत.)",
+      "usage": "A contract is not legally binding without valid consideration from both parties."
+    },
+    {
+      "term": "Cross-examination",
+      "pron": "KRAWS-ig-ZAM-i-NAY-shun",
+      "en": "The examination of a witness who has already testified in order to check or discredit the witness's testimony.",
+      "hi": "जिरह (एक गवाह की जांच जिसने पहले ही गवाही दी है ताकि गवाह की गवाही की जांच की जा सके या उसे बदनाम किया जा सके।)",
+      "bn": "জেরা (সাক্ষীর সাক্ষ্য যাচাই বা খণ্ডন করার জন্য করা উল্টো জিজ্ঞাসাবাদ।)",
+      "te": "క్రాస్ ఎగ్జామినేషన్ (ఒక సాక్షి చెప్పిన సాక్ష్యాన్ని తనిఖీ చేయడానికి లేదా తప్పు అని నిరూపించడానికి చేసే విచారణ.)",
+      "mr": "उलट तपासणी (साक्ष देणाऱ्या साक्षीदाराची उलट उलट तपासणी करणे जेणेकरून त्याच्या साक्षीची विश्वासार्हता तपासता येईल.)",
+      "usage": "The defense attorney spent hours in cross-examination, trying to expose inconsistencies in the witness's story."
+    },
+    {
+      "term": "Damages",
+      "pron": "DAM-ih-jiz",
+      "en": "A sum of money claimed or awarded in compensation for a loss or an injury.",
+      "hi": "हर्जाना (नुकसान या चोट के मुआवजे के रूप में दावा की गई या दी गई धन की राशि।)",
+      "bn": "ক্ষতিপূরণ (ক্ষতি বা আঘাতের জন্য দাবি করা বা মঞ্জুর করা অর্থ।)",
+      "te": "నష్టపరిహారం (నష్టం లేదా గాయానికి పరిహారంగా కోరే లేదా ఇచ్చే సొమ్ము.)",
+      "mr": "नुकसानभरपाई (नुकसान किंवा इजा झाल्याबद्दल दिलेली आर्थिक रक्कम.)",
+      "usage": "The court ordered the construction company to pay massive damages for the building collapse."
+    },
+    {
+      "term": "Deposition",
+      "pron": "DEP-uh-ZISH-un",
+      "en": "The process of giving sworn evidence out of court, usually recorded for future use.",
+      "hi": "बयान देना (अदालत के बाहर शपथ लेकर गवाही देने की प्रक्रिया, आमतौर पर भविष्य के उपयोग के लिए रिकॉर्ड की जाती है।)",
+      "bn": "ডেপোজিশন (আদালতের বাইরে শপথ নিয়ে সাক্ষ্য দেওয়ার প্রক্রিয়া।)",
+      "te": "డిపోజిషన్ (కోర్టు వెలుపల ప్రమాణం చేసి ఇచ్చే సాక్ష్యం, దీనిని భవిష్యత్తు కోసం రికార్డ్ చేస్తారు.)",
+      "mr": "जबाब नोंदवणे (न्यायालयाबाहेर शपथेवर दिलेला पुरावा, जो भविष्यातील वापरासाठी रेकॉर्ड केला जातो.)",
+      "usage": "The lawyer took a video deposition from the witness who was unable to travel to the trial."
+    },
+    {
+      "term": "Discovery",
+      "pron": "dih-SKUHV-er-ee",
+      "en": "The pre-trial phase in a lawsuit in which each party investigates the facts of a case through rules of civil procedure.",
+      "hi": "प्रकटीकरण (एक मुकदमे में परीक्षण-पूर्व चरण जिसमें प्रत्येक पक्ष नागरिक प्रक्रिया के नियमों के माध्यम से मामले के तथ्यों की जांच करता है।)",
+      "bn": "ডিসকভারি (মামলার শুনানির আগে উভয় পক্ষ কর্তৃক তথ্য ও প্রমাণ সংগ্রহের পর্যায়।)",
+      "te": "డిస్కవరీ (సివిల్ కోడ్ నిబంధనల ప్రకారం ఇరు పక్షాలు కేసు వాస్తవాలను విచారించే ప్రక్రియ.)",
+      "mr": "प्रकटीकरण (खटल्याच्या सुनावणीपूर्वीची अशी पायरी जिथे दोन्ही पक्ष पुराव्यांची देवाणघेवाण करतात.)",
+      "usage": "During discovery, many emails were found that proved the company knew about the defect."
+    },
+    {
+      "term": "Due Process",
+      "pron": "DOO PROH-ses",
+      "en": "Fair treatment through the normal judicial system, especially as a citizen's entitlement.",
+      "hi": "विधि की उचित प्रक्रिया (सामान्य न्यायिक प्रणाली के माध्यम से उचित व्यवहार, विशेष रूप से नागरिक के अधिकार के रूप में।)",
+      "bn": "ডিউ প্রসেস (বিচার ব্যবস্থার মাধ্যমে ন্যায্য আচরণ পাওয়ার অধিকার।)",
+      "te": "సరైన విచారణ ప్రక్రియ (సాధారణ న్యాయ వ్యవస్థ ద్వారా లభించే నిష్పాక్షికమైన చికిత్స.)",
+      "mr": "कायद्याची चक्राकार प्रक्रिया (न्यायव्यवस्थेद्वारे मिळणारी न्याय्य वागणूक, जो प्रत्येक नागरिकाचा अधिकार आहे.)",
+      "usage": "Every citizen has a right to due process before their liberty is taken away."
+    },
+    {
+      "term": "Easement",
+      "pron": "EEZ-muhnt",
+      "en": "A right to cross or otherwise use someone else's land for a specified purpose.",
+      "hi": "सुखाधिकार (एक निर्दिष्ट उद्देश्य के लिए किसी और की भूमि को पार करने या अन्यथा उपयोग करने का अधिकार।)",
+      "bn": "ইজমেন্ট (নির্দিষ্ট উদ্দেশ্যে অন্যের জমি ব্যবহারের অধিকার।)",
+      "te": "ఈజ్‌మెంట్ (ఒక నిర్దిష్ట ప్రయోజనం కోసం మరొకరి భూమిని ఉపయోగించుకునే హక్కు.)",
+      "mr": "सुखाधिकार (एखाद्या ठराविक कामासाठी दुसऱ्याच्या जमिनीवरून जाण्याचा किंवा तिचा वापर करण्याचा अधिकार.)",
+      "usage": "The utility company has an easement to run power lines across the back of the property."
+    },
+    {
+      "term": "Entrapment",
+      "pron": "en-TRAP-muhnt",
+      "en": "The action of tricking someone into committing a crime in order to secure their prosecution.",
+      "hi": "हथकंडा (किसी को अपराध करने के लिए उकसाने या फंसाने की क्रिया ताकि उन पर मुकदमा चलाया जा सके।)",
+      "bn": "এন্ট্র্যাপমেন্ট (কাউকে কোনো অপরাধ করতে প্ররোচিত করার মাধ্যমে আইনি জালে ফাসানো।)",
+      "te": "ఎంట్రాప్‌మెంట్ (ఒక వ్యక్తిని నేరం చేసేలా ఉసిగొల్పి అరెస్టు చేసేలా చేసే కుతంత్రం.)",
+      "mr": "सापळा रचणे (एखाद्या व्यक्तीला गुन्हेगारी कृत्य करण्यास प्रवृत्त करणे जेणेकरून त्याच्यावर खटला भरता येईल.)",
+      "usage": "The defense argued entrapment, saying the undercover officer pushed the suspect to buy the illegal items."
+    },
+    {
+      "term": "Equity",
+      "pron": "EK-wi-tee",
+      "en": "A branch of law that focuses on fairness and justice, often providing remedies not available under common law.",
+      "hi": "इक्विटी / साम्या (कानून की एक शाखा जो निष्पक्षता और न्याय पर केंद्रित है, अक्सर ऐसे उपचार प्रदान करती है जो सामान्य कानून के तहत उपलब्ध नहीं हैं।)",
+      "bn": "ইক্যুইটি (আইনের এমন একটি শাখা যা সমতা ও ন্যায়ের ওপর গুরুত্ব দেয় এবং প্রথাগত আইনের সীমাবদ্ধতা দূর করে।)",
+      "te": "ఈక్విటీ (న్యాయం మరియు నిష్పాక్షికతపై దృష్టి సారించే చట్టం యొక్క శాఖ.)",
+      "mr": "समभागात्मक न्याय (कायद्याची अशी शाखा जी केवळ तांत्रिक नियमांऐवजी समानता आणि न्यायावर भर देते.)",
+      "usage": "The court of equity granted an injunction, which was not available under traditional law."
+    },
+    {
+      "term": "Escrow",
+      "pron": "ES-kroh",
+      "en": "A bond, deed, or other document kept in the custody of a third party and taking effect only when a specified condition has been fulfilled.",
+      "hi": "एस्क्रो (एक बॉन्ड, डीड या अन्य दस्तावेज जिसे तीसरे पक्ष की हिरासत में रखा जाता है और केवल तभी प्रभावी होता है जब एक निर्दिष्ट शर्त पूरी हो जाती है।)",
+      "bn": "এসক্রো (তৃতীয় পক্ষের হেফাজতে রাখা কোনো দলিল যা নির্দিষ্ট শর্ত পূরণের পর কার্যকর হয়।)",
+      "te": "ఎస్కరో (ఒక నిర్దిష్ట షరతు నెరవేరిన తర్వాతే పని చేసేలా మూడవ పక్షం వద్ద ఉంచిన పత్రం లేదా సొమ్ము.)",
+      "mr": "एस्क्रो (तिसऱ्या पक्षाकडे सुरक्षित ठेवलेला दस्तऐवज किंवा रक्कम, जी अटी पूर्ण झाल्यावरच हस्तांतरित केली जाते.)",
+      "usage": "The home buyer's deposit is held in escrow until the property inspection is cleared."
+    },
+    {
+      "term": "Estate",
+      "pron": "es-TAYT",
+      "en": "All the money and property owned by a particular person, especially at death.",
+      "hi": "संपदा (एक विशेष व्यक्ति के स्वामित्व वाले सभी धन और संपत्ति, विशेष रूप से मृत्यु पर।)",
+      "bn": "এস্টেট (ব্যক্তির মালিকানাধীন সমস্ত অর্থ ও সম্পত্তি, বিশেষ করে মৃত্যুর সময়।)",
+      "te": "ఎస్టేట్ (ఒక వ్యక్తికి ఉన్న మొత్తం ఆస్తిపాస్తులు మరియు నగదు.)",
+      "mr": "मालमत्ता (एखाद्या व्यक्तीच्या मालकीचे सर्व पैसे आणि मालमत्ता.)",
+      "usage": "The lawyer spent months distributing the assets of the complex estate to the heirs."
+    },
+    {
+      "term": "Eviction",
+      "pron": "ee-VIK-shun",
+      "en": "The action of expelling someone, especially a tenant, from a property.",
+      "hi": "बेदखली (किसी को, विशेष रूप से एक किरायेदार को, किसी संपत्ति से बाहर निकालने की क्रिया।)",
+      "bn": "উচ্ছেদ (কাউকে, বিশেষ করে ভাড়াটিয়াকে কোনো সম্পত্তি থেকে বের করে দেওয়া।)",
+      "te": "తొలగింపు/ఎవిక్షన్ (యజమాని భూమి లేదా ఆస్తి నుండి అద్దెదారుని బలవంతంగా బయటకు పంపే చర్య.)",
+      "mr": "बेदखल करणे (एखाद्या मालमत्तेतून एखाद्याला, विशेषतः भाडेकरूला बाहेर काढणे.)",
+      "usage": "The landlord filed for eviction after three months of unpaid rent."
+    },
+    {
+      "term": "Evidence",
+      "pron": "EV-i-duhns",
+      "en": "Information used to prove or disprove a fact or an allegation in a case.",
+      "hi": "सबूत / साक्ष्य (मामले में किसी तथ्य या आरोप को साबित करने या गलत साबित करने के लिए उपयोग की जाने वाली जानकारी।)",
+      "bn": "প্রমাণ (কোনো অভিযোগ বা সত্যের স্বপক্ষ বা বিপক্ষে উপস্থাপিত তথ্য।)",
+      "te": "సాక్ష్యం (ఒక వాస్తవాన్ని లేదా ఆరోపణను నిరూపించడానికి ఉపయోగించే సమాచారం.)",
+      "mr": "पुरावा (खटल्यातील एखादी वस्तुस्थिती किंवा आरोप सिद्ध करण्यासाठी वापरली जाणारी माहिती.)",
+      "usage": "The fingerprints on the vault were considered key evidence by the crime lab."
+    },
+    {
+      "term": "Exclusionary Rule",
+      "pron": "eks-KLOO-zhuhn-er-ee ROOL",
+      "en": "A law that prohibits the use of illegally obtained evidence in a criminal trial.",
+      "hi": "बहिष्करण नियम (एक कानून जो आपराधिक परीक्षण में अवैध रूप से प्राप्त साक्ष्य के उपयोग को रोकता है।)",
+      "bn": "বর্জনীয় নিয়ম (অবৈধভাবে সংগৃহীত প্রমাণ আদালতে ব্যবহার না করার আইনি নীতি।)",
+      "te": "ఎక్స్‌క్లూషనరీ రూల్ (అక్రమంగా సేకరించిన సాక్ష్యాలను కోర్టులో ఉపయోగించకుండా నిషేధించే నియమం.)",
+      "mr": "बहिष्कृत करण्याचा नियम (बेकायदेशीरपणे मिळवलेला पुरावा न्यायालयात वापरण्यास मनाई करणारा नियम.)",
+      "usage": "The defense moved to suppress the evidence, citing the exclusionary rule since the search was illegal."
+    },
+    {
+      "term": "Executor",
+      "pron": "ig-ZEK-yuh-ter",
+      "en": "A person appointed by a testator to carry out the terms of their will.",
+      "hi": "निष्पादक / वसीयत निष्पादक (अपनी वसीयत की शर्तों को पूरा करने के लिए वसीयतकर्ता द्वारा नियुक्त व्यक्ति।)",
+      "bn": "উইল পালনকারী/এক্সিকিউটর (উইলের শর্ত পালনের জন্য উইলে নিযুক্ত ব্যক্তি।)",
+      "te": "ఎగ్జిక్యూటర్ (మృత్యుపత్రం లేదా విల్లులో రాసిన అంశాలను అమలు చేయడానికి నియమించబడిన వ్యక్తి.)",
+      "mr": "मृत्यूपत्र बजावणारा (मृत्युपत्रातील अटी पूर्ण करण्यासाठी मृत व्यक्तीने नियुक्त केलेली व्यक्ती.)",
+      "usage": "As the executor of the will, she had to pay the taxes and debts of the deceased person."
+    },
+    {
+      "term": "Expert Witness",
+      "pron": "EKS-purt WIT-nis",
+      "en": "A witness who is qualified as an expert in a specific subject and can give specialized testimony.",
+      "hi": "विशेषज्ञ गवाह (एक गवाह जो किसी विशिष्ट विषय में विशेषज्ञ के रूप में योग्य है और विशेष गवाही दे सकता है।)",
+      "bn": "বিশেষজ্ঞ সাক্ষী (পেশাদার কোনো ক্ষেত্রে বিশেষজ্ঞ হিসেবে সাক্ষ্য দেওয়ার যোগ্য ব্যক্তি।)",
+      "te": "నిపుణుడైన సాక్షి (ఒక నిర్దిష్ట రంగంలో నిపుణుడు మరియు కోర్టులో శాస్త్రీయ లేదా సాంకేతిక సాక్ష్యం ఇవ్వగల వ్యక్తి.)",
+      "mr": "तज्ज्ञ साक्षीदार (एखाद्या विषयातील तज्ज्ञ व्यक्ती जी न्यायालयात त्या विषयाशी संबंधित विशेष साक्ष देऊ शकते.)",
+      "usage": "The state called a forensic expert witness to explain the DNA analysis."
+    },
+    {
+      "term": "Express Warranty",
+      "pron": "eks-PRES WAWR-uhn-tee",
+      "en": "A specific promise or statement of fact made by a seller about the quality or performance of a product.",
+      "hi": "व्यक्त वारंटी (विक्रेता द्वारा उत्पाद की गुणवत्ता या प्रदर्शन के बारे में किया गया एक विशिष्ट वादा या तथ्य का बयान।)",
+      "bn": "সুস্পষ্ট ওয়ারেন্টি (পণ্যের গুণমান নিয়ে বিক্রেতার দেওয়া স্পষ্ট প্রতিশ্রুতি।)",
+      "te": "ఎక్స్‌ప్రెస్ వారంటీ (ఉత్పత్తి నాణ్యత గురించి విక్రేత ఇచ్చే స్పష్టమైన హామీ.)",
+      "mr": "स्पष्ट वॉरंटी (एखाद्या उत्पादनाच्या गुणवत्तेबद्दल विक्रेत्याने दिलेले स्पष्ट आश्वासन.)",
+      "usage": "The contract includes an express warranty covering all parts for five years."
+    },
+    {
+      "term": "Extortion",
+      "pron": "ik-STAWR-shun",
+      "en": "The practice of obtaining something, especially money, through force or threats.",
+      "hi": "जबरन वसूली (बल या धमकी के माध्यम से कुछ प्राप्त करने की प्रथा, विशेष रूप से धन।)",
+      "bn": "চাঁদাবাজি/জোরপূর্বক আদায় (ভয় দেখিয়ে বা জবরদস্তি করে টাকা আদায়।)",
+      "te": "ఎక్స్‌టార్షన్/వసూళ్లకు పాల్పడటం (బెదిరింపుల ద్వారా డబ్బు లేదా వస్తువులను వసూలు చేయడం.)",
+      "mr": "खंडणी उकळणे (धाक दाखवून किंवा धमकावून पैसे वसूल करणे.)",
+      "usage": "He was arrested for extortion after threatening to leak confidential information if not paid."
+    },
+    {
+      "term": "Extradition",
+      "pron": "eks-truh-DISH-un",
+      "en": "The legal process by which one country or state surrenders a person suspected of a crime to another jurisdiction.",
+      "hi": "प्रत्यर्पण (वह कानूनी प्रक्रिया जिसके द्वारा एक देश या राज्य किसी अपराध के संदिग्ध व्यक्ति को दूसरे अधिकार क्षेत्र को सौंपता है।)",
+      "bn": "প্রত্যর্পণ (এক দেশ থেকে অভিযোগকারী অন্য দেশে থাকা আসামীকে ফেরত আনার প্রক্রিয়া।)",
+      "te": "నేరస్తుల అప్పగింత (ఒక దేశం తన వద్ద ఉన్న నిందితుడిని నేరం జరిగిన దేశానికి అప్పగించే చట్టపరమైన ప్రక్రియ.)",
+      "mr": "हस्तांतरण (एखाद्या गुन्हेगाराला एका देशातून दुसऱ्या देशाकडे कायदेशीररित्या सोपवण्याची प्रक्रिया.)",
+      "usage": "India filed for the extradition of the fugitive businessman who fled to Europe."
+    },
+    {
+      "term": "False Imprisonment",
+      "pron": "FAWLS im-PRIZ-uhn-muhnt",
+      "en": "The illegal confinement of one person without their consent and without legal justification.",
+      "hi": "गलत तरीके से कारावास (बिना उनकी सहमति के और बिना कानूनी औचित्य के एक व्यक्ति का अवैध कारावास।)",
+      "bn": "মিথ্যা বন্দিত্ব (আইনি ভিত্তি ও সম্মতি ছাড়াই কাউকে আটকে রাখা।)",
+      "te": "అక్రమ నిర్బంధం (చట్టపరమైన కారణం లేకుండా ఒక వ్యక్తిని బలవంతంగా నిర్బంధించడం.)",
+      "mr": "बेकायदेशीर कैद/स्थानबद्धता (एखाद्या व्यक्तीला कायदेशीर कारणाशिवाय आणि तिच्या संमतीशिवाय अडकून ठेवणे.)",
+      "usage": "The store manager was sued for false imprisonment after detaining a shopper without evidence of theft."
+    },
+    {
+      "term": "Grand Jury",
+      "pron": "GRAND JOO-ree",
+      "en": "A jury empowered by law to investigate criminal conduct and determine if there is enough evidence to justify a trial.",
+      "hi": "ग्रैंड जूरी (कानून द्वारा अधिकृत एक जूरी जो आपराधिक आचरण की जांच करती है और यह निर्धारित करती है कि परीक्षण को सही ठहराने के लिए पर्याप्त सबूत हैं या नहीं।)",
+      "bn": "গ্র্যান্ড জুরি (বিচারের যথেষ্ট প্রমাণ আছে কি না তা যাচাইয়ের জন্য ক্ষমতাপ্রাপ্ত একদল ব্যক্তি।)",
+      "te": "గ్రాండ్ జ్యూరీ (నేరాలపై విచారణ జరిపి, విచారణకు తగిన సాక్ష్యాలు ఉన్నాయో లేదో నిర్ధారించే బృందం.)",
+      "mr": "ग्रँड ज्युरी (एखाद्या आरोपीवर खटला चालवण्यासाठी पुरेसे पुरावे आहेत की नाही, याचा तपास करण्यासाठी नियुक्त केलेली कायदेशीर समिती.)",
+      "usage": "The grand jury handed down an indictment against the governor."
+    },
+    {
+      "term": "Grantee",
+      "pron": "gran-TEE",
+      "en": "A person to whom a grant or conveyance of property is made.",
+      "hi": "अनुदानग्राही (एक व्यक्ति जिसे संपत्ति का अनुदान या हस्तांतरण किया जाता है।)",
+      "bn": "গ্রহীতা (যাঁকে কোনো সম্পত্তি বা অনুদান হস্তান্তর করা হয়।)",
+      "te": "గ్రహీత (ఆస్తి లేదా హక్కును పొందే వ్యక్తి.)",
+      "mr": "अनुदान मिळवणारी व्यक्ती (ज्या व्यक्तीच्या नावे मालमत्ता हस्तांतरित केली जाते.)",
+      "usage": "In the property deed, the oldest son is named as the grantee of the farmland."
+    },
+    {
+      "term": "Hearsay",
+      "pron": "HEER-say",
+      "en": "Evidence based on what has been heard from others rather than direct knowledge, usually inadmissible in court.",
+      "hi": "सुनी-सुनाई बात (प्रत्यक्ष ज्ञान के बजाय दूसरों से सुनी गई बातों पर आधारित सबूत, जो आमतौर पर अदालत में अस्वीकार्य होते हैं।)",
+      "bn": " শোনা কথা (নিজের জানার বদলে অপরের কাছ থেকে তথ্যের ওপর ভিত্তি করে দেওয়া প্রমাণ।)",
+      "te": "వినని మాట/హీర్‌సే (వేరే వాళ్ళు చెప్పింది విని చెప్పే సాక్ష్యం, సాధారణంగా కోర్టులో ఇది చెల్లదు.)",
+      "mr": "ऐकीव साक्ष (स्वतः पाहिलेल्या किंवा अनुभवलेल्या माहिती ऐवजी दुसऱ्याकडून ऐकलेल्या गोष्टींवर आधारित पुरावा, जो सहसा न्यायालयात अमान्य असतो.)",
+      "usage": "The judge sustained the objection because the witness's testimony was pure hearsay."
+    },
+    {
+      "term": "Indemnity",
+      "pron": "in-DEM-ni-tee",
+      "en": "Security or protection against a loss or other financial burden.",
+      "hi": "क्षतिपूर्ति / सुरक्षा (नुकसान या अन्य वित्तीय बोझ के खिलाफ सुरक्षा या बचाव।)",
+      "bn": "ক্ষতিপূরণ রক্ষা (ক্ষতি বা আর্থিক লোকসান পরিবর্তনের গ্যারান্টি বা নিরাপত্তা।)",
+      "te": "నష్టపరిహార పూచీకత్తు (నష్టం లేదా ఆర్థిక భారం నుండి రక్షణ.)",
+      "mr": "नुकसानभरपाईचे संरक्षण (आर्थिक नुकसान किंवा जोखमीपासून मिळणारे संरक्षण.)",
+      "usage": "The insurance company provided a full indemnity clause for the expensive equipment."
+    }
+  ]
+}

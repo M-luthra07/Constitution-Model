@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Law Dictionary — myConstitutionConnect</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:ital,wght@0,400;0,700;1,400&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        :root {
+            --primary: #0f172a;
+            --accent: #b45309;
+            --accent-light: #fef3c7;
+            --paper: #fffcf9;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+        }
+
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: #f1f5f9; 
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        .container { max-width: 1200px; margin: 100px auto 60px; padding: 0 20px; }
+
+        .hero-section {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: white;
+            padding: 80px 40px;
+            border-radius: 24px;
+            text-align: center;
+            margin-bottom: 60px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .hero-section h1 { 
+            font-family: 'Playfair Display', serif; 
+            font-size: 3.5rem; 
+            margin-bottom: 20px;
+            background: linear-gradient(to right, #fbbf24, #d4af37);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-section p { font-size: 1.2rem; opacity: 0.9; max-width: 800px; margin: 0 auto; }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: var(--primary);
+        }
+
+        .dict-wrapper {
+            background: white;
+            border-radius: 24px;
+            padding: 50px;
+            box-shadow: 0 4px 30px rgba(0,0,0,0.02);
+            border: 1px solid #e2e8f0;
+        }
+
+        .dict-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .search-container { position: relative; flex: 1; min-width: 300px; }
+        .search-input {
+            width: 100%;
+            padding: 15px 25px 15px 50px;
+            border-radius: 12px;
+            border: 2px solid #f1f5f9;
+            font-size: 1rem;
+            transition: all 0.3s;
+            outline: none;
+        }
+        .search-input:focus { border-color: var(--accent); background: #fffcf0; }
+        .search-icon { position: absolute; left: 20px; top: 18px; color: var(--text-muted); }
+
+        .lang-picker {
+            display: flex;
+            background: #f1f5f9;
+            padding: 5px;
+            border-radius: 12px;
+            gap: 5px;
+        }
+
+        .lang-btn {
+            border: none;
+            padding: 8px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+            color: var(--text-muted);
+        }
+
+        .lang-btn.active {
+            background: white;
+            color: var(--primary);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        .dict-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 25px; }
+
+        .term-card {
+            padding: 30px;
+            border-radius: 16px;
+            background: #fff;
+            border: 1px solid #f1f5f9;
+            transition: all 0.3s;
+        }
+        .term-card:hover { border-color: var(--accent); transform: translateY(-3px); }
+
+        .term-title { font-family: 'Merriweather', serif; font-size: 1.3rem; margin-bottom: 8px; color: var(--primary); }
+        .term-pron { font-size: 0.85rem; color: var(--text-muted); font-style: italic; margin-bottom: 15px; display: block; }
+        
+        .meaning-box { margin-bottom: 20px; min-height: 80px; }
+        .meaning-label { font-size: 0.75rem; text-transform: uppercase; font-weight: 800; color: #94a3b8; display: block; margin-bottom: 5px; }
+        .meaning-text { font-size: 0.95rem; color: #475569; }
+
+        .example-tag {
+            background: #f8fafc;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            color: #64748b;
+            border-left: 3px solid var(--accent);
+        }
+
+        .sync-badge {
+            background: #dcfce7;
+            color: #166534;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-left: 10px;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="main-header" style="background:var(--primary); padding: 15px 30px; position:fixed; top:0; left:0; right:0; z-index:1000; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+        <div style="max-width:1200px; width:100%; margin:0 auto; display:flex; justify-content:space-between; align-items:center;">
+            <a class="logo-link" href="/" style="text-decoration:none;">
+                <span style="color:white; font-family:'Merriweather',serif; font-size:1.3rem; font-weight:700;">🏛️ myConstitutionConnect</span>
+            </a>
+            <div>
+                <a href="/bibliography" style="color:white; font-weight:600; text-decoration:none; padding:8px 16px; border: 1px solid rgba(255,255,255,0.3); border-radius:6px; margin-right: 15px;">Cases</a>
+                <a href="/" style="color:white; font-weight:600; text-decoration:none; padding:8px 16px; border: 1px solid rgba(255,255,255,0.3); border-radius:6px;">Back Home</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="hero-section">
+            <h1>Law Student Dictionary <span id="syncDate" style="font-size: 1rem; opacity: 0.7;"></span></h1>
+            <p>Your interactive, multilingual guide to complex legal terms and Latin maxims used in Constitutional Law.</p>
+        </section>
+
+        <h2 class="section-title">📙 Legal Dictionary <span class="sync-badge">Updated via AI Sync</span></h2>
+        <div class="dict-wrapper">
+            <div class="dict-header">
+                <div class="search-container">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" class="search-input" id="termSearch" placeholder="Search meanings in any language..." onkeyup="filterTerms()">
+                </div>
+                <div class="lang-picker" id="langPicker">
+                    <button class="lang-btn active" data-lang="en">EN</button>
+                    <button class="lang-btn" data-lang="hi">हिन्दी</button>
+                    <button class="lang-btn" data-lang="bn">বাংলা</button>
+                    <button class="lang-btn" data-lang="te">తెలుగు</button>
+                    <button class="lang-btn" data-lang="mr">मराठी</button>
+                </div>
+            </div>
+
+            <div class="dict-grid" id="dictGrid">
+                <!-- Data will be injected here by JS -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let dictionaryData = [];
+        let currentLang = 'en';
+
+        async function loadLegalKnowledge() {
+            try {
+                const response = await fetch('/api/legal-knowledge');
+                const data = await response.json();
+                
+                dictionaryData = data.dictionary;
+                renderDictionary();
+                
+                document.getElementById('syncDate').innerText = `| Last Sync: ${new Date().toLocaleDateString()}`;
+            } catch (error) {
+                console.error("Legal Knowledge Load Error:", error);
+            }
+        }
+
+        function renderDictionary() {
+            const grid = document.getElementById('dictGrid');
+            const query = document.getElementById('termSearch').value.toLowerCase();
+            
+            grid.innerHTML = '';
+            
+            const filtered = dictionaryData.filter(item => 
+                item.term.toLowerCase().includes(query) || 
+                (item[currentLang] && item[currentLang].toLowerCase().includes(query))
+            );
+
+            filtered.forEach(item => {
+                const card = document.createElement('div');
+                card.className = 'term-card';
+                card.innerHTML = `
+                    <h3 class="term-title">${item.term}</h3>
+                    <span class="term-pron">Pronunciation: ${item.pron}</span>
+                    <div class="meaning-box">
+                        <span class="meaning-label">Meaning (${currentLang.toUpperCase()})</span>
+                        <p class="meaning-text">${item[currentLang] || 'Translation coming soon...'}</p>
+                    </div>
+                    <div class="example-tag">
+                        <strong>Practical Usage:</strong> "${item.usage}"
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        function setLanguage(lang) {
+            currentLang = lang;
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.lang === lang);
+            });
+            renderDictionary();
+        }
+
+        function filterTerms() {
+            renderDictionary();
+        }
+
+        document.getElementById('langPicker').addEventListener('click', (e) => {
+            if(e.target.tagName === 'BUTTON') {
+                setLanguage(e.target.dataset.lang);
+            }
+        });
+
+        // Initialize
+        loadLegalKnowledge();
+    </script>
+</body>
+</html>

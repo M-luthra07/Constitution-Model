@@ -47,8 +47,8 @@ export default function Home() {
                             <span className="block text-white">Know Your Rights</span>
                             <span className="block text-amber-400 mt-2">State by State</span>
                         </h1>
-                        <a href="/schemes" className="inline-flex items-center px-8 py-4 bg-white dark:bg-slate-900 text-slate-900 dark:text-white rounded-full shadow-2xl border border-slate-200 dark:border-slate-700 hover:shadow-3xl transition-all mt-6">
-                            <span className="font-semibold">📋 Explore Government Schemes →</span>
+                        <a href="http://localhost:5000/" className="inline-flex items-center px-8 py-4 bg-white dark:bg-slate-900 text-slate-900 dark:text-white rounded-full shadow-2xl border border-slate-200 dark:border-slate-700 hover:shadow-3xl transition-all mt-6">
+                            <span className="font-semibold">🏠 Back to Home</span>
                         </a>
                         <p className="max-w-2xl mx-auto text-lg sm:text-xl text-slate-300 mb-10">
                             Explore the essential laws and legal provisions specific to every State and Union Territory of India.
