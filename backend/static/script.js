@@ -108,8 +108,12 @@ document.addEventListener("DOMContentLoaded", () => {
     input.value = "";
 
     const typing = document.createElement("div");
-    typing.className = "message bot";
-    typing.innerText = "Lawyer is typing…";
+    typing.className = "message bot typing-indicator";
+    typing.innerHTML = `
+      <div class="dots">
+        <span></span><span></span><span></span>
+      </div>
+    `;
     chatbox.appendChild(typing);
     chatbox.scrollTop = chatbox.scrollHeight;
 
@@ -142,6 +146,32 @@ document.addEventListener("DOMContentLoaded", () => {
     if (e.key === "Enter") sendMessage();
   });
 
+  // --- Reveal on Scroll ---
+  const revealElements = document.querySelectorAll(".reveal");
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+      }
+    });
+  }, { threshold: 0.1 });
+
+  revealElements.forEach(el => revealObserver.observe(el));
+
+  // --- Header Scroll Effect ---
+  const header = document.querySelector(".main-header");
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 20) {
+      header.style.background = "var(--glass)";
+      header.style.height = "70px";
+      header.style.boxShadow = "var(--shadow-premium)";
+    } else {
+      header.style.background = "transparent";
+      header.style.height = "80px";
+      header.style.boxShadow = "none";
+    }
+  });
+
   // --- OCR Redirect Handling ---
   const ocrBtn = document.querySelector(".ocr-btn");
   if (ocrBtn) {
@@ -150,3 +180,4 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+

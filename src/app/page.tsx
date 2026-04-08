@@ -24,161 +24,196 @@ export default function Home() {
     };
 
     return (
-        <main className="min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 font-sans selection:bg-amber-200 dark:selection:bg-amber-900">
-            {/* Hero Section */}
-            <div className="relative overflow-hidden bg-legal-navy text-white pb-20 pt-16 sm:pt-24">
-                <div className="absolute inset-0 overflow-hidden">
-                    <div className="absolute -top-1/2 -right-1/2 w-[1000px] h-[1000px] rounded-full bg-amber-500/10 blur-3xl" />
-                    <div className="absolute -bottom-1/2 -left-1/2 w-[1000px] h-[1000px] rounded-full bg-blue-500/10 blur-3xl" />
+        <main className="min-h-screen bg-[#020617] text-slate-100 font-sans selection:bg-purple-500/30">
+            {/* Premium Aura Hero Section */}
+            <div className="relative min-h-[85vh] flex items-center justify-center overflow-hidden border-b border-white/5">
+                {/* Dynamic Background Effects */}
+                <div className="absolute inset-0 z-0">
+                    <div className="absolute top-[-10%] right-[-10%] w-[600px] h-[600px] rounded-full bg-purple-600/20 blur-[120px] animate-pulse" />
+                    <div className="absolute bottom-[-10%] left-[-10%] w-[600px] h-[600px] rounded-full bg-blue-600/20 blur-[120px] animate-pulse" style={{ animationDelay: '2s' }} />
+                    <div className="absolute top-[30%] left-[20%] w-[400px] h-[400px] rounded-full bg-amber-500/10 blur-[100px]" />
+                    <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay" />
                 </div>
 
-                <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <div className="relative max-w-7xl mx-auto px-6 py-24 text-center z-10">
                     <motion.div
-                        initial={{ opacity: 0, y: 20 }}
+                        initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6 }}
+                        transition={{ duration: 0.8 }}
                     >
-                        <div className="flex justify-center mb-6">
-                            <div className="p-3 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 shadow-xl">
-                                <Scale className="w-10 h-10 text-amber-400" />
-                            </div>
+                        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-amber-400 text-sm font-medium mb-8 backdrop-blur-xl">
+                            <span className="relative flex h-2 w-2">
+                              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
+                              <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-500"></span>
+                            </span>
+                            Latest Legislative Data Sync: April 2025
                         </div>
-                        <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight mb-6">
-                            <span className="block text-white">Know Your Rights</span>
-                            <span className="block text-amber-400 mt-2">State by State</span>
+
+                        <h1 className="text-6xl md:text-8xl font-outfit font-extrabold tracking-tight mb-8 leading-[1.1]">
+                            Digital Justice <br />
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-blue-400 to-amber-400">
+                                Across Every State
+                            </span>
                         </h1>
-                        <a href="http://localhost:5000/" className="inline-flex items-center px-8 py-4 bg-white dark:bg-slate-900 text-slate-900 dark:text-white rounded-full shadow-2xl border border-slate-200 dark:border-slate-700 hover:shadow-3xl transition-all mt-6">
-                            <span className="font-semibold">🏠 Back to Home</span>
-                        </a>
-                        <p className="max-w-2xl mx-auto text-lg sm:text-xl text-slate-300 mb-10">
-                            Explore the essential laws and legal provisions specific to every State and Union Territory of India.
+                        
+                        <p className="max-w-3xl mx-auto text-xl text-slate-400 mb-12 font-light leading-relaxed">
+                            Navigate India's complex legal landscape with AI-powered clarity. Access state-specific laws, municipal rules, and union territory provisions in simplified language.
                         </p>
 
-                        {/* Search Box */}
-                        <div className="max-w-xl mx-auto relative group">
-                            <div className="absolute inset-0 bg-amber-400/30 rounded-full blur-md group-hover:blur-lg transition-all duration-300" />
-                            <div className="relative flex items-center bg-white dark:bg-slate-900 rounded-full shadow-2xl border border-slate-200 dark:border-slate-700 overflow-hidden">
-                                <Search className="w-6 h-6 text-slate-400 ml-6" />
+                        <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-16">
+                            <a href="http://localhost:5000/" className="group relative px-8 py-4 bg-white text-black rounded-2xl font-bold shadow-2xl hover:scale-105 transition-all duration-300">
+                                Launch Main Dashboard
+                            </a>
+                            <a href="/schemes" className="px-8 py-4 bg-white/5 hover:bg-white/10 border border-white/10 rounded-2xl font-semibold backdrop-blur-xl transition-all">
+                                Welfare Engine
+                            </a>
+                        </div>
+
+                        {/* Search Intersection */}
+                        <motion.div 
+                            className="max-w-2xl mx-auto relative group"
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{ delay: 0.4 }}
+                        >
+                            <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 to-blue-600 rounded-2xl blur opacity-20 group-focus-within:opacity-40 transition duration-500" />
+                            <div className="relative flex items-center bg-white/5 rounded-2xl border border-white/10 overflow-hidden backdrop-blur-2xl">
+                                <Search className="w-6 h-6 text-slate-500 ml-6" />
                                 <input
                                     type="text"
-                                    placeholder="Search for your State or UT..."
+                                    placeholder="Search for your State or Union Territory..."
                                     value={searchQuery}
                                     onChange={(e) => setSearchQuery(e.target.value)}
-                                    className="w-full py-4 px-4 bg-transparent text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none text-lg"
+                                    className="w-full py-6 px-6 bg-transparent text-white placeholder-slate-600 focus:outline-none text-lg font-outfit"
                                 />
                             </div>
-                        </div>
+                        </motion.div>
                     </motion.div>
                 </div>
             </div>
 
-            {/* Grid Section */}
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 -mt-10 relative z-10">
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            {/* Premium Grid Section */}
+            <div className="max-w-7xl mx-auto px-6 py-24">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
                     {filteredStates.map((state, index) => (
                         <motion.button
                             key={state.name}
-                            initial={{ opacity: 0, scale: 0.9 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            transition={{ delay: index * 0.03 }}
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: index * 0.05 }}
                             onClick={() => handleStateClick(state)}
-                            className="group relative flex flex-col items-start p-6 bg-white dark:bg-slate-900 rounded-2xl shadow-lg hover:shadow-2xl border border-slate-100 dark:border-slate-800 hover:border-amber-200 dark:hover:border-amber-800 transition-all duration-300 text-left w-full overflow-hidden"
+                            className="group relative p-8 bg-white/5 hover:bg-white/[0.08] backdrop-blur-xl rounded-[32px] border border-white/10 hover:border-purple-500/50 transition-all duration-500 text-left overflow-hidden h-[240px]"
                         >
-                            <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
-                                <MapPin className="w-16 h-16 text-slate-900 dark:text-white transform rotate-12 group-hover:rotate-0 transition-transform duration-500" />
-                            </div>
-
-                            <div className="relative z-10 w-full">
-                                <div className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 mb-4">
+                            <div className="absolute top-0 right-0 w-32 h-32 bg-purple-500/5 blur-3xl rounded-full group-hover:bg-purple-500/10 transition-all" />
+                            
+                            <div className="relative z-10 flex flex-col h-full">
+                                <span className="inline-flex items-center px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-white/5 border border-white/10 text-slate-400 mb-6 w-fit">
                                     {state.type}
-                                </div>
-                                <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">
+                                </span>
+                                <h3 className="text-2xl font-bold font-outfit text-white mb-2 group-hover:text-purple-400 transition-colors">
                                     {state.name}
                                 </h3>
-                                <div className="flex items-center text-sm text-slate-500 dark:text-slate-400 mt-auto group-hover:translate-x-1 transition-transform duration-300">
-                                    <span>View Laws</span>
-                                    <ChevronRight className="w-4 h-4 ml-1" />
+                                <div className="mt-auto flex items-center text-sm font-medium text-slate-500 group-hover:text-white transition-all">
+                                    <span>Explore Provisions</span>
+                                    <ChevronRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                                 </div>
                             </div>
-
-                            <div className="absolute bottom-0 left-0 h-1 w-0 bg-amber-500 group-hover:w-full transition-all duration-300" />
                         </motion.button>
                     ))}
                 </div>
 
+
                 {filteredStates.length === 0 && (
-                    <div className="text-center py-20">
-                        <p className="text-slate-500 dark:text-slate-400 text-lg">
-                            No states found matching &quot;{searchQuery}&quot;
+                    <motion.div 
+                        initial={{ opacity: 0 }} 
+                        animate={{ opacity: 1 }}
+                        className="text-center py-20 bg-slate-100/50 dark:bg-slate-900/50 rounded-3xl border border-slate-200 dark:border-slate-800 mt-10 backdrop-blur-sm"
+                    >
+                        <Search className="w-12 h-12 text-slate-400 mx-auto mb-4 opacity-50" />
+                        <h3 className="text-xl font-semibold text-slate-700 dark:text-slate-300 mb-2">No results found</h3>
+                        <p className="text-slate-500 dark:text-slate-500">
+                            We couldn't find any state matching &quot;<span className="text-amber-600 dark:text-amber-400 font-medium">{searchQuery}</span>&quot;
                         </p>
-                    </div>
+                    </motion.div>
                 )}
             </div>
 
-            {/* Welfare Schemes Section */}
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            {/* Premium Welfare Schemes Section */}
+            <div className="max-w-7xl mx-auto px-6 py-32 relative">
+                <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 0.2 }}
-                    className="text-center mb-12"
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="text-center mb-20"
                 >
-                    <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-400 rounded-full text-xs font-bold uppercase tracking-wider mb-4">
-                        <div className="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse" />
-                        Government Welfare Schemes
+                    <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-white/5 text-amber-400 rounded-full text-[10px] font-bold uppercase tracking-[0.2em] mb-6 border border-white/10 backdrop-blur-md">
+                        National Welfare Initiatives
                     </div>
-                    <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mb-4">
-                        Explore <span className="text-amber-500">Welfare Schemes</span>
+                    <h2 className="text-5xl md:text-6xl font-outfit font-extrabold text-white mb-8">
+                        Global Access to <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-500">Public Welfare</span>
                     </h2>
-                    <p className="max-w-2xl mx-auto text-slate-500 dark:text-slate-400 text-lg">
-                        Discover thousands of central and state government schemes across health, education, housing, employment and more.
+                    <p className="max-w-3xl mx-auto text-slate-400 text-lg font-light leading-relaxed">
+                        Intelligent discovery of central and state government schemes. 
+                        We match your profile with 2000+ legislative benefits across health, education, and empowerment.
                     </p>
                 </motion.div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
                     {[
-                        { icon: Heart, label: "Health & Medicine", hindi: "स्वास्थ्य और चिकित्सा", sector: "Health", color: "from-rose-500 to-pink-600", bg: "bg-rose-50 dark:bg-rose-950/20", border: "border-rose-200 dark:border-rose-800", desc: "Ayushman Bharat, PMJAY & more" },
-                        { icon: GraduationCap, label: "Education & Scholarships", hindi: "शिक्षा और छात्रवृत्ति", sector: "Education", color: "from-blue-500 to-indigo-600", bg: "bg-blue-50 dark:bg-blue-950/20", border: "border-blue-200 dark:border-blue-800", desc: "Scholarships, mid-day meal & more" },
-                        { icon: HomeIcon, label: "Housing & Shelter", hindi: "आवास और मकान", sector: "Housing", color: "from-emerald-500 to-teal-600", bg: "bg-emerald-50 dark:bg-emerald-950/20", border: "border-emerald-200 dark:border-emerald-800", desc: "PM Awas Yojana & housing grants" },
-                        { icon: Briefcase, label: "Jobs & Employment", hindi: "नौकरी और रोजगार", sector: "Employment", color: "from-violet-500 to-purple-600", bg: "bg-violet-50 dark:bg-violet-950/20", border: "border-violet-200 dark:border-violet-800", desc: "MGNREGA, skill programs & more" },
-                        { icon: Leaf, label: "Agriculture & Farmers", hindi: "कृषि और किसान", sector: "Agriculture", color: "from-lime-500 to-green-600", bg: "bg-lime-50 dark:bg-lime-950/20", border: "border-lime-200 dark:border-lime-800", desc: "PM-KISAN, crop insurance & more" },
-                        { icon: Users, label: "Women Empowerment", hindi: "महिला सशक्तिकरण", sector: "Women Empowerment", color: "from-amber-500 to-orange-600", bg: "bg-amber-50 dark:bg-amber-950/20", border: "border-amber-200 dark:border-amber-800", desc: "Ladli Behna, Ujjwala & more" },
+                        { icon: Heart, label: "Health & Care", sector: "Health", color: "from-rose-500 to-pink-600", desc: "Ayushman Bharat, PMJAY & Healthcare Grants" },
+                        { icon: GraduationCap, label: "Education Hub", sector: "Education", color: "from-blue-500 to-indigo-600", desc: "Digital India Scholarships & Skill Development" },
+                        { icon: HomeIcon, label: "Housing & Infrastructure", sector: "Housing", color: "from-emerald-500 to-teal-600", desc: "PM Awas Yojana & Smart City Housing" },
+                        { icon: Briefcase, label: "Employment & MSME", sector: "Employment", color: "from-violet-500 to-fuchsia-600", desc: "Startup India, MGNREGA & Job Training" },
+                        { icon: Leaf, label: "Agri-Tech & Farmers", sector: "Agriculture", color: "from-lime-500 to-green-600", desc: "PM-KISAN, Crop Insurance & Soil Health" },
+                        { icon: Users, label: "Women Empowerment", sector: "Women Empowerment", color: "from-amber-500 to-orange-600", desc: "Lakhpati Didi, Ujjwala & Safety Programs" },
                     ].map((item, index) => (
                         <motion.a
                             key={item.sector}
                             href={`/schemes?sector=${encodeURIComponent(item.sector)}`}
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.1 * index }}
-                            className={`group relative flex flex-col p-6 ${item.bg} rounded-2xl border ${item.border} hover:shadow-2xl transition-all duration-300 overflow-hidden`}
+                            initial={{ opacity: 0, scale: 0.95 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: index * 0.1 }}
+                            className="group relative p-8 bg-white/5 rounded-[40px] border border-white/10 hover:border-white/20 transition-all duration-500 overflow-hidden"
                         >
-                            <div className="absolute top-0 right-0 w-32 h-32 opacity-5 group-hover:opacity-10 transition-opacity">
-                                <item.icon className="w-full h-full" />
+                            <div className={`absolute -top-24 -right-24 w-48 h-48 bg-gradient-to-br ${item.color} opacity-0 group-hover:opacity-20 blur-3xl transition-opacity duration-700`} />
+                            
+                            <div className="relative z-10">
+                                <div className={`w-16 h-16 rounded-3xl bg-gradient-to-br ${item.color} flex items-center justify-center shadow-2xl mb-8 group-hover:scale-110 transition-transform duration-500`}>
+                                    <item.icon className="w-8 h-8 text-white" />
+                                </div>
+                                
+                                <h3 className="text-2xl font-bold font-outfit text-white mb-3 group-hover:text-amber-400 transition-colors">
+                                    {item.label}
+                                </h3>
+                                <p className="text-slate-400 text-sm leading-relaxed mb-6">
+                                    {item.desc}
+                                </p>
+                                
+                                <div className="flex items-center text-xs font-bold text-slate-500 group-hover:text-white transition-all uppercase tracking-widest">
+                                    Explore Benefits
+                                    <ChevronRight className="w-4 h-4 ml-2" />
+                                </div>
                             </div>
-                            <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${item.color} flex items-center justify-center mb-4 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
-                                <item.icon className="w-6 h-6 text-white" />
-                            </div>
-                            <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-1 group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">
-                                {item.label}
-                            </h3>
-                            <p className="text-sm text-slate-500 dark:text-slate-400 mb-1">{item.hindi}</p>
-                            <p className="text-xs text-slate-400 dark:text-slate-500 mt-auto">{item.desc}</p>
-                            <div className="flex items-center text-sm text-amber-600 dark:text-amber-400 mt-3 font-semibold group-hover:translate-x-1 transition-transform duration-300">
-                                <span>View Schemes</span>
-                                <ChevronRight className="w-4 h-4 ml-1" />
-                            </div>
-                            <div className="absolute bottom-0 left-0 h-1 w-0 bg-gradient-to-r from-amber-400 to-orange-500 group-hover:w-full transition-all duration-500" />
                         </motion.a>
                     ))}
                 </div>
 
                 <div className="text-center">
-                    <a href="/schemes" className="inline-flex items-center gap-3 px-8 py-4 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-full font-bold text-lg hover:bg-amber-600 dark:hover:bg-amber-400 hover:text-white transition-all shadow-xl hover:shadow-2xl hover:-translate-y-0.5">
-                        📋 Browse All Schemes
-                        <ChevronRight className="w-5 h-5" />
-                    </a>
+                    <motion.a 
+                        whileHover={{ scale: 1.05 }}
+                        href="/schemes" 
+                        className="inline-flex items-center gap-4 px-12 py-5 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-2xl font-bold text-lg shadow-2xl shadow-purple-500/20 hover:shadow-purple-500/40 transition-all"
+                    >
+                        Browse All 2025 Schemes
+                        <ChevronRight className="w-6 h-6" />
+                    </motion.a>
                 </div>
             </div>
+
 
             <LawModal
                 isOpen={isModalOpen}

@@ -43,279 +43,254 @@
 
   <!-- ===================== HERO ===================== -->
   <section class="hero">
-    <div class="hero-bg" aria-hidden="true">
-      <div class="particle p1"></div>
-      <div class="particle p2"></div>
-      <div class="particle p3"></div>
-      <div class="particle p4"></div>
-      <div class="particle p5"></div>
-      <div class="hero-glow g1"></div>
-      <div class="hero-glow g2"></div>
+    <div class="hero-aura-wrap">
+       <div class="aura a1"></div>
+       <div class="aura a2"></div>
+       <div class="aura a3"></div>
     </div>
 
-    <div class="hero-content">
-      <div class="hero-text">
-        <div class="hero-badge">
-          <span class="badge-dot"></span>
-          Citizen Services Portal
+    <div class="container hero-container">
+      <div class="hero-content">
+        <div class="hero-badge reveal">
+          <span class="pulse-dot"></span>
+          Revolutionizing Digital Justice 2025
         </div>
-        <h1 class="hero-title">
-          Know Your Rights.<br>
-          <span class="hero-title-gold">Powered by AI.</span>
+        <h1 class="hero-title reveal">
+          Empowering Every Citizen with <span class="gradient-text">AI Wisdom</span>
         </h1>
-        <p class="hero-desc">
-          Access simplified legal explanations, explore the Indian Constitution,
-          and get instant AI-guided answers — all in plain language, free for every citizen.
+        <p class="hero-desc reveal">
+          Navigate the Indian Constitution with precision. Get instant legal clarity, explore state laws, and access national welfare schemes through our unified intelligence engine.
         </p>
 
-        <div class="hero-actions">
-          <button id="startChatBtnHero" class="btn-primary">
-            <span>Start Legal Consultation</span>
-            <svg width="18" height="18" fill="none" viewBox="0 0 24 24">
-              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M5 12h14M12 5l7 7-7 7" />
-            </svg>
+        <div class="hero-cta-group reveal">
+          <button id="startChatBtnHero" class="btn-primary-aura">
+            <span>Launch AI Assistant</span>
+            <svg viewBox="0 0 24 24" fill="none" class="icon-arrow"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </button>
-          <a class="btn-ghost-hero" href="/read">Browse Constitution</a>
+          <a href="http://localhost:4000" class="btn-secondary-glass">
+            <span>Explore State Laws</span>
+          </a>
         </div>
-      </div>
-
-      <div class="hero-image-wrap">
-        <img src="{{ url_for('static', filename='hero_constitution.png') }}"
-          alt="Indian Constitution with Scales of Justice" class="hero-image">
-      </div>
-    </div>
-
-    <!-- Stats bar -->
-    <div class="stats-bar">
-      <div class="stat"><span class="stat-num">448+</span><span class="stat-label">Articles Covered</span></div>
-      <div class="stat-divider"></div>
-      <div class="stat"><span class="stat-num">36</span><span class="stat-label">States &amp; UTs</span></div>
-      <div class="stat-divider"></div>
-      <div class="stat"><span class="stat-num">AI</span><span class="stat-label">Powered Answers</span></div>
-      <div class="stat-divider"></div>
-      <div class="stat"><span class="stat-num">Free</span><span class="stat-label">For All Citizens</span></div>
-    </div>
-  </section>
-
-
-  <!-- ===================== ABOUT SECTION ===================== -->
-  <section class="about-section" id="about">
-    <div class="container">
-      <div class="about-grid">
-        <div class="about-image-wrap">
-          <img src="{{ url_for('static', filename='rights_illustration.png') }}"
-            alt="Citizens of India under the shield of justice" class="about-image">
-          <div class="about-image-badge">
-            <span class="about-badge-num">75+</span>
-            <span class="about-badge-text">Years of Constitutional Democracy</span>
-          </div>
-        </div>
-        <div class="about-text">
-          <span class="section-tag">About</span>
-          <h2>India's Constitution — The People's Document</h2>
-          <p class="about-lead">
-            The Constitution of India is the supreme law of the land. Adopted on <strong>26 November 1949</strong>
-            and effective from <strong>26 January 1950</strong>, it is the longest written constitution of any
-            sovereign country in the world.
-          </p>
-          <div class="about-highlights">
-            <div class="highlight-item">
-              <div class="highlight-icon">📖</div>
-              <div>
-                <strong>448 Articles</strong>
-                <span>across 25 Parts covering every aspect of governance</span>
-              </div>
-            </div>
-            <div class="highlight-item">
-              <div class="highlight-icon">📋</div>
-              <div>
-                <strong>12 Schedules</strong>
-                <span>detailing administrative and legal provisions</span>
-              </div>
-            </div>
-            <div class="highlight-item">
-              <div class="highlight-icon">🏛️</div>
-              <div>
-                <strong>3 Pillars</strong>
-                <span>Legislature, Executive, and Judiciary</span>
-              </div>
-            </div>
-          </div>
-          <a href="/read" class="btn-primary about-btn">Read the Constitution →</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===================== HOW IT WORKS ===================== -->
-  <section class="hiw-section" id="how-it-works">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Simple</span>
-        <h2>How It Works</h2>
-        <p>Get legal guidance in three easy steps</p>
-      </div>
-
-      <div class="hiw-grid">
-        <div class="hiw-step">
-          <div class="hiw-number">01</div>
-          <div class="hiw-icon">💬</div>
-          <h3>Ask Your Question</h3>
-          <p>Type or speak your legal question in plain language — no legal expertise required.</p>
-        </div>
-        <div class="hiw-arrow">→</div>
-        <div class="hiw-step">
-          <div class="hiw-number">02</div>
-          <div class="hiw-icon">⚡</div>
-          <h3>AI Analyzes</h3>
-          <p>Our AI scans the complete Indian Constitution and relevant legal provisions instantly.</p>
-        </div>
-        <div class="hiw-arrow">→</div>
-        <div class="hiw-step">
-          <div class="hiw-number">03</div>
-          <div class="hiw-icon">✅</div>
-          <h3>Get Clear Answers</h3>
-          <p>Receive simplified explanations with article references and actionable next steps.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===================== KNOWLEDGE CENTER ===================== -->
-  <section class="knowledge-section" id="knowledge">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Learn</span>
-        <h2>Knowledge Center</h2>
-        <p>Understand the pillars of Indian Democracy</p>
-      </div>
-
-      <div class="knowledge-grid">
-        <!-- New Timeline Card -->
-        <article class="kcard" style="--card-accent: #fbbf24;">
-          <div class="kcard-icon-wrap" style="background: rgba(251,191,36,0.12);">📅</div>
-          <h3>Case Law Timeline</h3>
-          <p>Trace the evolution of the Indian Constitution from 1950 to the latest 2025 amendments.</p>
-          <a href="/timeline" class="kcard-link">View Evolution Map <span>→</span></a>
-        </article>
-
-        <article class="kcard" style="--card-accent: #d4af37;">
-          <div class="kcard-icon-wrap" style="background: rgba(212,175,55,0.12);">⚖️</div>
-          <h3>Basic Rights</h3>
-          <p>Equality, Freedom, and Constitutional Remedies—every Indian citizen's legal shield.</p>
-          <a href="/flashcards/" class="kcard-link">Learn Rights <span>→</span></a>
-        </article>
         
-        <article class="kcard" style="--card-accent: #60a5fa;">
-          <div class="kcard-icon-wrap" style="background: rgba(96,165,250,0.12);">🤝</div>
-          <h3>Citizen Duties</h3>
-          <p>Fundamental Duties to uphold sovereignty and unity—your role in building the nation.</p>
-          <a href="/flashcards/" class="kcard-link">Explore Duties <span>→</span></a>
-        </article>
+        <div class="hero-trusted-by reveal">
+            <span>Integrated with:</span>
+            <div class="trust-icons">
+                <span class="trust-badge">DIKSHA</span>
+                <span class="trust-badge">BHASHINI AI</span>
+                <span class="trust-badge">UMANG</span>
+            </div>
+        </div>
+      </div>
 
-        <article class="kcard" style="--card-accent: #a78bfa;">
-          <div class="kcard-icon-wrap" style="background: rgba(167,139,250,0.12);">📜</div>
-          <h3>The Preamble</h3>
-          <p>The philosophical spirit of India in All 22 official languages—Justice & Liberty for all.</p>
-          <a href="/preamble" class="kcard-link">Read in Languages <span>→</span></a>
-        </article>
-
-        <article class="kcard" style="--card-accent: #f59e0b;">
-          <div class="kcard-icon-wrap" style="background: rgba(245,158,11,0.12);">👨‍⚖️</div>
-          <h3>AI Virtual Court</h3>
-          <p>Experience a trial: defend citizens using Article 14-32 in a simulated judicial environment.</p>
-          <a href="/virtual-court" class="kcard-link">Enter the Court <span>→</span></a>
-        </article>
-
-        <article class="kcard" style="--card-accent: #10b981;">
-          <div class="kcard-icon-wrap" style="background: rgba(16,185,129,0.12);">✉️</div>
-          <h3>Smart RTI Drafter</h3>
-          <p>Hold authority accountable. Let AI generate professional RTI applications for you.</p>
-          <a href="/rti" class="kcard-link">Draft Now <span>→</span></a>
-        </article>
-
-        <article class="kcard" style="--card-accent: #f43f5e;">
-          <div class="kcard-icon-wrap" style="background: rgba(244,63,94,0.12);">📋</div>
-          <h3>Welfare Schemes</h3>
-          <p>Real-time updates on 2025 Central and State government schemes across health & jobs.</p>
-          <a href="http://localhost:4000/schemes" class="kcard-link">Browse Portal <span>→</span></a>
-        </article>
-
-        <article class="kcard" style="--card-accent: #8b5cf6;">
-          <div class="kcard-icon-wrap" style="background: rgba(139,92,246,0.12);">📚</div>
-          <h3>Scholars' Corner</h3>
-          <p>A specialized Law Dictionary and Landmark Case repository for legal students.</p>
-          <a href="/bibliography" class="kcard-link">View Dictionary <span>→</span></a>
-        </article>
+      <div class="hero-visual reveal">
+        <div class="glass-orb">
+            <img src="{{ url_for('static', filename='logo.png') }}" alt="Emblem" class="orb-logo">
+            <div class="orb-ring"></div>
+            <div class="orb-ring"></div>
+        </div>
+        <div class="floating-card c1">
+            <span class="f-icon">⚖️</span>
+            <div>
+                <h4>Article 21</h4>
+                <p>Right to Life</p>
+            </div>
+        </div>
+        <div class="floating-card c2">
+            <span class="f-icon">📜</span>
+            <div>
+                <h4>Preamble</h4>
+                <p>22 Languages</p>
+            </div>
+        </div>
+        <div class="floating-card c3">
+            <span class="f-icon">🏛️</span>
+            <div>
+                <h4>Virtual Court</h4>
+                <p>Simulated Trials</p>
+            </div>
+        </div>
+        <div class="floating-card c4">
+            <span class="f-icon">🔍</span>
+            <div>
+                <h4>Intelligence</h4>
+                <p>OCR Scanner 2.0</p>
+            </div>
+        </div>
       </div>
     </div>
   </section>
+
+  <!-- ===================== KNOWLEDGE HUB ===================== -->
+  <section class="knowledge-hub" id="knowledge">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2 class="title-with-glow">Knowledge <span class="hub-text">Hub</span></h2>
+        <p>Interactive gateways to constitutional excellence and legal awareness</p>
+      </div>
+
+      <div class="hub-grid">
+        <!-- New Timeline Card -->
+        <a href="/timeline" class="hub-card reveal" style="--c: var(--secondary);">
+          <div class="card-glass"></div>
+          <div class="card-content">
+              <div class="hub-card-icon">📅</div>
+              <h3>Evolution Map</h3>
+              <p>Trace 75 years of constitutional changes from 1950 to the future updates of 2025.</p>
+              <div class="hub-btn">Explore Timeline</div>
+          </div>
+        </a>
+
+        <a href="/flashcards/" class="hub-card reveal" style="--c: var(--accent);">
+          <div class="card-glass"></div>
+          <div class="card-content">
+              <div class="hub-card-icon">🧠</div>
+              <h3>Smart Flashcards</h3>
+              <p>Master Fundamental Rights and Duties through visual, AI-generated learning cards.</p>
+              <div class="hub-btn">Start Learning</div>
+          </div>
+        </a>
+        
+        <a href="/virtual-court" class="hub-card reveal" style="--c: var(--primary);">
+          <div class="card-glass"></div>
+          <div class="card-content">
+              <div class="hub-card-icon">🏛️</div>
+              <h3>AI Courtroom</h3>
+              <p>Participate in simulated legal cases. Defend rights in a gamified judicial environment.</p>
+              <div class="hub-btn">Enter Chamber</div>
+          </div>
+        </a>
+
+        <a href="/rti" class="hub-card reveal" style="--c: 160 84% 39%;">
+          <div class="card-glass"></div>
+          <div class="card-content">
+              <div class="hub-card-icon">✉️</div>
+              <h3>RTI Generator</h3>
+              <p>Harness the power of transparency. Draft professional RTI applications instantly with AI.</p>
+              <div class="hub-btn">Draft RTI</div>
+          </div>
+        </a>
+
+        <a href="http://localhost:4000/schemes" class="hub-card reveal" style="--c: 0 91% 71%;">
+          <div class="card-glass"></div>
+          <div class="card-content">
+              <div class="hub-card-icon">💎</div>
+              <h3>Welfare Engine</h3>
+              <p>Discover government benefits tailored to your profile. Health, jobs & education.</p>
+              <div class="hub-btn">Find Schemes</div>
+          </div>
+        </a>
+
+        <a href="/bibliography" class="hub-card reveal" style="--c: 280 67% 60%;">
+          <div class="card-glass"></div>
+          <div class="card-content">
+              <div class="hub-card-icon">🏛️</div>
+              <h3>Landmark Vault</h3>
+              <p>Explore the definitive repository of supreme court judgments and case stories.</p>
+              <div class="hub-btn">View Cases</div>
+          </div>
+        </a>
+
+        <a href="/dictionary" class="hub-card reveal" style="--c: 45 90% 50%;">
+          <div class="card-glass"></div>
+          <div class="card-content">
+              <div class="hub-card-icon">📙</div>
+              <h3>Digital Lexicon</h3>
+              <p>Master the language of justice with our searchable, multilingual law dictionary.</p>
+              <div class="hub-btn">Decode Law</div>
+          </div>
+        </a>
+
+
+        <!-- Flagship Preamble Card -->
+        <a href="/preamble" class="hub-card reveal special" style="--c: var(--accent);">
+          <div class="card-glass"></div>
+          <div class="card-content">
+              <div class="hub-card-icon">📜</div>
+              <h3>22-Language Preamble</h3>
+              <p>The soul of our Constitution, available in all 22 scheduled languages with official audio.</p>
+              <div class="hub-btn">Voice of India</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
 
   <!-- ===================== TOOLS / PLATFORM FEATURES ===================== -->
   <section class="tools-section" id="tools">
     <div class="container">
       <!-- Tool #1: AI Chat -->
-      <div class="tool-row">
+      <div class="tool-row reveal">
         <div class="tool-image-wrap">
-          <img src="{{ url_for('static', filename='ai_assistant.png') }}" alt="AI Legal Assistant interface"
-            class="tool-image">
+          <img src="{{ url_for('static', filename='ai_assistant.png') }}" alt="AI Legal Assistant" class="tool-image">
+          <div class="tool-overlay">
+            <div class="site-tagline">AI Powered Guidance</div>
+          </div>
         </div>
         <div class="tool-text">
-          <span class="section-tag">Tool</span>
+          <span class="section-tag">Intelligence</span>
           <h2>AI Legal Assistant</h2>
-          <p>Ask any question about the Indian Constitution in plain language. Our AI analyzes all 448 articles and
-            gives you clear, simplified answers with proper article references.</p>
+          <p>Navigate the complexities of the Indian Constitution with our advanced neural engine. Get instant, simplified clarity on rights and laws.</p>
           <ul class="tool-features">
-            <li><span class="tf-check">✓</span> Understands plain-language legal questions</li>
-            <li><span class="tf-check">✓</span> References specific Articles and Sections</li>
-            <li><span class="tf-check">✓</span> Suggests practical next steps</li>
-            <li><span class="tf-check">✓</span> Available in text and voice mode</li>
+            <li><div class="tf-check">✓</div> Plain-language neural processing</li>
+            <li><div class="tf-check">✓</div> Direct Constitutional Article mapping</li>
+            <li><div class="tf-check">✓</div> Multi-modal Voice & Text support</li>
           </ul>
           <div class="tool-actions">
-            <button onclick="document.getElementById('chat').scrollIntoView({behavior:'smooth'})"
-              class="btn-primary">Try the AI Chat →</button>
-            <a href="http://localhost:8001" class="btn-ghost-hero" target="_blank">🎤 Voice Mode</a>
+            <button onclick="document.getElementById('chat').scrollIntoView({behavior:'smooth'})" class="btn-primary">
+                Launch Chat
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+            <a href="http://localhost:8001" class="btn-ghost-hero" target="_blank">🎤 Open Voice Bot</a>
           </div>
         </div>
       </div>
 
       <!-- Tool #2: Document Scanner -->
-      <div class="tool-row tool-row-reverse">
+      <div class="tool-row tool-row-reverse reveal">
         <div class="tool-image-wrap">
-          <img src="{{ url_for('static', filename='ocr_preview.png') }}" alt="Document scanner screenshot"
-            class="tool-image tool-image-screenshot">
+          <img src="{{ url_for('static', filename='ocr_preview.png') }}" alt="Intelligence Scanner" class="tool-image">
+          <div class="tool-overlay">
+             <div class="site-tagline">Vision OCR Engine</div>
+          </div>
         </div>
         <div class="tool-text">
-          <span class="section-tag">Tool</span>
-          <h2>Document Scanner</h2>
-          <p>Upload a legal notice, government form, or any legal document. Our AI will read it, explain what it says in
-            simple terms, and tell you what to do next.</p>
+          <span class="section-tag">Document Vision</span>
+          <h2>Smart Intelligence Scanner</h2>
+          <p>Upload any legal document, notice, or certificate. Our AI extracts core provisions and translates legalese into actionable insights.</p>
           <ul class="tool-features">
-            <li><span class="tf-check">✓</span> Supports PDFs and images</li>
-            <li><span class="tf-check">✓</span> Explains legal jargon in plain language</li>
-            <li><span class="tf-check">✓</span> Identifies key deadlines and actions</li>
+            <li><div class="tf-check">✓</div> Supports HDR Image & PDF scanning</li>
+            <li><div class="tf-check">✓</div> Real-time jargon translation</li>
+            <li><div class="tf-check">✓</div> Automatic deadline extraction</li>
           </ul>
-          <a href="/ocr" class="btn-primary">Scan a Document →</a>
+          <a href="/ocr" class="btn-primary">
+            Start Scanning
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
         </div>
       </div>
 
       <!-- Tool #3: State Laws -->
-      <div class="tool-row">
+      <div class="tool-row reveal">
         <div class="tool-image-wrap">
-          <img src="{{ url_for('static', filename='cover.jpg') }}" alt="Indian flag and legal books" class="tool-image">
+          <img src="{{ url_for('static', filename='cover.jpg') }}" alt="State Jurisdictions" class="tool-image">
+          <div class="tool-overlay">
+            <div class="site-tagline">36 Jurisdictions Integrated</div>
+          </div>
         </div>
         <div class="tool-text">
-          <span class="section-tag">Tool</span>
-          <h2>State-by-State Laws</h2>
-          <p>India has different laws for different states and union territories. Explore legal provisions specific to
-            your region, from local labour laws to state police acts.</p>
+          <span class="section-tag">Governance</span>
+          <h2>State-Specific Laws</h2>
+          <p>Access sub-national legal frameworks across all 28 states and 8 union territories. From local acts to municipal regulations.</p>
           <ul class="tool-features">
-            <li><span class="tf-check">✓</span> All 28 states and 8 union territories</li>
-            <li><span class="tf-check">✓</span> Search by state or legal topic</li>
-            <li><span class="tf-check">✓</span> Complete with relevant articles and acts</li>
+            <li><div class="tf-check">✓</div> Centralized state acts database</li>
+            <li><div class="tf-check">✓</div> Optimized jurisdictional search</li>
+            <li><div class="tf-check">✓</div> Live legislative updates</li>
           </ul>
-          <a href="http://localhost:4000" class="btn-primary">Explore State Laws →</a>
+          <a href="http://localhost:4000" class="btn-primary">
+            Explore Jurisdictions
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
         </div>
       </div>
     </div>
@@ -324,18 +299,27 @@
   <!-- ===================== PREAMBLE BANNER ===================== -->
   <section class="preamble-section">
     <div class="container">
-      <div class="preamble-card">
-        <div class="preamble-eyebrow">The Preamble of India</div>
-        <blockquote class="preamble-text">
-          "WE, THE PEOPLE OF INDIA, having solemnly resolved to constitute India into a
-          <em>Sovereign Socialist Secular Democratic Republic</em> and to secure to all its citizens:
+      <div class="preamble-card reveal">
+        <div class="preamble-eyebrow">THE SOUL OF THE CONSTITUTION</div>
+        <div class="preamble-text">
+          WE, THE PEOPLE OF INDIA, having solemnly resolved to constitute India into a
+          <em>SOVEREIGN SOCIALIST SECULAR DEMOCRATIC REPUBLIC</em> and to secure to all its citizens:
           <strong>JUSTICE</strong>, social, economic and political;
           <strong>LIBERTY</strong> of thought, expression, belief, faith and worship;
           <strong>EQUALITY</strong> of status and of opportunity;
           and to promote among them all <strong>FRATERNITY</strong> assuring the dignity of the individual
-          and the unity and integrity of the Nation…"
-        </blockquote>
-        <a href="/preamble" class="preamble-link">Explore in All 22 Languages →</a>
+          and the unity and integrity of the Nation…
+        </div>
+        
+        <div class="preamble-action-group">
+            <a href="/preamble" class="preamble-link">
+                <span>Explore in All 22 Languages</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <div class="preamble-audio-badge">
+                <span>🔊 Official Audio Available</span>
+            </div>
+        </div>
       </div>
     </div>
   </section>

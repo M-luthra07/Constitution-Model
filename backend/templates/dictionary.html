@@ -1,195 +1,314 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Law Dictionary — myConstitutionConnect</title>
-    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:ital,wght@0,400;0,700;1,400&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <style>
         :root {
-            --primary: #0f172a;
-            --accent: #b45309;
-            --accent-light: #fef3c7;
-            --paper: #fffcf9;
-            --text-main: #1e293b;
-            --text-muted: #64748b;
+            --primary-gold: #D4AF37;
+            --accent-saffron: #FF9933;
+            --legal-green: #138808;
+            --bg-dark: #0a0e1a;
+            --card-glass: rgba(30, 41, 59, 0.4);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --text-light: #f1f5f9;
+            --text-muted: #94a3b8;
         }
 
-        body { 
-            font-family: 'Inter', sans-serif; 
-            background-color: #f1f5f9; 
-            color: var(--text-main);
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: var(--bg-dark);
+            background-image: 
+                radial-gradient(circle at 15% 15%, rgba(255, 153, 51, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 85% 85%, rgba(19, 136, 8, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.03) 0%, transparent 50%);
+            color: var(--text-light);
+            font-family: 'Inter', sans-serif;
             line-height: 1.6;
+            min-height: 100vh;
         }
 
-        .container { max-width: 1200px; margin: 100px auto 60px; padding: 0 20px; }
+        .container { max-width: 1250px; margin: 0 auto; padding: 140px 20px 80px; }
 
-        .hero-section {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-            color: white;
-            padding: 80px 40px;
-            border-radius: 24px;
+        /* Hero */
+        .dictionary-hero {
             text-align: center;
-            margin-bottom: 60px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            margin-bottom: 80px;
         }
 
-        .hero-section h1 { 
-            font-family: 'Playfair Display', serif; 
-            font-size: 3.5rem; 
+        .hero-tag {
+            font-size: 0.9rem;
+            color: var(--accent-saffron);
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-weight: 800;
             margin-bottom: 20px;
-            background: linear-gradient(to right, #fbbf24, #d4af37);
-            background-clip: text;
+            display: block;
+        }
+
+        h1 {
+            font-family: 'Merriweather', serif;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 900;
+            background: linear-gradient(to bottom, #fcf6ba 0%, #d4af37 40%, #fcf6ba 60%, #aa771c 100%);
             -webkit-background-clip: text;
+            background-clip: text;
             -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
         }
 
-        .hero-section p { font-size: 1.2rem; opacity: 0.9; max-width: 800px; margin: 0 auto; }
-
-        .section-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.2rem;
-            margin-bottom: 40px;
+        /* Search Section */
+        .search-area {
+            max-width: 900px;
+            margin: 0 auto 100px;
             display: flex;
+            flex-direction: column;
+            gap: 30px;
             align-items: center;
-            gap: 15px;
-            color: var(--primary);
         }
 
-        .dict-wrapper {
-            background: white;
-            border-radius: 24px;
-            padding: 50px;
-            box-shadow: 0 4px 30px rgba(0,0,0,0.02);
-            border: 1px solid #e2e8f0;
-        }
-
-        .dict-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 40px;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        .search-container { position: relative; flex: 1; min-width: 300px; }
-        .search-input {
+        .search-container {
             width: 100%;
-            padding: 15px 25px 15px 50px;
-            border-radius: 12px;
-            border: 2px solid #f1f5f9;
-            font-size: 1rem;
-            transition: all 0.3s;
-            outline: none;
+            position: relative;
+            background: var(--card-glass);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 60px;
+            padding: 8px;
+            transition: 0.4s;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.4);
         }
-        .search-input:focus { border-color: var(--accent); background: #fffcf0; }
-        .search-icon { position: absolute; left: 20px; top: 18px; color: var(--text-muted); }
 
-        .lang-picker {
+        .search-container:focus-within {
+            border-color: var(--primary-gold);
+            transform: translateY(-3px);
+            box-shadow: 0 0 40px rgba(212, 175, 55, 0.2);
+        }
+
+        .search-container input {
+            width: 100%;
+            background: transparent;
+            border: none;
+            padding: 18px 40px;
+            color: #fff;
+            font-size: 1.2rem;
+            outline: none;
+            text-align: center;
+        }
+
+        /* Lang Picker */
+        .lexicon-picker {
             display: flex;
-            background: #f1f5f9;
-            padding: 5px;
-            border-radius: 12px;
-            gap: 5px;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 6px;
+            border-radius: 50px;
+            border: 1px solid var(--glass-border);
+            backdrop-filter: blur(10px);
         }
 
         .lang-btn {
+            padding: 10px 25px;
             border: none;
-            padding: 8px 16px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: all 0.2s;
+            background: transparent;
             color: var(--text-muted);
+            font-weight: 700;
+            cursor: pointer;
+            border-radius: 50px;
+            transition: 0.3s;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .lang-btn.active {
-            background: white;
-            color: var(--primary);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            background: var(--primary-gold);
+            color: #000;
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
         }
 
-        .dict-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 25px; }
+        /* Lexicon Grid */
+        .lexicon-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+            gap: 30px;
+        }
 
         .term-card {
-            padding: 30px;
-            border-radius: 16px;
-            background: #fff;
-            border: 1px solid #f1f5f9;
-            transition: all 0.3s;
+            background: var(--card-glass);
+            backdrop-filter: blur(30px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 40px;
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(20px);
         }
-        .term-card:hover { border-color: var(--accent); transform: translateY(-3px); }
 
-        .term-title { font-family: 'Merriweather', serif; font-size: 1.3rem; margin-bottom: 8px; color: var(--primary); }
-        .term-pron { font-size: 0.85rem; color: var(--text-muted); font-style: italic; margin-bottom: 15px; display: block; }
-        
-        .meaning-box { margin-bottom: 20px; min-height: 80px; }
-        .meaning-label { font-size: 0.75rem; text-transform: uppercase; font-weight: 800; color: #94a3b8; display: block; margin-bottom: 5px; }
-        .meaning-text { font-size: 0.95rem; color: #475569; }
+        .term-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
 
-        .example-tag {
-            background: #f8fafc;
-            padding: 12px;
-            border-radius: 8px;
+        .term-card:hover {
+            border-color: var(--primary-gold);
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+        }
+
+        .term-header {
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .card-term {
+            font-family: 'Merriweather', serif;
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--primary-gold);
+            margin-bottom: 5px;
+            line-height: 1.2;
+        }
+
+        .term-pron {
             font-size: 0.85rem;
-            color: #64748b;
-            border-left: 3px solid var(--accent);
+            color: var(--text-muted);
+            font-style: italic;
+            display: block;
+            margin-top: 5px;
+            opacity: 1;
         }
 
-        .sync-badge {
-            background: #dcfce7;
-            color: #166534;
-            padding: 4px 10px;
-            border-radius: 12px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            margin-left: 10px;
-            vertical-align: middle;
+        .meaning-block {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            min-height: 100px;
         }
+
+        .meaning-label {
+            font-size: 0.65rem;
+            font-weight: 800;
+            color: var(--accent-saffron);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .meaning-text {
+            color: var(--text-light);
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .usage-block {
+            border-left: 3px solid var(--legal-green);
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .usage-label {
+            font-size: 0.65rem;
+            font-weight: 800;
+            color: var(--legal-green);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .usage-text {
+            color: #94a3b8;
+            font-size: 0.9rem;
+            font-style: normal;
+        }
+
+        /* Portal Nav */
+        .portal-nav {
+            position: fixed;
+            top: 40px;
+            left: 40px;
+            right: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .nav-logo {
+            text-decoration: none;
+            font-family: 'Merriweather', serif;
+            font-weight: 900;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 1.2rem;
+        }
+
+        .logo-emblem { height: 32px; filter: drop-shadow(0 0 10px var(--primary-gold)); }
+
+        .nav-actions { display: flex; gap: 15px; }
+
+        .btn-pill {
+            background: var(--card-glass);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            padding: 10px 25px;
+            border-radius: 50px;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: 0.3s;
+        }
+        .btn-pill:hover { border-color: var(--primary-gold); color: var(--primary-gold); }
+        .btn-pill.active { background: var(--primary-gold); color: #000; }
     </style>
 </head>
 <body>
 
-    <header class="main-header" style="background:var(--primary); padding: 15px 30px; position:fixed; top:0; left:0; right:0; z-index:1000; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
-        <div style="max-width:1200px; width:100%; margin:0 auto; display:flex; justify-content:space-between; align-items:center;">
-            <a class="logo-link" href="/" style="text-decoration:none;">
-                <span style="color:white; font-family:'Merriweather',serif; font-size:1.3rem; font-weight:700;">🏛️ myConstitutionConnect</span>
-            </a>
-            <div>
-                <a href="/bibliography" style="color:white; font-weight:600; text-decoration:none; padding:8px 16px; border: 1px solid rgba(255,255,255,0.3); border-radius:6px; margin-right: 15px;">Cases</a>
-                <a href="/" style="color:white; font-weight:600; text-decoration:none; padding:8px 16px; border: 1px solid rgba(255,255,255,0.3); border-radius:6px;">Back Home</a>
-            </div>
+    <nav class="portal-nav">
+        <a href="/" class="nav-logo">
+            <img src="/static/logo.png" alt="Emblem" class="logo-emblem">
+            <span>ScholarVault</span>
+        </a>
+        <div class="nav-actions">
+            <a href="/bibliography" class="btn-pill">Case Stories</a>
+            <a href="/" class="btn-pill active">Home Portal</a>
         </div>
-    </header>
+    </nav>
 
     <div class="container">
-        <section class="hero-section">
-            <h1>Law Student Dictionary <span id="syncDate" style="font-size: 1rem; opacity: 0.7;"></span></h1>
-            <p>Your interactive, multilingual guide to complex legal terms and Latin maxims used in Constitutional Law.</p>
+        <header class="dictionary-hero">
+            <span class="hero-tag">Multilingual Lexicon</span>
+            <h1>Lexicon of Justice</h1>
+            <p style="color: var(--text-muted); max-width: 700px; margin: 0 auto; font-size: 1.1rem;">
+                Deciphering the language of the law through interactive definitions and practical examples in all scheduled languages.
+            </p>
+        </header>
+
+        <section class="search-area">
+            <div class="search-container">
+                <input type="text" id="termSearch" placeholder="Search a secret legal language..." onkeyup="filterTerms()">
+            </div>
+            
+            <div class="lexicon-picker" id="langPicker">
+                <button class="lang-btn active" data-lang="en">EN</button>
+                <button class="lang-btn" data-lang="hi">हिन्दी</button>
+                <button class="lang-btn" data-lang="bn">বাংলা</button>
+                <button class="lang-btn" data-lang="te">తెలుగు</button>
+                <button class="lang-btn" data-lang="mr">मराठी</button>
+            </div>
         </section>
 
-        <h2 class="section-title">📙 Legal Dictionary <span class="sync-badge">Updated via AI Sync</span></h2>
-        <div class="dict-wrapper">
-            <div class="dict-header">
-                <div class="search-container">
-                    <span class="search-icon">🔍</span>
-                    <input type="text" class="search-input" id="termSearch" placeholder="Search meanings in any language..." onkeyup="filterTerms()">
-                </div>
-                <div class="lang-picker" id="langPicker">
-                    <button class="lang-btn active" data-lang="en">EN</button>
-                    <button class="lang-btn" data-lang="hi">हिन्दी</button>
-                    <button class="lang-btn" data-lang="bn">বাংলা</button>
-                    <button class="lang-btn" data-lang="te">తెలుగు</button>
-                    <button class="lang-btn" data-lang="mr">मराठी</button>
-                </div>
-            </div>
-
-            <div class="dict-grid" id="dictGrid">
-                <!-- Data will be injected here by JS -->
+        <div class="lexicon-grid" id="dictGrid">
+            <!-- Loading Interface -->
+            <div style="text-align:center; padding: 100px; color: var(--primary-gold); grid-column: 1/-1;">
+                <span style="font-size: 0.8rem; letter-spacing: 2px; font-weight: 800;">DECODING LEGAL TERMS...</span>
             </div>
         </div>
     </div>
@@ -202,13 +321,10 @@
             try {
                 const response = await fetch('/api/legal-knowledge');
                 const data = await response.json();
-                
                 dictionaryData = data.dictionary;
                 renderDictionary();
-                
-                document.getElementById('syncDate').innerText = `| Last Sync: ${new Date().toLocaleDateString()}`;
             } catch (error) {
-                console.error("Legal Knowledge Load Error:", error);
+                console.error("Lexicon Load Error:", error);
             }
         }
 
@@ -223,21 +339,27 @@
                 (item[currentLang] && item[currentLang].toLowerCase().includes(query))
             );
 
-            filtered.forEach(item => {
+            filtered.forEach((item, index) => {
                 const card = document.createElement('div');
                 card.className = 'term-card';
                 card.innerHTML = `
-                    <h3 class="term-title">${item.term}</h3>
-                    <span class="term-pron">Pronunciation: ${item.pron}</span>
-                    <div class="meaning-box">
+                    <div class="term-header">
+                        <h3 class="card-term">${item.term}</h3>
+                        <span class="term-pron">Pronunciation: ${item.pron}</span>
+                    </div>
+                    <div class="meaning-block">
                         <span class="meaning-label">Meaning (${currentLang.toUpperCase()})</span>
                         <p class="meaning-text">${item[currentLang] || 'Translation coming soon...'}</p>
                     </div>
-                    <div class="example-tag">
-                        <strong>Practical Usage:</strong> "${item.usage}"
+                    <div class="usage-block">
+                        <span class="usage-label">Practical Usage</span>
+                        <p class="usage-text">"${item.usage}"</p>
                     </div>
                 `;
                 grid.appendChild(card);
+                
+                // Add staggered animation
+                setTimeout(() => card.classList.add('visible'), index * 50);
             });
         }
 
@@ -259,8 +381,9 @@
             }
         });
 
-        // Initialize
         loadLegalKnowledge();
     </script>
+</body>
+</html>
 </body>
 </html>

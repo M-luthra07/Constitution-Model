@@ -20,8 +20,8 @@ if not GEMINI_API_KEY:
 genai.configure(api_key=GEMINI_API_KEY)
 
 # Initialize the Gemini models
-vision_model = genai.GenerativeModel('models/gemini-2.5-flash-image-preview')
-text_model = genai.GenerativeModel('models/gemini-2.5-pro')
+vision_model = genai.GenerativeModel('gemini-2.5-flash')
+text_model = genai.GenerativeModel('gemini-2.5-flash')
 
 def identify_fields_and_get_suggestions(image):
     """

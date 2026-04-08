@@ -3,281 +3,287 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Virtual Court - Constitution Explorer</title>
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <title>Veritas VR - AI Immersive Courtroom</title>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --court-wood: #2D1B11;
-            --court-trim: #D4AF37;
-            --paper: #f4eCdf;
-            --text-dark: #1e1e1e;
-            --accent-red: #8b0000;
+            --court-wood: #4A3728; /* Modern Light Oak/Walnut */
+            --court-trim: #C5A059;
+            --paper: #FFFFFF;
+            --text-dark: #202124;
+            --gold: #D4AF37;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--text-dark);
-            color: var(--paper);
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            background-image: 
-                linear-gradient(rgba(45, 27, 17, 0.9), rgba(45, 27, 17, 0.95)),
-                url('https://www.transparenttextures.com/patterns/wood-pattern.png');
+            font-family: 'Outfit', sans-serif;
+            background-color: #f8f9fa;
+            color: #202124;
+            height: 100vh;
+            overflow: hidden;
         }
 
+        /* VR Workspace Container */
+        .vr-workspace {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 50px;
+            padding: 40px;
+        }
+
+        /* Immersion Background Layer */
+        .court-environment {
+            position: absolute;
+            inset: 0;
+            background: url("/static/modern_indian_digital_courtroom_bg.png") center/cover no-repeat;
+            z-index: -1;
+            filter: brightness(0.85) saturate(1.1); /* Brighter for modern feel */
+            box-shadow: inset 0 0 200px rgba(0,0,0,0.5);
+        }
+
+        /* Ambient Lighting / Depth */
+        .depth-shadow {
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at center, transparent 30%, rgba(0,0,0,0.95) 100%);
+            pointer-events: none;
+            z-index: 5;
+        }
+
+        /* Header / HUD */
         header {
-            padding: 20px 40px;
-            background: rgba(0,0,0,0.5);
-            border-bottom: 2px solid var(--court-trim);
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+            width: 80%;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            background: rgba(0,0,0,0.6);
+            backdrop-filter: blur(10px);
+            padding: 12px 30px;
+            border-radius: 60px;
+            border: 1px solid rgba(212, 175, 55, 0.4);
         }
 
         .back-btn {
-            color: var(--court-trim);
+            color: #94a3b8;
             text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
             display: flex;
             align-items: center;
             gap: 8px;
-            font-weight: 500;
+            transition: color 0.2s;
         }
+        .back-btn:hover { color: var(--gold); }
 
-        h1 {
+        .court-status {
             font-family: 'Merriweather', serif;
-            color: var(--court-trim);
-            font-size: 1.8rem;
-            text-transform: uppercase;
+            color: var(--gold);
+            font-weight: 900;
             letter-spacing: 2px;
+            text-transform: uppercase;
+            font-size: 1rem;
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 40px auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            padding: 0 20px;
-            flex: 1;
-        }
-
-        /* Case File Panel */
-        .case-panel {
-            background-color: var(--paper);
+        /* --- THE PODIUM (Center Case Info) --- */
+        .case-podium {
+            width: 400px;
+            background: var(--paper);
             color: var(--text-dark);
             padding: 40px;
-            border-radius: 4px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
-            position: relative;
+            border-radius: 8px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+            z-index: 20;
             background-image: url('https://www.transparenttextures.com/patterns/cream-paper.png');
-        }
-
-        .stamp {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            color: var(--accent-red);
-            border: 3px solid var(--accent-red);
-            font-weight: bold;
-            padding: 5px 15px;
-            transform: rotate(-15deg);
-            opacity: 0.6;
-            font-family: 'Courier New', monospace;
-            font-size: 1.2rem;
-            border-radius: 4px;
         }
 
         .case-title {
             font-family: 'Merriweather', serif;
-            font-size: 1.5rem;
-            color: #5d2e0a;
-            margin-bottom: 20px;
-            border-bottom: 2px solid rgba(93, 46, 10, 0.2);
-            padding-bottom: 10px;
+            font-size: 1.6rem;
+            color: #4a2a14;
+            margin-bottom: 25px;
+            border-bottom: 2px solid rgba(0,0,0,0.1);
+            padding-bottom: 15px;
+            line-height: 1.3;
         }
 
         .case-desc {
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             line-height: 1.8;
-            margin-bottom: 30px;
+            color: #333;
+            max-height: 450px;
+            overflow-y: auto;
             text-align: justify;
         }
 
-        /* Argument Panel */
-        .argument-panel {
-            background: rgba(0,0,0,0.4);
-            border: 1px solid rgba(212, 175, 55, 0.3);
+        /* --- THE LAWYER'S BENCH (Input Station) --- */
+        .lawyer-station {
+            width: 600px;
+            background: var(--court-wood);
+            border: 4px solid var(--court-trim);
+            padding: 40px;
             border-radius: 12px;
-            padding: 30px;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.8);
+            z-index: 30;
         }
 
-        h2 {
-            font-family: 'Merriweather', serif;
-            color: var(--court-trim);
-            font-size: 1.3rem;
-            margin-bottom: 10px;
+        .station-label {
+            font-size: 0.85rem;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 25px;
+            font-weight: 800;
+            text-align: center;
+            border-bottom: 2px solid rgba(212, 175, 55, 0.2);
+            padding-bottom: 12px;
         }
 
         .rights-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 12px;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 25px;
         }
 
         .right-btn {
             background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.1);
-            color: white;
-            padding: 12px;
+            border: 1px solid rgba(255,193,7,0.3);
+            color: #e2e8f0;
+            padding: 14px;
             border-radius: 8px;
             cursor: pointer;
-            transition: all 0.2s;
-            text-align: left;
             font-size: 0.9rem;
+            text-align: left;
+            transition: all 0.2s;
         }
-
         .right-btn:hover {
-            border-color: var(--court-trim);
-            background: rgba(212, 175, 55, 0.1);
+            background: rgba(255,193,7,0.15);
+            border-color: var(--gold);
         }
-
         .right-btn.selected {
-            background: var(--court-trim);
+            background: var(--gold);
             color: var(--text-dark);
-            border-color: var(--court-trim);
-            font-weight: 600;
+            border-color: var(--gold);
+            font-weight: 800;
         }
 
         textarea {
             width: 100%;
-            height: 120px;
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 8px;
-            padding: 15px;
+            height: 140px;
+            background: rgba(0,0,0,0.4);
+            border: 2px solid rgba(212, 175, 55, 0.3);
+            border-radius: 12px;
+            padding: 18px;
             color: white;
-            font-family: 'Inter', sans-serif;
+            font-family: inherit;
+            margin-bottom: 20px;
             resize: none;
-            font-size: 1rem;
-        }
-
-        textarea:focus {
             outline: none;
-            border-color: var(--court-trim);
+            font-size: 1.05rem;
         }
+        textarea:focus { border-color: var(--gold); }
 
         .submit-btn {
-            background: var(--court-trim);
+            width: 100%;
+            padding: 20px;
+            background: var(--gold);
             color: var(--text-dark);
             border: none;
-            padding: 15px 30px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            cursor: pointer;
-            border-radius: 8px;
-            transition: all 0.2s;
+            border-radius: 12px;
+            font-weight: 900;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 1.1rem;
         }
+        .submit-btn:hover { background: #E6C200; transform: translateY(-2px); }
+        .submit-btn:disabled { opacity: 0.5; cursor: not-allowed; }
 
-        .submit-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
-        }
-
-        .submit-btn:disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-            transform: none;
-        }
-
-        /* Verdict Modal */
-        .modal {
-            display: none;
+        /* --- VERDICT OVERLAY (VR Presentation) --- */
+        .verdict-overlay {
             position: fixed;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(0,0,0,0.8);
-            z-index: 1000;
+            inset: 0;
+            background: rgba(0,0,0,0.9);
+            z-index: 2000;
+            display: none;
             align-items: center;
             justify-content: center;
+            opacity: 0;
+            transition: opacity 0.5s ease;
         }
+        .verdict-overlay.active { display: flex; opacity: 1; }
 
-        .modal.active {
-            display: flex;
-        }
-
-        .verdict-card {
+        .verdict-scroll {
             background: var(--paper);
             color: var(--text-dark);
-            width: 95%;
-            max-width: 750px;
-            max-height: 90vh;
-            overflow-y: auto;
-            padding: 50px;
-            border-radius: 8px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.6);
-            text-align: center;
+            width: 800px;
+            max-height: 85vh;
+            padding: 60px;
+            border-radius: 4px;
             position: relative;
+            box-shadow: 0 50px 100px rgba(0,0,0,1);
+            overflow-y: auto;
+            background-image: url('https://www.transparenttextures.com/patterns/cream-paper.png');
         }
 
-        .judge-icon {
-            font-size: 3.5rem;
-            margin-bottom: 25px;
-            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+        .verdict-scroll h2 { 
+            font-family: 'Merriweather', serif;
+            text-align: center;
+            color: #8b1d1d;
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+            border-bottom: 4px double #8b1d1d;
+            padding-bottom: 10px;
         }
 
         .verdict-content {
-            text-align: justify;
-            margin-bottom: 35px;
-            line-height: 1.8;
             font-family: 'Merriweather', serif;
-            font-size: 1.05rem;
-            color: #2c2c2c;
+            line-height: 2;
+            text-align: justify;
+            font-variant-ligatures: common-ligatures;
+            font-size: 1.15rem;
         }
 
-        .verdict-content h1, .verdict-content h2, .verdict-content h3 {
+        .verdict-footer {
+            margin-top: 40px;
             text-align: center;
-            margin-top: 25px;
-            margin-bottom: 15px;
-            color: #1a1a1a;
         }
 
-        .next-case-btn {
-            background: var(--text-dark);
-            color: var(--court-trim);
-            border: 2px solid var(--court-trim);
-            padding: 10px 24px;
-            font-size: 1rem;
-            cursor: pointer;
-            border-radius: 4px;
-            font-weight: bold;
-            transition: all 0.2s;
+        .gavel-notif {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            font-size: 10rem;
+            z-index: 2100;
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            pointer-events: none;
         }
+        .gavel-notif.hit { transform: translate(-50%, -50%) scale(1); }
 
-        .next-case-btn:hover {
-            background: var(--court-trim);
-            color: var(--text-dark);
-        }
-
-        .loading {
+        .loading-ring {
             display: none;
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
             text-align: center;
-            color: var(--court-trim);
-            margin-top: 20px;
-            font-style: italic;
+            z-index: 100;
         }
 
-        @keyframes blink { 50% { opacity: 0; } }
-
-        @media (max-width: 768px) {
-            .container { grid-template-columns: 1fr; }
-            .rights-grid { grid-template-columns: 1fr; }
+        @media (max-width: 1024px) {
+            .vr-workspace { flex-direction: column; padding-top: 100px; overflow-y: auto; height: auto; }
+            .case-podium, .lawyer-station { width: 95%; margin: 0 auto; }
         }
     </style>
 </head>
@@ -285,54 +291,68 @@
 
     <header>
         <a href="/" class="back-btn">
-            <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
             </svg>
-            Leave Courtroom
+            EXIT COURT
         </a>
-        <h1>AI Virtual Court</h1>
-        <div style="width: 24px;"></div> <!-- Spacer -->
+        <div class="court-status">Hon'ble High Court of India</div>
+        <div style="width: 20px;"></div>
     </header>
 
-    <div class="container">
-        <!-- Case Info -->
-        <div class="case-panel">
-            <div class="stamp">DOCKET #<span id="caseId">001</span></div>
-            <h2 class="case-title" id="caseTitle">Loading Case...</h2>
+    <div class="vr-workspace" id="vrScene">
+        <!-- Environmental Layers -->
+        <div class="court-environment"></div>
+        <div class="depth-shadow"></div>
+
+        <!-- Case podium (The Facts) -->
+        <div class="case-podium">
+            <div style="font-size: 0.8rem; font-weight: 800; color: #8b1d1d; margin-bottom: 8px; letter-spacing: 1px;">OFFICIAL DOCKET #<span id="caseId">000</span></div>
+            <h2 class="case-title" id="caseTitle">Litigation Details</h2>
             <div class="case-desc" id="caseDesc">
-                Please wait, the baliff is fetching the next case file from the archives.
+                Fetching the latest case records from the vault...
             </div>
-            <div style="margin-top: 30px; font-size: 0.9rem; color: #666; font-style: italic;">
-                Your task: Review the facts and select the most applicable Constitutional Right to defend your client.
+            <div style="margin-top: 30px; font-size: 0.85rem; color: #555; border-top: 2px solid rgba(0,0,0,0.05); padding-top: 15px;">
+                <b>INSTRUCTION:</b> Counsel, please select the appropriate Constitutional Right and present your argument.
             </div>
         </div>
 
-        <!-- Argument Interface -->
-        <div class="argument-panel">
-            <div>
-                <h2>1. Select Fundamental Right</h2>
-                <div class="rights-grid" id="rightsGrid">
-                    <!-- Buttons generated by JS -->
-                </div>
+        <!-- Lawyer's Station (User Controls) -->
+        <div class="lawyer-station">
+            <div class="station-label">Counsel's Lectern</div>
+            
+            <h3 style="font-size: 0.95rem; margin-bottom: 12px; color: #ccc; font-weight: 600;">Constitutional Right Infringed:</h3>
+            <div class="rights-grid" id="rightsGrid">
+                <!-- Buttons populated by script -->
             </div>
 
-            <div>
-                <h2>2. Present Your Argument (Optional)</h2>
-                <textarea id="userArgument" placeholder="Your Honor, I submit that my client's rights..."></textarea>
-            </div>
+            <h3 style="font-size: 0.95rem; margin-bottom: 12px; color: #ccc; font-weight: 600;">Formal Submission:</h3>
+            <textarea id="userArgument" placeholder="Your Honor, I respectfully submit that..."></textarea>
 
-            <button class="submit-btn" id="submitBtn" onclick="presentCase()">Present to Judge</button>
-            <div class="loading" id="loadingPrompt">The Honorable Judge is deliberating...</div>
+            <button class="submit-btn" id="submitBtn" onclick="presentCase()">Present Case to Court</button>
         </div>
+
+        <!-- Loading Feedback -->
+        <div class="loading-ring" id="loadingRing">
+            <div style="font-size: 4rem; margin-bottom: 15px;">📜</div>
+            <div style="font-weight: 900; color: var(--gold); font-size: 1.2rem; text-shadow: 0 4px 10px rgba(0,0,0,0.5);">Judge is Deliberating...</div>
+        </div>
+
+        <!-- Gavel Animation -->
+        <div class="gavel-notif" id="gavelAnim">🔨</div>
     </div>
 
-    <!-- Judge's Verdict -->
-    <div class="modal" id="verdictModal">
-        <div class="verdict-card">
-            <div class="judge-icon">⚖️</div>
-            <h2 style="color: var(--text-dark); margin-bottom: 20px;">The Court's Verdict</h2>
+    <!-- The Verdict Scroll -->
+    <div class="verdict-overlay" id="verdictOverlay">
+        <div class="verdict-scroll">
+            <div style="text-align: center; margin-bottom: 25px;">
+                <img src="https://raw.githubusercontent.com/souvik-halder/Gov-Logos-India/master/Emblem_of_India.svg" width="100" height="auto" alt="State Emblem of India" style="filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));">
+            </div>
+            <h2>COURT VERDICT</h2>
             <div class="verdict-content" id="verdictText"></div>
-            <button class="next-case-btn" onclick="loadRandomCase(); document.getElementById('verdictModal').classList.remove('active');">Call Next Case</button>
+            <div class="verdict-footer">
+                <button class="submit-btn" style="width: auto; padding: 15px 60px;" onclick="closeVerdict()">Call Next Case</button>
+            </div>
         </div>
     </div>
 
@@ -347,8 +367,8 @@
                 cases = await response.json();
                 loadRandomCase();
             } catch (err) {
-                document.getElementById('caseTitle').textContent = "Error Loading Cases";
-                document.getElementById('caseDesc').textContent = "Could not fetch the court files. Please ensure court_cases.json exists.";
+                document.getElementById('caseTitle').textContent = "Connection Lost";
+                document.getElementById('caseDesc').textContent = "Court records currently unavailable.";
             }
         }
 
@@ -357,11 +377,10 @@
             const randomIdx = Math.floor(Math.random() * cases.length);
             currentCase = cases[randomIdx];
             
-            document.getElementById('caseId').textContent = currentCase.id;
+            document.getElementById('caseId').textContent = currentCase.id || "102";
             document.getElementById('caseTitle').textContent = currentCase.title;
             document.getElementById('caseDesc').textContent = currentCase.desc;
             
-            // Generate Buttons
             const grid = document.getElementById('rightsGrid');
             grid.innerHTML = '';
             selectedRight = null;
@@ -383,45 +402,37 @@
         let audioCtx = null;
         function playGavelSound() {
             try {
-                if (!audioCtx) {
-                    audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-                }
-                
-                // Resume context if it was suspended (browser policy)
-                if (audioCtx.state === 'suspended') {
-                    audioCtx.resume();
-                }
+                if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+                if (audioCtx.state === 'suspended') audioCtx.resume();
 
                 function hit(timeOffset) {
                     const osc = audioCtx.createOscillator();
-                    const gainNode = audioCtx.createGain();
+                    const gain = audioCtx.createGain();
                     osc.type = 'square';
-                    osc.connect(gainNode);
-                    gainNode.connect(audioCtx.destination);
+                    osc.connect(gain); gain.connect(audioCtx.destination);
                     osc.frequency.setValueAtTime(300, audioCtx.currentTime + timeOffset);
                     osc.frequency.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + timeOffset + 0.1);
-                    gainNode.gain.setValueAtTime(1, audioCtx.currentTime + timeOffset);
-                    gainNode.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + timeOffset + 0.05);
+                    gain.gain.setValueAtTime(1, audioCtx.currentTime + timeOffset);
+                    gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + timeOffset + 0.05);
                     osc.start(audioCtx.currentTime + timeOffset);
                     osc.stop(audioCtx.currentTime + timeOffset + 0.1);
                 }
-                hit(0);
-                hit(0.25);
-            } catch(e) { console.log("Audio API error:", e); }
+                hit(0); hit(0.25);
+            } catch(e) {}
         }
 
         async function presentCase() {
             if (!selectedRight) {
-                alert("You must select a Constitutional Right to base your argument upon!");
+                alert("Counsel, you must cite a Constitutional Right for your argument.");
                 return;
             }
 
             const arg = document.getElementById('userArgument').value;
-            const btn = document.getElementById('submitBtn');
-            const loading = document.getElementById('loadingPrompt');
+            const loading = document.getElementById('loadingRing');
+            const submitBtn = document.getElementById('submitBtn');
 
-            btn.disabled = true;
             loading.style.display = 'block';
+            submitBtn.disabled = true;
 
             try {
                 const response = await fetch('/api/court/judge', {
@@ -437,31 +448,148 @@
                 const data = await response.json();
                 
                 if (data.verdict) {
-                    const nextBtn = document.querySelector('.next-case-btn');
-                    nextBtn.style.display = 'none'; // hide until typing finished
-
-                    document.getElementById('verdictText').innerHTML = "";
-                    document.getElementById('verdictModal').classList.add('active');
-                    
-                    // Drama sequence: BANG BANG -> Wait -> Show Instant
+                    // Dramatic gavel hit
+                    loading.style.display = 'none';
+                    const gavel = document.getElementById('gavelAnim');
+                    gavel.classList.add('hit');
                     playGavelSound();
-                    await new Promise(r => setTimeout(r, 600));
                     
-                    document.getElementById('verdictText').innerHTML = data.verdict;
-                    
-                    nextBtn.style.display = 'inline-block';
-                } else {
-                    alert('The judge refused to hear the case: ' + data.error);
+                    setTimeout(() => {
+                        gavel.classList.remove('hit');
+                        document.getElementById('verdictText').innerHTML = data.verdict;
+                        document.getElementById('verdictOverlay').classList.add('active');
+                    }, 800);
                 }
             } catch (err) {
-                alert('Connection to the court severed.');
+                alert("Network failure.");
             } finally {
-                btn.disabled = false;
+                submitBtn.disabled = false;
                 loading.style.display = 'none';
             }
         }
 
-        // Initialize
+        function closeVerdict() {
+            document.getElementById('verdictOverlay').classList.remove('active');
+            loadRandomCase();
+        }
+
+        initCourt();
+    </script>
+</body>
+</html>
+
+        async function initCourt() {
+            try {
+                const response = await fetch('/static/court_cases.json');
+                cases = await response.json();
+                loadRandomCase();
+            } catch (err) {
+                document.getElementById('caseTitle').textContent = "Connection Lost";
+                document.getElementById('caseDesc').textContent = "Court records currently unavailable.";
+            }
+        }
+
+        function loadRandomCase() {
+            if (cases.length === 0) return;
+            const randomIdx = Math.floor(Math.random() * cases.length);
+            currentCase = cases[randomIdx];
+            
+            document.getElementById('caseId').textContent = currentCase.id || "102";
+            document.getElementById('caseTitle').textContent = currentCase.title;
+            document.getElementById('caseDesc').textContent = currentCase.desc;
+            
+            const grid = document.getElementById('rightsGrid');
+            grid.innerHTML = '';
+            selectedRight = null;
+            document.getElementById('userArgument').value = '';
+            
+            currentCase.options.forEach(opt => {
+                const btn = document.createElement('button');
+                btn.className = 'right-btn';
+                btn.textContent = opt;
+                btn.onclick = () => {
+                    document.querySelectorAll('.right-btn').forEach(b => b.classList.remove('selected'));
+                    btn.classList.add('selected');
+                    selectedRight = opt;
+                };
+                grid.appendChild(btn);
+            });
+        }
+
+        let audioCtx = null;
+        function playGavelSound() {
+            try {
+                if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+                if (audioCtx.state === 'suspended') audioCtx.resume();
+
+                function hit(timeOffset) {
+                    const osc = audioCtx.createOscillator();
+                    const gain = audioCtx.createGain();
+                    osc.type = 'square';
+                    osc.connect(gain); gain.connect(audioCtx.destination);
+                    osc.frequency.setValueAtTime(300, audioCtx.currentTime + timeOffset);
+                    osc.frequency.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + timeOffset + 0.1);
+                    gain.gain.setValueAtTime(1, audioCtx.currentTime + timeOffset);
+                    gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + timeOffset + 0.05);
+                    osc.start(audioCtx.currentTime + timeOffset);
+                    osc.stop(audioCtx.currentTime + timeOffset + 0.1);
+                }
+                hit(0); hit(0.25);
+            } catch(e) {}
+        }
+
+        async function presentCase() {
+            if (!selectedRight) {
+                alert("Counsel, you must cite a Constitutional Right for your argument.");
+                return;
+            }
+
+            const arg = document.getElementById('userArgument').value;
+            const loading = document.getElementById('loadingRing');
+            const submitBtn = document.getElementById('submitBtn');
+
+            loading.style.display = 'block';
+            submitBtn.disabled = true;
+
+            try {
+                const response = await fetch('/api/court/judge', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        scenario: currentCase.desc,
+                        chosen_right: selectedRight,
+                        argument: arg
+                    })
+                });
+
+                const data = await response.json();
+                
+                if (data.verdict) {
+                    // Dramatic gavel hit
+                    loading.style.display = 'none';
+                    const gavel = document.getElementById('gavelAnim');
+                    gavel.classList.add('hit');
+                    playGavelSound();
+                    
+                    setTimeout(() => {
+                        gavel.classList.remove('hit');
+                        document.getElementById('verdictText').innerHTML = data.verdict;
+                        document.getElementById('verdictOverlay').classList.add('active');
+                    }, 800);
+                }
+            } catch (err) {
+                alert("Network failure in the VR stream.");
+            } finally {
+                submitBtn.disabled = false;
+                loading.style.display = 'none';
+            }
+        }
+
+        function closeVerdict() {
+            document.getElementById('verdictOverlay').classList.remove('active');
+            loadRandomCase();
+        }
+
         initCourt();
     </script>
 </body>

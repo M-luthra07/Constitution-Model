@@ -4,8 +4,68 @@ import os
 import google.generativeai as genai
 from dotenv import load_dotenv
 import time
+from datetime import datetime, timedelta
+
+# Path to store last sync timestamp
+SYNC_TIMESTAMP_FILE = r'c:\Users\luthr\Downloads\Constitution-Model-main\.sync_timestamps.json'
+
+def get_last_sync_time(sync_type):
+    """Get the last sync time for a specific sync type."""
+    if not os.path.exists(SYNC_TIMESTAMP_FILE):
+        return None
+    
+    try:
+        with open(SYNC_TIMESTAMP_FILE, 'r') as f:
+            data = json.load(f)
+        return data.get(sync_type)
+    except:
+        return None
+
+def set_sync_time(sync_type):
+    """Update the sync timestamp for a specific sync type."""
+    data = {}
+    if os.path.exists(SYNC_TIMESTAMP_FILE):
+        try:
+            with open(SYNC_TIMESTAMP_FILE, 'r') as f:
+                data = json.load(f)
+        except:
+            pass
+    
+    data[sync_type] = datetime.now().isoformat()
+    
+    with open(SYNC_TIMESTAMP_FILE, 'w') as f:
+        json.dump(data, f, indent=2)
+
+def should_run_sync(sync_type, hours=48):
+    """Check if sync should run based on 48-hour interval."""
+    last_sync = get_last_sync_time(sync_type)
+    
+    if last_sync is None:
+        print(f"ℹ️ First run for {sync_type}. Proceeding with sync...")
+        return True
+    
+    try:
+        last_sync_time = datetime.fromisoformat(last_sync)
+        time_diff = datetime.now() - last_sync_time
+        hours_passed = time_diff.total_seconds() / 3600
+        
+        if hours_passed < hours:
+            hours_remaining = hours - hours_passed
+            print(f"⏸️  {sync_type} was run {hours_passed:.1f} hours ago.")
+            print(f"⏳ Next sync in {hours_remaining:.1f} hours (48-hour interval).")
+            return False
+        else:
+            print(f"✅ 48 hours have passed. Running {sync_type}...")
+            return True
+    except:
+        print(f"⚠️ Error checking sync time. Running {sync_type}...")
+        return True
 
 def internet_sync():
+    # Check 48-hour rate limit
+    if not should_run_sync("internet_sync"):
+        return
+    
     print("🌐 [AI INTERNET SYNC] Starting automated scheme update...")
     load_dotenv()
     api_key = os.getenv("GOOGLE_API_KEY")
@@ -14,7 +74,7 @@ def internet_sync():
         return
 
     genai.configure(api_key=api_key)
-    model = genai.GenerativeModel('gemini-flash-latest')
+    model = genai.GenerativeModel('gemini-2.5-flash')
 
     # Define the core database paths
     schemes_json_path = r'c:\Users\luthr\Downloads\Constitution-Model-main\backend\static\schemes.json'
@@ -85,8 +145,10 @@ def internet_sync():
             with open(master_json_path, 'w', encoding='utf-8') as f:
                 json.dump(db, f, indent=2, ensure_ascii=False)
             print(f"✅ Sync Successful: {new_count} new schemes added to the encyclopedia.")
+            set_sync_time("internet_sync")  # Update timestamp
         else:
             print("ℹ️ Database is already up to date with the latest 2025 schemes.")
+            set_sync_time("internet_sync")  # Update timestamp even if no new schemes
 
     except Exception as e:
         print(f"❌ Sync Error: {e}")

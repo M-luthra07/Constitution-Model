@@ -10,116 +10,301 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
   <style>
-    .rti-container { max-width: 800px; margin: 100px auto 50px; padding: 20px; }
-    .rti-card { background: #fff; border-radius: 12px; padding: 40px; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1); border: 1px solid #e2e8f0; }
-    .rti-title { font-family: 'Merriweather', serif; color: #0f172a; margin-bottom: 15px; font-size: 2.2rem;}
-    .rti-desc { color: #475569; margin-bottom: 30px; line-height: 1.6; font-size: 1.1rem;}
-    .rti-form { display: flex; flex-direction: column; gap: 20px; }
-    .form-group { display: flex; flex-direction: column; gap: 10px; }
-    .rti-select, .rti-input { width: 100%; border: 2px solid #cbd5e1; padding: 12px; border-radius: 8px; font-family: 'Inter', sans-serif; transition: border-color 0.3s; font-size: 1rem; }
-    .rti-select:focus, .rti-input:focus { border-color: #3b82f6; outline: none; }
-    .rti-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-    .rti-textarea { width: 100%; border: 2px solid #cbd5e1; padding: 15px; border-radius: 8px; font-family: 'Inter', sans-serif; resize: vertical; min-height: 140px; transition: border-color 0.3s; font-size: 1rem;}
-    .rti-textarea:focus { border-color: #3b82f6; outline: none; box-shadow: 0 0 0 3px rgba(59,130,246,0.2); }
-    .rti-btn { background: #0f172a; color: white; border: none; padding: 14px 28px; border-radius: 8px; font-weight: 600; cursor: pointer; transition: all 0.2s; align-self: flex-start; font-size: 1.05rem;}
-    .rti-btn:hover { background: #1e293b; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.15);}
-    .rti-btn:disabled { background: #94a3b8; cursor: not-allowed; transform: none; box-shadow:none;}
-    .rti-output-wrapper { margin-top: 40px; display: none; border-top: 1px solid #e2e8f0; padding-top: 30px;}
-    .rti-output-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
-    .rti-output-box { background: #f8fafc; padding: 30px; border-radius: 8px; border: 1px dashed #94a3b8; font-family: 'Courier New', Courier, monospace; white-space: pre-wrap; line-height: 1.7; color: #1e293b; font-size: 0.95rem; box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);}
-    .copy-btn { background: #d4af37; color: #fff; padding: 10px 20px; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; transition: background 0.2s; }
-    .copy-btn:hover { background: #c29d2f; }
-    .loading-spinner { display: none; color: #3b82f6; font-weight: 600; margin-top: 10px; animation: pulse 1.5s infinite; }
-    .mock-badge { background: #fef08a; color: #854d0e; padding: 6px 12px; border-radius: 6px; font-size: 0.85rem; font-weight: 700; margin-bottom: 15px; display: inline-block; border: 1px solid #fde047;}
-    @keyframes pulse { 0% {opacity: 1;} 50% {opacity: 0.5;} 100% {opacity: 1;} }
+    :root {
+        --primary-gold: #D4AF37;
+        --accent-saffron: #FF9933;
+        --legal-green: #138808;
+        --patriot-blue: #060918;
+        --bg-dark: #0f172a;
+        --card-dark: rgba(30, 41, 59, 0.7);
+        --text-light: #f8fafc;
+        --text-muted: #94a3b8;
+        --glass-border: rgba(255, 255, 255, 0.1);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+        font-family: 'Inter', sans-serif;
+        background-color: var(--bg-dark);
+        background-image: 
+            radial-gradient(circle at 5% 5%, rgba(255, 153, 51, 0.1) 0%, transparent 40%),
+            radial-gradient(circle at 95% 95%, rgba(19, 136, 8, 0.1) 0%, transparent 40%);
+        color: var(--text-light);
+        min-height: 100vh;
+        overflow-x: hidden;
+    }
+
+    header {
+        height: 80px;
+        background: rgba(15, 23, 42, 0.8);
+        backdrop-filter: blur(20px);
+        border-bottom: 1px solid var(--glass-border);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 4px 30px rgba(0,0,0,0.3);
+    }
+
+    .header-content {
+        max-width: 1200px;
+        width: 100%;
+        padding: 0 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .header-left { display: flex; align-items: center; gap: 15px; }
+    .emblem-small { height: 45px; filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.4)); }
+    .site-title { font-family: 'Merriweather', serif; font-size: 1.4rem; font-weight: 900; color: var(--primary-gold); }
+
+    .back-btn {
+        text-decoration: none;
+        color: var(--text-muted);
+        font-size: 0.75rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        padding: 10px 20px;
+        border-radius: 50px;
+        border: 1px solid var(--glass-border);
+        transition: 0.3s;
+    }
+    .back-btn:hover { color: var(--accent-saffron); border-color: var(--accent-saffron); background: rgba(255,153,51,0.1); }
+
+    .rti-container { max-width: 900px; margin: 60px auto; padding: 0 20px; }
+
+    .rti-card { 
+        background: var(--card-dark); 
+        backdrop-filter: blur(30px);
+        border-radius: 28px; 
+        padding: 60px; 
+        box-shadow: 0 40px 100px rgba(0,0,0,0.5);
+        border: 1px solid var(--glass-border);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .rti-card::before {
+        content: "";
+        position: absolute;
+        top: 0; left: 0; right: 0; height: 6px;
+        background: linear-gradient(90deg, var(--accent-saffron), #fff, var(--legal-green));
+        opacity: 0.7;
+    }
+
+    .rti-title { font-family: 'Merriweather', serif; color: #fff; margin-bottom: 20px; font-size: 2.8rem; font-weight: 900; letter-spacing: -1px; text-shadow: 0 2px 10px rgba(0,0,0,0.3);}
+    .rti-desc { color: var(--text-muted); margin-bottom: 45px; line-height: 1.8; font-size: 1.15rem; max-width: 700px;}
+
+    .rti-form { display: flex; flex-direction: column; gap: 30px; }
+    .form-label { font-size: 0.8rem; font-weight: 800; color: var(--accent-saffron); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 12px; display: block; }
+    
+    .rti-input, .rti-select, .rti-textarea { 
+        width: 100%; 
+        background: rgba(15, 23, 42, 0.4);
+        border: 2px solid var(--glass-border); 
+        padding: 18px 22px; 
+        border-radius: 14px; 
+        font-family: 'Inter', sans-serif; 
+        font-size: 1.05rem;
+        color: #fff;
+        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .rti-input:focus, .rti-select:focus, .rti-textarea:focus { 
+        border-color: var(--accent-saffron); 
+        background: rgba(15, 23, 42, 0.6);
+        outline: none; 
+        box-shadow: 0 0 30px rgba(255, 153, 51, 0.15);
+        transform: translateY(-2px);
+    }
+    
+    .rti-select option { background: var(--bg-dark); color: #fff; }
+
+    .rti-row { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+    .rti-textarea { min-height: 200px; line-height: 1.8; resize: none; }
+
+    .rti-btn { 
+        background: linear-gradient(135deg, var(--legal-green), #1aa60a);
+        color: white; 
+        border: none; 
+        padding: 20px 45px; 
+        border-radius: 14px; 
+        font-weight: 900; 
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        cursor: pointer; 
+        transition: all 0.4s; 
+        align-self: flex-start; 
+        font-size: 1rem;
+        box-shadow: 0 10px 30px rgba(19, 136, 8, 0.3);
+    }
+
+    .rti-btn:hover { transform: translateY(-5px); box-shadow: 0 15px 50px rgba(19, 136, 8, 0.5); filter: brightness(1.1); }
+    .rti-btn:disabled { background: #334155; cursor: not-allowed; transform: none; box-shadow: none; opacity: 0.5; }
+
+    .rti-output-wrapper { margin-top: 60px; display: none; border-top: 2px solid var(--glass-border); padding-top: 50px; }
+    .rti-output-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; }
+    
+    .rti-output-box { 
+        background: #fff; 
+        color: #1a1a1a;
+        padding: 60px; 
+        border-radius: 20px; 
+        border: none; 
+        font-family: 'Merriweather', serif; 
+        white-space: pre-wrap; 
+        line-height: 2.2; 
+        font-size: 1.2rem; 
+        box-shadow: 0 40px 100px rgba(0,0,0,0.6);
+        position: relative;
+    }
+
+    .rti-output-box::before {
+        content: "OFFICIAL DRAFT";
+        position: absolute;
+        top: 20px; right: 40px;
+        background: var(--bg-dark);
+        color: var(--primary-gold);
+        font-size: 0.75rem;
+        font-weight: 900;
+        padding: 6px 18px;
+        border-radius: 50px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        border: 1px solid var(--primary-gold);
+    }
+
+    .action-btn { 
+        background: var(--primary-gold); 
+        color: #000; 
+        padding: 14px 28px; 
+        border: none; 
+        border-radius: 12px; 
+        font-weight: 800; 
+        cursor: pointer; 
+        transition: 0.3s; 
+        font-size: 0.95rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+    .action-btn:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3); }
+    .action-btn.secondary { background: rgba(255,255,255,0.05); color: #fff; border: 1px solid var(--glass-border); }
+    .action-btn.secondary:hover { background: rgba(255,255,255,0.1); }
+
+    .loading-spinner { display: none; color: var(--accent-saffron); font-weight: 800; margin-top: 25px; font-size: 1.2rem; letter-spacing: 1px; text-shadow: 0 0 20px rgba(255,153,51,0.3); }
+
     @media print {
       body * { visibility: hidden; }
       #outputWrapper, #outputWrapper * { visibility: visible; }
       #rtiOutput { position: absolute; left: 0; top: 0; width: 100%; border: none; box-shadow: none; padding: 20px; background: white; white-space: pre-wrap; font-family: 'Times New Roman', serif; font-size: 13pt; color: black; line-height: 1.5; }
       .rti-output-header, .mock-badge, #outputWrapper a { display: none !important; }
     }
+
+    @media (max-width: 768px) {
+        .rti-card { padding: 40px 30px; }
+        .rti-title { font-size: 2rem; }
+        .rti-row { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
-<body class="bg-slate-50" style="background:#f8fafc; margin:0; font-family:'Inter',sans-serif;">
-  <header class="main-header" style="background:#0f172a; padding: 15px 30px; display:flex; align-items:center; box-shadow: 0 2px 10px rgba(0,0,0,0.2);">
-    <div style="max-width:1200px; width:100%; margin:0 auto; display:flex; justify-content:space-between; align-items:center;">
-      <a class="logo-link" href="/" style="text-decoration:none;">
-        <span class="site-name" style="color:white; font-family:'Merriweather',serif; font-size:1.3rem; font-weight:700;">🏛️ myConstitutionConnect</span>
-      </a>
-      <a href="/" style="color:#d4af37; font-weight:600; text-decoration:none; padding:8px 16px; border: 1px solid #d4af37; border-radius:6px; transition:all 0.2s;" onmouseover="this.style.background='#d4af37'; this.style.color='#fff';" onmouseout="this.style.background='transparent'; this.style.color='#d4af37';">Back Home</a>
+<body>
+  <header>
+    <div class="header-content">
+      <div class="header-left">
+        <img src="/static/logo.png" alt="National Emblem" class="emblem-small">
+        <span class="site-title">myConstitutionConnect</span>
+      </div>
+      <a href="/" class="back-btn">Exit Assistant</a>
     </div>
   </header>
 
   <main class="rti-container">
     <div class="rti-card">
-      <h1 class="rti-title">✉️ RTI Assistant</h1>
+      <h1 class="rti-title">RTI Assistant</h1>
       <p class="rti-desc">
-        Empowering citizens to demand transparency. Describe what information you need in simple terms, and our AI will immediately formulate the exact structure, identify the likely Department/PIO, and draft the formal Right to Information (RTI) application for you.
+        Empowering every Indian citizen with the digital tools to demand transparency. Our AI expertly crafts formal Right to Information applications by identifying the correct authorities across all 28 states and 8 UTs.
       </p>
 
       <form id="rtiForm" class="rti-form">
         <div class="rti-row">
           <div class="form-group">
-            <label for="stateSelect" style="font-weight: 600; color: #1e293b;">Select State / UT:</label>
+            <label for="stateSelect" class="form-label">Jurisdiction (State / UT)</label>
             <select id="stateSelect" class="rti-select">
-              <option value="India">India (Central Government)</option>
-              <option value="Andhra Pradesh">Andhra Pradesh</option>
-              <option value="Arunachal Pradesh">Arunachal Pradesh</option>
-              <option value="Assam">Assam</option>
-              <option value="Bihar">Bihar</option>
-              <option value="Chhattisgarh">Chhattisgarh</option>
-              <option value="Delhi">Delhi (NCT)</option>
-              <option value="Goa">Goa</option>
-              <option value="Gujarat">Gujarat</option>
-              <option value="Haryana">Haryana</option>
-              <option value="Himachal Pradesh">Himachal Pradesh</option>
-              <option value="Jharkhand">Jharkhand</option>
-              <option value="Karnataka">Karnataka</option>
-              <option value="Kerala">Kerala</option>
-              <option value="Madhya Pradesh">Madhya Pradesh</option>
-              <option value="Maharashtra">Maharashtra</option>
-              <option value="Manipur">Manipur</option>
-              <option value="Meghalaya">Meghalaya</option>
-              <option value="Mizoram">Mizoram</option>
-              <option value="Nagaland">Nagaland</option>
-              <option value="Odisha">Odisha</option>
-              <option value="Punjab">Punjab</option>
-              <option value="Rajasthan">Rajasthan</option>
-              <option value="Sikkim">Sikkim</option>
-              <option value="Tamil Nadu">Tamil Nadu</option>
-              <option value="Telangana">Telangana</option>
-              <option value="Tripura">Tripura</option>
-              <option value="Uttar Pradesh">Uttar Pradesh</option>
-              <option value="Uttarakhand">Uttarakhand</option>
-              <option value="West Bengal">West Bengal</option>
+              <optgroup label="Central Government">
+                <option value="India">Government of India (Central)</option>
+              </optgroup>
+              <optgroup label="States & UTs">
+                <option value="Andhra Pradesh">Andhra Pradesh</option>
+                <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                <option value="Assam">Assam</option>
+                <option value="Bihar">Bihar</option>
+                <option value="Chhattisgarh">Chhattisgarh</option>
+                <option value="Delhi">Delhi (NCT)</option>
+                <option value="Goa">Goa</option>
+                <option value="Gujarat">Gujarat</option>
+                <option value="Haryana">Haryana</option>
+                <option value="Himachal Pradesh">Himachal Pradesh</option>
+                <option value="Jharkhand">Jharkhand</option>
+                <option value="Karnataka">Karnataka</option>
+                <option value="Kerala">Kerala</option>
+                <option value="Madhya Pradesh">Madhya Pradesh</option>
+                <option value="Maharashtra">Maharashtra</option>
+                <option value="Manipur">Manipur</option>
+                <option value="Meghalaya">Meghalaya</option>
+                <option value="Mizoram">Mizoram</option>
+                <option value="Nagaland">Nagaland</option>
+                <option value="Odisha">Odisha</option>
+                <option value="Punjab">Punjab</option>
+                <option value="Rajasthan">Rajasthan</option>
+                <option value="Sikkim">Sikkim</option>
+                <option value="Tamil Nadu">Tamil Nadu</option>
+                <option value="Telangana">Telangana</option>
+                <option value="Tripura">Tripura</option>
+                <option value="Uttar Pradesh">Uttar Pradesh</option>
+                <option value="Uttarakhand">Uttarakhand</option>
+                <option value="West Bengal">West Bengal</option>
+              </optgroup>
             </select>
           </div>
           <div class="form-group">
-            <label for="cityInput" style="font-weight: 600; color: #1e293b;">City / District / Council:</label>
-            <input type="text" id="cityInput" class="rti-input" placeholder="e.g. Mumbai, Ranchi, etc.">
+            <label for="cityInput" class="form-label">City / Municipal Area</label>
+            <input type="text" id="cityInput" class="rti-input" placeholder="e.g. Mumbai, New Delhi, Bengaluru">
           </div>
         </div>
         <div class="form-group">
-          <label for="rtiInput" style="font-weight: 600; color: #1e293b; font-size:1.1rem;">What information do you want from the government?</label>
-          <textarea id="rtiInput" class="rti-textarea" placeholder="Example: I want to know the total budget allocated and the contractor's name for fixing the potholes on MG Road for the year 2023-2024."></textarea>
+          <label for="rtiInput" class="form-label">Information Requested</label>
+          <textarea id="rtiInput" class="rti-textarea" placeholder="In simple terms, describe what you want to know. Our AI will handle the formal legal structure."></textarea>
         </div>
-        <button type="submit" class="rti-btn" id="submitBtn">Generate RTI Draft ✨</button>
-        <div id="loading" class="loading-spinner">✍️ Drafting your formal RTI document... Please wait.</div>
+        
+        <div style="display:flex; align-items:center; gap:20px;">
+            <button type="submit" class="rti-btn" id="submitBtn">Generate Formal Draft</button>
+            <div id="loading" class="loading-spinner">⚖️ Analyzing Jurisdiction & Drafting Application...</div>
+        </div>
       </form>
 
       <div id="outputWrapper" class="rti-output-wrapper">
         <div class="rti-output-header">
-           <h3 style="font-family:'Merriweather',serif; margin:0; color:#0f172a; font-size:1.4rem;">📄 Your RTI Document</h3>
-           <div>
-             <button class="copy-btn" id="copyBtn">📋 Copy</button>
-             <button onclick="window.print()" class="copy-btn" style="background:#1e293b; margin-left: 10px;">🖨️ Print / PDF</button>
+           <h3 style="font-family:'Merriweather',serif; margin:0; color:var(--patriot-blue); font-size:1.6rem;">📄 Formal RTI Application</h3>
+           <div style="display:flex; gap:10px;">
+             <button class="action-btn" id="copyBtn">📋 Copy to Clipboard</button>
+             <button onclick="window.print()" class="action-btn secondary">🖨️ Export PDF / Print</button>
            </div>
         </div>
-        <div id="mockBadge" class="mock-badge" style="display:none;">⚠️ API Unavailable: Showing Smart Template Fallback</div>
+        <div id="mockBadge" class="mock-badge" style="display:none; margin-bottom: 10px;">⚠️ API Limit Reached: Using High-Accuracy Local Template</div>
         <div id="rtiOutput" class="rti-output-box"></div>
-        <div style="margin-top: 20px; text-align:center;">
-           <a href="https://rtionline.gov.in/" target="_blank" style="display:inline-block; background-color:#eff6ff; color: #2563eb; padding:12px 24px; border-radius:8px; text-decoration: none; font-weight: 600; border:1px solid #bfdbfe; transition:all 0.2s;">
-            📤 Submit this at the Official Gov RTI Portal →
+        
+        <div style="margin-top: 40px; text-align:center; padding: 30px; background:#eff6ff; border-radius:16px;">
+           <p style="font-weight:700; color:var(--patriot-blue); margin-bottom:15px;">Ready to Submit?</p>
+           <a href="https://rtionline.gov.in/" target="_blank" style="text-decoration:none; color: #fff; background: #2563eb; padding:12px 28px; border-radius:10px; font-weight:700; display:inline-block; transition:0.3s;" onmouseover="this.style.background='#1d4ed8'" onmouseout="this.style.background='#2563eb'">
+            Open Official RTI Portal (rtionline.gov.in) →
            </a>
         </div>
       </div>

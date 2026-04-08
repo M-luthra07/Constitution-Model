@@ -1,252 +1,355 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Law Scholars' Hub — myConstitutionConnect</title>
-    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:ital,wght@0,400;0,700;1,400&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <style>
         :root {
-            --primary: #0f172a;
-            --accent: #b45309;
-            --accent-light: #fef3c7;
-            --paper: #fffcf9;
-            --text-main: #1e293b;
-            --text-muted: #64748b;
+            --primary-gold: #D4AF37;
+            --accent-saffron: #FF9933;
+            --legal-green: #138808;
+            --bg-dark: #0a0e1a;
+            --card-glass: rgba(30, 41, 59, 0.4);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --text-light: #f1f5f9;
+            --text-muted: #94a3b8;
         }
 
-        body { 
-            font-family: 'Inter', sans-serif; 
-            background-color: #f1f5f9; 
-            color: var(--text-main);
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: var(--bg-dark);
+            background-image: 
+                radial-gradient(circle at 5% 10%, rgba(255, 153, 51, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 95% 90%, rgba(19, 136, 8, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.03) 0%, transparent 50%);
+            color: var(--text-light);
+            font-family: 'Inter', sans-serif;
             line-height: 1.6;
+            min-height: 100vh;
         }
 
-        .container { max-width: 1200px; margin: 100px auto 60px; padding: 0 20px; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 140px 20px 80px; }
 
-        .hero-section {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-            color: white;
-            padding: 80px 40px;
-            border-radius: 24px;
+        /* Hero Archival Pass */
+        .archive-hero {
             text-align: center;
-            margin-bottom: 60px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            margin-bottom: 80px;
+            position: relative;
         }
 
-        .hero-section h1 { 
-            font-family: 'Playfair Display', serif; 
-            font-size: 3.5rem; 
-            margin-bottom: 20px;
-            background: linear-gradient(to right, #fbbf24, #d4af37);
-            background-clip: text;
+        .archive-emblem {
+            height: 80px;
+            margin-bottom: 30px;
+            filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.4));
+        }
+
+        h1 {
+            font-family: 'Merriweather', serif;
+            font-size: clamp(2rem, 6vw, 3.8rem);
+            font-weight: 900;
+            background: linear-gradient(to bottom, #fcf6ba 0%, #d4af37 40%, #fcf6ba 60%, #aa771c 100%);
             -webkit-background-clip: text;
+            background-clip: text;
             -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
         }
 
-        .hero-section p { font-size: 1.2rem; opacity: 0.9; max-width: 800px; margin: 0 auto; }
+        .hero-tag {
+            font-size: 0.9rem;
+            color: var(--accent-saffron);
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            display: block;
+        }
 
-        .section-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.2rem;
-            margin-bottom: 40px;
+        /* Premium Search */
+        .vault-controls {
+            max-width: 800px;
+            margin: 0 auto 100px;
+        }
+
+        .search-box {
+            position: relative;
+            background: var(--card-glass);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 50px;
+            padding: 5px;
             display: flex;
             align-items: center;
-            gap: 15px;
-            color: var(--primary);
+            transition: all 0.4s;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
         }
 
-        .case-story-grid { display: grid; grid-template-columns: 1fr; gap: 40px; margin-bottom: 100px; }
-        
-        .case-story-card {
-            background: var(--paper);
-            border-radius: 20px;
-            overflow: hidden;
-            border: 1px solid #e2e8f0;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.03);
-            display: grid;
-            grid-template-columns: 350px 1fr;
+        .search-box:focus-within {
+            border-color: var(--primary-gold);
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.2);
+            transform: translateY(-2px);
         }
 
-        .case-meta {
-            padding: 40px;
-            border-right: 1px solid #e2e8f0;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .case-year-badge {
-            background: var(--accent);
-            color: white;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 700;
-            width: fit-content;
-            margin-bottom: 15px;
-        }
-
-        .case-name { font-family: 'Merriweather', serif; font-size: 1.5rem; color: var(--primary); line-height: 1.3; }
-
-        .case-story-content { padding: 40px; }
-        
-        .story-segment { margin-bottom: 30px; }
-        .story-segment h4 { 
-            text-transform: uppercase; 
-            font-size: 0.8rem; 
-            letter-spacing: 2px; 
-            color: var(--accent); 
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .story-text { font-family: 'Merriweather', serif; font-size: 1.05rem; color: #334155; text-align: justify; }
-
-        .dict-wrapper {
-            background: white;
-            border-radius: 24px;
-            padding: 50px;
-            box-shadow: 0 4px 30px rgba(0,0,0,0.02);
-            border: 1px solid #e2e8f0;
-        }
-
-        .dict-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 40px;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        .search-container { position: relative; flex: 1; min-width: 300px; }
-        .search-input {
-            width: 100%;
-            padding: 15px 25px 15px 50px;
-            border-radius: 12px;
-            border: 2px solid #f1f5f9;
-            font-size: 1rem;
-            transition: all 0.3s;
+        .search-box input {
+            flex: 1;
+            background: transparent;
+            border: none;
+            padding: 15px 30px;
+            color: #fff;
+            font-size: 1.1rem;
             outline: none;
         }
-        .search-input:focus { border-color: var(--accent); background: #fffcf0; }
-        .search-icon { position: absolute; left: 20px; top: 18px; color: var(--text-muted); }
 
-        .lang-picker {
+        .search-box i {
+            padding: 0 30px;
+            font-size: 1.2rem;
+            color: var(--primary-gold);
+        }
+
+        /* Case Ledger Grid */
+        .case-ledger-grid {
+            display: grid;
+            gap: 40px;
+        }
+
+        .case-ledger-card {
+            background: var(--card-glass);
+            backdrop-filter: blur(30px);
+            border: 1px solid var(--glass-border);
+            border-radius: 30px;
+            overflow: hidden;
             display: flex;
-            background: #f1f5f9;
-            padding: 5px;
-            border-radius: 12px;
-            gap: 5px;
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            opacity: 0;
+            transform: translateY(30px);
         }
 
-        .lang-btn {
-            border: none;
-            padding: 8px 16px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: all 0.2s;
+        .case-ledger-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .case-ledger-card:hover {
+            border-color: rgba(212, 175, 55, 0.3);
+            transform: scale(1.02);
+            box-shadow: 0 40px 80px rgba(0,0,0,0.5);
+        }
+
+        .case-identity {
+            width: 320px;
+            padding: 50px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            border-right: 1px solid var(--glass-border);
+        }
+
+        .case-identity::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), transparent);
+            pointer-events: none;
+        }
+
+        .judgement-pill {
+            background: rgba(212, 175, 55, 0.1);
+            color: var(--primary-gold);
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.7rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            width: fit-content;
+        }
+
+        .case-year {
+            font-family: 'Merriweather', serif;
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: rgba(255, 255, 255, 0.1);
+            line-height: 1;
+            margin: 20px 0;
+        }
+
+        .case-title {
+            font-family: 'Merriweather', serif;
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: #fff;
+            line-height: 1.3;
+        }
+
+        .case-briefing {
+            flex: 1;
+            padding: 50px;
+        }
+
+        .brief-segment {
+            margin-bottom: 35px;
+        }
+
+        .brief-segment:last-child { margin-bottom: 0; }
+
+        .segment-tag {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.7rem;
+            font-weight: 800;
+            color: var(--accent-saffron);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
+
+        .brief-text {
             color: var(--text-muted);
+            font-size: 1rem;
+            line-height: 1.8;
+            background: rgba(255, 255, 255, 0.02);
+            padding: 20px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.04);
         }
 
-        .lang-btn.active {
-            background: white;
-            color: var(--primary);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        /* Executive Botton CTA */
+        .dictionary-cta {
+            margin-top: 100px;
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            border: 1px solid var(--primary-gold);
+            border-radius: 40px;
+            padding: 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 40px 100px rgba(0,0,0,0.5);
         }
 
-        .dict-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 25px; }
+        .dictionary-cta::before {
+            content: "DICT";
+            position: absolute;
+            font-size: 15rem;
+            font-weight: 900;
+            color: rgba(212, 175, 55, 0.03);
+            top: -50px;
+            left: -50px;
+            pointer-events: none;
+        }
 
-        .term-card {
-            padding: 30px;
-            border-radius: 16px;
-            background: #fff;
-            border: 1px solid #f1f5f9;
+        .btn-gold {
+            background: var(--primary-gold);
+            color: #000;
+            padding: 18px 45px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            display: inline-block;
+            margin-top: 30px;
             transition: all 0.3s;
-        }
-        .term-card:hover { border-color: var(--accent); transform: translateY(-3px); }
-
-        .term-title { font-family: 'Merriweather', serif; font-size: 1.3rem; margin-bottom: 8px; color: var(--primary); }
-        .term-pron { font-size: 0.85rem; color: var(--text-muted); font-style: italic; margin-bottom: 15px; display: block; }
-        
-        .meaning-box { margin-bottom: 20px; min-height: 80px; }
-        .meaning-label { font-size: 0.75rem; text-transform: uppercase; font-weight: 800; color: #94a3b8; display: block; margin-bottom: 5px; }
-        .meaning-text { font-size: 0.95rem; color: #475569; }
-
-        .example-tag {
-            background: #f8fafc;
-            padding: 12px;
-            border-radius: 8px;
-            font-size: 0.85rem;
-            color: #64748b;
-            border-left: 3px solid var(--accent);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
         }
 
-        .sync-badge {
-            background: #dcfce7;
-            color: #166534;
-            padding: 4px 10px;
-            border-radius: 12px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            margin-left: 10px;
-            vertical-align: middle;
+        .btn-gold:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.5);
         }
 
         @media (max-width: 900px) {
-            .case-story-card { grid-template-columns: 1fr; }
-            .case-meta { border-right: none; border-bottom: 1px solid #e2e8f0; padding: 30px; }
+            .case-ledger-card { flex-direction: column; }
+            .case-identity { width: 100%; border-right: none; border-bottom: 1px solid var(--glass-border); }
         }
+
+        /* Portal Nav */
+        .portal-nav {
+            position: fixed;
+            top: 40px;
+            left: 40px;
+            right: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .nav-logo {
+            text-decoration: none;
+            font-family: 'Merriweather', serif;
+            font-weight: 900;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 1.2rem;
+        }
+
+        .logo-emblem { height: 32px; filter: drop-shadow(0 0 10px var(--primary-gold)); }
+
+        .nav-actions { display: flex; gap: 15px; }
+
+        .btn-pill {
+            background: var(--card-glass);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            padding: 10px 25px;
+            border-radius: 50px;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: 0.3s;
+        }
+        .btn-pill:hover { border-color: var(--primary-gold); color: var(--primary-gold); }
+        .btn-pill.active { background: var(--primary-gold); color: #000; }
     </style>
 </head>
 <body>
 
-    <header class="main-header" style="background:var(--primary); padding: 15px 30px; position:fixed; top:0; left:0; right:0; z-index:1000; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
-        <div style="max-width:1200px; width:100%; margin:0 auto; display:flex; justify-content:space-between; align-items:center;">
-            <a class="logo-link" href="/" style="text-decoration:none;">
-                <span style="color:white; font-family:'Merriweather',serif; font-size:1.3rem; font-weight:700;">🏛️ myConstitutionConnect</span>
-            </a>
-            <div>
-                <a href="/dictionary" style="color:white; font-weight:600; text-decoration:none; padding:8px 16px; border: 1px solid rgba(255,255,255,0.3); border-radius:6px; margin-right: 15px;">Law Dictionary</a>
-                <a href="/" style="color:white; font-weight:600; text-decoration:none; padding:8px 16px; border: 1px solid rgba(255,255,255,0.3); border-radius:6px;">Back Home</a>
-            </div>
+    <nav class="portal-nav">
+        <a href="/" class="nav-logo">
+            <img src="/static/logo.png" alt="Emblem" class="logo-emblem">
+            <span>ScholarVault</span>
+        </a>
+        <div class="nav-actions">
+            <a href="/dictionary" class="btn-pill">Dictionary</a>
+            <a href="/" class="btn-pill active">Home Portal</a>
         </div>
-    </header>
+    </nav>
 
     <div class="container">
-        <section class="hero-section">
-            <h1>Scholars' Law Hub <span id="syncDate" style="font-size: 1rem; opacity: 0.7;"></span></h1>
-            <p>Bridging the gap between legal complexity and citizen understanding through storytelling and interactive translation.</p>
+        <header class="archive-hero">
+            <span class="hero-tag">Jurisprudence Archive</span>
+            <h1>Landmark Case Stories</h1>
+            <p style="color: var(--text-muted); max-width: 700px; margin: 0 auto; font-size: 1.1rem;">
+                Bridging the gap between legal complexity and citizen understanding through chronological storytelling and judicial wisdom.
+            </p>
+        </header>
+
+        <section class="vault-controls">
+            <div class="search-box">
+                <i class="search-icon">🔍</i>
+                <input type="text" id="caseSearch" placeholder="Search milestones, years, or case keywords..." onkeyup="filterCases()">
+            </div>
         </section>
 
-        <h2 class="section-title">📖 Landmark Case Stories <span class="sync-badge">Updated via AI Sync</span></h2>
-        <div class="dict-wrapper" style="margin-bottom: 60px;">
-            <div class="dict-header">
-                <div class="search-container">
-                    <span class="search-icon">🔍</span>
-                    <input type="text" class="search-input" id="caseSearch" placeholder="Search cases by name, year, or keywords..." onkeyup="filterCases()">
-                </div>
-            </div>
-            <div class="case-story-grid" id="casesGrid">
-                <!-- Loading state -->
-                <div style="text-align:center; padding: 50px;">
-                    <p>⌛ Loading latest landmark stories...</p>
-                </div>
+        <div class="case-ledger-grid" id="casesGrid">
+            <!-- Loading Interface -->
+            <div style="text-align:center; padding: 100px; color: var(--primary-gold);">
+                <span style="font-size: 0.8rem; letter-spacing: 2px; font-weight: 800;">SYNCING WITH JUDICIAL REPOSITORY...</span>
             </div>
         </div>
 
-        <div style="text-align:center; padding: 40px; background: white; border-radius: 20px; box-shadow: 0 4px 30px rgba(0,0,0,0.02); margin-top: 50px; border: 1px solid #e2e8f0;">
-            <h2 style="font-family: 'Playfair Display', serif; color: var(--primary); margin-bottom: 15px;">Looking for Legal Terms?</h2>
-            <p style="margin-bottom: 25px; color: var(--text-muted);">Explore our fully searchable, multilingual Law Student Dictionary, complete with Latin maxims and common legal language.</p>
-            <a href="/dictionary" style="background: var(--accent); color: white; padding: 12px 30px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1.1rem; display: inline-block;">Open Law Dictionary →</a>
-        </div>
+        <section class="dictionary-cta">
+            <h2 style="font-family: 'Merriweather', serif; color: #fff; font-size: 2.2rem; margin-bottom: 15px;">Seeking Legal Clarity?</h2>
+            <p style="color: var(--text-muted); font-size: 1.1rem; max-width: 600px; margin: 0 auto;">
+                Explore our fully searchable Multilingual Law Student Dictionary, complete with Latin maxims and judicial definitions.
+            </p>
+            <a href="/dictionary" class="btn-gold">Launch Scholar Dictionary</a>
+        </section>
     </div>
 
     <script>
@@ -256,13 +359,10 @@
             try {
                 const response = await fetch('/api/legal-knowledge');
                 const data = await response.json();
-                
                 casesData = data.cases;
                 renderCases(casesData);
-                
-                document.getElementById('syncDate').innerText = `| Last Sync: ${new Date().toLocaleDateString()}`;
             } catch (error) {
-                console.error("Legal Knowledge Load Error:", error);
+                console.error("Archive Load Error:", error);
             }
         }
 
@@ -270,47 +370,51 @@
             const grid = document.getElementById('casesGrid');
             grid.innerHTML = '';
             
-            cases.forEach(c => {
-                const article = document.createElement('article');
-                article.className = 'case-story-card';
-                article.innerHTML = `
-                    <div class="case-meta" style="background: ${c.color}">
-                        <span class="case-year-badge">${c.year} JUDGMENT</span>
-                        <h3 class="case-name">${c.name}</h3>
-                        <p style="font-size:0.9rem; color:var(--text-muted); margin-top:20px;">${c.subtitle}</p>
+            cases.forEach((c, index) => {
+                const card = document.createElement('div');
+                card.className = 'case-ledger-card';
+                card.innerHTML = `
+                    <div class="case-identity">
+                        <div>
+                            <span class="judgement-pill">${c.year} Judgement</span>
+                            <div class="case-year">${c.year}</div>
+                            <h3 class="case-title">${c.name}</h3>
+                        </div>
+                        <p style="font-size: 0.8rem; color: var(--accent-saffron); font-weight: 700; margin-top: 20px;">${c.subtitle}</p>
                     </div>
-                    <div class="case-story-content">
-                        <div class="story-segment">
-                            <h4>📜 The Story</h4>
-                            <p class="story-text">${c.story}</p>
+                    <div class="case-briefing">
+                        <div class="brief-segment">
+                            <div class="segment-tag"><span>📜</span> The Narrative</div>
+                            <div class="brief-text">${c.story}</div>
                         </div>
                         ${c.conflict ? `
-                        <div class="story-segment">
-                            <h4>⚔️ The Conflict</h4>
-                            <p class="story-text">${c.conflict}</p>
+                        <div class="brief-segment">
+                            <div class="segment-tag"><span>⚔️</span> The Legal Conflict</div>
+                            <div class="brief-text">${c.conflict}</div>
                         </div>` : ''}
-                        <div class="story-segment">
-                            <h4>⚖️ The Wisdom</h4>
-                            <p class="story-text">${c.wisdom}</p>
+                        <div class="brief-segment">
+                            <div class="segment-tag"><span>⚖️</span> Judicial Wisdom</div>
+                            <div class="brief-text" style="color: #fff; border-color: rgba(212, 175, 55, 0.2);">${c.wisdom}</div>
                         </div>
                     </div>
                 `;
-                grid.appendChild(article);
+                grid.appendChild(card);
+                
+                // Add staggered animation
+                setTimeout(() => card.classList.add('visible'), index * 100);
             });
         }
 
         function filterCases() {
             const query = document.getElementById('caseSearch').value.toLowerCase();
-            const filteredCases = casesData.filter(c => 
+            const filtered = casesData.filter(c => 
                 c.name.toLowerCase().includes(query) || 
-                (c.year && c.year.toString().includes(query)) ||
-                (c.subtitle && c.subtitle.toLowerCase().includes(query)) ||
-                (c.story && c.story.toLowerCase().includes(query))
+                c.year.toString().includes(query) ||
+                c.story.toLowerCase().includes(query)
             );
-            renderCases(filteredCases);
+            renderCases(filtered);
         }
 
-        // Initialize
         loadLegalKnowledge();
     </script>
 </body>

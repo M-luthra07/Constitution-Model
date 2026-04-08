@@ -3,179 +3,410 @@ import asyncio
 import logging
 import base64
 import io
-import tempfile
+import time
 from fastapi import FastAPI, WebSocket, WebSocketDisconnect
-from dotenv import load_dotenv
+from fastapi.middleware.cors import CORSMiddleware
 import google.generativeai as genai
-import speech_recognition as sr
+from dotenv import load_dotenv
 from gtts import gTTS
-from pydub import AudioSegment
 
 # --- Configuration ---
-load_dotenv()
-genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
+root_env = os.path.join(os.path.dirname(__file__), "..", "..", ".env")
+load_dotenv(root_env)
+api_key = os.getenv("GEMINI_API_KEY") or os.getenv("GOOGLE_API_KEY")
+
+if not api_key:
+    logging.error("❌ CRITICAL: No API key found in .env file!")
+    logging.error("Please add GEMINI_API_KEY or GOOGLE_API_KEY to the .env file")
+    logging.error("Get your key from: https://makersuite.google.com/app/apikey")
+else:
+    api_key = api_key.strip()  # Remove whitespace
+    genai.configure(api_key=api_key)
+    logging.info("✅ Gemini SDK configured successfully")
+
+# --- Model Configuration ---
+PRIMARY_MODEL = "gemini-2.5-flash"  # Best for voice & audio processing
+FALLBACK_MODELS = ["gemini-2.5-flash"]  # Fallback to same model
 
 # --- Logging Setup ---
 logging.basicConfig(
-    level=logging.INFO,
-    format="%(asctime)s - %(levelname)s - %(message)s",
-    handlers=[
-        logging.FileHandler("backend.log"),
-        logging.StreamHandler()
-    ]
+    level=logging.INFO, 
+    format="%(asctime)s - %(levelname)s - %(message)s"
 )
-
-# Gemini model setup
-model = genai.GenerativeModel(
-    "gemini-flash-latest",
-    system_instruction='''You are a professional, friendly INDIAN lawyer and legal assistant who helps people with legal knowledge.,
-    you are receiving the commands throgh speach to text so some words maybe caught wrong try to decipher the correct meaning from context.
-    Your responses must be concise and to the point.
-    After the first message, ask only one clear, relevant follow-up question at a time Only if necessary , based on what the user shared. Do not overwhelm them with multiple questions.
-
-Format your replies for clarity
-If the user is unsure, gently suggest what kind of information would help, but keep it conversational and encouraging.
-Always use plain, simple language—avoid legal jargon.
-Give practical, actionable advice tailored to the user's specific situation.
-
-If the user's question is out of context (not related to legal/illegal issues, law, or justice in India), reply clearly and politely:
-Sorry, I can only provide legal support. Please ask a question related to law, legal rights, or justice in India.
-Do not attempt to answer unrelated questions.
-
-you cannot do any task that is other than providing legal information and advice.
-
-Keep the conversation natural, step-by-step, and supportive. Only ask for more details only if truly needed to help the user or any other contact details. 
-
-'''
-
-    
-)
-
-# Speech recognizer instance
-recognizer = sr.Recognizer()
-
 app = FastAPI()
 
+# Add CORS middleware
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+def get_model_with_fallback(system_instruction=None, max_retries=2):
+    """Initialize model with fallback chain."""
+    models_to_try = [PRIMARY_MODEL] + FALLBACK_MODELS
+    last_error = None
+    
+    for model_name in models_to_try:
+        for attempt in range(max_retries):
+            try:
+                model = genai.GenerativeModel(
+                    model_name,
+                    system_instruction=system_instruction if system_instruction else "You are a professional, friendly INDIAN lawyer and legal assistant. Keep responses very concise and accurate."
+                )
+                logging.info(f"✅ Model initialized: {model_name}")
+                return model
+            except Exception as e:
+                last_error = e
+                error_str = str(e)
+                
+                if "quota" in error_str.lower() or "429" in error_str:
+                    logging.warning(f"⚠️  Quota on {model_name}, attempt {attempt + 1}/{max_retries}")
+                    if attempt < max_retries - 1:
+                        time.sleep(2 ** attempt)
+                    continue
+                else:
+                    logging.warning(f"⚠️  Error initializing {model_name}: {error_str}")
+                    break
+    
+    if model_name != models_to_try[-1]:
+        logging.info(f"🔄 Trying fallback model: {models_to_try[models_to_try.index(model_name) + 1]}")
+    
+    raise last_error if last_error else Exception("All models failed to initialize")
+
+# Using the Gemini model with fallback
+try:
+    model = get_model_with_fallback("You are a professional, friendly INDIAN lawyer and legal assistant. Keep responses very concise and accurate.")
+    logging.info("✅ Primary model ready with fallback chain")
+except Exception as e:
+    logging.error(f"❌ Failed to initialize any model: {e}")
+    model = None
 
 def transcribe_audio(audio_bytes: bytes) -> str:
-    """Convert audio bytes (WebM/Opus) to text using Google Speech Recognition."""
+    """Convert audio bytes to text using Gemini API with fallback."""
     try:
-        # Convert WebM/Opus to WAV using pydub + ffmpeg
-        audio_segment = AudioSegment.from_file(io.BytesIO(audio_bytes), format="webm")
+        if not model:
+            return "Error: Model not initialized"
         
-        # Export as WAV to a buffer
-        wav_buffer = io.BytesIO()
-        audio_segment.export(wav_buffer, format="wav")
-        wav_buffer.seek(0)
+        models_to_try = [PRIMARY_MODEL] + FALLBACK_MODELS
+        last_error = None
         
-        # Use speech_recognition to transcribe
-        with sr.AudioFile(wav_buffer) as source:
-            audio_data = recognizer.record(source)
-            text = recognizer.recognize_google(audio_data, language="en-IN")
-            return text
-    except sr.UnknownValueError:
-        logging.warning("Speech recognition could not understand the audio.")
+        for model_name in models_to_try:
+            try:
+                temp_model = genai.GenerativeModel(model_name)
+                audio_part = {"mime_type": "audio/webm", "data": audio_bytes}
+                
+                response = temp_model.generate_content([
+                    "Transcribe exactly what is said and nothing else. If you cannot understand anything, respond with 'EMPTY'.",
+                    audio_part
+                ])
+                
+                text = response.text.strip()
+                
+                if text.upper() == "EMPTY" or not text:
+                    logging.warning("Audio transcription returned empty")
+                    return ""
+                
+                logging.info(f"✅ Transcribed using {model_name}: {text[:100]}...")
+                return text
+                
+            except Exception as e:
+                last_error = e
+                error_msg = str(e)
+                
+                if "quota" in error_msg.lower() or "429" in error_msg:
+                    logging.warning(f"⚠️  Quota on {model_name}, trying fallback...")
+                    continue
+                elif "404" in error_msg or "not found" in error_msg:
+                    logging.warning(f"⚠️  {model_name} not found, trying fallback...")
+                    continue
+                else:
+                    logging.error(f"❌ Transcription error on {model_name}: {error_msg}")
+                    break
+        
+        logging.error(f"❌ All transcription models failed: {last_error}")
         return ""
-    except sr.RequestError as e:
-        logging.error(f"Google Speech Recognition service error: {e}")
-        return ""
+        
     except Exception as e:
-        logging.error(f"Audio transcription error: {e}", exc_info=True)
+        error_msg = str(e)
+        logging.error(f"❌ Transcription error: {error_msg}")
+        
+        # Provide helpful error messages
+        if "404" in error_msg or "not found" in error_msg:
+            logging.error("⚠️  Model not found. Check your API key and available models.")
+        elif "quota" in error_msg.lower():
+            logging.error("⚠️  API quota exceeded. Please wait and try again later.")
+        elif "authentication" in error_msg.lower():
+            logging.error("⚠️  Authentication failed. Check your API key.")
+        
         return ""
-
 
 def generate_tts_audio(text: str) -> str:
-    """Generate TTS audio from text and return as base64-encoded MP3."""
+    """Generate TTS audio using gTTS."""
     try:
-        tts = gTTS(text=text, lang='en', tld='co.in')  # Indian English accent
+        if not text or len(text) == 0:
+            logging.warning("Empty text provided to TTS")
+            return ""
+        
+        tts = gTTS(text=text, lang='en', tld='co.in', slow=False)
         mp3_buffer = io.BytesIO()
         tts.write_to_fp(mp3_buffer)
         mp3_buffer.seek(0)
-        return base64.b64encode(mp3_buffer.read()).decode('utf-8')
+        
+        audio_b64 = base64.b64encode(mp3_buffer.read()).decode('utf-8')
+        logging.info(f"✅ Generated TTS audio ({len(audio_b64)} bytes)")
+        return audio_b64
+        
     except Exception as e:
-        logging.error(f"TTS generation error: {e}", exc_info=True)
+        logging.error(f"❌ TTS error: {e}")
         return ""
 
-
-# --- WebSocket Endpoint ---
 @app.websocket("/ws")
 async def websocket_endpoint(websocket: WebSocket):
-    await websocket.accept()
-    logging.info("Client connected.")
+    logging.info("🔗 WebSocket connection initiated")
     
-    chat = model.start_chat(history=[])
-
     try:
-        logging.info("Ready to receive messages.")
+        await websocket.accept()
+        logging.info("✅ WebSocket client connected and accepted")
+        
+        if not model:
+            logging.error("❌ Model not initialized!")
+            await websocket.send_json({
+                "type": "error", 
+                "text": "Model initialization failed. Check logs for details."
+            })
+            await websocket.close()
+            return
+        
+        logging.info("🤖 Creating chat session...")
+        try:
+            chat = model.start_chat(history=[])
+            logging.info("✅ Chat session created")
+        except Exception as e:
+            logging.error(f"❌ Failed to create chat session: {e}")
+            await websocket.send_json({
+                "type": "error",
+                "text": f"Chat session error: {str(e)}"
+            })
+            await websocket.close()
+            return
+        
+        # Send greeting
+        greet = "Hello! I am your Indian legal assistant. Ask me anything about Indian law, constitutional rights, or legal processes. How can I help you?"
+        logging.info("📢 Sending greeting...")
+        
+        try:
+            greet_audio = await asyncio.to_thread(generate_tts_audio, greet)
+            await websocket.send_json({
+                "type": "greeting", 
+                "text": greet, 
+                "audio": greet_audio if greet_audio else ""
+            })
+            logging.info("✅ Greeting sent successfully")
+        except Exception as e:
+            logging.error(f"❌ Error sending greeting: {e}")
+            try:
+                await websocket.send_json({
+                    "type": "greeting", 
+                    "text": greet
+                })
+            except:
+                pass
 
-        # Send initial greeting with TTS audio
-        greeting_text = "Hello, how can I help you?"
-        greeting_audio = await asyncio.to_thread(generate_tts_audio, greeting_text)
-        await websocket.send_json({
-            "type": "greeting",
-            "text": greeting_text,
-            "audio": greeting_audio
-        })
-        logging.info("Greeting sent.")
-
+        # Main chat loop
+        logging.info("🔄 Entering main chat loop...")
         while True:
-            # Receive message from client - can be text or binary (audio)
-            message = await websocket.receive()
-            
-            if "text" in message:
-                # Legacy text message support
-                user_text = message["text"]
-                logging.info(f"Received text from client: {user_text}")
-            elif "bytes" in message:
-                # Binary audio data from MediaRecorder
-                audio_bytes = message["bytes"]
-                logging.info(f"Received audio from client: {len(audio_bytes)} bytes")
+            try:
+                logging.info("⏳ Waiting for message from client...")
+                message = await websocket.receive()
+                logging.info(f"📨 Message received: {list(message.keys())}")
                 
-                # Transcribe audio to text
-                user_text = await asyncio.to_thread(transcribe_audio, audio_bytes)
-                
-                if not user_text:
+                # Handle bytes (audio)
+                if "bytes" in message:
+                    audio_data = message["bytes"]
+                    logging.info(f"🎤 Audio received: {len(audio_data)} bytes")
+                    
+                    # Transcribe
+                    logging.info("🔄 Transcribing audio...")
+                    user_text = await asyncio.to_thread(transcribe_audio, audio_data)
+                    logging.info(f"📝 Transcribed: '{user_text}'")
+                    
+                    if not user_text:
+                        logging.warning("⚠️ Transcription empty")
+                        await websocket.send_json({
+                            "type": "error", 
+                            "text": "I didn't catch that. Please speak again."
+                        })
+                        continue
+                    
+                    # Send transcription
                     await websocket.send_json({
-                        "type": "error",
-                        "text": "Sorry, I couldn't understand the audio. Please try again."
+                        "type": "transcription", 
+                        "text": user_text
                     })
+                    logging.info("✅ Transcription sent")
+                
+                # Handle text
+                elif "text" in message:
+                    user_text = message["text"]
+                    logging.info(f"📝 Text received: '{user_text}'")
+                
+                else:
+                    logging.warning(f"⚠️ Unknown message type: {list(message.keys())}")
                     continue
                 
-                # Send transcription back to client so they can see what was recognized
-                await websocket.send_json({
-                    "type": "transcription",
-                    "text": user_text
-                })
-                logging.info(f"Transcribed: {user_text}")
-            else:
-                continue
-
-            # Get the full response from Gemini
-            logging.info("Sending text to Gemini...")
-            response = await chat.send_message_async(user_text)
-            ai_text = response.text
-            cleaned_text = ai_text.replace('*', '').replace('_', '').replace('#', '')
-            logging.info(f"AI Response: {cleaned_text}")
-
-            # Generate TTS audio for the response
-            tts_audio = await asyncio.to_thread(generate_tts_audio, cleaned_text)
-
-            # Send the AI's text response + audio back to the client
-            await websocket.send_json({
-                "type": "ai_response",
-                "text": cleaned_text,
-                "audio": tts_audio
-            })
-            logging.info("AI response with audio sent.")
-
-    except WebSocketDisconnect:
-        logging.info("Client disconnected.")
+                # Generate response
+                try:
+                    logging.info(f"🤖 Generating AI response...")
+                    response = chat.send_message(user_text)
+                    ai_text = response.text
+                    logging.info(f"✅ Response ready: {ai_text[:100]}...")
+                    
+                    # Generate audio
+                    logging.info(f"🔊 Generating TTS audio...")
+                    tts_audio = await asyncio.to_thread(generate_tts_audio, ai_text)
+                    logging.info(f"✅ Audio ready: {len(tts_audio) if tts_audio else 0} bytes")
+                    
+                    # Send response
+                    logging.info(f"📤 Sending response...")
+                    await websocket.send_json({
+                        "type": "ai_response",
+                        "text": ai_text,
+                        "audio": tts_audio if tts_audio else ""
+                    })
+                    logging.info(f"✅ Response sent successfully!")
+                    
+                except asyncio.TimeoutError:
+                    logging.error("⏱️ Response generation timed out")
+                    await websocket.send_json({
+                        "type": "error",
+                        "text": "Response generation timed out. Please try again."
+                    })
+                except Exception as e:
+                    logging.error(f"❌ Response generation error: {e}", exc_info=True)
+                    try:
+                        await websocket.send_json({
+                            "type": "error",
+                            "text": f"Error: {str(e)[:100]}"
+                        })
+                    except:
+                        logging.error("❌ Failed to send error message")
+                    
+            except WebSocketDisconnect:
+                logging.info("👋 WebSocket client disconnected normally")
+                break
+            except asyncio.CancelledError:
+                logging.info("⛔ WebSocket task cancelled")
+                break
+            except Exception as e:
+                logging.error(f"❌ Message loop error: {e}", exc_info=True)
+                try:
+                    await websocket.send_json({
+                        "type": "error",
+                        "text": f"Connection error: {str(e)[:100]}"
+                    })
+                except:
+                    break
+                    
     except Exception as e:
-        logging.error(f"An error occurred in websocket_endpoint: {e}", exc_info=True)
-    finally:
-        # Final cleanup for this connection if needed
-        pass
+        logging.error(f"❌ WebSocket connection error: {e}", exc_info=True)
+        try:
+            await websocket.close()
+        except:
+            pass
+
+@app.get("/health")
+async def health_check():
+    """Health check endpoint"""
+    return {
+        "status": "ok",
+        "model_initialized": model is not None,
+        "api_key_present": bool(api_key)
+    }
+
+@app.post("/test-transcribe")
+async def test_transcribe(file: bytes = None):
+    """Test transcription endpoint - for debugging"""
+    if not file:
+        return {
+            "status": "error",
+            "message": "No audio file provided",
+            "example": "Send audio bytes in request body"
+        }
+    
+    logging.info(f"🧪 Test transcription: {len(file)} bytes received")
+    
+    try:
+        text = await asyncio.to_thread(transcribe_audio, file)
+        return {
+            "status": "success",
+            "transcription": text,
+            "bytes_received": len(file)
+        }
+    except Exception as e:
+        logging.error(f"Test transcribe error: {e}")
+        return {
+            "status": "error",
+            "message": str(e)
+        }
+
+@app.post("/test-response")
+async def test_response(query: str = None):
+    """Test response generation - for debugging"""
+    if not query:
+        return {
+            "status": "error",
+            "message": "No query provided",
+            "example": "POST with ?query=your+question"
+        }
+    
+    logging.info(f"🧪 Test response: {query}")
+    
+    try:
+        if not model:
+            return {"status": "error", "message": "Model not initialized"}
+        
+        chat = model.start_chat()
+        response = chat.send_message(query)
+        
+        # Generate audio
+        audio = await asyncio.to_thread(generate_tts_audio, response.text)
+        
+        return {
+            "status": "success",
+            "response": response.text,
+            "audio_generated": bool(audio),
+            "audio_bytes": len(audio) if audio else 0
+        }
+    except Exception as e:
+        logging.error(f"Test response error: {e}")
+        return {
+            "status": "error",
+            "message": str(e)
+        }
+
+@app.get("/")
+async def root():
+    """Root endpoint - API documentation"""
+    return {
+        "name": "Constitutional Voice Bot API",
+        "version": "1.0.0",
+        "description": "AI-powered legal assistant with voice capabilities",
+        "endpoints": {
+            "websocket": "ws://localhost:8000/ws (for voice chat)",
+            "health": "GET /health (check server status)",
+            "docs": "Visit http://localhost:8001 for the web interface"
+        },
+        "status": "✅ Backend is running successfully",
+        "model": "Gemini-2.5-Flash",
+        "model_initialized": model is not None,
+        "api_key_configured": bool(api_key),
+        "message": "Use the frontend at http://localhost:8001 to interact with the voice bot"
+    }
 
 if __name__ == "__main__":
     import uvicorn
+    logging.info("🚀 Starting Voice Bot Backend...")
     uvicorn.run(app, host="0.0.0.0", port=8000)

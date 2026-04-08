@@ -11,770 +11,517 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <style>
         :root {
-            --timeline-gold: #d4af37;
-            --timeline-blue: #1e293b;
-            --timeline-bg: #f8fafc;
-            --saffron: #ff9933;
-            --white: #ffffff;
-            --green: #138808;
+            --primary-gold: #D4AF37;
+            --accent-saffron: #FF9933;
+            --legal-green: #138808;
+            --patriot-blue: #060918;
+            --bg-dark: #0a0e1a;
+            --card-glass: rgba(30, 41, 59, 0.4);
+            --parchment: #f9f4e8;
+            --text-light: #f1f5f9;
+            --text-muted: #94a3b8;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            background: linear-gradient(135deg, #f5f7fa 0%, #e8eef5 50%, #f0f4f8 100%);
-            background-attachment: fixed;
-            color: var(--timeline-blue);
-            line-height: 1.6;
-            margin: 0;
+            background-color: var(--bg-dark);
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(255, 153, 51, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(19, 136, 8, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.03) 0%, transparent 50%);
+            color: var(--text-light);
+            font-family: 'Inter', sans-serif;
             overflow-x: hidden;
-            font-family: 'Poppins', 'Inter', sans-serif;
-            position: relative;
+            line-height: 1.6;
         }
 
-        body::before {
-            content: '';
-            position: fixed;
-            inset: 0;
-            background: 
-                url("data:image/svg+xml,%3Csvg width='400' height='400' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cpattern id='constitution-bg' x='0' y='0' width='400' height='400' patternUnits='userSpaceOnUse'%3E%3Ctext x='200' y='200' font-size='150' text-anchor='middle' dominant-baseline='middle' fill='rgba(255,153,51,0.04)' font-weight='bold'%3E📜%3C/text%3E%3C/pattern%3E%3C/defs%3E%3Crect width='400' height='400' fill='url(%23constitution-bg)'/%3E%3C/svg%3E");
-            background-attachment: fixed;
-            pointer-events: none;
-            z-index: 0;
-        }
-
+        /* Header Overhaul */
         .timeline-header {
-            background: linear-gradient(135deg, #0f172a 0%, #1a2847 50%, #2d1b47 100%);
-            color: white;
-            padding: 100px 20px 160px;
+            min-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             text-align: center;
+            padding: 0 20px;
             position: relative;
-            overflow: hidden;
+            background: radial-gradient(circle at center, rgba(15, 23, 42, 0) 0%, var(--bg-dark) 100%);
         }
 
-        .timeline-header::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: 
-                url("data:image/svg+xml,%3Csvg width='600' height='400' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='oldToModern' x1='0%25' y1='0%25' x2='100%25' y2='0%25'%3E%3Cstop offset='0%25' style='stop-color:rgba(255,193,7,0.1);stop-opacity:1' /%3E%3Cstop offset='50%25' style='stop-color:rgba(255,140,0,0.08);stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:rgba(76,175,80,0.1);stop-opacity:1' /%3E%3C/linearGradient%3E%3Cpattern id='oldNotes' x='0' y='0' width='100' height='100' patternUnits='userSpaceOnUse'%3E%3Crect x='10' y='20' width='50' height='60' fill='none' stroke='rgba(212,175,55,0.08)' stroke-width='1' stroke-dasharray='3,3'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='600' height='400' fill='url(%23oldToModern)'/%3E%3Crect width='600' height='400' fill='url(%23oldNotes)' opacity='0.5'/%3E%3C/svg%3E");
-            opacity: 0.7;
-            pointer-events: none;
+        .header-emblem {
+            height: 120px;
+            margin-bottom: 40px;
+            filter: drop-shadow(0 0 30px rgba(212, 175, 55, 0.5));
+            animation: emblemAppear 1.5s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        .timeline-header h1 {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-            background: linear-gradient(to right, #ffd700, #fff, #d4af37);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            position: relative;
-            z-index: 2;
-            font-weight: 800;
-            letter-spacing: -1px;
-        }
-
-        .timeline-header h2 {
-            font-size: 2.2rem;
-            color: #FFD700;
-            margin-bottom: 10px;
-            position: relative;
-            z-index: 2;
+        h1 {
             font-family: 'Merriweather', serif;
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            font-weight: 900;
+            background: linear-gradient(to bottom, #fcf6ba 0%, #d4af37 40%, #fcf6ba 60%, #aa771c 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+            text-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
-        .timeline-header p {
-            max-width: 750px;
-            margin: 15px auto 0;
-            opacity: 0.9;
-            font-size: 1.05rem;
-            position: relative;
-            z-index: 2;
+        .header-subtitle {
+            font-size: 1.25rem;
+            color: var(--accent-saffron);
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            font-weight: 800;
+            margin-bottom: 30px;
+            opacity: 0.8;
+        }
+
+        .header-desc {
+            max-width: 800px;
+            font-size: 1.2rem;
+            color: var(--text-muted);
             line-height: 1.8;
         }
 
-        .lang-toggle {
-            position: relative;
-            z-index: 10;
+        /* Language Toggle - Executive Style */
+        .lang-control {
+            margin-top: 50px;
             display: flex;
-            gap: 10px;
-            justify-content: center;
-            margin-top: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 6px;
+            border-radius: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
         }
 
         .lang-btn {
-            padding: 8px 20px;
-            border: 2px solid #d4af37;
+            padding: 12px 30px;
+            border: none;
             background: transparent;
-            color: #d4af37;
-            border-radius: 20px;
+            color: var(--text-muted);
+            font-weight: 700;
             cursor: pointer;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            font-family: 'Poppins', sans-serif;
+            border-radius: 50px;
+            transition: all 0.4s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.85rem;
         }
 
         .lang-btn.active {
-            background: #d4af37;
-            color: #0f172a;
+            background: var(--primary-gold);
+            color: #000;
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
         }
 
-        .lang-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 16px rgba(212, 175, 55, 0.3);
-        }
-
-        .timeline-container {
-            max-width: 1200px;
-            margin: -80px auto 100px;
-            padding: 0 40px;
+        /* Timeline Mechanicals */
+        .timeline-section {
+            padding: 100px 0;
             position: relative;
         }
 
-        .timeline-line {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 6px;
-            height: 100%;
-            background: linear-gradient(180deg, rgba(255, 193, 7, 0.1), rgba(255, 140, 0, 0.2), rgba(76, 175, 80, 0.1));
-            z-index: 1;
-            box-shadow: 0 0 20px rgba(255, 193, 7, 0.2);
-        }
-
-        .timeline-event {
-            display: flex;
-            justify-content: flex-end;
-            padding-right: 50%;
-            margin-bottom: 100px;
-            position: relative;
-            z-index: 2;
-            opacity: 0;
-            animation: slideIn 0.6s ease forwards;
-        }
-
-        .timeline-event:nth-child(odd) {
-            animation-delay: 0.1s;
-        }
-
-        .timeline-event:nth-child(even) {
-            animation-delay: 0.2s;
-        }
-
-        @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .timeline-event:nth-child(even) {
-            justify-content: flex-start;
-            padding-right: 0;
-            padding-left: 50%;
-        }
-
-        .timeline-dot {
+        .timeline-path {
             position: absolute;
             left: 50%;
             top: 0;
-            transform: translate(-50%, 0);
-            width: 32px;
-            height: 32px;
-            background: linear-gradient(135deg, #ffd700, #d4af37);
-            border: 6px solid white;
-            border-radius: 50%;
-            box-shadow: 0 0 0 6px rgba(255, 193, 7, 0.3), 0 8px 16px rgba(0, 0, 0, 0.15);
-            z-index: 3;
-            transition: all 0.3s ease;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(to bottom, 
+                var(--accent-saffron), 
+                #fff 50%, 
+                var(--legal-green));
+            transform: translateX(-50%);
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
         }
 
-        .timeline-event:hover .timeline-dot {
-            transform: translate(-50%, 0) scale(1.2);
-            box-shadow: 0 0 0 8px rgba(255, 193, 7, 0.4), 0 12px 24px rgba(0, 0, 0, 0.2);
-        }
-
-        .timeline-content {
-            width: 85%;
-            padding: 40px;
-            background: white;
-            border-radius: 24px;
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
-            border-left: 6px solid var(--timeline-gold);
-            transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .timeline-content::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg, rgba(255, 193, 7, 0.03), rgba(76, 175, 80, 0.02));
-            pointer-events: none;
-        }
-
-        .timeline-event:nth-child(even) .timeline-content {
-            border-left: none;
-            border-right: 6px solid var(--timeline-gold);
-            text-align: right;
-        }
-
-        .timeline-content:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
-        }
-
-        .era-badge {
-            display: inline-block;
-            background: linear-gradient(135deg, rgba(255, 193, 7, 0.15), rgba(255, 140, 0, 0.1));
-            color: var(--timeline-gold);
-            padding: 8px 18px;
-            border-radius: 25px;
-            font-weight: 700;
-            font-size: 0.85rem;
-            margin-bottom: 15px;
-            letter-spacing: 1px;
-            border: 1px solid rgba(255, 193, 7, 0.3);
-            position: relative;
-            z-index: 2;
-        }
-
-        .era-badge.old-era {
-            background: linear-gradient(135deg, rgba(139, 69, 19, 0.15), rgba(184, 134, 11, 0.1));
-            color: #8B4513;
-            border-color: rgba(184, 134, 11, 0.4);
-        }
-
-        .era-badge.modern-era {
-            background: linear-gradient(135deg, rgba(76, 175, 80, 0.15), rgba(56, 142, 60, 0.1));
-            color: #2E7D32;
-            border-color: rgba(76, 175, 80, 0.4);
-        }
-
-        .year-label {
-            display: inline-block;
-            background: rgba(212, 175, 55, 0.1);
-            color: var(--timeline-gold);
-            padding: 8px 18px;
-            border-radius: 25px;
-            font-weight: 800;
-            font-size: 0.95rem;
-            margin-bottom: 12px;
-            letter-spacing: 1.2px;
-            position: relative;
-            z-index: 2;
-        }
-
-        .event-header {
+        .timeline-event {
+            width: 100%;
+            margin-bottom: 120px;
             display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 15px;
+            justify-content: center;
             position: relative;
-            z-index: 2;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        .event-icon {
-            font-size: 2.5rem;
-            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+        .timeline-event.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .event-card {
+            width: 450px;
+            background: var(--card-glass);
+            backdrop-filter: blur(25px);
+            border: 1px solid var(--glass-border);
+            border-radius: 30px;
+            padding: 45px;
+            position: relative;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+            transition: all 0.5s;
+        }
+
+        .timeline-event:nth-child(even) { transform: translateX(80px); }
+        .timeline-event:nth-child(odd) { transform: translateX(-80px); }
+        .timeline-event.visible { transform: translateX(0); }
+
+        .timeline-event:nth-child(odd) .event-card { margin-right: 550px; }
+        .timeline-event:nth-child(even) .event-card { margin-left: 550px; }
+
+        .event-card::after {
+            content: "";
+            position: absolute;
+            top: 40px;
+            width: 80px;
+            height: 2px;
+            background: var(--primary-gold);
+            opacity: 0.3;
+        }
+
+        .timeline-event:nth-child(odd) .event-card::after { right: -80px; }
+        .timeline-event:nth-child(even) .event-card::after { left: -80px; }
+
+        /* The Dot */
+        .event-marker {
+            position: absolute;
+            left: 50%;
+            top: 40px;
+            width: 24px;
+            height: 24px;
+            background: var(--primary-gold);
+            border: 5px solid var(--bg-dark);
+            border-radius: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            box-shadow: 0 0 20px var(--primary-gold);
+        }
+
+        /* Card Content */
+        .era-label {
+            font-size: 0.75rem;
+            font-weight: 800;
+            color: var(--accent-saffron);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .event-year {
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: #fff;
+            font-family: 'Merriweather', serif;
+            margin-bottom: 10px;
         }
 
         .event-title {
-            font-size: 1.6rem;
-            font-weight: 800;
-            margin-bottom: 15px;
-            color: #0f172a;
-            position: relative;
-            z-index: 2;
-        }
-
-        .event-title-hi {
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             font-weight: 700;
-            color: var(--timeline-gold);
-            margin-bottom: 8px;
-            font-family: 'Merriweather', serif;
-            position: relative;
-            z-index: 2;
+            color: var(--primary-gold);
+            margin-bottom: 20px;
+            line-height: 1.3;
         }
 
-        .event-desc {
-            color: #475569;
-            font-size: 1.02rem;
+        .event-body {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 20px;
+            padding: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 1.05rem;
+            color: var(--text-muted);
             line-height: 1.8;
             position: relative;
-            z-index: 2;
-        }
-
-        .event-desc-hi {
-            color: #64748b;
-            font-size: 0.95rem;
-            line-height: 1.7;
-            margin-top: 12px;
-            font-family: 'Merriweather', serif;
-            position: relative;
-            z-index: 2;
         }
 
         .event-tags {
-            margin-top: 18px;
+            margin-top: 25px;
             display: flex;
             gap: 10px;
             flex-wrap: wrap;
-            position: relative;
-            z-index: 2;
-        }
-
-        .timeline-event:nth-child(even) .event-tags {
-            justify-content: flex-end;
         }
 
         .tag {
-            font-size: 0.8rem;
-            background: linear-gradient(135deg, rgba(255, 193, 7, 0.1), rgba(76, 175, 80, 0.08));
-            padding: 6px 14px;
-            border-radius: 20px;
-            color: #64748b;
-            font-weight: 600;
-            border: 1px solid rgba(255, 193, 7, 0.2);
-            transition: all 0.3s ease;
+            font-size: 0.75rem;
+            font-weight: 800;
+            padding: 6px 16px;
+            border-radius: 50px;
+            background: rgba(212, 175, 55, 0.1);
+            color: var(--primary-gold);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
-        .tag:hover {
-            background: linear-gradient(135deg, rgba(255, 193, 7, 0.2), rgba(76, 175, 80, 0.15));
-            transform: translateY(-2px);
+        /* Animations */
+        @keyframes emblemAppear {
+            from { opacity: 0; transform: scale(0.8) translateY(30px); filter: blur(10px); }
+            to { opacity: 1; transform: scale(1) translateY(0); filter: blur(0); }
         }
 
-        .hindi-content { display: none; }
-        .hindi-content.active { display: block; }
-        .english-content.active { display: block; }
-        .english-content:not(.active) { display: none; }
-
-        @media (max-width: 768px) {
-            .timeline-line {
-                left: 30px;
-            }
-            .timeline-event {
-                justify-content: flex-start !important;
-                padding-left: 60px !important;
-                padding-right: 0 !important;
-            }
-            .timeline-dot {
-                left: 30px;
-            }
-            .timeline-content {
-                width: 100%;
-                text-align: left !important;
-                border-left: 6px solid var(--timeline-gold) !important;
-                border-right: none !important;
-            }
-            .timeline-event:nth-child(even) .event-tags {
-                justify-content: flex-start;
-            }
-            .timeline-header h1 {
-                font-size: 2.2rem;
-            }
-            .timeline-header h2 {
-                font-size: 1.8rem;
-            }
-            .timeline-header p {
-                font-size: 0.95rem;
-            }
-            .lang-toggle {
-                flex-direction: column;
-                gap: 8px;
-            }
-            .lang-btn {
-                width: 100%;
-            }
+        @media (max-width: 1100px) {
+            .timeline-path { left: 40px; transform: none; }
+            .timeline-event { justify-content: flex-start; padding-left: 90px; }
+            .event-card { width: calc(100% - 40px); }
+            .timeline-event:nth-child(odd) .event-card, 
+            .timeline-event:nth-child(even) .event-card { margin: 0; }
+            .event-marker { left: 40px; transform: translateX(-50%); }
+            .event-card::after { display: none; }
         }
 
-        strong {
-            color: var(--timeline-gold);
-            font-weight: 700;
+        .hindi-text { display: none; }
+        .lang-hi .hindi-text { display: block; }
+        .lang-hi .english-text { display: none; }
+
+        .btn-portal {
+            position: fixed;
+            top: 40px;
+            right: 40px;
+            background: var(--card-glass);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            padding: 12px 25px;
+            border-radius: 50px;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            z-index: 1000;
+            transition: 0.3s;
         }
+        .btn-portal:hover { background: var(--primary-gold); color: #000; box-shadow: 0 0 30px rgba(212, 175, 55, 0.3); }
     </style>
 </head>
-<body>
+<body class="lang-en">
 
-    <header class="main-header">
-        <div class="header-inner">
-            <a class="logo-link" href="/">
-                <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" class="emblem">
-                <div class="site-identity">
-                    <span class="site-name">myConstitutionConnect</span>
-                    <span class="site-tagline">Evolution Timeline</span>
-                </div>
-            </a>
-            <a href="/" class="btn-cta-header">Back to Portal</a>
-        </div>
-    </header>
+    <a href="/" class="btn-portal">Exit Timeline</a>
 
     <section class="timeline-header">
-        <h1>Evolution of the Living Document</h1>
-        <h2>संविधान का विकास क्रम</h2>
-        <p class="english-content active">Witness the transformative journey of the Indian Constitution, from its revolutionary birth in 1946 to the progressive amendments of the modern era.</p>
-        <p class="hindi-content">भारतीय संविधान की परिवर्तनकारी यात्रा को देखें, जो 1946 में जन्म लेकर आधुनिक युग के प्रगतिशील संशोधनों तक पहुंची है।</p>
-        <div class="lang-toggle">
-            <button class="lang-btn active" onclick="switchLanguage('english')">English</button>
-            <button class="lang-btn" onclick="switchLanguage('hindi')">हिन्दी</button>
+        <img src="/static/logo.png" alt="National Emblem" class="header-emblem">
+        <div class="header-subtitle">Constitutional Evolution</div>
+        <h1>Infinite National Odyssey</h1>
+        <p class="header-desc english-text">Journey through the transformative chapters of the Indian Constitution—a living document that breathes life into the world's largest democracy.</p>
+        <p class="header-desc hindi-text">भारतीय संविधान के परिवर्तनकारी अध्यायों की यात्रा—एक जीवित दस्तावेज जो दुनिया के सबसे बड़े लोकतंत्र में जान फूंकता है।</p>
+        
+        <div class="lang-control">
+            <button class="lang-btn active" id="btnEn" onclick="setLanguage('en')">English</button>
+            <button class="lang-btn" id="btnHi" onclick="setLanguage('hi')">हिन्दी</button>
         </div>
     </section>
 
-    <div class="timeline-container">
-        <div class="timeline-line"></div>
+    <div class="timeline-section">
+        <div class="timeline-path"></div>
 
-        <!-- Event 1: 1946-1947 -->
+        <!-- Event 1: 1946 -->
         <div class="timeline-event">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-                <div class="event-header">
-                    <span class="event-icon">📜</span>
-                    <div>
-                        <span class="era-badge old-era">1946 — 1947 | तुरंत आजादी के बाद</span>
-                    </div>
+            <div class="event-marker"></div>
+            <div class="event-card">
+                <span class="era-label">The Awakening</span>
+                <div class="event-year">1946</div>
+                <h3 class="event-title english-text">The Birth of the Assembly 🏛️</h3>
+                <h3 class="event-title hindi-text">संविधान सभा का उदय 🏛️</h3>
+                <div class="event-body">
+                    <p class="english-text">The journey begins in December 1946 as the <strong>Constituent Assembly</strong> gathers for its first session. Dr. Sachchidananda Sinha is chosen as the first interim Chairman, launching a task unparalleled in history.</p>
+                    <p class="hindi-text">यह यात्रा दिसंबर 1946 में शुरू होती है जब <strong>संविधान सभा</strong> अपने पहले सत्र के लिए एकत्रित होती है। डॉ. सच्चिदानंद सिन्हा को पहले अंतरिम अध्यक्ष के रूप में चुना गया है।</p>
                 </div>
-                <div class="english-content active">
-                    <span class="year-label">The Foundation</span>
-                    <h3 class="event-title">The Birth of Democracy 🇮🇳</h3>
-                    <p class="event-desc">The Constituent Assembly meets for the first time in December 1946. Following Independence in 1947, the Drafting Committee is formed with <strong>Dr. B.R. Ambedkar</strong> as Chairman—establishing the blueprint of a sovereign nation.</p>
-                    <div class="event-tags">
-                        <span class="tag">Assembly</span>
-                        <span class="tag">Dr. Ambedkar</span>
-                        <span class="tag">Drafting</span>
-                        <span class="tag">Independence</span>
-                    </div>
-                </div>
-                <div class="hindi-content">
-                    <span class="year-label">नींव की स्थापना</span>
-                    <h3 class="event-title-hi">लोकतंत्र का जन्म 🇮🇳</h3>
-                    <p class="event-desc-hi">संविधान सभा दिसंबर 1946 में पहली बार मिलती है। 1947 में स्वतंत्रता के बाद, <strong>डॉ. बी.आर. अंबेडकर</strong> को अध्यक्ष के रूप में मसौदा समिति का गठन किया जाता है—एक संप्रभु राष्ट्र की नींव रखते हुए।</p>
-                    <div class="event-tags">
-                        <span class="tag">सभा</span>
-                        <span class="tag">अंबेडकर</span>
-                        <span class="tag">मसौदा तैयारी</span>
-                    </div>
+                <div class="event-tags">
+                    <span class="tag">Assembly</span>
+                    <span class="tag">Democracy</span>
                 </div>
             </div>
         </div>
 
-        <!-- Event 2: 1949-1950 -->
+        <!-- Event 2: 1947 -->
         <div class="timeline-event">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-                <div class="event-header">
-                    <span class="event-icon">🎉</span>
-                    <div>
-                        <span class="era-badge">1949 — 1950 | संविधान को अपनाया गया</span>
-                    </div>
+            <div class="event-marker"></div>
+            <div class="event-card">
+                <span class="era-label">The Blueprint</span>
+                <div class="event-year">1947</div>
+                <h3 class="event-title english-text">Ambedkar's Vision ✍️</h3>
+                <h3 class="event-title hindi-text">अंबेडकर का विजन ✍️</h3>
+                <div class="event-body">
+                    <p class="english-text">Following Independence, the **Drafting Committee** is formed. **Dr. B.R. Ambedkar** is appointed Chairman, bringing his visionary legal mind to forge a document of equality and justice for all.</p>
+                    <p class="hindi-text">स्वतंत्रता के बाद, **मसौदा समिति** का गठन किया गया। **डॉ. बी.आर. अंबेडकर** को अध्यक्ष नियुक्त किया गया, जो सभी के लिए समानता और न्याय का दस्तावेज तैयार करने के लिए अपना दूरदर्शी विजन लेकर आए।</p>
                 </div>
-                <div class="english-content active">
-                    <span class="year-label">Adoption & Enactment</span>
-                    <h3 class="event-title">Republic Day Celebration 🏛️</h3>
-                    <p class="event-desc">On 26 November 1949, the Constitution is formally adopted. On <strong>26 January 1950</strong>, India officially becomes a Republic as the Constitution comes into force, replacing the Government of India Act 1935.</p>
-                    <div class="event-tags">
-                        <span class="tag">Republic Day</span>
-                        <span class="tag">Enactment</span>
-                        <span class="tag">Democratic State</span>
-                    </div>
-                </div>
-                <div class="hindi-content">
-                    <span class="year-label">गणराज्य दिवस</span>
-                    <h3 class="event-title-hi">गणराज्य की घोषणा 🏛️</h3>
-                    <p class="event-desc-hi">26 नवंबर 1949 को संविधान को औपचारिक रूप से अपनाया जाता है। <strong>26 जनवरी 1950</strong> को, भारत आधिकारिक रूप से गणराज्य बन जाता है क्योंकि संविधान लागू होता है।</p>
-                    <div class="event-tags">
-                        <span class="tag">गणराज्य दिवस</span>
-                        <span class="tag">लागू होना</span>
-                    </div>
+                <div class="event-tags">
+                    <span class="tag">Dr. Ambedkar</span>
+                    <span class="tag">Drafting</span>
                 </div>
             </div>
         </div>
 
-        <!-- Event 3: 1951 -->
+        <!-- Event 3: 1950 -->
         <div class="timeline-event">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-                <div class="event-header">
-                    <span class="event-icon">⚖️</span>
-                    <div>
-                        <span class="era-badge">1951 | पहला संशोधन</span>
-                    </div>
+            <div class="event-marker"></div>
+            <div class="event-card">
+                <span class="era-label">The Sovereign Era</span>
+                <div class="event-year">1950</div>
+                <h3 class="event-title english-text">India Becomes a Republic 🇮🇳</h3>
+                <h3 class="event-title hindi-text">भारत एक गणराज्य बना 🇮🇳</h3>
+                <div class="event-body">
+                    <p class="english-text">On **January 26, 1950**, the Constitution officially comes into force. India is declared a Sovereign Democratic Republic, marking the dawn of a new era for millions.</p>
+                    <p class="hindi-text">**26 जनवरी 1950** को संविधान आधिकारिक रूप से लागू हुआ। भारत को एक संप्रभु लोकतांत्रिक गणराज्य घोषित किया गया, जो लाखों लोगों के लिए एक नए युग की शुरुआत थी।</p>
                 </div>
-                <div class="english-content active">
-                    <span class="year-label">First Amendment</span>
-                    <h3 class="event-title">Land Reforms & Justice ⚖️</h3>
-                    <p class="event-desc">Introduced by <strong>Jawaharlal Nehru</strong>, this amendment enabled state-sponsored land reforms. It introduced the <strong>9th Schedule</strong> to protect laws from judicial review—marking the first tension between Parliament and Judiciary.</p>
-                    <div class="event-tags">
-                        <span class="tag">Land Reform</span>
-                        <span class="tag">9th Schedule</span>
-                        <span class="tag">Nehru</span>
-                    </div>
-                </div>
-                <div class="hindi-content">
-                    <span class="year-label">भूमि सुधार</span>
-                    <h3 class="event-title-hi">न्याय और समानता ⚖️</h3>
-                    <p class="event-desc-hi"><strong>जवाहरलाल नेहरू</strong> द्वारा प्रस्तुत, यह संशोधन राज्य द्वारा प्रायोजित भूमि सुधार को सक्षम बनाता है। यह <strong>9वीं अनुसूची</strong> को न्यायिक समीक्षा से कानूनों की रक्षा के लिए पेश करता है।</p>
-                    <div class="event-tags">
-                        <span class="tag">भूमि सुधार</span>
-                        <span class="tag">न्याय</span>
-                    </div>
+                <div class="event-tags">
+                    <span class="tag">Republic</span>
+                    <span class="tag">Enactment</span>
                 </div>
             </div>
         </div>
 
-        <!-- Event 4: 1973 -->
+        <!-- Event 4: 1951 -->
         <div class="timeline-event">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-                <div class="event-header">
-                    <span class="event-icon">📋</span>
-                    <div>
-                        <span class="era-badge">1973 | मील का पत्थर</span>
-                    </div>
+            <div class="event-marker"></div>
+            <div class="event-card">
+                <span class="era-label">The Living Reform</span>
+                <div class="event-year">1951</div>
+                <h3 class="event-title english-text">Land & Liberty ⚖️</h3>
+                <h3 class="event-title hindi-text">भूमि और स्वतंत्रता ⚖️</h3>
+                <div class="event-body">
+                    <p class="english-text">The **First Amendment** is enacted to facilitate land reforms. It introduces the **9th Schedule**, protecting progressive socio-economic laws from judicial challenge.</p>
+                    <p class="hindi-text">**पहला संशोधन** भूमि सुधारों को सुविधाजनक बनाने के लिए लागू किया गया है। यह **9वीं अनुसूची** पेश करता है, जो प्रगतिशील सामाजिक-आर्थिक कानूनों की रक्षा करती है।</p>
                 </div>
-                <div class="english-content active">
-                    <span class="year-label">Landmark Judgment</span>
-                    <h3 class="event-title">The Basic Structure Doctrine 📚</h3>
-                    <p class="event-desc">In the <strong>Kesavananda Bharati Case</strong>, the Supreme Court established the <strong>Basic Structure Doctrine</strong>—ruling that Parliament cannot amend the core features of the Constitution. A turning point in constitutional law!</p>
-                    <div class="event-tags">
-                        <span class="tag">Supreme Court</span>
-                        <span class="tag">Basic Structure</span>
-                        <span class="tag">Landmark</span>
-                    </div>
-                </div>
-                <div class="hindi-content">
-                    <span class="year-label">मूल संरचना</span>
-                    <h3 class="event-title-hi">संविधान की रक्षा 📚</h3>
-                    <p class="event-desc-hi"><strong>केसवानंद भारती केस</strong> में, सर्वोच्च न्यायालय ने <strong>मूल संरचना सिद्धांत</strong> की स्थापना की—यह कहते हुए कि संसद संविधान की मूल विशेषताओं को संशोधित नहीं कर सकती।</p>
-                    <div class="event-tags">
-                        <span class="tag">सर्वोच्च न्यायालय</span>
-                        <span class="tag">मूल संरचना</span>
-                    </div>
+                <div class="event-tags">
+                    <span class="tag">1st Amendment</span>
+                    <span class="tag">Justice</span>
                 </div>
             </div>
         </div>
 
-        <!-- Event 5: 1976 -->
+        <!-- Event 5: 1973 -->
         <div class="timeline-event">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-                <div class="event-header">
-                    <span class="event-icon">🌾</span>
-                    <div>
-                        <span class="era-badge">1976 | प्रमुख संशोधन</span>
-                    </div>
+            <div class="event-marker"></div>
+            <div class="event-card">
+                <span class="era-label">The Judicial Anchor</span>
+                <div class="event-year">1973</div>
+                <h3 class="event-title english-text">The Basic Structure 📚</h3>
+                <h3 class="event-title hindi-text">मूल संरचना सिद्धांत 📚</h3>
+                <div class="event-body">
+                    <p class="english-text">In the landmark **Kesavananda Bharati** case, the Supreme Court rules that Parliament cannot alter the 'Basic Structure' of the Constitution—ensuring its democratic identity remains eternal.</p>
+                    <p class="hindi-text">ऐतिहासिक **केसवानंद भारती** मामले में, सर्वोच्च न्यायालय ने फैसला सुनाया कि संसद संविधान की 'मूल संरचना' को नहीं बदल सकती—यह सुनिश्चित करते हुए कि इसकी लोकतांत्रिक पहचान शाश्वत बनी रहे।</p>
                 </div>
-                <div class="english-content active">
-                    <span class="year-label">42nd Amendment</span>
-                    <h3 class="event-title">The "Mini Constitution" 🌍</h3>
-                    <p class="event-desc">Enacted during the Emergency, the 42nd Amendment added <strong>'Socialist'</strong> and <strong>'Secular'</strong> to the Preamble. It introduced <strong>Fundamental Duties</strong> (Part IV-A). The most transformative amendment ever!</p>
-                    <div class="event-tags">
-                        <span class="tag">Socialist</span>
-                        <span class="tag">Secular</span>
-                        <span class="tag">Duties</span>
-                    </div>
-                </div>
-                <div class="hindi-content">
-                    <span class="year-label">समाजवादी संशोधन</span>
-                    <h3 class="event-title-hi">संविधान की घोषणा 🌍</h3>
-                    <p class="event-desc-hi">42वें संशोधन ने प्रस्तावना में <strong>'समाजवादी'</strong> और <strong>'धर्मनिरपेक्ष'</strong> शब्द जोड़े। इसने <strong>मौलिक कर्तव्य</strong> (भाग IV-A) को पेश किया।</p>
-                    <div class="event-tags">
-                        <span class="tag">समाजवाद</span>
-                        <span class="tag">धर्मनिरपेक्षता</span>
-                    </div>
+                <div class="event-tags">
+                    <span class="tag">Supreme Court</span>
+                    <span class="tag">Anchor</span>
                 </div>
             </div>
         </div>
 
-        <!-- Event 6: 1992 -->
+        <!-- Event 6: 1976 -->
         <div class="timeline-event">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-                <div class="event-header">
-                    <span class="event-icon">🏘️</span>
-                    <div>
-                        <span class="era-badge">1992 | स्थानीय शासन</span>
-                    </div>
+            <div class="event-marker"></div>
+            <div class="event-card">
+                <span class="era-label">The Social Revolution</span>
+                <div class="event-year">1976</div>
+                <h3 class="event-title english-text">The Mini-Constitution 🌍</h3>
+                <h3 class="event-title hindi-text">लघु-संविधान 🌍</h3>
+                <div class="event-body">
+                    <p class="english-text">The **42nd Amendment** adds 'Socialist' and 'Secular' to the Preamble. It also codifies **Fundamental Duties**, emphasizing the balance between rights and responsibilities.</p>
+                    <p class="hindi-text">**42वां संशोधन** प्रस्तावना में 'समाजवादी' और 'धर्मनिरपेक्ष' जोड़ता है। यह **मौलिक कर्तव्यों** को भी संहिताबद्ध करता है, जो अधिकारों और जिम्मेदारियों के बीच संतुलन पर जोर देता है।</p>
                 </div>
-                <div class="english-content active">
-                    <span class="year-label">73rd & 74th Amendments</span>
-                    <h3 class="event-title">Local Self-Government (Panchayati Raj) 👥</h3>
-                    <p class="event-desc">The 73rd and 74th Amendments granted constitutional status to local self-governments, creating a <strong>third tier of democracy</strong> through Panchayats and Municipalities—empowering villages and cities!</p>
-                    <div class="event-tags">
-                        <span class="tag">Decentralization</span>
-                        <span class="tag">Panchayat</span>
-                        <span class="tag">Municipality</span>
-                    </div>
-                </div>
-                <div class="hindi-content">
-                    <span class="year-label">पंचायती राज</span>
-                    <h3 class="event-title-hi">स्थानीय शासन 👥</h3>
-                    <p class="event-desc-hi">73वें और 74वें संशोधन ने स्थानीय स्वशासन को संवैधानिक स्तर दिया, <strong>लोकतंत्र की तीसरी परत</strong> बनाई—पंचायतों और नगरपालिकाओं के माध्यम से।</p>
-                    <div class="event-tags">
-                        <span class="tag">विकेंद्रीकरण</span>
-                        <span class="tag">पंचायत</span>
-                    </div>
+                <div class="event-tags">
+                    <span class="tag">42nd Amendment</span>
+                    <span class="tag">Values</span>
                 </div>
             </div>
         </div>
 
         <!-- Event 7: 2002 -->
         <div class="timeline-event">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-                <div class="event-header">
-                    <span class="event-icon">📖</span>
-                    <div>
-                        <span class="era-badge modern-era">2002 | शिक्षा का अधिकार</span>
-                    </div>
+            <div class="event-marker"></div>
+            <div class="event-card">
+                <span class="era-label">The Gift of Knowledge</span>
+                <div class="event-year">2002</div>
+                <h3 class="event-title english-text">Education for All 🎓</h3>
+                <h3 class="event-title hindi-text">सभी के लिए शिक्षा 🎓</h3>
+                <div class="event-body">
+                    <p class="english-text">The **86th Amendment** creates **Article 21A**, making free and compulsory education a Fundamental Right for all children aged 6-14, empowering the future generations of India.</p>
+                    <p class="hindi-text">**86वां संशोधन** **अनुच्छेद 21A** बनाता है, जो 6-14 वर्ष की आयु के सभी बच्चों के लिए मुफ्त और अनिवार्य शिक्षा को मौलिक अधिकार बनाता है।</p>
                 </div>
-                <div class="english-content active">
-                    <span class="year-label">86th Amendment</span>
-                    <h3 class="event-title">Right to Education 🎓</h3>
-                    <p class="event-desc">The 86th Amendment inserted <strong>Article 21A</strong>, making education a Fundamental Right for all children between the ages of 6 and 14 years. Education for all—a dream realized!</p>
-                    <div class="event-tags">
-                        <span class="tag">Education</span>
-                        <span class="tag">Child Rights</span>
-                        <span class="tag">Fundamental Right</span>
-                    </div>
-                </div>
-                <div class="hindi-content">
-                    <span class="year-label">शिक्षा का अधिकार</span>
-                    <h3 class="event-title-hi">सभी के लिए शिक्षा 🎓</h3>
-                    <p class="event-desc-hi">86वें संशोधन ने <strong>अनुच्छेद 21A</strong> को सम्मिलित किया, शिक्षा को सभी बच्चों के लिए मौलिक अधिकार बनाया। सभी के लिए शिक्षा—एक सपना वास्तविक हुआ!</p>
-                    <div class="event-tags">
-                        <span class="tag">शिक्षा</span>
-                        <span class="tag">बाल अधिकार</span>
-                    </div>
+                <div class="event-tags">
+                    <span class="tag">RTE</span>
+                    <span class="tag">Growth</span>
                 </div>
             </div>
         </div>
 
         <!-- Event 8: 2017 -->
         <div class="timeline-event">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-                <div class="event-header">
-                    <span class="event-icon">🔐</span>
-                    <div>
-                        <span class="era-badge modern-era">2017 | आधुनिक अधिकार</span>
-                    </div>
+            <div class="event-marker"></div>
+            <div class="event-card">
+                <span class="era-label">The Digital Shield</span>
+                <div class="event-year">2017</div>
+                <h3 class="event-title english-text">The Right to Privacy 🔒</h3>
+                <h3 class="event-title hindi-text">निजता का अधिकार 🔒</h3>
+                <div class="event-body">
+                    <p class="english-text">In **Justice K.S. Puttaswamy v. Union of India**, the Supreme Court declares Privacy a Fundamental Right, protecting individual dignity in the age of global connectivity.</p>
+                    <p class="hindi-text">**न्यायमूर्ति के.एस. पुट्टस्वामी बनाम भारत संघ** में, सर्वोच्च न्यायालय ने निजता को एक मौलिक अधिकार घोषित किया, जो वैश्विक कनेक्टिविटी के युग में व्यक्तिगत गरिमा की रक्षा करता है।</p>
                 </div>
-                <div class="english-content active">
-                    <span class="year-label">Digital Age</span>
-                    <h3 class="event-title">Right to Privacy 🔒</h3>
-                    <p class="event-desc">In the <strong>Justice K.S. Puttaswamy</strong> case, the Supreme Court ruled that <strong>Right to Privacy</strong> is intrinsic to the Right to Life and Personal Liberty under Article 21. Privacy in the digital age protected!</p>
-                    <div class="event-tags">
-                        <span class="tag">Privacy</span>
-                        <span class="tag">Liberty</span>
-                        <span class="tag">Digital Rights</span>
-                    </div>
-                </div>
-                <div class="hindi-content">
-                    <span class="year-label">गोपनीयता का अधिकार</span>
-                    <h3 class="event-title-hi">व्यक्तिगत स्वतंत्रता 🔒</h3>
-                    <p class="event-desc-hi"><strong>न्यायमूर्ति के.एस. पुट्टस्वामी</strong> के मामले में, सर्वोच्च न्यायालय ने फैसला दिया कि <strong>गोपनीयता का अधिकार</strong> अनुच्छेद 21 के तहत जीवन और व्यक्तिगत स्वतंत्रता के अधिकार का अंतर्निहित है।</p>
-                    <div class="event-tags">
-                        <span class="tag">गोपनीयता</span>
-                        <span class="tag">स्वतंत्रता</span>
-                    </div>
+                <div class="event-tags">
+                    <span class="tag">Privacy</span>
+                    <span class="tag">Liberty</span>
                 </div>
             </div>
         </div>
 
-        <!-- Event 9: 2023-2025 -->
+        <!-- Event 9: 2025 -->
         <div class="timeline-event">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-                <div class="event-header">
-                    <span class="event-icon">👩‍🤝‍👨</span>
-                    <div>
-                        <span class="era-badge modern-era">2023 — 2025 | महिला सशक्तिकरण</span>
-                    </div>
+            <div class="event-marker"></div>
+            <div class="event-card">
+                <span class="era-label">The Future of Shakti</span>
+                <div class="event-year">2023—25</div>
+                <h3 class="event-title english-text">Nari Shakti Vandan 👩‍⚖️</h3>
+                <h3 class="event-title hindi-text">नारी शक्ति वंदन 👩‍⚖️</h3>
+                <div class="event-body">
+                    <p class="english-text">The **106th Amendment** ensures 33% reservation for women in Lok Sabha and Assemblies, cementing gender justice as a cornerstone of Indian governance.</p>
+                    <p class="hindi-text">**106वां संशोधन** लोकसभा और विधानसभाओं में महिलाओं के लिए 33% आरक्षण सुनिश्चित करता है, जो भारतीय शासन के आधारशिला के रूप में लैंगिक न्याय को मजबूत करता है।</p>
                 </div>
-                <div class="english-content active">
-                    <span class="year-label">106th Amendment</span>
-                    <h3 class="event-title">Women Empowerment 👩‍💼</h3>
-                    <p class="event-desc">The <strong>Nari Shakti Vandan Adhiniyam</strong> (106th Amendment) provides <strong>33% reservation for women</strong> in the Lok Sabha and State Legislative Assemblies. Women's voices heard in Parliament!</p>
-                    <div class="event-tags">
-                        <span class="tag">Women Reservation</span>
-                        <span class="tag">Gender Equality</span>
-                        <span class="tag">Parliament</span>
-                    </div>
-                </div>
-                <div class="hindi-content">
-                    <span class="year-label">महिला आरक्षण</span>
-                    <h3 class="event-title-hi">नारी शक्ति वंदन 👩‍💼</h3>
-                    <p class="event-desc-hi"><strong>नारी शक्ति वंदन अधिनियम</strong> (106वां संशोधन) लोकसभा और राज्य विधानसभाओं में <strong>महिलाओं के लिए 33% आरक्षण</strong> प्रदान करता है। संसद में महिला आवाजें सुनी जा रही हैं!</p>
-                    <div class="event-tags">
-                        <span class="tag">महिला आरक्षण</span>
-                        <span class="tag">लैंगिक समानता</span>
-                    </div>
+                <div class="event-tags">
+                    <span class="tag">Equality</span>
+                    <span class="tag">Shakti</span>
                 </div>
             </div>
         </div>
 
     </div>
 
-    <footer class="site-footer">
-        <div class="container">
-            <p>© 2025 myConstitutionConnect. Journey through the Evolution of Democracy. | संविधान के विकास की यात्रा</p>
-        </div>
+    <footer style="text-align:center; padding: 100px 20px; color: var(--text-muted); font-size: 0.9rem; border-top: 1px solid var(--glass-border); background: rgba(0,0,0,0.2);">
+        <p>© 2025 myConstitutionConnect. Journey through the Evolution of the Living Document.</p>
+        <p style="margin-top: 10px; font-family: 'Merriweather', serif;">संविधान के विकास की अनंत यात्रा</p>
     </footer>
 
     <script>
-        function switchLanguage(lang) {
-            const englishContents = document.querySelectorAll('.english-content');
-            const hindiContents = document.querySelectorAll('.hindi-content');
-            const buttons = document.querySelectorAll('.lang-btn');
-
-            buttons.forEach(btn => btn.classList.remove('active'));
+        function setLanguage(lang) {
+            document.body.className = 'lang-' + lang;
+            document.getElementById('btnEn').classList.toggle('active', lang === 'en');
+            document.getElementById('btnHi').classList.toggle('active', lang === 'hi');
             
-            if (lang === 'english') {
-                englishContents.forEach(el => el.classList.add('active'));
-                hindiContents.forEach(el => el.classList.remove('active'));
-                buttons[0].classList.add('active');
-            } else {
-                hindiContents.forEach(el => el.classList.add('active'));
-                englishContents.forEach(el => el.classList.remove('active'));
-                buttons[1].classList.add('active');
-            }
-
-            // Animate elements on language switch
-            document.querySelectorAll('.timeline-event').forEach((el, index) => {
-                el.style.animation = 'none';
-                setTimeout(() => {
-                    el.style.animation = `slideIn 0.6s ease forwards`;
-                    el.style.animationDelay = `${index * 0.1}s`;
-                }, 10);
+            // Re-trigger animations
+            document.querySelectorAll('.timeline-event').forEach(el => {
+                el.classList.remove('visible');
+                setTimeout(() => checkScroll(), 100);
             });
         }
 
-        // Add scroll animations
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
+        function checkScroll() {
+            const triggerBottom = window.innerHeight * 0.85;
+            document.querySelectorAll('.timeline-event').forEach(event => {
+                const eventTop = event.getBoundingClientRect().top;
+                if (eventTop < triggerBottom) {
+                    event.classList.add('visible');
                 }
             });
-        }, { threshold: 0.1 });
+        }
 
-        document.querySelectorAll('.timeline-event').forEach(el => {
-            observer.observe(el);
+        window.addEventListener('scroll', checkScroll);
+        window.addEventListener('load', () => {
+            setTimeout(checkScroll, 500);
         });
     </script>
 

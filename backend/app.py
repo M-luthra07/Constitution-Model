@@ -4,6 +4,7 @@ import pathlib
 import hashlib
 import json
 import markdown
+import time
 from flask import Flask, render_template, request, jsonify, send_from_directory, send_file
 from dotenv import load_dotenv
 import google.generativeai as genai
@@ -23,8 +24,12 @@ pdf_path = pathlib.Path("20240716890312078.pdf")
 if not pdf_path.exists():
     pdf_path = pathlib.Path("../20240716890312078.pdf")
 
+# Define model fallback chain
+PRIMARY_MODEL = "gemini-2.5-flash"  # Best for voice & multi-modal
+FALLBACK_MODELS = ["gemini-2.5-flash"]  # Fallback to same model
+
 # Create model instance
-model = genai.GenerativeModel("gemini-flash-latest")
+model = genai.GenerativeModel(PRIMARY_MODEL)
 
 system_prompt = """You are a professional, friendly constitutional lawyer for myConstitutionConnect. 
 Your goal is to explain the Indian Constitution in plain, simple language for common citizens.
@@ -34,7 +39,57 @@ You are helping citizens understand their rights, responsibilities, and legal pr
 app = Flask(__name__)
 CORS(app)
 
+# Helper function to handle model generation with fallback
+def generate_content_with_fallback(content, system_instruction=None, max_retries=2):
+    """
+    Generate content with retry logic and fallback models.
+    Handles quota exceeded errors gracefully.
+    """
+    models_to_try = [PRIMARY_MODEL] + FALLBACK_MODELS
+    last_error = None
+    
+    for model_name in models_to_try:
+        for attempt in range(max_retries):
+            try:
+                current_model = genai.GenerativeModel(
+                    model_name, 
+                    system_instruction=system_instruction
+                ) if system_instruction else genai.GenerativeModel(model_name)
+                
+                response = current_model.generate_content(content)
+                print(f"✅ Content generated successfully using {model_name}")
+                return response
+                
+            except Exception as e:
+                error_str = str(e)
+                last_error = e
+                
+                # Check if it's a quota exceeded error
+                if "quota" in error_str.lower() or "429" in error_str or "resource exhausted" in error_str.lower():
+                    print(f"⚠️  Quota exceeded on {model_name}, attempt {attempt + 1}/{max_retries}")
+                    if attempt < max_retries - 1:
+                        wait_time = (2 ** attempt)  # Exponential backoff
+                        print(f"   Retrying in {wait_time} seconds...")
+                        time.sleep(wait_time)
+                    continue
+                else:
+                    print(f"❌ Error with {model_name}: {error_str}")
+                    break
+        
+        # If we exhausted retries for this model, try next fallback
+        if model_name != models_to_try[-1]:
+            print(f"🔄 Switching to fallback model: {models_to_try[models_to_try.index(model_name) + 1]}")
+            continue
+    
+    # If all models fail, raise the last error
+    raise last_error if last_error else Exception("All models failed to generate content")
+
 chat_history = [{"role": "system", "content": system_prompt}]
+
+@app.route("/favicon.ico")
+def favicon():
+    """Return 204 No Content for favicon requests to suppress 404 errors."""
+    return "", 204
 
 @app.route("/")
 def index():
@@ -68,6 +123,10 @@ def dictionary():
 def timeline():
     return render_template("timeline.html")
 
+@app.route("/state-laws")
+def state_laws():
+    return render_template("state_laws.html")
+
 @app.route("/api/legal-knowledge")
 def get_legal_knowledge():
     """Serves the latest legal cases and dictionary terms from the JSON database."""
@@ -97,15 +156,22 @@ def chat():
     data = request.json
     user_message = data.get("message", "").strip()
     state = data.get("state", "India")
-    if not user_message: return jsonify({"reply": "Please enter a valid question."})
+    if not user_message: 
+        return jsonify({"reply": "Please enter a valid question."})
     
     chat_history.append({"role": "user", "content": f"[Jurisdiction: {state}] {user_message}"})
     conversation = [m["content"] for m in chat_history]
 
-    response = model.generate_content(conversation)
-    reply_text = markdown.markdown(response.text).replace('\n', '<br>')
-    chat_history.append({"role": "assistant", "content": reply_text})
-    return jsonify({"reply": reply_text})
+    try:
+        response = generate_content_with_fallback(conversation)
+        reply_text = markdown.markdown(response.text).replace('\n', '<br>')
+        chat_history.append({"role": "assistant", "content": reply_text})
+        return jsonify({"reply": reply_text})
+    except Exception as e:
+        error_message = str(e)
+        if "quota" in error_message.lower():
+            return jsonify({"reply": "⚠️ API quota exceeded. Please try again in a few moments.", "error": "QUOTA_EXCEEDED"}), 429
+        return jsonify({"reply": f"An error occurred: {error_message}", "error": str(type(e).__name__)}), 500
 
 @app.route("/api/court/judge", methods=["POST"])
 def court_judge():
@@ -126,7 +192,7 @@ def court_judge():
         3. Clear final verdict label (Rights Upheld / Dismissed).
         Keep it formal and authoritative. Return in HTML."""
         
-        response = model.generate_content(prompt)
+        response = generate_content_with_fallback(prompt)
         # Strip markdown code blocks if the AI returns them
         content = response.text.strip()
         if "```html" in content:
@@ -134,8 +200,11 @@ def court_judge():
         elif "```" in content:
             content = content.split("```")[1].split("```")[0].strip()
             
-        return jsonify({"verdict": content}) # Return directly since it's already HTML
+        return jsonify({"verdict": content})
     except Exception as e:
+        error_message = str(e)
+        if "quota" in error_message.lower():
+            return jsonify({"error": "API quota exceeded. Please try again later.", "code": "QUOTA_EXCEEDED"}), 429
         return jsonify({"error": str(e)}), 500
 
 @app.route("/analyze-doc", methods=["POST"])
@@ -154,7 +223,7 @@ def analyze_doc():
         prompt = f"Analyze this legal document. Mode: {mode}. Explain clearly in HTML format, structured with standard legal headers."
         
         # For Gemini flash, we can pass parts as a list.
-        response = model.generate_content([
+        response = generate_content_with_fallback([
             prompt,
             {"mime_type": mime_type, "data": file_data}
         ])
@@ -167,6 +236,9 @@ def analyze_doc():
             
         return jsonify({"result": content})
     except Exception as e:
+        error_message = str(e)
+        if "quota" in error_message.lower():
+            return jsonify({"error": "API quota exceeded. Please try again later.", "code": "QUOTA_EXCEEDED"}), 429
         return jsonify({"error": str(e)}), 500
 
 @app.route("/tts")
@@ -264,19 +336,19 @@ Format it clearly with:
 Keep it strictly to the formal RTI draft. Do not include introductory/outro chatter."""
 
     try:
-        # Create a new local model instance with the specific instruction
-        rti_model = genai.GenerativeModel("gemini-2.5-flash", system_instruction=system_inst)
         full_query = f"User Location: {city}, {state}\nUser Request: {user_prompt}"
-        response = rti_model.generate_content(full_query)
+        response = generate_content_with_fallback(full_query, system_instruction=system_inst, max_retries=2)
         return jsonify({"draft": response.text, "is_mock": False})
     except Exception as e:
-        # Fallback if API key is invalid or quota exceeded
-        mock_draft = f"""[MOCK DRAFT / TEMPLATE - API UNAVAILABLE]
+        error_message = str(e)
+        # If quota exceeded, return mock but indicate it's a fallback
+        if "quota" in error_message.lower() or isinstance(e, Exception):
+            mock_draft = f"""[FALLBACK DRAFT / TEMPLATE - API QUOTA LIMIT REACHED]
 
 To,
 The Central Public Information Officer (CPIO),
 [Appropriate Government Department, E.g., Municipal Corporation/Ministry]
-[City, State, PIN Code]
+[{city}, {state}, PIN Code]
 
 Subject: Request for Information under the Right to Information Act, 2005
 
@@ -296,8 +368,11 @@ Yours faithfully,
 [Your Name]
 [Your Address]
 [Your Contact Number]
-[Date]"""
-        return jsonify({"draft": mock_draft, "is_mock": True})
+[Date]
+
+[Note: Server is experiencing high load. Please review and personalize this template before submission.]"""
+            return jsonify({"draft": mock_draft, "is_mock": True, "error": "api_quota_exceeded"}), 503
+        return jsonify({"error": str(e)}), 500
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5000, debug=True)
