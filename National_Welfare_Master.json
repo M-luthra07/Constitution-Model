@@ -1,5 +1,347 @@
 [
   {
+    "id": "PM_HARIT_ROJGAR_2025_04",
+    "name": "Pradhan Mantri Harit Rojgar Yojana",
+    "hindi_name": "प्रधानमंत्री हरित रोजगार योजना",
+    "state": "All",
+    "sector": [
+      "Employment",
+      "Energy",
+      "Environment",
+      "Skill Development"
+    ],
+    "ministry": "Ministry of Environment, Forest and Climate Change, Ministry of Skill Development and Entrepreneurship",
+    "launchYear": 2025,
+    "gender": "All",
+    "ageGroup": "18+",
+    "category": "Youth, Rural Population, Farmers",
+    "status": "Latest",
+    "description": "A national initiative to promote and create employment opportunities in green sectors such as renewable energy installation, waste management, sustainable agriculture, and eco-tourism through skill training and financial incentives.",
+    "hindi_description": "यह एक राष्ट्रीय पहल है जिसका उद्देश्य कौशल प्रशिक्षण और वित्तीय प्रोत्साहन के माध्यम से नवीकरणीय ऊर्जा स्थापना, अपशिष्ट प्रबंधन, टिकाऊ कृषि और पर्यावरण-पर्यटन जैसे हरित क्षेत्रों में रोजगार के अवसरों को बढ़ावा देना और सृजित करना है।",
+    "eligibility": "Indian citizens aged 18-45 years with a focus on rural and semi-urban populations, interested in green jobs.",
+    "hindi_eligibility": "18-45 वर्ष की आयु के भारतीय नागरिक, ग्रामीण और अर्ध-शहरी आबादी पर ध्यान केंद्रित करते हुए, जो हरित नौकरियों में रुचि रखते हों।",
+    "helpline": "1800-11-0001",
+    "website": "www.moef.gov.in/pmhry"
+  },
+  {
+    "id": "MP_MMDUY_2025_03",
+    "name": "Mukhyamantri Mahila Digital Udyami Yojana",
+    "hindi_name": "मुख्यमंत्री महिला डिजिटल उद्यमी योजना",
+    "state": "Madhya Pradesh",
+    "sector": [
+      "Women Empowerment",
+      "Employment",
+      "Digital India",
+      "Financial Services"
+    ],
+    "ministry": "Department of Women and Child Development, Government of Madhya Pradesh",
+    "launchYear": 2025,
+    "gender": "Female",
+    "ageGroup": "18+",
+    "category": "SHG, Women Entrepreneurs",
+    "status": "Latest",
+    "description": "This scheme provides financial assistance, digital literacy training, and mentorship to women in Madhya Pradesh, particularly from rural areas and Self-Help Groups, to establish and scale digital businesses.",
+    "hindi_description": "यह योजना मध्य प्रदेश की महिलाओं को, विशेषकर ग्रामीण क्षेत्रों और स्वयं सहायता समूहों की महिलाओं को, डिजिटल व्यवसाय स्थापित करने और बढ़ाने के लिए वित्तीय सहायता, डिजिटल साक्षरता प्रशिक्षण और मार्गदर्शन प्रदान करती है।",
+    "eligibility": "Women residents of Madhya Pradesh aged 18-60, preferably members of Self-Help Groups or aspiring digital entrepreneurs.",
+    "hindi_eligibility": "मध्य प्रदेश की 18-60 वर्ष की महिला निवासी, अधिमानतः स्वयं सहायता समूहों की सदस्य या इच्छुक डिजिटल उद्यमी।",
+    "helpline": "1800-233-1620",
+    "website": "www.mpwcd.gov.in/mmduy"
+  },
+  {
+    "id": "AB_MANAS_2024_02",
+    "name": "Ayushman Bharat - Manas Swasthya Sahayata",
+    "hindi_name": "आयुष्मान भारत - मानस स्वास्थ्य सहायता",
+    "state": "All",
+    "sector": [
+      "Health",
+      "Social Welfare"
+    ],
+    "ministry": "Ministry of Health and Family Welfare",
+    "launchYear": 2024,
+    "gender": "All",
+    "ageGroup": "All",
+    "category": "All",
+    "status": "Latest",
+    "description": "An extension of Ayushman Bharat to provide comprehensive mental health and psychological support services, including counselling, therapy, and treatment for eligible beneficiaries, enhancing overall well-being.",
+    "hindi_description": "आयुष्मान भारत का एक विस्तार जो पात्र लाभार्थियों के लिए परामर्श, चिकित्सा और उपचार सहित व्यापक मानसिक स्वास्थ्य और मनोवैज्ञानिक सहायता सेवाएं प्रदान करता है, जिससे समग्र कल्याण बढ़ता है।",
+    "eligibility": "All beneficiaries currently covered under Ayushman Bharat Pradhan Mantri Jan Arogya Yojana (AB-PMJAY).",
+    "hindi_eligibility": "आयुष्मान भारत प्रधानमंत्री जन आरोग्य योजना (AB-PMJAY) के अंतर्गत वर्तमान में शामिल सभी लाभार्थी।",
+    "helpline": "14555",
+    "website": "www.pmjay.gov.in/manas-swasthya"
+  },
+  {
+    "id": "PM_TECH_NIPUN_2025_01",
+    "name": "Pradhan Mantri TechNipun Abhiyan",
+    "hindi_name": "प्रधानमंत्री टेक-निपुण अभियान",
+    "state": "All",
+    "sector": [
+      "Employment",
+      "Digital India",
+      "Education"
+    ],
+    "ministry": "Ministry of Skill Development and Entrepreneurship, Ministry of Electronics and Information Technology",
+    "launchYear": 2025,
+    "gender": "All",
+    "ageGroup": "18+",
+    "category": "Youth",
+    "status": "Latest",
+    "description": "This scheme aims to rapidly upskill 5 million Indian youth in advanced digital technologies like AI, Machine Learning, and Cybersecurity through certified courses and industry apprenticeships, ensuring future-ready employment opportunities.",
+    "hindi_description": "यह योजना 50 लाख भारतीय युवाओं को एआई, मशीन लर्निंग और साइबर सुरक्षा जैसी उन्नत डिजिटल प्रौद्योगिकियों में प्रमाणित पाठ्यक्रमों और उद्योग प्रशिक्षुता के माध्यम से तेजी से कौशल प्रदान करने, भविष्य के लिए तैयार रोजगार के अवसर सुनिश्चित करने का लक्ष्य रखती है।",
+    "eligibility": "Indian citizens aged 18-35 years with a minimum 12th standard education, interested in high-tech digital sectors.",
+    "hindi_eligibility": "18-35 वर्ष की आयु के भारतीय नागरिक जिन्होंने न्यूनतम 12वीं कक्षा उत्तीर्ण की हो और उच्च-तकनीकी डिजिटल क्षेत्रों में रुचि रखते हों।",
+    "helpline": "1800-11-0001",
+    "website": "www.msde.gov.in/pm-technipun"
+  },
+  {
+    "id": "AI_MKSA_2025_04",
+    "name": "Mukhyamantri Kisan Samriddhi Abhiyan",
+    "hindi_name": "मुख्यमंत्री किसान समृद्धि अभियान",
+    "state": "Uttar Pradesh",
+    "sector": [
+      "Agriculture",
+      "Financial Services",
+      "Social Welfare"
+    ],
+    "ministry": "Department of Agriculture, Government of Uttar Pradesh",
+    "launchYear": 2025,
+    "gender": "All",
+    "ageGroup": "18+",
+    "category": [
+      "Farmers"
+    ],
+    "status": "Latest",
+    "description": "A Uttar Pradesh state scheme providing enhanced financial incentives, modern agricultural training, and direct market access support to small and marginal farmers for sustainable farming practices.",
+    "hindi_description": "एक उत्तर प्रदेश राज्य योजना जो छोटे और सीमांत किसानों को स्थायी कृषि पद्धतियों के लिए उन्नत वित्तीय प्रोत्साहन, आधुनिक कृषि प्रशिक्षण और प्रत्यक्ष बाजार पहुंच सहायता प्रदान करती है।",
+    "eligibility": "Small and marginal farmers residing in Uttar Pradesh with cultivable land holdings, registered with the state agriculture department.",
+    "hindi_eligibility": "उत्तर प्रदेश में निवास करने वाले छोटे और सीमांत किसान जिनके पास खेती योग्य भूमि है और जो राज्य कृषि विभाग के साथ पंजीकृत हैं।",
+    "helpline": "1800-180-2025",
+    "website": "https://upagriculture.gov.in/kisanabhiyan"
+  },
+  {
+    "id": "AI_ABASY_2024_03",
+    "name": "Ayushman Bharat Arogya Sanjeevani Yojana",
+    "hindi_name": "आयुष्मान भारत आरोग्य संजीवनी योजना",
+    "state": "All",
+    "sector": [
+      "Health",
+      "Digital India"
+    ],
+    "ministry": "Ministry of Health and Family Welfare",
+    "launchYear": 2024,
+    "gender": "All",
+    "ageGroup": "All",
+    "category": [
+      "All"
+    ],
+    "status": "Latest",
+    "description": "An expansion of the Ayushman Bharat scheme focusing on comprehensive preventive care, early disease detection, and digital health records for every citizen, aiming for universal health coverage.",
+    "hindi_description": "आयुष्मान भारत योजना का विस्तार, जो सार्वभौमिक स्वास्थ्य कवरेज के लक्ष्य के साथ हर नागरिक के लिए व्यापक निवारक देखभाल, प्रारंभिक रोग पहचान और डिजिटल स्वास्थ्य रिकॉर्ड पर केंद्रित है।",
+    "eligibility": "All Indian citizens not currently covered under PMJAY, with priority given to those identified through socio-economic caste census (SECC) data.",
+    "hindi_eligibility": "पीएमजेएवाई के अंतर्गत वर्तमान में शामिल न होने वाले सभी भारतीय नागरिक, सामाजिक-आर्थिक जाति जनगणना (एसईसीसी) डेटा के माध्यम से पहचाने गए लोगों को प्राथमिकता दी जाएगी।",
+    "helpline": "14555 / 1800-11-2024",
+    "website": "https://pmjay.gov.in/arogya"
+  },
+  {
+    "id": "AI_BAIKVY_2025_02",
+    "name": "Bharat AI Kaushal Vikas Yojana",
+    "hindi_name": "भारत एआई कौशल विकास योजना",
+    "state": "All",
+    "sector": [
+      "Employment",
+      "Education",
+      "Digital India"
+    ],
+    "ministry": "Ministry of Skill Development and Entrepreneurship",
+    "launchYear": 2025,
+    "gender": "All",
+    "ageGroup": "18-35",
+    "category": [
+      "Youth",
+      "Students",
+      "Professionals"
+    ],
+    "status": "Latest",
+    "description": "A national program to upskill and reskill Indian youth in advanced Artificial Intelligence (AI) technologies, machine learning, and data science for future job readiness.",
+    "hindi_description": "भारतीय युवाओं को भविष्य की नौकरियों के लिए तैयार करने हेतु उन्नत आर्टिफिशियल इंटेलिजेंस (एआई) तकनीकों, मशीन लर्निंग और डेटा साइंस में कौशल बढ़ाने और पुनः कौशल प्रदान करने वाला एक राष्ट्रीय कार्यक्रम।",
+    "eligibility": "Indian citizens aged 18-35, minimum 12th pass with a foundational understanding of computer science.",
+    "hindi_eligibility": "18-35 वर्ष आयु वर्ग के भारतीय नागरिक, कंप्यूटर विज्ञान की मूलभूत समझ के साथ न्यूनतम 12वीं पास।",
+    "helpline": "1800-11-2026",
+    "website": "https://skillindia.gov.in/ai"
+  },
+  {
+    "id": "AI_NSUY_2025_01",
+    "name": "Nari Shakti Udyam Yojana",
+    "hindi_name": "नारी शक्ति उद्यम योजना",
+    "state": "All",
+    "sector": [
+      "Women Empowerment",
+      "Financial Services",
+      "Employment"
+    ],
+    "ministry": "Ministry of Women and Child Development",
+    "launchYear": 2025,
+    "gender": "Female",
+    "ageGroup": "18+",
+    "category": [
+      "SHG",
+      "Women Entrepreneurs"
+    ],
+    "status": "Latest",
+    "description": "A central scheme providing enhanced financial assistance, digital skilling, and market linkages to women-led micro-enterprises and Self-Help Groups (SHGs) across India.",
+    "hindi_description": "भारत भर में महिला-नेतृत्व वाले सूक्ष्म उद्यमों और स्वयं सहायता समूहों (एसएचजी) को उन्नत वित्तीय सहायता, डिजिटल कौशल और बाजार संपर्क प्रदान करने वाली एक केंद्रीय योजना।",
+    "eligibility": "Women aged 18 and above, registered SHGs or individual women entrepreneurs operating micro-enterprises.",
+    "hindi_eligibility": "18 वर्ष और उससे अधिक आयु की महिलाएं, पंजीकृत स्वयं सहायता समूह या सूक्ष्म उद्यम चलाने वाली व्यक्तिगत महिला उद्यमी।",
+    "helpline": "1800-11-2025",
+    "website": "https://narisaktiudyamyojana.gov.in"
+  },
+  {
+    "id": "AI_NEW_2024_04",
+    "name": "Nari Shakti Udyam Protsahan Yojana (NSUPY)",
+    "hindi_name": "नारी शक्ति उद्यम प्रोत्साहन योजना",
+    "state": "All",
+    "sector": [
+      "Women Empowerment",
+      "Financial Services",
+      "Employment"
+    ],
+    "ministry": "Ministry of Women and Child Development",
+    "launchYear": 2024,
+    "gender": "Female",
+    "ageGroup": "18+",
+    "category": "Women, Entrepreneurs, SHG",
+    "status": "Latest",
+    "description": "A central scheme providing enhanced financial assistance, skill development, and market linkage support for women-led micro and small enterprises, particularly empowering those in rural and semi-urban areas.",
+    "hindi_description": "एक केंद्रीय योजना जो महिला-नेतृत्व वाले सूक्ष्म और लघु उद्यमों के लिए उन्नत वित्तीय सहायता, कौशल विकास और बाजार संपर्क सहायता प्रदान करती है, विशेष रूप से ग्रामीण और अर्ध-शहरी क्षेत्रों में महिलाओं को सशक्त बनाती है।",
+    "eligibility": "Women entrepreneurs or Self-Help Groups (SHGs) led by women, registered under relevant MSME categories, with viable business proposals.",
+    "hindi_eligibility": "महिला उद्यमी या महिलाओं के नेतृत्व वाले स्वयं सहायता समूह (एसएचजी), प्रासंगिक एमएसएमई श्रेणियों के तहत पंजीकृत, जिनके पास व्यवहार्य व्यावसायिक प्रस्ताव हैं।",
+    "helpline": "1800-11-2333",
+    "website": "www.wcd.nic.in/nsupy"
+  },
+  {
+    "id": "PM_YRSJ_2025_04",
+    "name": "Pradhan Mantri Yuva Rojgar Srijan Yojana",
+    "hindi_name": "प्रधानमंत्री युवा रोजगार सृजन योजना",
+    "state": "All",
+    "sector": [
+      "Employment",
+      "Financial Services",
+      "Education"
+    ],
+    "ministry": "Ministry of Skill Development and Entrepreneurship",
+    "launchYear": 2025,
+    "gender": [
+      "All"
+    ],
+    "ageGroup": [
+      "18-35"
+    ],
+    "category": [
+      "Youth",
+      "Entrepreneurs",
+      "Job Seekers"
+    ],
+    "status": "Latest",
+    "description": "A new comprehensive scheme to promote entrepreneurship and generate employment opportunities for youth in emerging sectors by providing subsidized loans, mentorship, and incubation support for innovative business ideas.",
+    "hindi_description": "उद्यमिता को बढ़ावा देने और उभरते क्षेत्रों में युवाओं के लिए रोजगार के अवसर पैदा करने के लिए एक नई व्यापक योजना, जिसमें रियायती ऋण, मेंटरशिप और अभिनव व्यावसायिक विचारों के लिए इन्क्यूबेशन सहायता प्रदान की जाएगी।",
+    "eligibility": "Indian youth aged 18-35 with a matriculation certificate and a viable business plan; special provisions for women and rural youth.",
+    "hindi_eligibility": "मैट्रिकुलेशन प्रमाणपत्र और एक व्यवहार्य व्यवसाय योजना वाले 18-35 आयु वर्ग के भारतीय युवा; महिलाओं और ग्रामीण युवाओं के लिए विशेष प्रावधान।",
+    "helpline": "1800-11-0001",
+    "website": "msde.gov.in"
+  },
+  {
+    "id": "AYUSHMAN_AAV_2024_03",
+    "name": "Ayushman Arogya Vistar Abhiyan",
+    "hindi_name": "आयुष्मान आरोग्य विस्तार अभियान",
+    "state": "All",
+    "sector": [
+      "Health",
+      "Digital India",
+      "Social Welfare"
+    ],
+    "ministry": "Ministry of Health and Family Welfare",
+    "launchYear": 2024,
+    "gender": [
+      "All"
+    ],
+    "ageGroup": [
+      "All"
+    ],
+    "category": [
+      "All",
+      "Vulnerable Sections",
+      "Rural Population"
+    ],
+    "status": "Latest",
+    "description": "An extension of the Ayushman Bharat program focused on strengthening primary healthcare services, enhancing digital health records integration, and promoting preventive health measures across all districts, especially in underserved regions.",
+    "hindi_description": "आयुष्मान भारत कार्यक्रम का एक विस्तार, जिसका मुख्य ध्यान प्राथमिक स्वास्थ्य सेवाओं को मजबूत करने, डिजिटल स्वास्थ्य रिकॉर्ड एकीकरण को बढ़ाने और सभी जिलों, विशेषकर वंचित क्षेत्रों में निवारक स्वास्थ्य उपायों को बढ़ावा देने पर है।",
+    "eligibility": "All Indian citizens are covered under the enhanced primary healthcare provisions; specific benefits may require Ayushman card or BPL status.",
+    "hindi_eligibility": "सभी भारतीय नागरिक बढ़ी हुई प्राथमिक स्वास्थ्य सेवा प्रावधानों के अंतर्गत आते हैं; विशिष्ट लाभों के लिए आयुष्मान कार्ड या बीपीएल स्थिति की आवश्यकता हो सकती है।",
+    "helpline": "14555",
+    "website": "pmjay.gov.in"
+  },
+  {
+    "id": "BHARAT_AISU_2025_02",
+    "name": "Bharat AI SkillUp Mission",
+    "hindi_name": "भारत एआई स्किलअप मिशन",
+    "state": "All",
+    "sector": [
+      "Digital India",
+      "Employment",
+      "Education"
+    ],
+    "ministry": "Ministry of Electronics and Information Technology",
+    "launchYear": 2025,
+    "gender": [
+      "All"
+    ],
+    "ageGroup": [
+      "18-35"
+    ],
+    "category": [
+      "Youth",
+      "Students",
+      "Professionals"
+    ],
+    "status": "Latest",
+    "description": "A pioneering national mission to upskill and reskill India's youth and workforce in cutting-edge Artificial Intelligence (AI) technologies, aiming to create a future-ready digital talent pool for global competitiveness.",
+    "hindi_description": "भारत के युवाओं और कार्यबल को अत्याधुनिक आर्टिफिशियल इंटेलिजेंस (एआई) प्रौद्योगिकियों में कौशल बढ़ाने और पुनः कौशल प्रदान करने के लिए एक अग्रणी राष्ट्रीय मिशन, जिसका लक्ष्य वैश्विक प्रतिस्पर्धा के लिए भविष्य के लिए तैयार डिजिटल प्रतिभा पूल बनाना है।",
+    "eligibility": "Indian citizens aged 18-35 with a basic understanding of computer operations; specific programs may require higher educational qualifications.",
+    "hindi_eligibility": "18-35 वर्ष आयु वर्ग के भारतीय नागरिक जिन्हें कंप्यूटर संचालन की बुनियादी समझ है; विशिष्ट कार्यक्रमों के लिए उच्च शैक्षिक योग्यता की आवश्यकता हो सकती है।",
+    "helpline": "1800-11-0001",
+    "website": "meity.gov.in"
+  },
+  {
+    "id": "PM_MSY_2024_01",
+    "name": "PM Mahila Samarthya Yojana",
+    "hindi_name": "पीएम महिला सामर्थ्य योजना",
+    "state": "All",
+    "sector": [
+      "Women Empowerment",
+      "Employment",
+      "Financial Services"
+    ],
+    "ministry": "Ministry of Women and Child Development",
+    "launchYear": 2024,
+    "gender": [
+      "Female"
+    ],
+    "ageGroup": [
+      "18-60"
+    ],
+    "category": [
+      "Women",
+      "SHG",
+      "Entrepreneurs"
+    ],
+    "status": "Latest",
+    "description": "A new central scheme launched to empower women through enhanced skill development programs, micro-enterprise support, and direct financial assistance for self-reliance and economic independence.",
+    "hindi_description": "महिलाओं को सशक्त बनाने के लिए एक नई केंद्रीय योजना शुरू की गई है, जिसमें कौशल विकास कार्यक्रमों को बढ़ाना, सूक्ष्म-उद्यमों का समर्थन करना और आत्मनिर्भरता तथा आर्थिक स्वतंत्रता के लिए सीधा वित्तीय सहायता प्रदान करना शामिल है।",
+    "eligibility": "Women aged 18-60, particularly those from rural areas, self-help groups, and aspiring micro-entrepreneurs.",
+    "hindi_eligibility": "18-60 वर्ष आयु वर्ग की महिलाएं, विशेष रूप से ग्रामीण क्षेत्रों से, स्वयं सहायता समूहों की सदस्य और महत्वाकांक्षी सूक्ष्म-उद्यमी।",
+    "helpline": "1800-11-0001",
+    "website": "wcd.nic.in"
+  },
+  {
     "id": "AI_NEW_2024_02",
     "name": "Ayushman Bharat Gramin Swasthya Samvardhan Yojana",
     "hindi_name": "आयुष्मान भारत ग्रामीण स्वास्थ्य संवर्धन योजना",

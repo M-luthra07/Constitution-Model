@@ -74,7 +74,14 @@ def internet_sync():
         return
 
     genai.configure(api_key=api_key)
-    model = genai.GenerativeModel('gemini-2.5-flash')
+    # Using fallback logic for model initialization
+    PRIMARY_MODEL = "gemini-2.5-flash"
+    FALLBACK_MODEL = "gemini-3-flash"
+    
+    try:
+        model = genai.GenerativeModel(PRIMARY_MODEL)
+    except:
+        model = genai.GenerativeModel(FALLBACK_MODEL)
 
     # Define the core database paths
     schemes_json_path = r'c:\Users\luthr\Downloads\Constitution-Model-main\backend\static\schemes.json'

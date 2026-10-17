@@ -73,7 +73,14 @@ def legal_sync():
         return
 
     genai.configure(api_key=api_key)
-    model = genai.GenerativeModel('gemini-2.5-flash')
+    # Using fallback logic for model initialization
+    PRIMARY_MODEL = "gemini-2.5-flash"
+    FALLBACK_MODEL = "gemini-3-flash"
+    
+    try:
+        model = genai.GenerativeModel(PRIMARY_MODEL)
+    except:
+        model = genai.GenerativeModel(FALLBACK_MODEL)
 
     # Define the legal knowledge database path
     legal_knowledge_path = r'backend\static\legal_knowledge.json'

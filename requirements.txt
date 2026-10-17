@@ -2,4 +2,6 @@ Flask
 python-dotenv
 google-generativeai
 Markdown
+flask-cors
 gTTS
+PyMuPDF

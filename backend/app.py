@@ -1,6 +1,5 @@
 
 import os
-import pathlib
 import hashlib
 import json
 import markdown
@@ -9,6 +8,7 @@ from flask import Flask, render_template, request, jsonify, send_from_directory,
 from dotenv import load_dotenv
 import google.generativeai as genai
 from flask_cors import CORS
+from pdf_config import CONSTITUTION_PDF_PATH
 
 # Load API key
 load_dotenv()
@@ -20,13 +20,11 @@ if not api_key:
 genai.configure(api_key=api_key)
 
 # Load Indian Constitution PDF (for direct serving)
-pdf_path = pathlib.Path("20240716890312078.pdf")
-if not pdf_path.exists():
-    pdf_path = pathlib.Path("../20240716890312078.pdf")
+pdf_path = CONSTITUTION_PDF_PATH
 
 # Define model fallback chain
 PRIMARY_MODEL = "gemini-2.5-flash"  # Best for voice & multi-modal
-FALLBACK_MODELS = ["gemini-2.5-flash"]  # Fallback to same model
+FALLBACK_MODELS = ["gemini-3-flash"]  # Fallback to next gen model
 
 # Create model instance
 model = genai.GenerativeModel(PRIMARY_MODEL)

@@ -26,7 +26,7 @@ else:
 
 # --- Model Configuration ---
 PRIMARY_MODEL = "gemini-2.5-flash"  # Best for voice & audio processing
-FALLBACK_MODELS = ["gemini-2.5-flash"]  # Fallback to same model
+FALLBACK_MODELS = ["gemini-3-flash"]  # Fallback to next gen model
 
 # --- Logging Setup ---
 logging.basicConfig(

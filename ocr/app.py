@@ -19,9 +19,18 @@ if not GEMINI_API_KEY:
 
 genai.configure(api_key=GEMINI_API_KEY)
 
-# Initialize the Gemini models
-vision_model = genai.GenerativeModel('gemini-2.5-flash')
-text_model = genai.GenerativeModel('gemini-2.5-flash')
+# Initialize the Gemini models with fallback
+PRIMARY_MODEL = "gemini-2.5-flash"
+FALLBACK_MODEL = "gemini-3-flash"
+
+def get_vision_model():
+    try:
+        return genai.GenerativeModel(PRIMARY_MODEL)
+    except:
+        return genai.GenerativeModel(FALLBACK_MODEL)
+
+vision_model = get_vision_model()
+text_model = vision_model
 
 def identify_fields_and_get_suggestions(image):
     """

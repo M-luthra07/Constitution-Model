@@ -1,6 +1,7 @@
 import fitz  # PyMuPDF
 import json
 import re
+from pdf_config import CONSTITUTION_PDF_PATH
 
 def analyze_pdf(pdf_path, output_json):
     try:
@@ -103,4 +104,4 @@ def analyze_pdf(pdf_path, output_json):
         print(f"Error: {e}")
 
 if __name__ == "__main__":
-    analyze_pdf("20240716890312078.pdf", "static/toc.json")
+    analyze_pdf(CONSTITUTION_PDF_PATH, "static/toc.json")
